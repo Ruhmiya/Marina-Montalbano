@@ -2,7 +2,7 @@
 
 ## 🌱 En reconversion vers le développement Full Stack
 
-Après [8 anneés] dans [l'administratif], ainsi que [6 années] en tant que [conductrice de bus] j'ai choisi de suivre ma passion pour la création web. Aujourd'hui je construis des projets concrets pour apprendre et grandir chaque jour.
+Après 8 anneés dans l'administratif, ainsi que 6 années en tant que conductrice de bus j'ai choisi de suivre ma passion pour la création web. Aujourd'hui je construis des projets concrets pour apprendre et grandir chaque jour.
 
 ---
 
