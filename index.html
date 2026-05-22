@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marina Montalbano — UX/UI Designer</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<title>Marina Montalbano — Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -28,10 +28,12 @@ nav {
   background: rgba(11,31,74,0.95); backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(201,168,76,0.2);
 }
-.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold2); text-decoration: none; letter-spacing: 1px; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-logo { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px; color: var(--gold2); text-decoration: none; letter-spacing: 3px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
 .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.3s; }
 .nav-links a:hover { color: var(--gold2); }
+.nav-cv { padding: 8px 20px; background: var(--gold); color: var(--navy) !important; font-weight: 700 !important; letter-spacing: 2px; text-transform: uppercase; font-size: 10px !important; transition: all 0.3s !important; }
+.nav-cv:hover { background: var(--gold2) !important; color: var(--navy) !important; }
 
 /* HERO */
 .hero {
@@ -43,16 +45,16 @@ nav {
 .hero::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; border:1px solid rgba(201,168,76,0.07); border-radius:50%; }
 .hero::after  { content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px; border:1px solid rgba(201,168,76,0.05); border-radius:50%; }
 .hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.2s ease forwards; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(40px,6vw,80px); font-weight:900; color:var(--gold2); line-height:1.1; margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.4s ease forwards; }
+.hero h1 { font-family:'Lato',sans-serif; font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--gold2); line-height:1.1; margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.4s ease forwards; letter-spacing:-1px; }
 .hero-desc { font-size:17px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.78); max-width:680px; line-height:1.8; margin-bottom:48px; opacity:0; animation: fadeUp 0.8s 0.6s ease forwards; }
-.hero-sig { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,48px); font-weight:400; font-style:italic; color:var(--white); margin-bottom:12px; opacity:0; animation: fadeUp 0.8s 0.8s ease forwards; }
+.hero-sig { font-family:'Lato',sans-serif; font-size:clamp(28px,4vw,48px); font-weight:100; font-style:italic; color:var(--white); margin-bottom:12px; opacity:0; animation: fadeUp 0.8s 0.8s ease forwards; letter-spacing:4px; }
 .hero-role { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); opacity:0; animation: fadeUp 0.8s 1s ease forwards; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
 /* SECTIONS */
 section { padding: 100px 80px; }
 .section-eyebrow { font-size:10px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
-.section-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,52px); font-weight:700; line-height:1.15; margin-bottom:48px; }
+.section-title { font-family:'Lato',sans-serif; font-size:clamp(30px,4vw,52px); font-weight:900; line-height:1.1; margin-bottom:48px; letter-spacing:-0.5px; }
 
 /* CE QUE JE FAISAIS */
 #faisais { background: var(--white); }
@@ -91,7 +93,7 @@ section { padding: 100px 80px; }
 .tl-dot { position:absolute; left:-46px; top:6px; width:12px; height:12px; background:var(--gold); border-radius:50%; border:2px solid var(--cream); box-shadow:0 0 0 3px rgba(201,168,76,0.2); }
 .tl-dot.active { background:var(--gold2); box-shadow:0 0 0 6px rgba(201,168,76,0.15); }
 .tl-role { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-.tl-sub  { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:var(--gold); margin-bottom:8px; }
+.tl-sub  { font-family:'Lato',sans-serif; font-style:italic; font-weight:300; font-size:15px; color:var(--gold); margin-bottom:8px; }
 .tl-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
 
 /* METIERS */
@@ -131,7 +133,7 @@ section { padding: 100px 80px; }
 .exp-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .exp-card { padding:40px 36px; background:var(--white); border-top:3px solid transparent; transition:all 0.3s; }
 .exp-card:hover { border-top-color:var(--gold); transform:translateY(-3px); box-shadow:0 12px 32px rgba(11,31,74,0.08); }
-.exp-card h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px; }
+.exp-card h3 { font-family:'Lato',sans-serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px; letter-spacing:-0.3px; }
 .exp-card p { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
 
 /* CONCLUSION */
@@ -141,7 +143,9 @@ section { padding: 100px 80px; }
 }
 #conclusion .section-title { color:var(--gold2); font-size:clamp(28px,4vw,52px); }
 .concl-text { font-size:17px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.78); max-width:700px; margin:0 auto 56px; line-height:1.9; }
-.concl-sig { font-family:'Playfair Display',serif; font-size:clamp(32px,4vw,52px); font-style:italic; color:var(--white); margin-bottom:12px; }
+.concl-sig { font-family:'Lato',sans-serif; font-size:clamp(32px,4vw,52px); font-weight:100; font-style:italic; letter-spacing:4px; color:var(--white); margin-bottom:12px; }
+.btn-cv { display:inline-block; margin-top:20px; margin-left:16px; padding:14px 40px; background:transparent; color:var(--gold); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); transition:all 0.3s; }
+.btn-cv:hover { background:rgba(201,168,76,0.1); transform:translateY(-2px); }
 .concl-role { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:56px; }
 .contact-row { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; }
 .contact-item { text-align:center; }
@@ -152,7 +156,7 @@ section { padding: 100px 80px; }
 
 /* FOOTER */
 footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
-.footer-name { font-family:'Playfair Display',serif; font-size:16px; color:var(--gold2); }
+.footer-name { font-family:'Lato',sans-serif; font-weight:300; letter-spacing:3px; font-size:16px; color:var(--gold2); text-transform:uppercase; }
 .footer-copy { font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:1px; }
 
 /* RESPONSIVE */
@@ -177,16 +181,17 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
     <li><a href="#parcours">Parcours</a></li>
     <li><a href="#pourquoi">Pourquoi le design</a></li>
     <li><a href="#conclusion">Contact</a></li>
+    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv">⬇ Mon CV</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="accueil">
   <p class="hero-eyebrow">De la coordination à l'expérience utilisateur</p>
-  <h1>Mon parcours ne m'éloigne pas<br>de l'UX/UI Design.<br>Il m'y conduit.</h1>
+  <h1>Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit.</h1>
   <p class="hero-desc">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</p>
   <p class="hero-sig">Marina Montalbano</p>
-  <p class="hero-role">Reconversion UX/UI Designer</p>
+  <p class="hero-role">Reconversion Product Designer</p>
 </section>
 
 <!-- CE QUE JE FAISAIS DÉJÀ SANS LE NOMMER -->
@@ -255,7 +260,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
     </div>
     <div class="tl-item">
       <div class="tl-dot active"></div>
-      <div class="tl-role">Reconversion UX/UI Design</div>
+      <div class="tl-role">Reconversion Product Design</div>
       <div class="tl-sub">Synthèse de toutes ces compétences</div>
       <p class="tl-desc">Formation RNCP Product Designer via OpenClassrooms. Apprentissage autodidacte de Figma, UX Research, accessibilité et développement web.</p>
     </div>
@@ -305,7 +310,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
 <!-- POURQUOI -->
 <section id="pourquoi">
   <p class="section-eyebrow" style="text-align:center;justify-content:center;">Motivation</p>
-  <h2 class="section-title" style="text-align:center;color:var(--white);">Pourquoi l'UX/UI Design<br>s'est imposé à moi</h2>
+  <h2 class="section-title" style="text-align:center;color:var(--white);">Pourquoi le Product Design<br>s'est imposé à moi</h2>
   <div class="pourquoi-grid">
     <div class="pourquoi-item">
       <div class="pourquoi-icon">♡</div>
@@ -320,7 +325,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
     <div class="pourquoi-item">
       <div class="pourquoi-icon">✦</div>
       <div class="pourquoi-label">Ce que j'ai trouvé</div>
-      <p class="pourquoi-text">L'UX/UI Design : là où toutes mes compétences trouvent enfin leur place.</p>
+      <p class="pourquoi-text">L'Product Design : là où toutes mes compétences trouvent enfin leur place.</p>
     </div>
   </div>
 </section>
@@ -397,7 +402,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
 
 <!-- CONCLUSION -->
 <section id="conclusion">
-  <h2 class="section-title">Mon parcours ne m'éloigne pas<br>de l'UX/UI Design. Il m'y conduit.</h2>
+  <h2 class="section-title">Mon parcours ne m'éloigne pas<br>du Product Design. Il m'y conduit.</h2>
   <p class="concl-text">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</p>
   <p class="concl-sig">Marina Montalbano</p>
   <p class="concl-role">Reconversion Product Designer</p>
@@ -416,12 +421,13 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
     </div>
   </div>
   <a href="tel:0750625397" class="btn">Me contacter</a>
+  <a href="CV_Marina_Montalbano.pdf" download class="btn-cv">⬇ Télécharger mon CV</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Marina Montalbano</div>
-  <div class="footer-copy">UX/UI Designer en reconversion · 2026</div>
+  <div class="footer-copy">Product Designer en reconversion · 2026</div>
 </footer>
 
 </body>
