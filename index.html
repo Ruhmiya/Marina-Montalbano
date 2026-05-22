@@ -14,8 +14,8 @@
   --gold2:  #e2c47a;
   --cream:  #f8f4ed;
   --white:  #ffffff;
-  --text:   #1a1a2e;
-  --muted:  #666;
+  --text:   #0b1f4a;
+  --muted:  #2a4080;
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
@@ -31,7 +31,11 @@ nav {
 .nav-logo { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px; color: var(--gold2); text-decoration: none; letter-spacing: 3px; text-transform: uppercase; }
 .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
 .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: var(--gold2); }
+.nav-links a:hover { color: var(--gold2); animation: goldBlink 1.2s ease infinite; }
+@keyframes goldBlink {
+  0%,100% { color: var(--gold2); opacity:1; }
+  50% { color: var(--gold); opacity:0.5; }
+}
 .nav-cv { padding: 8px 20px; background: var(--gold); color: var(--navy) !important; font-weight: 700 !important; letter-spacing: 2px; text-transform: uppercase; font-size: 10px !important; transition: all 0.3s !important; }
 .nav-cv:hover { background: var(--gold2) !important; color: var(--navy) !important; }
 
@@ -45,7 +49,7 @@ nav {
 .hero::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; border:1px solid rgba(201,168,76,0.07); border-radius:50%; }
 .hero::after  { content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px; border:1px solid rgba(201,168,76,0.05); border-radius:50%; }
 .hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.2s ease forwards; }
-.hero h1 { font-family:'Lato',sans-serif; font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--gold2); line-height:1.1; margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.4s ease forwards; letter-spacing:-1px; }
+.hero h1 { font-family:'Lato',sans-serif; font-size:clamp(32px,5vw,64px); font-weight:900; color:var(--gold2); line-height:1.2; margin-bottom:40px; opacity:0; animation: fadeUp 0.8s 0.4s ease forwards; letter-spacing:-0.5px; }
 .hero-desc { font-size:17px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.78); max-width:680px; line-height:1.8; margin-bottom:48px; opacity:0; animation: fadeUp 0.8s 0.6s ease forwards; }
 .hero-sig { font-family:'Lato',sans-serif; font-size:clamp(28px,4vw,48px); font-weight:100; font-style:italic; color:var(--white); margin-bottom:12px; opacity:0; animation: fadeUp 0.8s 0.8s ease forwards; letter-spacing:4px; }
 .hero-role { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); opacity:0; animation: fadeUp 0.8s 1s ease forwards; }
@@ -80,7 +84,7 @@ section { padding: 100px 80px; }
 .fil-box.dark  .fil-label { color:var(--gold); }
 .fil-list { list-style:none; }
 .fil-list li { font-size:15px; font-weight:300; line-height:1.8; display:flex; align-items:baseline; gap:10px; }
-.fil-box.light .fil-list li { color:#444; }
+.fil-box.light .fil-list li { color:#0b1f4a; }
 .fil-box.dark  .fil-list li { color:rgba(255,255,255,0.85); }
 .fil-list li::before { content:'—'; color:var(--gold); font-weight:700; flex-shrink:0; }
 
@@ -99,10 +103,10 @@ section { padding: 100px 80px; }
 /* METIERS */
 #metiers { background:var(--cream); }
 .metiers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-.metier-card { background:var(--white); padding:32px 24px; border:1px solid rgba(11,31,74,0.07); transition:all 0.3s; }
+.metier-card { background:var(--white); padding:32px 24px; border:1px solid rgba(11,31,74,0.07); transition:all 0.3s; display:flex; flex-direction:column; }
 .metier-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(11,31,74,0.08); border-color:rgba(201,168,76,0.3); }
 .metier-title { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:16px; text-transform:uppercase; letter-spacing:0.5px; }
-.metier-list { list-style:none; }
+.metier-list { list-style:none; flex:1; }
 .metier-list li { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; display:flex; align-items:baseline; gap:8px; }
 .metier-list li::before { content:'●'; font-size:6px; color:var(--gold); flex-shrink:0; }
 
@@ -188,8 +192,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
 <!-- HERO -->
 <section class="hero" id="accueil">
   <p class="hero-eyebrow">De la coordination à l'expérience utilisateur</p>
-  <h1>Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit.</h1>
-  <p class="hero-desc">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</p>
+  <h1>Mon parcours de reconversion<br>vers le Product Design</h1>
   <p class="hero-sig">Marina Montalbano</p>
   <p class="hero-role">Reconversion Product Designer</p>
 </section>
@@ -214,7 +217,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
 <section id="fil">
   <p class="section-eyebrow">Le fil conducteur</p>
   <h2 class="section-title">Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé.</h2>
-  <div class="fil-grid">
+  <div class="fil-grid" style="margin:0 auto;">
     <div class="fil-box light">
       <p class="fil-label">Ce que l'on voit</p>
       <ul class="fil-list">
@@ -309,7 +312,6 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
 
 <!-- POURQUOI -->
 <section id="pourquoi">
-  <p class="section-eyebrow" style="text-align:center;justify-content:center;">Motivation</p>
   <h2 class="section-title" style="text-align:center;color:var(--white);">Pourquoi le Product Design<br>s'est imposé à moi</h2>
   <div class="pourquoi-grid">
     <div class="pourquoi-item">
@@ -325,7 +327,7 @@ footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padd
     <div class="pourquoi-item">
       <div class="pourquoi-icon">✦</div>
       <div class="pourquoi-label">Ce que j'ai trouvé</div>
-      <p class="pourquoi-text">L'Product Design : là où toutes mes compétences trouvent enfin leur place.</p>
+      <p class="pourquoi-text">Le Product Design : là où toutes mes compétences trouvent enfin leur place.</p>
     </div>
   </div>
 </section>
@@ -473,19 +475,46 @@ document.querySelectorAll('.section-title, .section-eyebrow').forEach(el => {
   }, { threshold: 0.2 }).observe(el);
 });
 
-// ── TIMELINE DOTS PULSE ───────────────────────────────────
-document.querySelectorAll('.tl-dot').forEach(dot => {
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      dot.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
-      dot.style.transform = 'scale(1.4)';
-      dot.style.boxShadow = '0 0 0 8px rgba(201,168,76,0.2)';
-      setTimeout(() => {
-        dot.style.transform = 'scale(1)';
-        dot.style.boxShadow = '0 0 0 3px rgba(201,168,76,0.2)';
-      }, 400);
+// ── TIMELINE DOTS SÉQUENCE EN CASCADE ────────────────────
+const tlDots = document.querySelectorAll('.tl-dot');
+const tlItems = document.querySelectorAll('.tl-item');
+
+// Init : toutes les puces en gris clair
+tlDots.forEach(dot => {
+  dot.style.background = 'rgba(201,168,76,0.25)';
+  dot.style.boxShadow = 'none';
+  dot.style.transition = 'all 0.6s ease';
+});
+
+let currentDot = 0;
+
+function activateDot(index) {
+  // Reset toutes
+  tlDots.forEach((d, i) => {
+    if (i < index) {
+      d.style.background = 'var(--gold)';
+      d.style.boxShadow = '0 0 0 3px rgba(201,168,76,0.2)';
+      d.style.transform = 'scale(1)';
+    } else if (i === index) {
+      d.style.background = '#a07820';
+      d.style.boxShadow = '0 0 0 8px rgba(160,120,32,0.25)';
+      d.style.transform = 'scale(1.3)';
+    } else {
+      d.style.background = 'rgba(201,168,76,0.25)';
+      d.style.boxShadow = 'none';
+      d.style.transform = 'scale(1)';
     }
-  }, { threshold: 1 }).observe(dot);
+  });
+}
+
+// Observer chaque item de timeline
+tlItems.forEach((item, index) => {
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && index >= currentDot) {
+      currentDot = index;
+      activateDot(index);
+    }
+  }, { threshold: 0.5 }).observe(item);
 });
 
 // ── NAV ACTIVE LINK ───────────────────────────────────────
