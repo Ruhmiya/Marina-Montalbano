@@ -1,6 +1,6 @@
 # Bonjour, je suis Marina Montalbano 
 
-### En reconversion vers l'UX/UI Design
+### En reconversion vers le métier de Product Designer
 
 ---
 
