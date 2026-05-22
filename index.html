@@ -3,785 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marina Montalbano — Product Designer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<title>Marina Montalbano — UX/UI Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --navy:    #0b1829;
-  --navy2:   #152238;
-  --navy3:   #1e3250;
-  --gold:    #c9a84c;
-  --gold2:   #e2c47a;
-  --gold3:   #f5e4b8;
-  --white:   #ffffff;
-  --offwhite:#f8f6f1;
-  --text:    #1a1a2e;
-  --muted:   #7a7a8a;
+  --navy:   #0b1f4a;
+  --navy2:  #0404B8;
+  --gold:   #c9a84c;
+  --gold2:  #e2c47a;
+  --cream:  #f8f4ed;
+  --white:  #ffffff;
+  --text:   #1a1a2e;
+  --muted:  #666;
 }
-
 html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--offwhite);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-/* ══════════════════════════════════════
-   NAVIGATION
-══════════════════════════════════════ */
+/* NAV */
 nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background: rgba(11,24,41,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,168,76,0.15);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 60px;
+  background: rgba(11,31,74,0.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
 }
-
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--gold2);
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 1px;
-  background: var(--gold);
-  transition: width 0.3s;
-}
-
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold2); text-decoration: none; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.3s; }
 .nav-links a:hover { color: var(--gold2); }
-.nav-links a:hover::after { width: 100%; }
 
-/* ══════════════════════════════════════
-   HERO
-══════════════════════════════════════ */
+/* HERO */
 .hero {
-  min-height: 100vh;
-  background: linear-gradient(145deg, var(--navy) 0%, var(--navy2) 50%, #0f2040 100%);
-  display: flex;
-  align-items: center;
-  padding: 120px 60px 80px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Cercles décoratifs */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 500px; height: 500px;
-  border: 1px solid rgba(201,168,76,0.08);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -150px; left: -150px;
-  width: 600px; height: 600px;
-  border: 1px solid rgba(201,168,76,0.06);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Ligne dorée verticale décorative */
-.hero-line {
-  position: absolute;
-  left: 60px; top: 120px; bottom: 80px;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold2) 70%, transparent);
-  opacity: 0.4;
-}
-
-.hero-content {
-  max-width: 700px;
-  margin-left: 80px;
-  animation: fadeUp 1s ease both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-tag {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-tag::before {
-  content: '';
-  width: 32px; height: 1px;
-  background: var(--gold);
-}
-
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 7vw, 90px);
-  font-weight: 300;
-  line-height: 1.0;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-
-.hero h1 span {
-  display: block;
-  font-weight: 700;
-  color: var(--gold2);
-}
-
-.hero-subtitle {
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 32px;
-  margin-top: 16px;
-}
-
-.hero-desc {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.75);
-  max-width: 560px;
-  margin-bottom: 48px;
-}
-
-.hero-desc em {
-  color: var(--gold2);
-  font-style: normal;
-  font-weight: 400;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  padding: 14px 32px;
-  background: var(--gold);
-  color: var(--navy);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
-}
-
-.btn-primary:hover {
-  background: var(--gold2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201,168,76,0.3);
-}
-
-.btn-secondary {
-  padding: 14px 32px;
-  background: transparent;
-  color: var(--gold2);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid rgba(201,168,76,0.4);
-  transition: all 0.3s;
-}
-
-.btn-secondary:hover {
-  border-color: var(--gold);
-  background: rgba(201,168,76,0.05);
-  transform: translateY(-2px);
-}
-
-.hero-stats {
-  position: absolute;
-  right: 60px; bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  animation: fadeUp 1s 0.3s ease both;
-}
-
-.stat {
-  text-align: right;
-  border-right: 2px solid rgba(201,168,76,0.3);
-  padding-right: 20px;
-}
-
-.stat-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  font-weight: 300;
-  color: var(--gold2);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-top: 4px;
-}
-
-/* ══════════════════════════════════════
-   SECTION BASE
-══════════════════════════════════════ */
-section { padding: 100px 60px; }
-
-.section-tag {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.section-tag::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--gold);
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 4vw, 56px);
-  font-weight: 300;
-  color: var(--navy);
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
-.section-title strong { font-weight: 700; color: var(--navy); }
-
-/* ══════════════════════════════════════
-   À PROPOS
-══════════════════════════════════════ */
-#apropos {
-  background: var(--white);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.apropos-left {}
-
-.apropos-text {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.9;
-  color: #444;
-  margin-bottom: 24px;
-}
-
-.apropos-text em {
-  color: var(--navy);
-  font-style: normal;
-  font-weight: 500;
-}
-
-.apropos-right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.value-card {
-  padding: 28px 32px;
-  border: 1px solid rgba(11,24,41,0.08);
-  border-left: 3px solid var(--gold);
-  background: var(--offwhite);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.value-card:hover {
-  transform: translateX(6px);
-  box-shadow: -4px 0 16px rgba(201,168,76,0.15);
-}
-
-.value-card h3 {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--navy);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-
-.value-card p {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ══════════════════════════════════════
-   PARCOURS
-══════════════════════════════════════ */
-#parcours {
-  background: var(--offwhite);
-}
-
-.parcours-intro {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #555;
-  max-width: 680px;
-  margin-bottom: 64px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
-}
-
-.timeline {
-  position: relative;
-  padding-left: 48px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 8px; bottom: 8px;
-  width: 1px;
-  background: linear-gradient(180deg, var(--gold), rgba(201,168,76,0.1));
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 48px;
-  padding-bottom: 48px;
-  border-bottom: 1px dashed rgba(11,24,41,0.08);
-}
-
-.timeline-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -54px; top: 6px;
-  width: 12px; height: 12px;
-  background: var(--gold);
-  border-radius: 50%;
-  border: 2px solid var(--offwhite);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
-}
-
-.timeline-period {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.timeline-role {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-
-.timeline-company {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  font-style: italic;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.timeline-desc {
-  font-size: 14px;
-  font-weight: 300;
-  color: #555;
-  line-height: 1.7;
-  max-width: 600px;
-}
-
-/* ══════════════════════════════════════
-   PORTFOLIO
-══════════════════════════════════════ */
-#portfolio {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-#portfolio::before {
-  content: '';
-  position: absolute;
-  top: -200px; right: -200px;
-  width: 600px; height: 600px;
-  border: 1px solid rgba(201,168,76,0.06);
-  border-radius: 50%;
-}
-
-#portfolio .section-title { color: var(--white); }
-#portfolio .section-title strong { color: var(--gold2); }
-
-.portfolio-subtitle {
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 56px;
-  max-width: 520px;
-  line-height: 1.7;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.project-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,168,76,0.12);
-  padding: 40px 36px;
-  transition: all 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s;
-}
-
-.project-card:hover::before { transform: scaleX(1); }
-
-.project-card:hover {
-  background: rgba(255,255,255,0.07);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.project-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
-  color: rgba(201,168,76,0.15);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.project-tag {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-
-.project-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.project-desc {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  transition: gap 0.3s;
-}
-
-.project-link:hover { gap: 14px; }
-
-.project-link::after { content: '→'; }
-
-.project-soon {
-  display: inline-block;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.4);
-  border: 1px solid rgba(201,168,76,0.2);
-  padding: 4px 12px;
-}
-
-/* ══════════════════════════════════════
-   COMPÉTENCES
-══════════════════════════════════════ */
-#competences {
-  background: var(--white);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.competences-left {}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 40px;
-}
-
-.skill-item {
-  padding: 20px;
-  background: var(--offwhite);
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s, transform 0.3s;
-}
-
-.skill-item:hover {
-  border-bottom-color: var(--gold);
-  transform: translateY(-2px);
-}
-
-.skill-item-name {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-}
-
-.skill-item-level {
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
-.competences-right {}
-
-.lang-block { margin-top: 40px; }
-
-.lang-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(11,24,41,0.06);
-}
-
-.lang-name {
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--navy);
-}
-
-.lang-badge {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: var(--gold);
-  text-transform: uppercase;
-  background: rgba(201,168,76,0.1);
-  padding: 4px 12px;
-  border: 1px solid rgba(201,168,76,0.25);
-}
-
-.qualites-block { margin-top: 48px; }
-
-.qualite-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--navy);
-  border: 1px solid rgba(11,24,41,0.15);
-  padding: 6px 16px;
-  margin: 4px;
-  transition: all 0.3s;
-}
-
-.qualite-tag:hover {
-  background: var(--navy);
-  color: var(--gold2);
-  border-color: var(--navy);
-}
-
-/* ══════════════════════════════════════
-   CONTACT
-══════════════════════════════════════ */
-#contact {
-  background: linear-gradient(135deg, var(--navy) 0%, #0f2040 100%);
-  text-align: center;
-  padding: 120px 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-#contact::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px; height: 700px;
-  border: 1px solid rgba(201,168,76,0.05);
-  border-radius: 50%;
-}
-
-#contact .section-tag { justify-content: center; }
-#contact .section-tag::before { display: none; }
-
-#contact .section-title {
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.contact-desc {
-  font-size: 16px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  max-width: 480px;
-  margin: 0 auto 48px;
-  line-height: 1.7;
-}
-
-.contact-infos {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.contact-info {
-  text-align: center;
-}
-
-.contact-info-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.contact-info-value {
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.85);
-}
-
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
-footer {
-  background: var(--navy);
-  border-top: 1px solid rgba(201,168,76,0.1);
-  padding: 24px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  color: var(--gold2);
-}
-
-.footer-copy {
-  font-size: 11px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 1px;
-}
-
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
-@media (max-width: 900px) {
-  nav { padding: 16px 24px; }
-  .nav-links { gap: 24px; }
-  section { padding: 72px 24px; }
-  .hero { padding: 100px 24px 60px; flex-direction: column; }
-  .hero-content { margin-left: 0; }
-  .hero-stats { position: static; flex-direction: row; margin-top: 48px; }
-  .stat { text-align: left; border-right: none; border-left: 2px solid rgba(201,168,76,0.3); padding-right: 0; padding-left: 16px; }
-  #apropos, #competences { grid-template-columns: 1fr; gap: 40px; }
-  .hero-line { display: none; }
-  footer { flex-direction: column; gap: 8px; text-align: center; }
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 120px 60px 80px;
+  background: linear-gradient(160deg, var(--navy) 0%, #0c1e45 60%, #0f2550 100%);
+  position: relative; overflow: hidden;
+}
+.hero::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; border:1px solid rgba(201,168,76,0.07); border-radius:50%; }
+.hero::after  { content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px; border:1px solid rgba(201,168,76,0.05); border-radius:50%; }
+.hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.2s ease forwards; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(40px,6vw,80px); font-weight:900; color:var(--gold2); line-height:1.1; margin-bottom:32px; opacity:0; animation: fadeUp 0.8s 0.4s ease forwards; }
+.hero-desc { font-size:17px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.78); max-width:680px; line-height:1.8; margin-bottom:48px; opacity:0; animation: fadeUp 0.8s 0.6s ease forwards; }
+.hero-sig { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,48px); font-weight:400; font-style:italic; color:var(--white); margin-bottom:12px; opacity:0; animation: fadeUp 0.8s 0.8s ease forwards; }
+.hero-role { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); opacity:0; animation: fadeUp 0.8s 1s ease forwards; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* SECTIONS */
+section { padding: 100px 80px; }
+.section-eyebrow { font-size:10px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,52px); font-weight:700; line-height:1.15; margin-bottom:48px; }
+
+/* CE QUE JE FAISAIS */
+#faisais { background: var(--white); }
+.faisais-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:860px; margin:0 auto; }
+.faisais-card {
+  border:1px solid rgba(11,31,74,0.1); padding:24px 28px;
+  display:flex; align-items:center; gap:14px;
+  transition: all 0.3s; cursor:default;
+}
+.faisais-card:hover { border-color:var(--gold); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.12); }
+.faisais-icon { width:24px; height:24px; border-radius:50%; border:2px solid var(--gold); flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.faisais-icon::after { content:'✓'; font-size:11px; color:var(--gold); font-weight:700; }
+.faisais-card span { font-size:15px; font-weight:400; color:var(--navy); }
+
+/* FIL CONDUCTEUR */
+#fil { background:var(--cream); }
+.fil-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:860px; }
+.fil-box { padding:40px; }
+.fil-box.light { background:var(--white); border:1px solid rgba(11,31,74,0.08); }
+.fil-box.dark  { background:var(--navy); }
+.fil-label { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:20px; }
+.fil-box.light .fil-label { color:var(--muted); }
+.fil-box.dark  .fil-label { color:var(--gold); }
+.fil-list { list-style:none; }
+.fil-list li { font-size:15px; font-weight:300; line-height:1.8; display:flex; align-items:baseline; gap:10px; }
+.fil-box.light .fil-list li { color:#444; }
+.fil-box.dark  .fil-list li { color:rgba(255,255,255,0.85); }
+.fil-list li::before { content:'—'; color:var(--gold); font-weight:700; flex-shrink:0; }
+
+/* PARCOURS */
+#parcours { background:var(--white); }
+.timeline { position:relative; padding-left:40px; max-width:700px; }
+.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:1px; background:linear-gradient(180deg,var(--gold),rgba(201,168,76,0.1)); }
+.tl-item { position:relative; margin-bottom:52px; }
+.tl-item:last-child { margin-bottom:0; }
+.tl-dot { position:absolute; left:-46px; top:6px; width:12px; height:12px; background:var(--gold); border-radius:50%; border:2px solid var(--cream); box-shadow:0 0 0 3px rgba(201,168,76,0.2); }
+.tl-dot.active { background:var(--gold2); box-shadow:0 0 0 6px rgba(201,168,76,0.15); }
+.tl-role { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+.tl-sub  { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:var(--gold); margin-bottom:8px; }
+.tl-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
+
+/* METIERS */
+#metiers { background:var(--cream); }
+.metiers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.metier-card { background:var(--white); padding:32px 24px; border:1px solid rgba(11,31,74,0.07); transition:all 0.3s; }
+.metier-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(11,31,74,0.08); border-color:rgba(201,168,76,0.3); }
+.metier-title { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:16px; text-transform:uppercase; letter-spacing:0.5px; }
+.metier-list { list-style:none; }
+.metier-list li { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; display:flex; align-items:baseline; gap:8px; }
+.metier-list li::before { content:'●'; font-size:6px; color:var(--gold); flex-shrink:0; }
+
+/* POURQUOI */
+#pourquoi { background:var(--navy); text-align:center; }
+#pourquoi .section-title { color:var(--white); }
+.pourquoi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:48px; max-width:900px; margin:0 auto; }
+.pourquoi-item { display:flex; flex-direction:column; align-items:center; gap:16px; }
+.pourquoi-icon { font-size:32px; color:var(--gold); }
+.pourquoi-label { font-size:15px; font-weight:700; color:var(--white); }
+.pourquoi-text { font-size:14px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.7; text-align:center; }
+
+/* COMPÉTENCES */
+#competences { background:var(--white); }
+.comp-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.tags-wrap { display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
+.tag { padding:8px 20px; border:1px solid rgba(11,31,74,0.15); font-size:13px; font-weight:400; color:var(--navy); transition:all 0.3s; cursor:default; }
+.tag:hover { background:var(--navy); color:var(--gold2); border-color:var(--navy); }
+.apprend-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px; }
+.apprend-box { padding:24px; border-left:3px solid var(--gold); background:var(--cream); }
+.apprend-box h4 { font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--navy); margin-bottom:12px; }
+.apprend-box ul { list-style:none; }
+.apprend-box ul li { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; }
+.apprend-box ul li::before { content:'· '; color:var(--gold); font-weight:700; }
+
+/* EXPÉRIENCES SOUHAITÉES */
+#experiences { background:var(--cream); }
+.exp-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.exp-card { padding:40px 36px; background:var(--white); border-top:3px solid transparent; transition:all 0.3s; }
+.exp-card:hover { border-top-color:var(--gold); transform:translateY(-3px); box-shadow:0 12px 32px rgba(11,31,74,0.08); }
+.exp-card h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px; }
+.exp-card p { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
+
+/* CONCLUSION */
+#conclusion {
+  background:linear-gradient(160deg, var(--navy) 0%, #0c1e45 100%);
+  text-align:center; padding:120px 80px;
+}
+#conclusion .section-title { color:var(--gold2); font-size:clamp(28px,4vw,52px); }
+.concl-text { font-size:17px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.78); max-width:700px; margin:0 auto 56px; line-height:1.9; }
+.concl-sig { font-family:'Playfair Display',serif; font-size:clamp(32px,4vw,52px); font-style:italic; color:var(--white); margin-bottom:12px; }
+.concl-role { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:56px; }
+.contact-row { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; }
+.contact-item { text-align:center; }
+.contact-label { font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.contact-val { font-size:15px; font-weight:300; color:rgba(255,255,255,0.85); }
+.btn { display:inline-block; margin-top:48px; padding:14px 40px; background:var(--gold); color:var(--navy); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
+.btn:hover { background:var(--gold2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.3); }
+
+/* FOOTER */
+footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
+.footer-name { font-family:'Playfair Display',serif; font-size:16px; color:var(--gold2); }
+.footer-copy { font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:1px; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav { padding:16px 24px; }
+  .nav-links { gap:20px; }
+  section { padding:72px 24px; }
+  .faisais-grid, .fil-grid, .metiers-grid, .comp-grid, .exp-grid, .pourquoi-grid { grid-template-columns:1fr; }
+  .metiers-grid { grid-template-columns:1fr 1fr; }
+  .apprend-grid { grid-template-columns:1fr; }
+  footer { flex-direction:column; gap:8px; text-align:center; }
 }
 </style>
 </head>
@@ -789,266 +171,257 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">M. Montalbano</a>
+  <a class="nav-logo" href="#">Marina Montalbano</a>
   <ul class="nav-links">
-    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#faisais">Compétences</a></li>
     <li><a href="#parcours">Parcours</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#competences">Compétences</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#pourquoi">Pourquoi le design</a></li>
+    <li><a href="#conclusion">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="accueil">
-  <div class="hero-line"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Product Designer — En reconversion</div>
-    <h1>
-      Marina
-      <span>Montalbano</span>
-    </h1>
-    <div class="hero-subtitle">UX · UI · Expérience Utilisateur</div>
-    <p class="hero-desc">
-      15 ans d'expérience terrain au contact des usagers, aujourd'hui au service du design.<br>
-      Je conçois des interfaces <em>ancrées dans le réel</em>, pensées pour les humains — pas pour les écrans.
-    </p>
-    <div class="hero-ctas">
-      <a href="#portfolio" class="btn-primary">Voir mon travail</a>
-      <a href="#contact" class="btn-secondary">Me contacter</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-number">15</div>
-      <div class="stat-label">Ans d'expérience</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Univers métiers</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">∞</div>
-      <div class="stat-label">Curiosité</div>
+  <p class="hero-eyebrow">De la coordination à l'expérience utilisateur</p>
+  <h1>Mon parcours ne m'éloigne pas<br>de l'UX/UI Design.<br>Il m'y conduit.</h1>
+  <p class="hero-desc">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</p>
+  <p class="hero-sig">Marina Montalbano</p>
+  <p class="hero-role">Reconversion UX/UI Designer</p>
+</section>
+
+<!-- CE QUE JE FAISAIS DÉJÀ SANS LE NOMMER -->
+<section id="faisais">
+  <div style="max-width:860px;margin:0 auto;text-align:center;">
+    <p class="section-eyebrow" style="text-align:center;">Prise de conscience</p>
+    <h2 class="section-title">Ce que je faisais déjà<br>sans le nommer</h2>
+    <div class="faisais-grid">
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Améliorer la lisibilité d'un support</span></div>
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Organiser une information complexe</span></div>
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Anticiper les besoins</span></div>
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Rendre un parcours plus simple</span></div>
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Penser accessibilité</span></div>
+      <div class="faisais-card"><div class="faisais-icon"></div><span>Créer de la cohérence visuelle</span></div>
     </div>
   </div>
 </section>
 
-<!-- À PROPOS -->
-<section id="apropos">
-  <div class="apropos-left">
-    <div class="section-tag">À propos</div>
-    <h2 class="section-title">Un profil <strong>atypique,<br>une vraie force.</strong></h2>
-    <p class="apropos-text">
-      Après 8 ans en tant qu'<em>assistante de direction</em> dans de grands groupes — Thales, Onera, Vivarte, Groupe Urgo — et 6 ans comme <em>conductrice de bus</em> en Île-de-France, j'ai décidé de mettre toute cette expérience terrain au service d'un nouveau métier : le <em>Product Design</em>.
-    </p>
-    <p class="apropos-text">
-      Ce n'est pas une rupture. C'est une évolution logique. J'ai toujours exercé des métiers où <em>comprendre les besoins des personnes</em> était au cœur de l'action. Aujourd'hui, je traduis cette capacité en conception d'interfaces centrées sur l'humain.
-    </p>
-    <p class="apropos-text">
-      Autodidacte en développement web (HTML, CSS, Python, front-end, back-end) et en UX/UI, je prépare le <em>titre RNCP Product Designer</em> via OpenClassrooms.
-    </p>
-  </div>
-  <div class="apropos-right">
-    <div class="value-card">
-      <h3>Empathie terrain</h3>
-      <p>6 ans à observer les usagers au quotidien. Je sais ce que "frustration utilisateur" veut dire concrètement — pas théoriquement.</p>
+<!-- FIL CONDUCTEUR -->
+<section id="fil">
+  <p class="section-eyebrow">Le fil conducteur</p>
+  <h2 class="section-title">Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé.</h2>
+  <div class="fil-grid">
+    <div class="fil-box light">
+      <p class="fil-label">Ce que l'on voit</p>
+      <ul class="fil-list">
+        <li>Assistante de direction</li>
+        <li>Conductrice de bus</li>
+        <li>Support projet</li>
+      </ul>
     </div>
-    <div class="value-card">
-      <h3>Rigueur & méthode</h3>
-      <p>Coordination de directions générales, respect de protocoles stricts. La rigueur n'est pas une qualité chez moi, c'est un réflexe.</p>
-    </div>
-    <div class="value-card">
-      <h3>Vision globale</h3>
-      <p>Des bases en développement web qui me permettent de dialoguer avec les équipes techniques et de penser le design dans son ensemble.</p>
-    </div>
-    <div class="value-card">
-      <h3>Adaptabilité prouvée</h3>
-      <p>Thales, Vivarte, Keolis, Onera — des secteurs radicalement différents, une même capacité à m'intégrer et à comprendre rapidement.</p>
+    <div class="fil-box dark">
+      <p class="fil-label">Ce qu'il y avait déjà</p>
+      <ul class="fil-list">
+        <li>Compréhension des besoins</li>
+        <li>Clarté de l'information</li>
+        <li>Fluidité des parcours</li>
+        <li>Sens du détail</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- PARCOURS -->
+<!-- PARCOURS PROFESSIONNEL -->
 <section id="parcours">
-  <div class="section-tag">Parcours</div>
-  <h2 class="section-title">Un fil conducteur <strong>cohérent.</strong></h2>
-  <p class="parcours-intro">"Chaque expérience m'a appris quelque chose sur les humains et leurs besoins. C'est exactement ce dont le Product Design a besoin."</p>
-
+  <p class="section-eyebrow">Timeline</p>
+  <h2 class="section-title">Mon parcours professionnel</h2>
   <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">2024 – 2026</div>
-      <div class="timeline-role">Assistante Administrative</div>
-      <div class="timeline-company">ONERA — Office National d'Études et de Recherches Aérospatiales</div>
-      <p class="timeline-desc">Coordination administrative au sein d'un organisme de recherche public. Interface entre directions, équipes de recherche et partenaires institutionnels. Gestion de dossiers complexes et d'informations stratégiques.</p>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Assistanat</div>
+      <div class="tl-sub">Organisation, coordination et communication</div>
+      <p class="tl-desc">Grands groupes — Thales, Vivarte, Apogea, Groupe Urgo. Gestion d'agendas complexes, coordination de directions générales, interface entre équipes.</p>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">2018 – 2024</div>
-      <div class="timeline-role">Conductrice de Bus</div>
-      <div class="timeline-company">Transdev / Keolis — Île-de-France</div>
-      <p class="timeline-desc">Transport de voyageurs en Île-de-France. Relation usager en temps réel, gestion de situations imprévues, application de protocoles de sécurité stricts. Une école d'observation des comportements utilisateurs au quotidien.</p>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Conductrice de bus</div>
+      <div class="tl-sub">Service public, anticipation et parcours utilisateur</div>
+      <p class="tl-desc">Transdev / Keolis — Île-de-France. 6 ans au contact direct des usagers. Une école d'observation des comportements et des besoins réels.</p>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">2010 – 2016</div>
-      <div class="timeline-role">Assistante de Direction — Grands Comptes</div>
-      <div class="timeline-company">Thales · Vivarte · Apogea · Groupe Urgo</div>
-      <p class="timeline-desc">Gestion d'agendas complexes et coordination pour des directions générales. Interface entre directions, équipes internes et prestataires. Forte capacité d'adaptation à des secteurs et cultures d'entreprise très variés.</p>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-role">Assistante de direction technique</div>
+      <div class="tl-sub">Support projet, clarté et gestion de l'information</div>
+      <p class="tl-desc">ONERA — Office National d'Études et de Recherches Aérospatiales. Coordination administrative dans un environnement scientifique et institutionnel exigeant.</p>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot" style="background: var(--gold2); box-shadow: 0 0 0 6px rgba(201,168,76,0.15);"></div>
-      <div class="timeline-period">Aujourd'hui</div>
-      <div class="timeline-role">En reconversion — Product Designer</div>
-      <div class="timeline-company">OpenClassrooms · Formation RNCP</div>
-      <p class="timeline-desc">Préparation du titre RNCP Product Designer (Bac+3/4). Formation autodidacte en UX/UI, développement web (HTML, CSS, Python, front-end, back-end) via OpenClassrooms, MIMO et Mosaïque. Projet Voltaire certifiée.</p>
+    <div class="tl-item">
+      <div class="tl-dot active"></div>
+      <div class="tl-role">Reconversion UX/UI Design</div>
+      <div class="tl-sub">Synthèse de toutes ces compétences</div>
+      <p class="tl-desc">Formation RNCP Product Designer via OpenClassrooms. Apprentissage autodidacte de Figma, UX Research, accessibilité et développement web.</p>
     </div>
-
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">Mes <strong style="color:var(--gold2)">projets.</strong></h2>
-  <p class="portfolio-subtitle">Des projets concrets qui illustrent ma démarche UX : partir du terrain, comprendre les usagers, concevoir des solutions claires.</p>
-
-  <div class="portfolio-grid">
-
-    <div class="project-card">
-      <div class="project-number">01</div>
-      <div class="project-tag">Refonte UX/UI · Mobile & Web</div>
-      <div class="project-title">Refonte de l'application Keolis IDF</div>
-      <p class="project-desc">En tant qu'ex-conductrice, j'ai observé pendant 6 ans les frustrations des voyageurs. Ce projet repart de ces observations pour repenser l'expérience complète de l'appli mobile.</p>
-      <span class="project-soon">Projet en cours</span>
+<!-- CHAQUE MÉTIER -->
+<section id="metiers">
+  <p class="section-eyebrow">Compétences transférables</p>
+  <h2 class="section-title">Chaque métier m'a appris<br>une compétence utile au design</h2>
+  <div class="metiers-grid">
+    <div class="metier-card">
+      <div class="metier-title">Assistante de direction</div>
+      <ul class="metier-list">
+        <li>Organiser l'information</li>
+        <li>Anticiper les besoins</li>
+        <li>Simplifier les processus</li>
+      </ul>
     </div>
-
-    <div class="project-card">
-      <div class="project-number">02</div>
-      <div class="project-tag">UX Research · Design System</div>
-      <div class="project-title">Simplifier l'accès à l'information complexe</div>
-      <p class="project-desc">Comment rendre une interface de gestion de contrats ou de remboursements lisible pour tous ? Un projet centré sur l'accessibilité et la clarté.</p>
-      <span class="project-soon">À venir</span>
+    <div class="metier-card">
+      <div class="metier-title">Support projet</div>
+      <ul class="metier-list">
+        <li>Coordination d'équipes</li>
+        <li>Vision d'ensemble</li>
+        <li>Clarté dans la communication</li>
+      </ul>
     </div>
-
-    <div class="project-card">
-      <div class="project-number">03</div>
-      <div class="project-tag">Site vitrine · WordPress</div>
-      <div class="project-title">Création de sites en autonomie</div>
-      <p class="project-desc">Conception et développement de sites sous WordPress, de la structure à la mise en ligne. Une pratique autodidacte qui nourrit ma compréhension des contraintes techniques.</p>
-      <span class="project-soon">À venir</span>
+    <div class="metier-card">
+      <div class="metier-title">Conductrice de bus</div>
+      <ul class="metier-list">
+        <li>Expérience utilisateur</li>
+        <li>Accessibilité</li>
+        <li>Gestion des imprévus</li>
+      </ul>
     </div>
+    <div class="metier-card">
+      <div class="metier-title">Environnement technique</div>
+      <ul class="metier-list">
+        <li>Rigueur</li>
+        <li>Logique de système</li>
+        <li>Attention aux détails</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<!-- POURQUOI -->
+<section id="pourquoi">
+  <p class="section-eyebrow" style="text-align:center;justify-content:center;">Motivation</p>
+  <h2 class="section-title" style="text-align:center;color:var(--white);">Pourquoi l'UX/UI Design<br>s'est imposé à moi</h2>
+  <div class="pourquoi-grid">
+    <div class="pourquoi-item">
+      <div class="pourquoi-icon">♡</div>
+      <div class="pourquoi-label">Ce que j'aime</div>
+      <p class="pourquoi-text">Comprendre les besoins, simplifier le complexe, créer de la clarté et du sens.</p>
+    </div>
+    <div class="pourquoi-item">
+      <div class="pourquoi-icon">◎</div>
+      <div class="pourquoi-label">Ce que je cherche</div>
+      <p class="pourquoi-text">Un métier qui allie réflexion, créativité, technique et impact humain.</p>
+    </div>
+    <div class="pourquoi-item">
+      <div class="pourquoi-icon">✦</div>
+      <div class="pourquoi-label">Ce que j'ai trouvé</div>
+      <p class="pourquoi-text">L'UX/UI Design : là où toutes mes compétences trouvent enfin leur place.</p>
+    </div>
   </div>
 </section>
 
 <!-- COMPÉTENCES -->
 <section id="competences">
-  <div class="competences-left">
-    <div class="section-tag">Compétences</div>
-    <h2 class="section-title">Outils &<br><strong>savoir-faire.</strong></h2>
-    <div class="skills-grid">
-      <div class="skill-item">
-        <div class="skill-item-name">Figma</div>
-        <div class="skill-item-level">En apprentissage</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">Canva</div>
-        <div class="skill-item-level">Avancé</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">WordPress</div>
-        <div class="skill-item-level">Intermédiaire</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">HTML / CSS</div>
-        <div class="skill-item-level">Notions solides</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">Python</div>
-        <div class="skill-item-level">Bases</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">Microsoft Office</div>
-        <div class="skill-item-level">Expert</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">UX Research</div>
-        <div class="skill-item-level">En formation</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-item-name">Projet Voltaire</div>
-        <div class="skill-item-level">Certifiée</div>
+  <div class="comp-grid">
+    <div>
+      <p class="section-eyebrow">Savoir-être</p>
+      <h2 class="section-title">Les compétences<br>que j'apporte</h2>
+      <div class="tags-wrap">
+        <span class="tag">Organisation</span>
+        <span class="tag">Analyse</span>
+        <span class="tag">Clarté</span>
+        <span class="tag">Coordination</span>
+        <span class="tag">Écoute</span>
+        <span class="tag">Sens du détail</span>
+        <span class="tag">Communication visuelle</span>
+        <span class="tag">Empathie</span>
+        <span class="tag">Rigueur</span>
+        <span class="tag">Adaptabilité</span>
       </div>
     </div>
-  </div>
-
-  <div class="competences-right">
-    <div class="section-tag">Langues & qualités</div>
-    <h2 class="section-title" style="font-size:32px;">Ce qui me<br><strong>définit.</strong></h2>
-
-    <div class="lang-block">
-      <div class="lang-entry">
-        <span class="lang-name">Français</span>
-        <span class="lang-badge">Natif</span>
+    <div>
+      <p class="section-eyebrow">Ma transition est déjà en cours</p>
+      <h2 class="section-title" style="font-size:32px;">Ce que j'apprends,<br>ce que je développe</h2>
+      <div class="apprend-grid">
+        <div class="apprend-box">
+          <h4>En cours d'apprentissage</h4>
+          <ul>
+            <li>Figma</li>
+            <li>User flows</li>
+            <li>Accessibilité</li>
+            <li>Recherche utilisateur</li>
+          </ul>
+        </div>
+        <div class="apprend-box">
+          <h4>Ce que je développe</h4>
+          <ul>
+            <li>Projets portfolio</li>
+            <li>Tests utilisateurs</li>
+            <li>Design systems</li>
+            <li>Autonomie d'apprentissage</li>
+          </ul>
+        </div>
       </div>
-      <div class="lang-entry">
-        <span class="lang-name">Anglais</span>
-        <span class="lang-badge">B1 / B2</span>
-      </div>
-      <div class="lang-entry">
-        <span class="lang-name">Serbe</span>
-        <span class="lang-badge">A2</span>
-      </div>
-    </div>
-
-    <div class="qualites-block">
-      <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:600;">Savoir-être</p>
-      <span class="qualite-tag">Méthodique</span>
-      <span class="qualite-tag">Empathique</span>
-      <span class="qualite-tag">Stratégique</span>
-      <span class="qualite-tag">Curieuse</span>
-      <span class="qualite-tag">Adaptable</span>
-      <span class="qualite-tag">Rigoureuse</span>
-      <span class="qualite-tag">Autodidacte</span>
-      <span class="qualite-tag">Terrain</span>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-tag">Contact</div>
-  <h2 class="section-title">Travaillons<br><strong style="color:var(--gold2)">ensemble.</strong></h2>
-  <p class="contact-desc">Disponible pour une immersion professionnelle (POE France Travail) et ouverte à toute opportunité dans le Product Design.</p>
-
-  <div class="contact-infos">
-    <div class="contact-info">
-      <div class="contact-info-label">Téléphone</div>
-      <div class="contact-info-value">07 50 62 53 97</div>
+<!-- EXPÉRIENCES SOUHAITÉES -->
+<section id="experiences">
+  <p class="section-eyebrow">Vision</p>
+  <h2 class="section-title">Le type d'expériences<br>que je souhaite créer</h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <h3>Des interfaces claires</h3>
+      <p>Où l'utilisateur n'a pas à chercher, où tout est à sa place.</p>
     </div>
-    <div class="contact-info">
-      <div class="contact-info-label">Localisation</div>
-      <div class="contact-info-value">Longjumeau — 91160</div>
+    <div class="exp-card">
+      <h3>Des parcours rassurants</h3>
+      <p>Qui accompagnent sans perdre, qui anticipent sans envahir.</p>
     </div>
-    <div class="contact-info">
-      <div class="contact-info-label">Disponibilité</div>
-      <div class="contact-info-value">Immédiate</div>
+    <div class="exp-card">
+      <h3>Des services utiles</h3>
+      <p>Pensés pour résoudre un vrai besoin, pas pour impressionner.</p>
+    </div>
+    <div class="exp-card">
+      <h3>Un design plus humain</h3>
+      <p>Qui place l'empathie et l'accessibilité au centre.</p>
     </div>
   </div>
+</section>
 
-  <a href="tel:0750625397" class="btn-primary" style="display:inline-block;">Me contacter</a>
+<!-- CONCLUSION -->
+<section id="conclusion">
+  <h2 class="section-title">Mon parcours ne m'éloigne pas<br>de l'UX/UI Design. Il m'y conduit.</h2>
+  <p class="concl-text">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</p>
+  <p class="concl-sig">Marina Montalbano</p>
+  <p class="concl-role">Reconversion Product Designer</p>
+  <div class="contact-row">
+    <div class="contact-item">
+      <div class="contact-label">Téléphone</div>
+      <div class="contact-val">07 50 62 53 97</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Localisation</div>
+      <div class="contact-val">Longjumeau — 91160</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Disponibilité</div>
+      <div class="contact-val">Immédiate</div>
+    </div>
+  </div>
+  <a href="tel:0750625397" class="btn">Me contacter</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Marina Montalbano</div>
-  <div class="footer-copy">Product Designer en reconversion · 2026</div>
+  <div class="footer-copy">UX/UI Designer en reconversion · 2026</div>
 </footer>
 
 </body>
