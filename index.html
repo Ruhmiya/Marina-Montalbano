@@ -145,25 +145,27 @@ section { padding: 100px 120px; }
 .contact-item .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
 .contact-item .contact-val { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85); }
 .btns-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.btn { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; text-align: center; }
 .btn:hover { background: var(--gold2); transform: translateY(-2px); }
 .btn-outline { display: inline-block; padding: 14px 40px; background: transparent; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: all 0.3s; }
 .btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
 .btn-cv-glow {
   animation: cvPulse 2.5s ease-in-out infinite;
-  padding: 18px 48px;
   font-size: 11px;
+  text-align: center;
 }
 @keyframes cvPulse {
   0%, 100% {
-    border-color: var(--gold);
+    border-color: rgba(201,168,76,0.5);
     color: var(--gold);
     box-shadow: 0 0 0 0 rgba(201,168,76,0);
+    background: transparent;
   }
   50% {
     border-color: var(--gold2);
-    color: var(--gold2);
-    box-shadow: 0 0 20px 6px rgba(201,168,76,0.25);
+    color: var(--white);
+    box-shadow: 0 0 40px 15px rgba(201,168,76,0.4), 0 0 80px 30px rgba(201,168,76,0.15);
+    background: rgba(201,168,76,0.12);
   }
 }
 .btn-cv-glow:hover {
@@ -511,7 +513,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
   </div>
   <div class="btns-row">
     <a href="mailto:emploi.marina.91@gmail.com" class="btn"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline btn-cv-glow" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV — Disponible immédiatement" data-en="⬇ Download my Resume — Available immediately">⬇ Télécharger mon CV — Disponible immédiatement</span></a>
+    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline btn-cv-glow" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a>
   </div>
 </section>
 
