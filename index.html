@@ -155,14 +155,88 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 .footer-name { font-family: 'Dancing Script', cursive; font-size: 18px; color: var(--gold); }
 .footer-copy { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
 
-/* ══ RESPONSIVE ══ */
-@media(max-width:900px){
-  nav { padding:14px 20px; }
-  .nav-links { gap:16px; }
-  section { padding:72px 24px; }
-  .fil-grid,.metiers-grid,.faisais-grid,.pourquoi-grid,.apprend-grid,.exp-grid { grid-template-columns:1fr; }
-  .metiers-grid { grid-template-columns:1fr 1fr; }
-  footer { flex-direction:column; gap:8px; text-align:center; }
+/* ══ RESPONSIVE MOBILE ══ */
+@media(max-width:768px){
+
+  /* NAV mobile — hamburger simple */
+  nav {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+  }
+  .nav-logo { font-size: 11px; letter-spacing: 3px; margin-bottom: 0; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background: rgba(245,240,232,0.98);
+    padding: 12px 0;
+    margin-top: 12px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .nav-links .nav-cv { margin: 10px 20px; display: inline-block; width: auto; }
+  .lang-switcher { padding: 10px 20px; }
+
+  /* Bouton hamburger */
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero { padding: 100px 24px 60px; }
+  .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+  .hero-sig { font-size: clamp(28px, 7vw, 40px); }
+
+  /* SECTIONS */
+  section { padding: 64px 20px; }
+
+  /* GRILLES → 1 colonne */
+  .fil-grid,
+  .faisais-grid,
+  .pourquoi-grid,
+  .apprend-grid,
+  .exp-grid { grid-template-columns: 1fr; }
+
+  /* METIERS → 1 colonne */
+  .metiers-grid { grid-template-columns: 1fr; }
+
+  /* FIL CONDUCTEUR */
+  .fil-box { padding: 32px 24px; }
+  .fil-list li { font-size: 15px; }
+
+  /* CONCLUSION */
+  #conclusion { padding: 72px 20px; }
+  .contact-row { gap: 24px; flex-direction: column; align-items: center; }
+  .btns-row { flex-direction: column; align-items: center; }
+  .btn, .btn-outline { width: 100%; text-align: center; }
+
+  /* FOOTER */
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
 }
 </style>
 </head>
@@ -171,7 +245,10 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">Marina Montalbano</a>
-  <ul class="nav-links">
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#fil"><span data-fr="Parcours" data-en="Journey">Parcours</span></a></li>
     <li><a href="#metiers"><span data-fr="Compétences" data-en="Skills">Compétences</span></a></li>
     <li><a href="#pourquoi"><span data-fr="Pourquoi le design" data-en="Why design">Pourquoi le design</span></a></li>
@@ -522,6 +599,33 @@ window.addEventListener('scroll', () => {
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
   navLinks.forEach(a => {
     a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : 'var(--navy)';
+  });
+});
+
+// ── HAMBURGER MENU ───────────────────────────────────────
+function toggleMenu() {
+  const nav = document.getElementById('nav-links');
+  const burger = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+}
+
+// Afficher hamburger sur mobile
+function checkMobile() {
+  const burger = document.getElementById('hamburger');
+  if (window.innerWidth <= 768) {
+    burger.style.display = 'flex';
+  } else {
+    burger.style.display = 'none';
+    document.getElementById('nav-links').classList.remove('open');
+  }
+}
+window.addEventListener('resize', checkMobile);
+checkMobile();
+
+// Fermer menu au clic sur un lien
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
   });
 });
 
