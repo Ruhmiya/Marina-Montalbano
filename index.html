@@ -33,7 +33,7 @@ nav {
 .nav-links a { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
 .nav-links a:hover { color: var(--gold); animation: goldBlink 1s ease infinite; }
 @keyframes goldBlink { 0%,100%{opacity:1;color:var(--gold)} 50%{opacity:0.4;color:var(--gold2)} }
-.nav-cv { padding: 8px 18px !important; background: var(--gold) !important; color: var(--white) !important; font-weight: 700 !important; transition: all 0.3s !important; animation: none !important; }
+.nav-cv { padding: 10px 20px !important; background: var(--gold) !important; color: var(--white) !important; font-weight: 700 !important; transition: all 0.3s !important; animation: none !important; font-size: 11px !important; letter-spacing: 1.5px !important; white-space: nowrap !important; }
 .nav-cv:hover { background: var(--gold2) !important; animation: none !important; }
 .lang-switcher { display: flex; gap: 6px; align-items: center; }
 .lang-btn { font-size: 20px; cursor: pointer; opacity: 0.35; filter: grayscale(80%); transition: all 0.3s; }
@@ -149,6 +149,29 @@ section { padding: 100px 120px; }
 .btn:hover { background: var(--gold2); transform: translateY(-2px); }
 .btn-outline { display: inline-block; padding: 14px 40px; background: transparent; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: all 0.3s; }
 .btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+.btn-cv-glow {
+  animation: cvPulse 2.5s ease-in-out infinite;
+  padding: 18px 48px;
+  font-size: 11px;
+}
+@keyframes cvPulse {
+  0%, 100% {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 0 0 rgba(201,168,76,0);
+  }
+  50% {
+    border-color: var(--gold2);
+    color: var(--gold2);
+    box-shadow: 0 0 20px 6px rgba(201,168,76,0.25);
+  }
+}
+.btn-cv-glow:hover {
+  animation: none;
+  background: rgba(201,168,76,0.15);
+  box-shadow: 0 0 32px 8px rgba(201,168,76,0.3);
+  transform: translateY(-2px);
+}
 
 /* ══ FOOTER ══ */
 footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; }
@@ -253,7 +276,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
     <li><a href="#metiers"><span data-fr="Compétences" data-en="Skills">Compétences</span></a></li>
     <li><a href="#pourquoi"><span data-fr="Pourquoi le design" data-en="Why design">Pourquoi le design</span></a></li>
     <li><a href="#conclusion"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
-    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="⬇ Mon CV" data-en="⬇ My Resume">⬇ Mon CV</span></a></li>
+    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a></li>
     <li class="lang-switcher">
       <span class="lang-btn active" onclick="setLang('fr')" title="Français"><span style="font-size:20px">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></span>
       <span class="lang-btn" onclick="setLang('en')" title="English"><span style="font-size:20px">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></span>
@@ -488,7 +511,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
   </div>
   <div class="btns-row">
     <a href="mailto:emploi.marina.91@gmail.com" class="btn"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a>
+    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline btn-cv-glow" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV — Disponible immédiatement" data-en="⬇ Download my Resume — Available immediately">⬇ Télécharger mon CV — Disponible immédiatement</span></a>
   </div>
 </section>
 
