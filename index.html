@@ -13,12 +13,92 @@
   --blue2:  #0404B8;
   --gold:   #c9a84c;
   --gold2:  #a07820;
+  --gold-text: #7a5c18;
   --navy:   #0b1f4a;
   --white:  #ffffff;
   --muted:  #5a6a8a;
+  --text-scale: 1;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: scroll; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+
+/* ══ RESPECT DE "PRÉFÉRER LE MOUVEMENT RÉDUIT" (WCAG 2.3.3) ══ */
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a:hover, .nav-links a:focus-visible { animation: none !important; }
+  .nav-cv { animation: none !important; }
+  .hero-eyebrow, .hero h1, .hero-divider, .hero-para, .hero-badges,
+  .hero-ctas, .hero-sig-wrap { animation: none !important; opacity: 1 !important; }
+  .nav-card:hover, .btn:hover, .btn-outline-navy:hover, .btn-outline-gold:hover,
+  .footer-social a:hover { transform: none !important; }
+}
+
+/* ══ ACCESSIBILITÉ — focus clavier visible partout ══ */
+a:focus-visible, button:focus-visible, .nav-card:focus-visible,
+.mm-item:focus-visible, .lang-btn:focus-visible, .a11y-toggle:focus-visible,
+.a11y-panel button:focus-visible, .hamburger:focus-visible {
+  outline: 2.5px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ══ SKIP LINK ══ */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 1000;
+  background: var(--navy); color: var(--white);
+  padding: 14px 22px; font-size: calc(13px * var(--text-scale));
+  font-weight: 700; text-decoration: none; letter-spacing: 0.5px;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+/* ══ MODE CONTRASTE ÉLEVÉ (fond noir / jaune vif) ══ */
+body.high-contrast {
+  background: #000 !important; color: #fff !important;
+  --cream: #000000; --white: #000000; --navy: #ffffff; --blue: #ffffff; --blue2: #ffffff;
+  --gold: #FFDD00; --gold2: #FFDD00; --gold-text: #FFDD00; --muted: #ffffff;
+}
+body.high-contrast section, body.high-contrast nav, body.high-contrast footer,
+body.high-contrast .mobile-menu-overlay, body.high-contrast .hero,
+body.high-contrast #apporte { background: #000 !important; }
+body.high-contrast .nav-card, body.high-contrast .hero-quote,
+body.high-contrast .a11y-panel, body.high-contrast .a11y-panel-mobile { background: #000 !important; }
+body.high-contrast p, body.high-contrast span, body.high-contrast li,
+body.high-contrast .nav-card-desc, body.high-contrast .apporte-item p,
+body.high-contrast .footer-copy { color: #ffffff !important; }
+body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 { color: #ffffff !important; }
+body.high-contrast .nav-card, body.high-contrast .hero-quote,
+body.high-contrast .btn-outline-navy, body.high-contrast .btn-outline-gold,
+body.high-contrast .footer-social a, body.high-contrast .a11y-toggle,
+body.high-contrast .a11y-panel, body.high-contrast .a11y-panel-mobile,
+body.high-contrast .a11y-step-btn, body.high-contrast .a11y-step-value {
+  border-color: #FFDD00 !important; border-width: 2px !important; color: #FFDD00 !important;
+}
+body.high-contrast .btn {
+  background: #FFDD00 !important; color: #000 !important; border-color: #FFDD00 !important;
+}
+body.high-contrast .btn:hover { background: #fff !important; }
+body.high-contrast .btn-outline-navy:hover, body.high-contrast .btn-outline-gold:hover { background: rgba(255,221,0,0.12) !important; }
+body.high-contrast .hero-badge svg, body.high-contrast .apporte-item svg,
+body.high-contrast .nav-card-icon svg, body.high-contrast .nav-card-arrow,
+body.high-contrast .footer-social svg { color: #FFDD00 !important; }
+body.high-contrast .nav-card-icon { background: rgba(255,221,0,0.12) !important; }
+body.high-contrast .nav-links a, body.high-contrast .nav-logo,
+body.high-contrast .mm-logo, body.high-contrast .hero-sig,
+body.high-contrast .footer-name { color: #ffffff !important; }
+body.high-contrast .nav-links a { text-decoration: underline; text-underline-offset: 3px; }
+body.high-contrast .nav-cv { background: #FFDD00 !important; color: #000 !important; }
+body.high-contrast .hero-divider, body.high-contrast .hero-sig-underline,
+body.high-contrast .nav-cards-divider { background: #FFDD00 !important; }
+body.high-contrast a:focus-visible, body.high-contrast button:focus-visible { outline-color: #FFDD00 !important; }
+body.high-contrast .toggle-switch { background: #333 !important; }
+body.high-contrast .toggle-switch.active { background: #FFDD00 !important; }
+body.high-contrast .toggle-switch.active .toggle-knob { background: #000 !important; }
+
+/* ══ LIENS SOULIGNÉS ══ */
+body.underline-links a:not(.btn):not(.btn-outline-navy):not(.btn-outline-gold):not(.nav-cv):not(.nav-card):not(.skip-link) {
+  text-decoration: underline; text-underline-offset: 3px;
+}
+body.underline-links .nav-card { box-shadow: inset 0 -2px 0 var(--gold2); }
 
 /* ══ NAV ══ */
 nav {
@@ -28,503 +108,510 @@ nav {
   background: rgba(245,240,232,0.96); backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(201,168,76,0.2);
 }
-.nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(13px * var(--text-scale)); font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
 .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-links a { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
-.nav-links a:hover { color: var(--gold); animation: goldBlink 1s ease infinite; }
-@keyframes goldBlink { 0%,100%{opacity:1;color:var(--gold)} 50%{opacity:0.4;color:var(--gold2)} }
-.nav-cv { padding: 10px 20px !important; color: var(--white) !important; font-weight: 700 !important; font-size: 11px !important; letter-spacing: 1.5px !important; white-space: nowrap !important; text-decoration: none; animation: navCvPulse 2.5s ease-in-out infinite !important; }
+.nav-mobile-only { display: none; }
+.nav-links a { font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-text); animation: goldBlink 1s ease infinite; }
+@keyframes goldBlink { 0%,100%{opacity:1;color:var(--gold-text)} 50%{opacity:0.85;color:var(--gold2)} }
+.nav-cv { padding: 10px 20px !important; color: var(--navy) !important; font-weight: 700 !important; font-size: calc(11px * var(--text-scale)) !important; letter-spacing: 1.5px !important; white-space: nowrap !important; text-decoration: none; animation: navCvPulse 2.5s ease-in-out infinite !important; }
 @keyframes navCvPulse {
-  0%, 100% {
-    background: var(--gold);
-    box-shadow: 0 0 0 0 rgba(11,31,74,0);
-  }
-  50% {
-    background: var(--gold);
-    box-shadow: 0 0 10px 3px rgba(11,31,74,0.5);
-  }
+  0%, 100% { background: var(--gold); box-shadow: 0 0 0 0 rgba(11,31,74,0); }
+  50%      { background: var(--gold); box-shadow: 0 0 10px 3px rgba(11,31,74,0.5); }
 }
 .nav-cv:hover { animation: none !important; background: var(--gold2) !important; box-shadow: none !important; }
-.nav-cv:hover { background: var(--gold2) !important; animation: none !important; }
-.lang-switcher { display: flex; gap: 6px; align-items: center; }
-.lang-btn { font-size: 20px; cursor: pointer; opacity: 0.35; filter: grayscale(80%); transition: all 0.3s; }
-.lang-btn:hover, .lang-btn.active { opacity: 1; filter: grayscale(0%); transform: scale(1.2); }
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn { background: none; border: none; padding: 6px; border-radius: 4px; font-size: calc(20px * var(--text-scale)); cursor: pointer; opacity: 0.35; filter: grayscale(80%); transition: all 0.3s; }
+.lang-btn:hover, .lang-btn.active { opacity: 1; filter: grayscale(0%); transform: scale(1.15); }
+
+/* ══ MENU "Aa" — ACCESSIBILITÉ ══ */
+.a11y-menu { position: relative; margin-left: 8px; }
+.a11y-toggle {
+  background: transparent; border: 1px solid rgba(11,31,74,0.25); border-radius: 4px;
+  padding: 6px 11px; font-family: 'Playfair Display', serif;
+  font-size: calc(13px * var(--text-scale)); font-weight: 700; color: var(--navy);
+  cursor: pointer; transition: all 0.25s; line-height: 1;
+}
+.a11y-toggle:hover { border-color: var(--gold2); color: var(--gold-text); }
+.a11y-panel {
+  position: absolute; top: calc(100% + 10px); right: 0; z-index: 150;
+  background: var(--white); border: 1px solid rgba(11,31,74,0.12);
+  box-shadow: 0 14px 34px rgba(11,31,74,0.14);
+  padding: 18px 20px; width: 232px;
+}
+.a11y-row { margin-bottom: 16px; }
+.a11y-row-label { display: block; font-size: calc(10.5px * var(--text-scale)); font-weight: 700; letter-spacing: 0.5px; color: var(--navy); margin-bottom: 10px; }
+.a11y-stepper { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.a11y-step-btn {
+  width: 28px; height: 28px; border: 1px solid rgba(11,31,74,0.25); background: var(--cream);
+  color: var(--navy); font-weight: 700; font-size: 16px; line-height: 1; cursor: pointer;
+  border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.25s;
+}
+.a11y-step-btn:hover { border-color: var(--gold2); color: var(--gold-text); }
+.a11y-step-value { font-weight: 700; font-size: calc(13px * var(--text-scale)); min-width: 42px; text-align: center; color: var(--navy); }
+.a11y-switch-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: calc(12.5px * var(--text-scale)); font-weight: 400; color: var(--navy);
+  padding: 10px 0; border-top: 1px solid rgba(11,31,74,0.08); cursor: pointer;
+}
+.a11y-switch-row input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none; width: 38px; height: 22px; border-radius: 11px;
+  background: rgba(11,31,74,0.25); position: relative; cursor: pointer; transition: background 0.25s; flex-shrink: 0;
+}
+.a11y-switch-row input[type="checkbox"]::before {
+  content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
+  background: #fff; border-radius: 50%; transition: transform 0.25s; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.a11y-switch-row input[type="checkbox"]:checked { background: var(--gold2); }
+.a11y-switch-row input[type="checkbox"]:checked::before { transform: translateX(16px); }
+
+/* ══ POLICE DYSLEXIE ══ */
+body.dyslexic-font, body.dyslexic-font * {
+  font-family: Verdana, 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.035em !important; word-spacing: 0.12em !important; line-height: 1.75 !important;
+}
+
+@media(max-width:1024px) and (min-width:769px){
+  nav { padding: 14px 28px; }
+  .nav-links { gap: 20px; }
+}
 
 /* ══ HERO ══ */
 .hero {
-  min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; align-items: center; text-align: center;
-  padding: 120px 60px 80px; background: var(--cream); position: relative;
+  min-height: auto; display: flex; flex-direction: column;
+  padding: 150px 60px 70px; background: var(--cream); position: relative;
+  max-width: 1180px; margin: 0 auto;
 }
-.hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s 0.2s ease forwards; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5.5vw, 72px); font-weight: 700; color: var(--blue); line-height: 1.2; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
-.hero-sub { font-size: 15px; font-weight: 300; color: var(--gold); margin-bottom: 48px; letter-spacing: 1px; opacity: 0; animation: fadeUp 0.8s 0.6s ease forwards; }
-.hero-sig { font-family: 'Dancing Script', cursive; font-size: clamp(36px, 5vw, 64px); color: var(--blue2); margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s 0.8s ease forwards; }
-.hero-arrow { font-size: 24px; color: var(--gold); margin-top: 48px; opacity: 0; animation: fadeUp 0.8s 1s ease forwards, bounce 2s 1.8s ease infinite; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+.hero-eyebrow { font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.2s ease forwards; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: start; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: calc(clamp(34px, 4.6vw, 58px) * var(--text-scale)); font-weight: 700; color: var(--blue); line-height: 1.2; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
+.hero-divider { width: 220px; height: 2px; background: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards; }
+.hero-para { font-size: calc(16px * var(--text-scale)); font-weight: 300; line-height: 1.9; color: var(--navy); max-width: 480px; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.6s ease forwards; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s 0.7s ease forwards; }
+.hero-badge { display: flex; align-items: center; gap: 9px; font-size: calc(13px * var(--text-scale)); font-weight: 400; color: var(--navy); }
+.hero-badge svg { width: 17px; height: 17px; color: var(--gold2); flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; opacity: 0; animation: fadeUp 0.8s 0.8s ease forwards; }
+.hero-sig-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 8px; opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards; }
+.hero-sig { font-family: 'Dancing Script', cursive; font-size: calc(clamp(30px, 3.4vw, 46px) * var(--text-scale)); color: var(--blue2); margin-bottom: 4px; text-align: center; }
+.hero-sig-underline { width: 180px; height: 2px; background: var(--gold); margin-bottom: 30px; }
+.hero-quote { background: var(--white); border: 1px solid rgba(11,31,74,0.06); padding: 34px 32px; position: relative; width: 100%; }
+.hero-quote-mark { font-family: 'Playfair Display', serif; font-size: calc(40px * var(--text-scale)); color: var(--gold-text); line-height: 1; margin-bottom: 8px; }
+.hero-quote p { font-size: calc(17px * var(--text-scale)); font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.7; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
-/* ══ SECTIONS ══ */
-section { padding: 100px 120px; }
-.section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; text-align: center; }
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 44px); font-weight: 600; color: var(--blue); line-height: 1.3; margin-bottom: 60px; text-align: center; }
-.section-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 60px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: var(--gold); color: var(--navy); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; border: 1px solid var(--gold); }
+.btn:hover { background: var(--gold2); border-color: var(--gold2); transform: translateY(-2px); }
+.btn-outline-navy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--navy); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(11,31,74,0.35); transition: all 0.3s; }
+.btn-outline-navy:hover { background: rgba(11,31,74,0.05); transform: translateY(-2px); }
+.btn-outline-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--gold-text); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; }
+.btn-outline-gold:hover { background: rgba(201,168,76,0.08); transform: translateY(-2px); }
+.btn svg, .btn-outline-navy svg, .btn-outline-gold svg { width: 15px; height: 15px; }
 
-/* ══ FIL CONDUCTEUR ══ */
-#fil { background: var(--cream); }
-.fil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 720px; margin: 0 auto; }
-.fil-box { padding: 52px 44px; }
-.fil-box.light { background: var(--white); border: 1px solid rgba(11,31,74,0.08); }
-.fil-box.dark  { background: var(--navy); }
-.fil-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px; }
-.fil-box.light .fil-label { color: var(--muted); }
-.fil-box.dark  .fil-label { color: var(--gold); }
-.fil-list { list-style: none; }
-.fil-list li { font-size: 18px; font-weight: 300; line-height: 2.1; display: flex; align-items: baseline; gap: 12px; }
-.fil-box.light .fil-list li { color: var(--navy); }
-.fil-box.dark  .fil-list li { color: rgba(255,255,255,0.9); }
-.fil-list li::before { content: '—'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+/* ══ NAVIGUEZ SELON VOS INTÉRÊTS ══ */
+#naviguez { padding: 70px 60px 90px; max-width: 1180px; margin: 0 auto; }
+.nav-cards-eyebrow { text-align: center; font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 14px; }
+.nav-cards-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 48px; }
+.nav-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.nav-card { background: var(--white); border: 1px solid rgba(11,31,74,0.07); padding: 32px 26px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.3s; }
+.nav-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,31,74,0.09); border-color: rgba(201,168,76,0.35); }
+.nav-card-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,168,76,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.nav-card-icon svg { width: 24px; height: 24px; color: var(--gold2); }
+.nav-card-title { font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+.nav-card-desc { font-size: calc(13.5px * var(--text-scale)); font-weight: 300; color: var(--navy); line-height: 1.75; flex-grow: 1; margin-bottom: 20px; }
+.nav-card-arrow { font-size: calc(18px * var(--text-scale)); color: var(--blue); transition: transform 0.3s; }
+.nav-card:hover .nav-card-arrow { transform: translateX(6px); }
 
-/* ══ PARCOURS ══ */
-#parcours { background: var(--white); }
-.timeline { position: relative; padding-left: 40px; max-width: 620px; margin: 0 auto; }
-.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:1px; background:linear-gradient(180deg,var(--gold),rgba(201,168,76,0.1)); }
-.tl-item { position: relative; margin-bottom: 52px; }
-.tl-item:last-child { margin-bottom: 0; }
-.tl-dot { position:absolute; left:-46px; top:6px; width:12px; height:12px; background:rgba(201,168,76,0.25); border-radius:50%; transition:all 0.6s ease; }
-.tl-dot.active { background:var(--gold2); box-shadow:0 0 0 8px rgba(160,120,32,0.15); transform:scale(1.3); }
-.tl-dot.done  { background:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,0.2); }
-.tl-role { font-family:'Playfair Display',serif; font-size: 18px; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
-.tl-sub  { font-size: 14px; font-weight: 300; font-style: italic; color: var(--gold); margin-bottom: 0; }
+/* ══ CE QUE MA RECONVERSION M'APPORTE ══ */
+#apporte { background: rgba(201,168,76,0.08); padding: 70px 60px; }
+.apporte-inner { max-width: 1000px; margin: 0 auto; }
+.apporte-eyebrow { text-align: center; font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 44px; }
+.apporte-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.apporte-item { display: flex; gap: 18px; align-items: flex-start; }
+.apporte-item svg { width: 30px; height: 30px; color: var(--gold2); flex-shrink: 0; margin-top: 2px; }
+.apporte-item h3 { font-family: 'Playfair Display', serif; font-size: calc(17px * var(--text-scale)); font-weight: 600; color: var(--blue); margin-bottom: 8px; }
+.apporte-item p { font-size: calc(13.5px * var(--text-scale)); font-weight: 300; color: var(--navy); line-height: 1.75; }
 
-/* ══ METIERS ══ */
-#metiers { background: var(--cream); }
-.metiers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
-.metier-card { background: var(--white); padding: 32px 24px; border: 1px solid rgba(11,31,74,0.06); display: flex; flex-direction: column; transition: all 0.3s; }
-.metier-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(11,31,74,0.08); border-color: rgba(201,168,76,0.3); }
-.metier-title { font-size: 11px; font-weight: 400; color: var(--blue); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-.metier-list { list-style: none; flex: 1; }
-.metier-list li { font-size: 13px; font-weight: 300; color: var(--navy); line-height: 1.9; display: flex; align-items: baseline; gap: 8px; }
-.metier-list li::before { content:'●'; font-size:6px; color:var(--gold); flex-shrink:0; }
-
-/* ══ FAISAIS ══ */
-#faisais { background: var(--white); }
-.faisais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 760px; margin: 0 auto; }
-.faisais-card { border: 1px solid rgba(11,31,74,0.1); padding: 22px 24px; display: flex; align-items: center; gap: 14px; background: var(--cream); transition: all 0.3s; }
-.faisais-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.faisais-icon { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--gold); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.faisais-icon::after { content:'✓'; font-size:10px; color:var(--gold); font-weight:700; }
-.faisais-card span { font-size: 14px; font-weight: 400; color: var(--navy); }
-
-/* ══ POURQUOI ══ */
-#pourquoi { background: var(--navy); text-align: center; }
-#pourquoi .section-title { color: var(--white); }
-.pourquoi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; max-width: 860px; margin: 0 auto; }
-.pourquoi-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.pourquoi-icon { font-size: 36px; color: var(--gold); margin-bottom: 8px; }
-.pourquoi-label { font-family:'Playfair Display',serif; font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-.pourquoi-text { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.8; }
-
-/* ══ COMPÉTENCES ══ */
-#competences { background: var(--cream); }
-.comp-title { font-family:'Playfair Display',serif; font-size:clamp(22px,2.8vw,38px); font-weight:600; color:var(--blue); text-align:center; margin-bottom:48px; }
-.tags-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 760px; margin: 0 auto 64px; }
-.tag { padding: 10px 24px; border: 1px solid rgba(11,31,74,0.15); font-size: 13px; font-weight: 400; color: var(--navy); background: var(--white); transition: all 0.3s; cursor: default; }
-.tag:hover { background: var(--navy); color: var(--gold2); border-color: var(--navy); }
-.apprend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
-.apprend-box { padding: 28px 32px; border-left: 3px solid var(--gold); background: var(--white); }
-.apprend-box h4 { font-size: 12px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
-.apprend-box ul { list-style: none; }
-.apprend-box ul li { font-size: 16px; font-weight: 400; color: var(--navy); line-height: 2; }
-.apprend-box ul li::before { content: '· '; color: var(--gold); font-weight: 700; }
-
-/* ══ EXPÉRIENCES ══ */
-#experiences { background: var(--white); }
-.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
-.exp-card { padding: 36px 32px; background: var(--cream); border-top: 2px solid transparent; transition: all 0.3s; }
-.exp-card:hover { border-top-color: var(--gold); transform: translateY(-3px); }
-.exp-card h3 { font-family:'Playfair Display',serif; font-size: 18px; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
-.exp-card p { font-size: 13px; font-weight: 300; color: var(--navy); line-height: 1.8; }
-
-/* ══ CONCLUSION ══ */
-#conclusion { background: var(--navy); text-align: center; padding: 120px 80px; }
-.concl-h1 { font-family:'Playfair Display',serif; font-size:clamp(26px,3.5vw,48px); font-weight:700; color:var(--gold2); line-height:1.3; margin-bottom:40px; }
-.concl-text { font-size: 16px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.75); max-width: 660px; margin: 0 auto 52px; line-height: 1.9; }
-.concl-sig { font-family: 'Dancing Script', cursive; font-size: clamp(36px,5vw,60px); color: var(--white); margin-bottom: 10px; }
-.concl-role { font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 56px; }
-.contact-row { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; margin-bottom: 48px; }
-.contact-item .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.contact-item .contact-val { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85); }
-.btns-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; text-align: center; }
-.btn:hover { background: var(--gold2); transform: translateY(-2px); }
-.btn-outline { display: inline-block; padding: 14px 40px; background: transparent; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: all 0.3s; }
-.btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
-.btn-cv-glow {
-  animation: cvPulse 2.5s ease-in-out infinite;
-  font-size: 11px;
-  text-align: center;
+/* ══ BANDEAU EXPLICATIF — MODE CONTRASTE ÉLEVÉ ══ */
+.hc-sidebar {
+  display: none;
+  position: fixed; top: 0; left: 0; bottom: 0; width: 230px; z-index: 250;
+  background: #000; border-right: 2px solid #FFDD00; color: #fff;
+  padding: 24px 20px; overflow-y: auto; font-size: 12.5px; line-height: 1.7;
 }
-@keyframes cvPulse {
-  0%, 100% {
-    border-color: rgba(201,168,76,0.5);
-    color: var(--gold);
-    box-shadow: 0 0 0 0 rgba(201,168,76,0);
-    background: transparent;
-  }
-  50% {
-    border-color: var(--gold2);
-    color: var(--white);
-    box-shadow: 0 0 40px 15px rgba(201,168,76,0.4), 0 0 80px 30px rgba(201,168,76,0.15);
-    background: rgba(201,168,76,0.12);
-  }
+body.high-contrast .hc-sidebar.active { display: block; }
+.hc-sidebar-title { color: #FFDD00; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.hc-sidebar-close { background: none; border: 1px solid #FFDD00; color: #FFDD00; width: 26px; height: 26px; flex-shrink: 0; cursor: pointer; font-size: 14px; border-radius: 3px; }
+.hc-sidebar p { color: rgba(255,255,255,0.85); font-weight: 300; margin-bottom: 20px; }
+.hc-sidebar-controls { border: 2px solid #FFDD00; padding: 14px; margin-bottom: 20px; }
+.hc-sidebar-controls .a11y-switch-row, .hc-sidebar-controls .a11y-row { font-size: 12px; padding: 8px 0; border-color: rgba(255,221,0,0.3); }
+.hc-sidebar-controls .a11y-switch-row span, .hc-sidebar-controls .a11y-row-label { color: #fff; }
+.hc-sidebar-controls .a11y-step-value { color: #FFDD00; }
+.hc-sidebar-note { color: rgba(255,255,255,0.6); font-size: 11.5px; display: flex; align-items: flex-start; gap: 8px; }
+.hc-sidebar-note svg { width: 20px; height: 20px; flex-shrink: 0; color: #FFDD00; }
+@media(max-width:1024px){ .hc-sidebar { display: none !important; } }
+
+@media(min-width:1025px){
+  body.high-contrast.hc-sidebar-open nav { left: 230px; }
+  body.high-contrast.hc-sidebar-open > section,
+  body.high-contrast.hc-sidebar-open > footer,
+  body.high-contrast.hc-sidebar-open > .a11y-statement-bar { margin-left: 230px; }
 }
-.btn-cv-glow:hover {
-  animation: none;
-  background: rgba(201,168,76,0.15);
-  box-shadow: 0 0 32px 8px rgba(201,168,76,0.3);
-  transform: translateY(-2px);
+
+/* ══ BARRE D'ENGAGEMENT ACCESSIBILITÉ ══ */
+.a11y-statement-bar {
+  background: #0a1730; color: rgba(255,255,255,0.6);
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 40px;
+  padding: 12px 24px; font-size: 11.5px; font-weight: 300;
+}
+.a11y-statement-bar span { display: inline-flex; align-items: center; gap: 8px; }
+.a11y-statement-bar svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); }
+body.high-contrast .a11y-statement-bar { background: #000; color: #fff; border-top: 1px solid #FFDD00; }
+body.high-contrast .a11y-statement-bar svg { color: #FFDD00; }
+@media(max-width:768px){
+  .a11y-statement-bar { flex-direction: column; align-items: center; text-align: center; padding: 14px 20px; gap: 8px; }
 }
 
 /* ══ FOOTER ══ */
-footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; }
-.footer-name { font-family: 'Dancing Script', cursive; font-size: 18px; color: var(--gold); }
-.footer-copy { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.footer-name { font-family: 'Dancing Script', cursive; font-size: calc(22px * var(--text-scale)); color: var(--gold); }
+.footer-copy { font-size: calc(11px * var(--text-scale)); color: rgba(255,255,255,0.45); letter-spacing: 1px; }
+.footer-social { display: flex; gap: 14px; }
+.footer-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.35); display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; transition: all 0.3s; }
+.footer-social a:hover { background: rgba(201,168,76,0.15); transform: translateY(-2px); }
+.footer-social svg { width: 16px; height: 16px; }
+
+/* ══ MENU MOBILE PLEIN ÉCRAN (partagé avec les autres pages) ══ */
+.mobile-menu-overlay { display: none; }
+.mobile-menu-overlay.open { display: flex; }
 
 /* ══ RESPONSIVE MOBILE ══ */
+@media(max-width:1024px){
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-sig-wrap { align-items: flex-start; }
+  .hero-sig { text-align: left; }
+  .hero-sig-underline { margin-left: 0; }
+  .nav-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .apporte-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
 @media(max-width:768px){
+  nav { padding: 14px 20px; flex-direction: row; position: relative; }
+  .nav-logo { font-size: calc(11px * var(--text-scale)); letter-spacing: 3px; }
+  .nav-links { display: none; }
 
-  /* NAV mobile — hamburger simple */
-  nav {
-    padding: 14px 20px;
+  .mobile-menu-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--cream);
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    position: relative;
+    padding: 22px 26px 32px;
+    overflow-y: auto;
   }
-  .nav-logo { font-size: 11px; letter-spacing: 3px; margin-bottom: 0; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-    background: rgba(245,240,232,0.98);
-    padding: 12px 0;
-    margin-top: 12px;
-    border-top: 1px solid rgba(201,168,76,0.2);
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { width: 100%; }
-  .nav-links a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 11px;
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-  }
-  .nav-links .nav-cv { margin: 10px 20px; display: inline-block; width: auto; }
-  .lang-switcher { padding: 10px 20px; }
+  .mm-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; }
+  .mm-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(12px * var(--text-scale)); font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); }
+  .mm-close { background: none; border: none; font-size: calc(24px * var(--text-scale)); color: var(--navy); cursor: pointer; line-height: 1; padding: 12px; width: 44px; height: 44px; }
+  .mm-list { list-style: none; margin-top: 8px; }
+  .mm-list li { border-bottom: 1px solid rgba(11,31,74,0.08); }
+  .mm-item { display: flex; align-items: center; gap: 22px; padding: 22px 4px; text-decoration: none; color: var(--navy); font-size: calc(17px * var(--text-scale)); font-weight: 400; transition: color 0.25s; }
+  .mm-item svg { width: 25px; height: 25px; flex-shrink: 0; }
+  .mm-item.active { color: var(--gold-text); }
+  .mm-item.active svg { stroke: var(--gold-text); }
+  .mm-item:active { opacity: 0.6; }
+  .mm-lang { display: flex; gap: 30px; margin-top: 30px; padding-top: 4px; }
+  .mm-a11y { margin-top: 20px; border-top: 1px solid rgba(11,31,74,0.08); padding-top: 20px; }
+  .mm-a11y .a11y-toggle { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 4px; font-size: calc(15px * var(--text-scale)); border: none; }
+  .mm-a11y .a11y-toggle span { font-family: 'Lato', sans-serif; font-weight: 700; font-size: calc(13px * var(--text-scale)); letter-spacing: 1px; text-transform: uppercase; }
+  .a11y-panel-mobile { position: static; width: 100%; box-shadow: none; border: none; background: rgba(11,31,74,0.03); margin-top: 8px; padding: 16px; }
+  .mm-lang button { background: none; border: none; display: flex; align-items: center; gap: 6px; font-size: calc(13px * var(--text-scale)); font-weight: 700; letter-spacing: 1px; color: var(--navy); cursor: pointer; padding: 6px 0; opacity: 0.5; }
+  .mm-lang button.active { opacity: 1; color: var(--gold2); }
+  .mm-lang .flag { font-size: calc(20px * var(--text-scale)); }
 
-  /* Bouton hamburger */
-  .hamburger {
-    display: flex !important;
-    position: absolute;
-    right: 20px;
-    top: 14px;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--navy);
-    transition: all 0.3s;
-  }
+  .hamburger { display: flex !important; position: absolute; right: 14px; top: 10px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; padding: 11px; background: none; border: none; width: 44px; height: 44px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
 
-  /* HERO */
-  .hero { padding: 100px 24px 60px; }
-  .hero h1 { font-size: clamp(32px, 8vw, 48px); }
-  .hero-sig { font-size: clamp(28px, 7vw, 40px); }
+  .hero { padding: 96px 22px 50px; }
+  .hero-quote { margin-top: 30px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas a { width: 100%; }
 
-  /* SECTIONS */
-  section { padding: 64px 20px; }
+  #naviguez { padding: 50px 20px 60px; }
+  .nav-cards-grid { grid-template-columns: 1fr; }
 
-  /* GRILLES → 1 colonne */
-  .fil-grid,
-  .faisais-grid,
-  .pourquoi-grid,
-  .apprend-grid,
-  .exp-grid { grid-template-columns: 1fr; }
+  #apporte { padding: 50px 20px; }
 
-  /* METIERS → 1 colonne */
-  .metiers-grid { grid-template-columns: 1fr; }
-
-  /* FIL CONDUCTEUR */
-  .fil-box { padding: 32px 24px; }
-  .fil-list li { font-size: 15px; }
-
-  /* CONCLUSION */
-  #conclusion { padding: 72px 20px; }
-  .contact-row { gap: 24px; flex-direction: column; align-items: center; }
-  .btns-row { flex-direction: column; align-items: center; }
-  .btn, .btn-outline { width: 100%; text-align: center; }
-
-  /* FOOTER */
-  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
+  footer { padding: 30px 20px; }
 }
 </style>
 </head>
 <body>
 
+<!-- Lien d'évitement, pour les utilisateurs clavier -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<!-- Bandeau explicatif du mode contraste élevé (desktop uniquement) -->
+<aside class="hc-sidebar" id="hcSidebar" aria-label="À propos du mode contraste élevé">
+  <div class="hc-sidebar-title">
+    <span>MODE CONTRASTE ÉLEVÉ ACTIVÉ</span>
+    <button class="hc-sidebar-close" onclick="closeHcSidebar()" aria-label="Masquer ce panneau">✕</button>
+  </div>
+  <p>Le mode contraste élevé améliore la lisibilité en renforçant les contrastes des couleurs et en simplifiant les éléments visuels.</p>
+
+  <div class="hc-sidebar-controls">
+    <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+      <span>Contraste élevé</span>
+      <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+    </label>
+    <div class="a11y-row">
+      <span class="a11y-row-label">Taille du texte</span>
+      <div class="a11y-stepper" role="group" aria-label="Taille du texte">
+        <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+        <span class="a11y-step-value" aria-live="polite">100%</span>
+        <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+      </div>
+    </div>
+    <label class="a11y-switch-row">
+      <span>Police dyslexie</span>
+      <input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+    </label>
+  </div>
+
+  <div class="hc-sidebar-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 17l5-5-5-5"/><path d="M12 19h8"/></svg>
+    <span>Les boutons, liens et textes sont plus visibles. La navigation au clavier est mise en évidence.</span>
+  </div>
+</aside>
+
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">Marina Montalbano</a>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;">
+  <a class="nav-logo" href="index.html">Marina Montalbano</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
     <span></span><span></span><span></span>
-  </div>
+  </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#fil"><span data-fr="Parcours" data-en="Journey">Parcours</span></a></li>
-    <li><a href="#metiers"><span data-fr="Compétences" data-en="Skills">Compétences</span></a></li>
-    <li><a href="#pourquoi"><span data-fr="Pourquoi le design" data-en="Why design">Pourquoi le design</span></a></li>
-    <li><a href="#conclusion"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
-    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a></li>
+    <li><a href="apropos.html"><span data-fr="À propos" data-en="About">À propos</span></a></li>
+    <li><a href="projets.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
+    <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
+    <li><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
+    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
     <li class="lang-switcher">
-      <span class="lang-btn active" onclick="setLang('fr')" title="Français"><span style="font-size:20px">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></span>
-      <span class="lang-btn" onclick="setLang('en')" title="English"><span style="font-size:20px">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></span>
+      <button class="lang-btn active" onclick="setLang('fr')" title="Français" aria-pressed="true"><span style="font-size:20px" aria-hidden="true">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></button>
+      <button class="lang-btn" onclick="setLang('en')" title="English" aria-pressed="false"><span style="font-size:20px" aria-hidden="true">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></button>
+    </li>
+    <li class="a11y-menu">
+      <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
+      <div class="a11y-panel" id="a11yPanel" role="menu" hidden>
+        <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+          <span>Contraste élevé</span>
+          <input type="checkbox" id="toggleContrast" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+        </label>
+        <div class="a11y-row">
+          <span class="a11y-row-label" id="a11ySizeLabel">Taille du texte</span>
+          <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabel">
+            <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+            <span class="a11y-step-value" aria-live="polite">100%</span>
+            <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+          </div>
+        </div>
+        <label class="a11y-switch-row">
+          <span>Police dyslexie</span>
+          <input type="checkbox" id="toggleDyslexic" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+        </label>
+        <label class="a11y-switch-row">
+          <span>Souligner les liens</span>
+          <input type="checkbox" id="toggleUnderline" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
+        </label>
+      </div>
     </li>
   </ul>
 </nav>
 
+<!-- MENU MOBILE PLEIN ÉCRAN -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <div class="mm-header">
+    <span class="mm-logo">MARINA MONTALBANO</span>
+    <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
+  </div>
+  <ul class="mm-list">
+    <li>
+      <a href="#" class="mm-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+        <span data-fr="Accueil" data-en="Home">Accueil</span>
+      </a>
+    </li>
+    <li>
+      <a href="projets.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
+      </a>
+    </li>
+    <li>
+      <a href="cible.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
+      </a>
+    </li>
+    <li>
+      <a href="apropos.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
+        <span data-fr="À propos" data-en="About">À propos</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:emploi.marina.91@gmail.com" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
+      </a>
+    </li>
+  </ul>
+  <div class="mm-lang">
+    <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
+    <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button>
+  </div>
+
+  <div class="mm-a11y">
+    <button class="a11y-toggle" id="a11yToggleMobile" onclick="toggleA11yPanel('Mobile')" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanelMobile">Aa <span>Accessibilité</span></button>
+    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" role="menu" hidden>
+      <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+        <span>Contraste élevé</span>
+        <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+      </label>
+      <div class="a11y-row">
+        <span class="a11y-row-label" id="a11ySizeLabelMobile">Taille du texte</span>
+        <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabelMobile">
+          <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+          <span class="a11y-step-value" aria-live="polite">100%</span>
+          <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+        </div>
+      </div>
+      <label class="a11y-switch-row">
+        <span>Police dyslexie</span>
+        <input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+      </label>
+      <label class="a11y-switch-row">
+        <span>Souligner les liens</span>
+        <input type="checkbox" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
+      </label>
+    </div>
+  </div>
+</div>
+
 <!-- HERO -->
-<section class="hero" id="accueil">
-  <h1>
-    <span data-fr="De la coordination<br>à l'expérience utilisateur" data-en="From coordination<br>to user experience">De la coordination<br>à l'expérience utilisateur</span>
-  </h1>
-  <p class="hero-sub">
-    <span data-fr="Mon parcours de reconversion vers le Product Design" data-en="My journey into Product Design">Mon parcours de reconversion vers le Product Design</span>
-  </p>
-  <p class="hero-sig">Marina Montalbano</p>
-  <p class="hero-arrow">↓</p>
-</section>
+<section class="hero" id="main-content">
+  <p class="hero-eyebrow"><span data-fr="En reconversion vers le Product Design" data-en="Transitioning into Product Design">En reconversion vers le Product Design</span></p>
+  <div class="hero-grid">
+    <div>
+      <h1><span data-fr="De la coordination à l'expérience utilisateur" data-en="From coordination to user experience">De la coordination à l'expérience utilisateur</span></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-para"><span data-fr="Curieuse, rigoureuse et à l'écoute, je développe mes compétences en UX Design pour concevoir des expériences utiles, accessibles et centrées sur l'humain." data-en="Curious, rigorous and attentive, I'm developing my UX Design skills to create experiences that are useful, accessible and human-centred.">Curieuse, rigoureuse et à l'écoute, je développe mes compétences en UX Design pour concevoir des expériences utiles, accessibles et centrées sur l'humain.</span></p>
 
-<!-- FIL CONDUCTEUR -->
-<section id="fil">
-  <p class="section-eyebrow"><span data-fr="Le fil conducteur" data-en="The common thread">Le fil conducteur</span></p>
-  <h2 class="section-title">
-    <span data-fr="Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé." data-en="A path that seems to change.<br>A thread that never did.">Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé.</span>
-  </h2>
-  <div class="section-divider"></div>
-  <div class="fil-grid">
-    <div class="fil-box light">
-      <p class="fil-label"><span data-fr="Ce que l'on voit" data-en="What people see">Ce que l'on voit</span></p>
-      <ul class="fil-list">
-        <li><span data-fr="Assistante de direction" data-en="Executive Assistant">Assistante de direction</span></li>
-        <li><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></li>
-        <li><span data-fr="Support projet" data-en="Project support">Support projet</span></li>
-      </ul>
-    </div>
-    <div class="fil-box dark">
-      <p class="fil-label"><span data-fr="Ce qu'il y avait déjà" data-en="What was always there">Ce qu'il y avait déjà</span></p>
-      <ul class="fil-list">
-        <li><span data-fr="Compréhension des besoins" data-en="Understanding needs">Compréhension des besoins</span></li>
-        <li><span data-fr="Clarté de l'information" data-en="Information clarity">Clarté de l'information</span></li>
-        <li><span data-fr="Fluidité des parcours" data-en="Smooth user journeys">Fluidité des parcours</span></li>
-        <li><span data-fr="Sens du détail" data-en="Attention to detail">Sens du détail</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-fr="Longjumeau (91)" data-en="Longjumeau, France">Longjumeau (91)</span>
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <span data-fr="Disponible immédiatement" data-en="Available immediately">Disponible immédiatement</span>
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5L12 5l10 4.5-10 4.5-10-4.5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M21 9.5V16"/></svg>
+          <span data-fr="En apprentissage continu" data-en="Continuously learning">En apprentissage continu</span>
+        </div>
+      </div>
 
-<!-- PARCOURS -->
-<section id="parcours">
-  <h2 class="section-title"><span data-fr="Mon parcours professionnel" data-en="My professional journey">Mon parcours professionnel</span></h2>
-  <div class="section-divider"></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot" id="dot0"></div>
-      <div class="tl-role"><span data-fr="Assistanat" data-en="Executive assistance">Assistanat</span></div>
-      <div class="tl-sub"><span data-fr="Organisation, coordination et communication" data-en="Organisation, coordination and communication">Organisation, coordination et communication</span></div>
+      <div class="hero-ctas">
+        <a href="projets.html" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <span data-fr="Voir mon portfolio" data-en="View my portfolio">Voir mon portfolio</span>
+        </a>
+        <a href="apropos.html" class="btn-outline-navy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
+          <span data-fr="En savoir plus sur moi" data-en="Learn more about me">En savoir plus sur moi</span>
+        </a>
+        <a href="CV_Marina_Montalbano.pdf" download class="btn-outline-gold" id="hero-cv-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+          <span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span>
+        </a>
+      </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot1"></div>
-      <div class="tl-role"><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></div>
-      <div class="tl-sub"><span data-fr="Service public, anticipation et parcours utilisateur" data-en="Public service, anticipation and user journey">Service public, anticipation et parcours utilisateur</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot2"></div>
-      <div class="tl-role"><span data-fr="Assistante de direction technique" data-en="Technical executive assistant">Assistante de direction technique</span></div>
-      <div class="tl-sub"><span data-fr="Support projet, clarté et gestion de l'information" data-en="Project support, clarity and information management">Support projet, clarté et gestion de l'information</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot3"></div>
-      <div class="tl-role"><span data-fr="Reconversion Product Design" data-en="Product Design transition">Reconversion Product Design</span></div>
-      <div class="tl-sub"><span data-fr="Synthèse de toutes ces compétences" data-en="Bringing all skills together">Synthèse de toutes ces compétences</span></div>
+
+    <div class="hero-sig-wrap">
+      <p class="hero-sig">Marina Montalbano</p>
+      <div class="hero-sig-underline"></div>
+      <div class="hero-quote">
+        <div class="hero-quote-mark">"</div>
+        <p><span data-fr="Comprendre les besoins, simplifier le complexe et créer du sens : c'est ce qui m'anime." data-en="Understanding needs, simplifying complexity and creating meaning: that's what drives me.">Comprendre les besoins, simplifier le complexe et créer du sens : c'est ce qui m'anime.</span></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MÉTIERS -->
-<section id="metiers">
-  <h2 class="section-title"><span data-fr="Chaque métier m'a appris<br>une compétence utile au design" data-en="Every role taught me skills<br>that are useful in design">Chaque métier m'a appris<br>une compétence utile au design</span></h2>
-  <div class="section-divider"></div>
-  <div class="metiers-grid">
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Assistante de direction" data-en="Executive assistant">Assistante de direction</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Organiser l'information" data-en="Organise information">Organiser l'information</span></li>
-        <li><span data-fr="Anticiper les besoins" data-en="Anticipate needs">Anticiper les besoins</span></li>
-        <li><span data-fr="Simplifier les processus" data-en="Simplify processes">Simplifier les processus</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Support projet" data-en="Project support">Support projet</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Coordination d'équipes" data-en="Team coordination">Coordination d'équipes</span></li>
-        <li><span data-fr="Vision d'ensemble" data-en="Big picture thinking">Vision d'ensemble</span></li>
-        <li><span data-fr="Clarté dans la communication" data-en="Clear communication">Clarté dans la communication</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Expérience utilisateur" data-en="User experience">Expérience utilisateur</span></li>
-        <li><span data-fr="Accessibilité" data-en="Accessibility">Accessibilité</span></li>
-        <li><span data-fr="Gestion des imprévus" data-en="Managing the unexpected">Gestion des imprévus</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Environnement technique" data-en="Technical environment">Environnement technique</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Rigueur" data-en="Rigour">Rigueur</span></li>
-        <li><span data-fr="Logique de système" data-en="Systems thinking">Logique de système</span></li>
-        <li><span data-fr="Attention aux détails" data-en="Attention to detail">Attention aux détails</span></li>
-      </ul>
-    </div>
+<!-- NAVIGUEZ SELON VOS INTÉRÊTS -->
+<section id="naviguez">
+  <p class="nav-cards-eyebrow"><span data-fr="Naviguez selon vos intérêts" data-en="Browse by what interests you">Naviguez selon vos intérêts</span></p>
+  <div class="nav-cards-divider"></div>
+  <div class="nav-cards-grid">
+    <a href="apropos.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
+      </div>
+      <div class="nav-card-title"><span data-fr="À propos" data-en="About">À propos</span></div>
+      <p class="nav-card-desc"><span data-fr="Découvrez mon parcours, mes compétences et ce qui m'a menée à l'UX Design." data-en="Discover my journey, my skills, and what led me to UX Design.">Découvrez mon parcours, mes compétences et ce qui m'a menée à l'UX Design.</span></p>
+      <div class="nav-card-arrow">→</div>
+    </a>
+    <a href="projets.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      </div>
+      <div class="nav-card-title"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></div>
+      <p class="nav-card-desc"><span data-fr="Explorez mes projets académiques et personnels en UX Design." data-en="Explore my academic and personal UX Design projects.">Explorez mes projets académiques et personnels en UX Design.</span></p>
+      <div class="nav-card-arrow">→</div>
+    </a>
+    <a href="cible.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+      </div>
+      <div class="nav-card-title"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></div>
+      <p class="nav-card-desc"><span data-fr="Mes ambitions, ce que je souhaite développer et les environnements dans lesquels je veux évoluer." data-en="My ambitions, what I want to develop, and the environments I want to grow in.">Mes ambitions, ce que je souhaite développer et les environnements dans lesquels je veux évoluer.</span></p>
+      <div class="nav-card-arrow">→</div>
+    </a>
+    <a href="mailto:emploi.marina.91@gmail.com" class="nav-card">
+      <div class="nav-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </div>
+      <div class="nav-card-title"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></div>
+      <p class="nav-card-desc"><span data-fr="Discutons de vos projets ou d'une future collaboration." data-en="Let's discuss your projects or a future collaboration.">Discutons de vos projets ou d'une future collaboration.</span></p>
+      <div class="nav-card-arrow">→</div>
+    </a>
   </div>
 </section>
 
-<!-- CE QUE JE FAISAIS -->
-<section id="faisais">
-  <h2 class="section-title"><span data-fr="Ce que je faisais déjà<br>sans le nommer" data-en="What I was already doing<br>without naming it">Ce que je faisais déjà<br>sans le nommer</span></h2>
-  <div class="section-divider"></div>
-  <div class="faisais-grid">
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Améliorer la lisibilité d'un support" data-en="Improving readability of a document">Améliorer la lisibilité d'un support</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Organiser une information complexe" data-en="Organising complex information">Organiser une information complexe</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Anticiper les besoins" data-en="Anticipating needs">Anticiper les besoins</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Rendre un parcours plus simple" data-en="Making a journey simpler">Rendre un parcours plus simple</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Penser accessibilité" data-en="Thinking about accessibility">Penser accessibilité</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Créer de la cohérence visuelle" data-en="Creating visual consistency">Créer de la cohérence visuelle</span></div>
-  </div>
-</section>
-
-<!-- POURQUOI -->
-<section id="pourquoi">
-  <h2 class="section-title"><span data-fr="Pourquoi le Product Design<br>s'est imposé à moi" data-en="Why Product Design<br>became my obvious choice">Pourquoi le Product Design<br>s'est imposé à moi</span></h2>
-  <div class="section-divider" style="background:rgba(201,168,76,0.4);"></div>
-  <div class="pourquoi-grid">
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">♡</div>
-      <div class="pourquoi-label"><span data-fr="Ce que j'aime" data-en="What I love">Ce que j'aime</span></div>
-      <p class="pourquoi-text"><span data-fr="Comprendre les besoins, simplifier le complexe, créer de la clarté et du sens." data-en="Understanding needs, simplifying complexity, creating clarity and meaning.">Comprendre les besoins, simplifier le complexe, créer de la clarté et du sens.</span></p>
+<!-- CE QUE MA RECONVERSION M'APPORTE -->
+<section id="apporte">
+  <div class="apporte-inner">
+    <p class="apporte-eyebrow"><span data-fr="Ce que ma reconversion m'apporte" data-en="What my career change brings">Ce que ma reconversion m'apporte</span></p>
+    <div class="apporte-grid">
+      <div class="apporte-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="17" cy="8" r="2.4"/><path d="M22 21v-.8a4.5 4.5 0 0 0-3-4.24"/></svg>
+        <div>
+          <h3><span data-fr="Coordonner" data-en="Coordinate">Coordonner</span></h3>
+          <p><span data-fr="Une expérience forte dans la gestion de projets et la coordination avec des interlocuteurs variés." data-en="Strong experience in project management and coordinating with diverse stakeholders.">Une expérience forte dans la gestion de projets et la coordination avec des interlocuteurs variés.</span></p>
+        </div>
+      </div>
+      <div class="apporte-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-1"/><path d="M4 12v3a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1z"/><path d="M20 12v3a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 2 1z"/></svg>
+        <div>
+          <h3><span data-fr="Écouter" data-en="Listen">Écouter</span></h3>
+          <p><span data-fr="Une capacité à comprendre les besoins et accompagner les utilisateurs avec empathie." data-en="An ability to understand needs and support users with empathy.">Une capacité à comprendre les besoins et accompagner les utilisateurs avec empathie.</span></p>
+        </div>
+      </div>
+      <div class="apporte-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3.5a2 2 0 1 1 3 1.7V7h2.3a2 2 0 1 1 0 3H16v3h1.8a2 2 0 1 1 0 3H16v1.8a2 2 0 1 1-3 0V16H9.5v2a2 2 0 1 1-3 0v-2H4.7a2 2 0 1 1 0-3H6.5v-3H4.7a2 2 0 1 1 0-3H6.5V6.2a2 2 0 1 1 3-1.7"/></svg>
+        <div>
+          <h3><span data-fr="Structurer" data-en="Structure">Structurer</span></h3>
+          <p><span data-fr="Un goût pour l'organisation, la clarté et la transformation d'idées en solutions concrètes." data-en="A taste for organisation, clarity, and turning ideas into concrete solutions.">Un goût pour l'organisation, la clarté et la transformation d'idées en solutions concrètes.</span></p>
+        </div>
+      </div>
     </div>
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">◎</div>
-      <div class="pourquoi-label"><span data-fr="Ce que je cherche" data-en="What I'm looking for">Ce que je cherche</span></div>
-      <p class="pourquoi-text"><span data-fr="Un métier qui allie réflexion, créativité, technique et impact humain." data-en="A role that combines thinking, creativity, technical skill and human impact.">Un métier qui allie réflexion, créativité, technique et impact humain.</span></p>
-    </div>
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">✦</div>
-      <div class="pourquoi-label"><span data-fr="Ce que j'ai trouvé" data-en="What I found">Ce que j'ai trouvé</span></div>
-      <p class="pourquoi-text"><span data-fr="Le Product Design : là où toutes mes compétences trouvent enfin leur place." data-en="Product Design: where all my skills finally find their place.">Le Product Design : là où toutes mes compétences trouvent enfin leur place.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- COMPÉTENCES -->
-<section id="competences">
-  <h2 class="comp-title"><span data-fr="Les compétences que j'apporte<br>dans ma reconversion" data-en="The transferable skills<br>I bring">Les compétences que j'apporte<br>dans ma reconversion</span></h2>
-  <div class="section-divider"></div>
-  <div class="tags-wrap">
-    <span class="tag" data-fr="Organisation" data-en="Organisation">Organisation</span>
-    <span class="tag" data-fr="Analyse" data-en="Analysis">Analyse</span>
-    <span class="tag" data-fr="Clarté" data-en="Clarity">Clarté</span>
-    <span class="tag" data-fr="Coordination" data-en="Coordination">Coordination</span>
-    <span class="tag" data-fr="Écoute" data-en="Active listening">Écoute</span>
-    <span class="tag" data-fr="Sens du détail" data-en="Attention to detail">Sens du détail</span>
-    <span class="tag" data-fr="Communication visuelle" data-en="Visual communication">Communication visuelle</span>
-    <span class="tag" data-fr="Empathie" data-en="Empathy">Empathie</span>
-  </div>
-  <h2 class="comp-title" style="margin-top:64px;"><span data-fr="Ma transition est déjà en cours" data-en="My transition is already underway">Ma transition est déjà en cours</span></h2>
-  <div class="section-divider"></div>
-  <div class="apprend-grid">
-    <div class="apprend-box">
-      <h4><span data-fr="En cours d'apprentissage" data-en="Currently learning">En cours d'apprentissage</span></h4>
-      <ul>
-        <li>Figma</li>
-        <li><span data-fr="User flows" data-en="User flows">User flows</span></li>
-        <li><span data-fr="Accessibilité" data-en="Accessibility">Accessibilité</span></li>
-        <li><span data-fr="Recherche utilisateur" data-en="User research">Recherche utilisateur</span></li>
-      </ul>
-    </div>
-    <div class="apprend-box">
-      <h4><span data-fr="Ce que je développe" data-en="What I'm building">Ce que je développe</span></h4>
-      <ul>
-        <li><span data-fr="Projets portfolio" data-en="Portfolio projects">Projets portfolio</span></li>
-        <li><span data-fr="Tests utilisateurs" data-en="User testing">Tests utilisateurs</span></li>
-        <li><span data-fr="Design systems" data-en="Design systems">Design systems</span></li>
-        <li><span data-fr="Autonomie d'apprentissage" data-en="Self-directed learning">Autonomie d'apprentissage</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- EXPÉRIENCES SOUHAITÉES -->
-<section id="experiences">
-  <h2 class="section-title"><span data-fr="Le type d'expériences<br>que je souhaite créer" data-en="The type of experiences<br>I want to create">Le type d'expériences<br>que je souhaite créer</span></h2>
-  <div class="section-divider"></div>
-  <div class="exp-grid">
-    <div class="exp-card">
-      <h3><span data-fr="Des interfaces claires" data-en="Clear interfaces">Des interfaces claires</span></h3>
-      <p><span data-fr="Où l'utilisateur n'a pas à chercher, où tout est à sa place." data-en="Where users never have to search — everything feels intuitive.">Où l'utilisateur n'a pas à chercher, où tout est à sa place.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Des parcours rassurants" data-en="Reassuring journeys">Des parcours rassurants</span></h3>
-      <p><span data-fr="Qui accompagnent sans perdre, qui anticipent sans envahir." data-en="That guide without getting lost, that anticipate without overwhelming.">Qui accompagnent sans perdre, qui anticipent sans envahir.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Des services utiles" data-en="Useful services">Des services utiles</span></h3>
-      <p><span data-fr="Pensés pour résoudre un vrai besoin, pas pour impressionner." data-en="Designed to solve a real need, not to impress.">Pensés pour résoudre un vrai besoin, pas pour impressionner.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Un design plus humain" data-en="A more human design">Un design plus humain</span></h3>
-      <p><span data-fr="Qui place l'empathie et l'accessibilité au centre." data-en="That puts empathy and accessibility at the centre.">Qui place l'empathie et l'accessibilité au centre.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- CONCLUSION -->
-<section id="conclusion">
-  <h2 class="concl-h1"><span data-fr="Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit." data-en="My background doesn't distance me<br>from Product Design.<br>It leads me there.">Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit.</span></h2>
-  <p class="concl-text"><span data-fr="Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles." data-en="Every professional experience was a building block. Every skill acquired, a tool. Today, I'm not starting from scratch — I'm bringing everything I've learned to create user experiences that are clear, human, and meaningful.">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</span></p>
-  <div class="contact-row">
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Téléphone" data-en="Phone">Téléphone</span></div>
-      <div class="contact-val">07 50 62 53 97</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Localisation" data-en="Location">Localisation</span></div>
-      <div class="contact-val">Longjumeau — 91160</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Disponibilité" data-en="Availability">Disponibilité</span></div>
-      <div class="contact-val"><span data-fr="Immédiate" data-en="Immediate">Immédiate</span></div>
-    </div>
-  </div>
-  <div class="btns-row">
-    <a href="mailto:emploi.marina.91@gmail.com" class="btn"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline btn-cv-glow" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a>
   </div>
 </section>
 
@@ -532,7 +619,26 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 <footer>
   <div class="footer-name">Marina Montalbano</div>
   <div class="footer-copy"><span data-fr="Product Designer en reconversion · 2026" data-en="Aspiring Product Designer · 2026">Product Designer en reconversion · 2026</span></div>
+  <div class="footer-social">
+    <a href="#" aria-label="LinkedIn" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3v11.75h-3zM9.5 8.75h2.9v1.6h.04c.4-.76 1.4-1.6 2.9-1.6 3.1 0 3.66 2 3.66 4.6v6.9h-3v-6.1c0-1.46-.03-3.34-2.03-3.34-2.04 0-2.35 1.6-2.35 3.24v6.2h-3z"/></svg>
+    </a>
+    <a href="#" aria-label="Dribbble" title="Dribbble">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M4 9.5c4 1.2 9 1 13.5-1.2M3.5 15c5-1.5 10.5-1 16 2M9 3.3c2.7 3.4 4.5 8.5 4.5 13" stroke-linecap="round"/></svg>
+    </a>
+  </div>
 </footer>
+
+<div class="a11y-statement-bar">
+  <span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-fr="Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité." data-en="This site was designed with particular attention to accessibility and readability.">Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité.</span>
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h1M7 13h1M11 9h6M11 13h3" stroke-linecap="round"/></svg>
+    <span data-fr="Navigation au clavier : Tab pour naviguer, Entrée pour activer." data-en="Keyboard navigation: Tab to navigate, Enter to activate.">Navigation au clavier : Tab pour naviguer, Entrée pour activer.</span>
+  </span>
+</div>
 
 <script>
 // ── LANGUE ────────────────────────────────────────────────
@@ -544,143 +650,142 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
   });
-  // Switcher le lien de téléchargement du CV
+  document.querySelectorAll('.mm-lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
+  });
   const cvFr = 'CV_Marina_Montalbano.pdf';
   const cvEn = 'CV_Marina_Montalbano_EN.pdf';
   const navCv = document.getElementById('nav-cv-link');
-  const footerCv = document.getElementById('footer-cv-link');
+  const heroCv = document.getElementById('hero-cv-link');
   if (navCv) navCv.href = lang === 'en' ? cvEn : cvFr;
-  if (footerCv) footerCv.href = lang === 'en' ? cvEn : cvFr;
+  if (heroCv) heroCv.href = lang === 'en' ? cvEn : cvFr;
   localStorage.setItem('lang', lang);
 }
 setLang(localStorage.getItem('lang') || 'fr');
 
-// ── SCROLL REVEAL ─────────────────────────────────────────
-const revealEls = document.querySelectorAll(
-  '.faisais-card, .fil-box, .tl-item, .metier-card, .pourquoi-item, .tag, .apprend-box, .exp-card, .section-title, .section-eyebrow, .comp-title'
-);
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const siblings = [...entry.target.parentElement.children];
-      const index = siblings.indexOf(entry.target);
-      setTimeout(() => {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }, index * 90);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-revealEls.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  observer.observe(el);
-});
-
-// ── TIMELINE CASCADE AVEC CLIGNOTEMENT FINAL ─────────────
-const tlDots = document.querySelectorAll('.tl-dot');
-const tlItems = document.querySelectorAll('.tl-item');
-let currentDot = -1;
-let blinkInterval = null;
-
-// CSS pour le clignotement
-const blinkStyle = document.createElement('style');
-blinkStyle.textContent = `
-  @keyframes dotBlink {
-    0%,100% { background: var(--gold2); box-shadow: 0 0 0 8px rgba(160,120,32,0.25); transform: scale(1.3); }
-    50%      { background: var(--gold);  box-shadow: 0 0 0 4px rgba(201,168,76,0.15); transform: scale(1.1); }
-  }
-  .tl-dot.blinking { animation: dotBlink 1.2s ease infinite; }
-`;
-document.head.appendChild(blinkStyle);
-
-function activateDot(index) {
-  // Stopper tout clignotement précédent
-  if (blinkInterval) clearInterval(blinkInterval);
-  tlDots.forEach(d => d.classList.remove('active', 'done', 'blinking'));
-
-  // Allumer en cascade avec délai
-  tlDots.forEach((d, i) => {
-    setTimeout(() => {
-      if (i < index) {
-        d.classList.add('done');
-      } else if (i === index) {
-        d.classList.add('active');
-        // Si c'est la dernière puce → clignoter indéfiniment
-        if (index === tlDots.length - 1) {
-          setTimeout(() => d.classList.add('blinking'), 400);
-        }
-      }
-    }, i * 350);
-  });
-}
-
-tlItems.forEach((item, index) => {
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting && index > currentDot) {
-      currentDot = index;
-      activateDot(index);
-    }
-  }, { threshold: 0.5 }).observe(item);
-});
-
-// ── NAV ACTIVE ────────────────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cv)');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : 'var(--navy)';
-  });
-});
-
 // ── HAMBURGER MENU ───────────────────────────────────────
 function toggleMenu() {
-  const nav = document.getElementById('nav-links');
+  const overlay = document.getElementById('mobileMenuOverlay');
   const burger = document.getElementById('hamburger');
-  nav.classList.toggle('open');
+  const isOpen = overlay.classList.toggle('open');
+  burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
-
-// Afficher hamburger sur mobile
 function checkMobile() {
   const burger = document.getElementById('hamburger');
   if (window.innerWidth <= 768) {
     burger.style.display = 'flex';
   } else {
     burger.style.display = 'none';
-    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('mobileMenuOverlay').classList.remove('open');
   }
 }
 window.addEventListener('resize', checkMobile);
 checkMobile();
 
-// Fermer menu au clic sur un lien
-document.querySelectorAll('.nav-links a').forEach(a => {
+document.querySelectorAll('.mm-item').forEach(a => {
   a.addEventListener('click', () => {
-    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('mobileMenuOverlay').classList.remove('open');
   });
 });
 
-// ── SMOOTH SCROLL ─────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+// ── MENU "Aa" — ACCESSIBILITÉ ────────────────────────────
+function toggleA11yPanel(suffix) {
+  suffix = suffix || '';
+  const toggle = document.getElementById('a11yToggle' + suffix);
+  const panel = document.getElementById('a11yPanel' + suffix);
+  const isOpen = panel.hasAttribute('hidden');
+  if (isOpen) {
+    panel.removeAttribute('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+  } else {
+    panel.setAttribute('hidden', '');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+}
+// Fermer les panneaux au clic extérieur ou avec Échap
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.a11y-menu, .mm-a11y').forEach(wrap => {
+    if (!wrap.contains(e.target)) {
+      const panel = wrap.querySelector('.a11y-panel');
+      const toggle = wrap.querySelector('.a11y-toggle');
+      if (panel && !panel.hasAttribute('hidden')) {
+        panel.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    }
   });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.a11y-panel').forEach(panel => panel.setAttribute('hidden', ''));
+    document.querySelectorAll('.a11y-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
+  }
 });
 
-// ── CURSOR GLOW ───────────────────────────────────────────
-document.querySelectorAll('.faisais-card, .metier-card, .exp-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.background = `radial-gradient(circle at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(201,168,76,0.07), transparent 60%), var(--cream)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.background = ''; });
-});
+// Taille du texte — stepper 100% → 150% par pas de 10, agit sur --text-scale
+let currentTextScalePct = 100;
+function applyTextScale(pct) {
+  currentTextScalePct = Math.min(150, Math.max(100, pct));
+  document.documentElement.style.setProperty('--text-scale', currentTextScalePct / 100);
+  document.querySelectorAll('.a11y-step-value').forEach(el => el.textContent = currentTextScalePct + '%');
+  localStorage.setItem('textScale', currentTextScalePct);
+}
+function stepTextScale(delta) {
+  applyTextScale(currentTextScalePct + delta);
+}
+
+// Contraste élevé
+function toggleHighContrast(active) {
+  document.body.classList.toggle('high-contrast', active);
+  document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = active);
+  localStorage.setItem('highContrast', active ? '1' : '0');
+  const sidebar = document.getElementById('hcSidebar');
+  if (active) {
+    sidebar.classList.add('active');
+    document.body.classList.add('hc-sidebar-open');
+  } else {
+    sidebar.classList.remove('active');
+    document.body.classList.remove('hc-sidebar-open');
+  }
+}
+function closeHcSidebar() {
+  document.getElementById('hcSidebar').classList.remove('active');
+  document.body.classList.remove('hc-sidebar-open');
+}
+
+// Police dyslexie
+function toggleDyslexicFont(active) {
+  document.body.classList.toggle('dyslexic-font', active);
+  document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = active);
+  localStorage.setItem('dyslexicFont', active ? '1' : '0');
+}
+
+// Liens soulignés
+function toggleUnderlineLinks(active) {
+  document.body.classList.toggle('underline-links', active);
+  document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = active);
+  localStorage.setItem('underlineLinks', active ? '1' : '0');
+}
+
+// Restaurer les préférences enregistrées
+(function restoreA11yPrefs() {
+  const savedScale = parseInt(localStorage.getItem('textScale'), 10);
+  applyTextScale(savedScale || 100);
+  if (localStorage.getItem('highContrast') === '1') {
+    document.body.classList.add('high-contrast', 'hc-sidebar-open');
+    document.getElementById('hcSidebar').classList.add('active');
+    document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = true);
+  }
+  if (localStorage.getItem('dyslexicFont') === '1') {
+    document.body.classList.add('dyslexic-font');
+    document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = true);
+  }
+  if (localStorage.getItem('underlineLinks') === '1') {
+    document.body.classList.add('underline-links');
+    document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = true);
+  }
+})();
 </script>
+
 </body>
 </html>
