@@ -2,7 +2,7 @@
 .studio-handwritten-wrap{max-width:640px;margin:8px auto 20px}
 .handwriting-art{display:flex;flex-direction:column;align-items:center;width:100%}
 .handwriting-quote-crop{position:relative;width:100%;overflow:hidden}
-.handwriting-home-crop{aspect-ratio:5.45/1}
+.handwriting-home-crop{aspect-ratio:2048/682}
 .handwriting-portfolio-crop{aspect-ratio:3/1}
 .handwriting-quote-image{position:absolute;inset:0 auto auto 0;display:block;width:100%;height:auto}
 .handwriting-signature{display:block;align-self:flex-end;width:min(40%,230px);min-width:150px;height:auto;margin:0 4% 0 0}
