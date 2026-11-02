@@ -112,3 +112,19 @@ body.underline-links .studio-link{text-decoration:underline}
  .studio-portfolio-page .studio-project-visual.dual img{height:216px;max-height:216px}
  .studio-portfolio-page .studio-project-copy{min-height:0}
 }
+
+
+/* Use Marina's supplied visual assets in the portfolio and case-study cards. */
+.studio-portfolio-page .studio-art{background:#f5e9dc}
+.studio-portfolio-page .studio-art:before,.studio-portfolio-page .studio-art:after{display:none}
+.studio-portfolio-page .studio-art-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;border-radius:inherit}
+.studio-portfolio-page .studio-art-caption{display:none}
+.studio-portfolio-page .studio-project-visual.image-cover{display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden}
+.studio-portfolio-page .studio-project-visual.image-cover img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;border-radius:0;box-shadow:none}
+.studio-coming-illustration{display:block;width:min(100%,980px);height:auto;max-height:65vh;object-fit:contain;margin:22px auto 28px;border-radius:14px;box-shadow:0 14px 34px #173b321a}
+.studio-coming-page .studio-coming-card{max-width:1100px}
+@media(max-width:760px){
+ .studio-portfolio-page .studio-art-photo{object-position:center 38%}
+ .studio-portfolio-page .studio-project-visual.image-cover{flex-basis:250px;height:250px}
+ .studio-coming-illustration{max-height:none;margin:18px auto 24px;border-radius:10px}
+}
