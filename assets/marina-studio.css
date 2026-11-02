@@ -128,3 +128,23 @@ body.underline-links .studio-link{text-decoration:underline}
  .studio-portfolio-page .studio-project-visual.image-cover{flex-basis:250px;height:250px}
  .studio-coming-illustration{max-height:none;margin:18px auto 24px;border-radius:10px}
 }
+
+/* Spacing, quote and circular portrait requested for the portfolio refresh. */
+@media(min-width:1181px){.studio-portfolio-page .nav-links{gap:clamp(18px,2vw,28px)}}
+.studio-portfolio-page .studio-hero>.studio-art{width:min(100%,510px);aspect-ratio:1/1;min-height:0;justify-self:center;border-radius:50%;background:#fbf9f5}
+.studio-portfolio-page .studio-art-photo{object-fit:contain;object-position:center;border-radius:50%}
+.studio-portfolio-page .studio-kicker{text-align:center}
+.studio-portfolio-page .studio-hero h1{text-align:center}
+.studio-portfolio-page .studio-hero-quote{max-width:710px;margin:12px auto 0;text-align:center}
+.studio-portfolio-page .studio-hero-quote p{font:italic 400 clamp(20px,2.1vw,27px)/1.55 'Playfair Display',Georgia,serif;color:#173b32}
+.studio-portfolio-page .studio-hero-quote cite{display:block;margin:8px 4% 0 0;text-align:right;font:700 clamp(30px,3.2vw,42px)/1.2 'Dancing Script',cursive;color:#173b32}
+.studio-portfolio-page .studio-closing{text-align:center;padding-top:62px;padding-bottom:62px}
+.studio-portfolio-page .studio-closing .studio-about h2{max-width:880px;margin:0 auto;font-size:clamp(30px,4vw,46px)}
+.studio-portfolio-page .studio-closing .studio-portfolio-cta{margin:18px auto 0}
+.studio-portfolio-page footer .footer-founder{margin-top:7px;color:#f6f1e6;font-size:13px}
+.studio-portfolio-page footer .footer-links{justify-content:center;margin-top:18px}
+@media(max-width:760px){
+ .studio-portfolio-page .studio-hero>.studio-art{width:min(100%,350px);min-height:0;max-height:none}
+ .studio-portfolio-page .studio-hero-quote p{font-size:20px}
+ .studio-portfolio-page .studio-hero-quote cite{text-align:center;margin-right:0}
+}

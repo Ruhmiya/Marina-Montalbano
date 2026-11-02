@@ -102,7 +102,7 @@ nav {
   border-bottom: 1px solid rgba(201,168,76,0.2);
 }
 .nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(13px * var(--text-scale)); font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
 .nav-mobile-only { display: none; }
 .nav-links a { font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-text); animation: goldBlink 1s ease infinite; }
