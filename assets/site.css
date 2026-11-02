@@ -378,3 +378,9 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 .credential-meta{font-weight:700;color:var(--gold-text)!important}.credential-link{font-weight:700;color:var(--navy);text-underline-offset:4px}
 @media(max-width:900px){.credentials-section{padding:48px 24px}.credential-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.credentials-section{padding:42px 18px}.credential-card{grid-template-columns:110px 1fr}.credential-copy{padding:14px}.credential-copy h3{font-size:16px}}
+
+@media(min-width:1181px) and (max-width:1450px){
+  nav .nav-links{gap:8px!important}
+  nav .nav-links a{font-size:9px!important;letter-spacing:1px!important}
+  nav .nav-logo{font-size:14px!important}
+}
