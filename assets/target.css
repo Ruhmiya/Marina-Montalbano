@@ -27,3 +27,11 @@
 .target-paused .target-heart{animation-play-state:paused}
 .target-reduced .target-heart{animation:none}
 @media(prefers-reduced-motion:reduce){.target-heart{animation:none!important}}
+
+/* Cible plus compacte, avec libellés lisibles et régulièrement espacés */
+.target-visual{width:min(100%,700px);max-width:700px}
+#career-target .target-ring-text{fill:#f5f1e8;font-family:'Inter','Lato',sans-serif;font-size:14px;font-weight:400;letter-spacing:.04em}
+#career-target .target-center-title,#career-target .target-center-role{font-family:'Inter','Lato',sans-serif;font-weight:500;letter-spacing:.02em}
+#career-target .target-center-role{font-weight:400}
+.target-visual:hover .target-ring,.target-visual:focus-within .target-ring{animation-play-state:paused}
+@media(max-width:600px){.target-visual{width:100%;max-width:100%}}
