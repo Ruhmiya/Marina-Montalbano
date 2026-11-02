@@ -102,6 +102,7 @@ let currentTextScalePct = 100;
 function applyTextScale(pct) {
   currentTextScalePct = Math.min(150, Math.max(100, pct));
   document.documentElement.style.setProperty('--text-scale', currentTextScalePct / 100);
+  document.body.classList.toggle('text-scale-large', currentTextScalePct > 100);
   document.querySelectorAll('.a11y-step-value').forEach(el => el.textContent = currentTextScalePct + '%');
   preferences.setItem('textScale', currentTextScalePct);
 }

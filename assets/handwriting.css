@@ -1,0 +1,16 @@
+.handwritten-wrap{width:100%;max-width:520px;margin-inline:auto}
+.studio-handwritten-wrap{max-width:640px;margin:8px auto 20px}
+.handwriting-art{display:flex;flex-direction:column;align-items:center;width:100%}
+.handwriting-quote-crop{position:relative;width:100%;overflow:hidden}
+.handwriting-home-crop{aspect-ratio:5.45/1}
+.handwriting-portfolio-crop{aspect-ratio:5/1}
+.handwriting-quote-image{position:absolute;inset:0 auto auto 0;display:block;width:100%;height:auto}
+.handwriting-signature{display:block;align-self:flex-end;width:min(40%,230px);min-width:150px;height:auto;margin:0 4% 0 0}
+.handwriting-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+.handwriting-accessible p{margin:0}
+.handwriting-accessible cite{display:block;margin-top:10px;font-style:normal;font-weight:600}
+body.high-contrast .handwriting-art,body.dyslexic-font .handwriting-art,body.text-scale-large .handwriting-art{display:none!important}
+body.high-contrast .handwriting-accessible,body.dyslexic-font .handwriting-accessible,body.text-scale-large .handwriting-accessible{position:relative!important;width:auto!important;height:auto!important;padding:18px 22px!important;margin:12px auto!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important;max-width:540px;border:1px solid rgba(11,31,74,.16)!important;border-radius:14px;background:rgba(255,255,255,.72);text-align:center;font-family:inherit;font-size:calc(17px*var(--text-scale));line-height:1.65;color:var(--navy)}
+body.high-contrast .handwriting-accessible{background:#000!important;border-color:#ffdd00!important;color:#fff!important}
+body.high-contrast .handwriting-accessible p,body.high-contrast .handwriting-accessible cite{color:#fff!important}
+@media(max-width:600px){.handwritten-wrap{max-width:100%}.handwriting-signature{width:min(44%,200px);min-width:132px;margin-right:3%}}

@@ -1,10 +1,10 @@
 (()=>{
 const rings=[
  {radius:440,words:["Empathie","Curiosité","Observation","Accessibilité","Collaboration","Communication","Recherche utilisateur","Entretiens","Profils utilisateurs","Normes d’accessibilité"],mobile:["Empathie","Accessibilité","Collaboration","Recherche utilisateur","Profils utilisateurs"]},
- {radius:340,words:["Architecture de l’information","Flux utilisateurs","Cartographie des parcours","Maquettes filaires","Conception UX","Tests","Résolution de problèmes"],mobile:["Architecture de l’information","Flux utilisateurs","Entretiens","Tests"]},
- {radius:240,words:["Conception UI","Conception visuelle","Système de conception","Composants","Mise en page automatique","Prototypage","Animation"],mobile:["Conception UI","Système de conception","Prototypage"]},
- {radius:160,words:["Figma","Balsamiq","Miro","Adaptation aux écrans","Performance","GitHub"],mobile:["Figma","Miro","Performance"]},
- {radius:110,words:["Vision produit","Stratégie","Innovation","Rétrospective","Point quotidien","Impact"],mobile:["Stratégie","Innovation","Impact"]}
+ {radius:355,words:["Architecture de l’information","Flux utilisateurs","Cartographie des parcours","Maquettes filaires","Conception UX","Tests","Résolution de problèmes"],mobile:["Architecture de l’information","Flux utilisateurs","Entretiens","Tests"]},
+ {radius:270,words:["Conception UI","Conception visuelle","Système de conception","Composants","Mise en page automatique","Prototypage","Animation"],mobile:["Conception UI","Système de conception","Prototypage"]},
+ {radius:185,words:["Figma","Balsamiq","Miro","Adaptation aux écrans","Performance","GitHub"],mobile:["Figma","Miro","Performance"]},
+ {radius:140,words:["Vision produit","Stratégie","Innovation","Rétrospective","Point quotidien","Impact"],mobile:["Stratégie","Innovation","Impact"]}
 ];
 const svg=document.getElementById('career-target');
 if(!svg)return;

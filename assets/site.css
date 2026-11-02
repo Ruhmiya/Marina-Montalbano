@@ -414,3 +414,16 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
   .hero-sig-wrap { align-items: center; }
   .hero-sig { text-align: center; }
 }
+
+
+/* Homepage headline matches the portfolio title typography, keeping the homepage color. */
+.hero h1 {
+  font-family: Lato, Arial, sans-serif;
+  font-size: calc(clamp(52px, 7vw, 90px) * var(--text-scale));
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+@media (max-width: 760px) {
+  .hero h1 { font-size: calc(clamp(46px, 14vw, 66px) * var(--text-scale)); }
+}
