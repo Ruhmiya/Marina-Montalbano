@@ -435,6 +435,7 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 .hero-portrait {
   display: block;
   width: min(72%, 320px);
+  height: auto;
   aspect-ratio: 1;
   object-fit: cover;
   border: 1px solid rgba(201,168,76,.6);
