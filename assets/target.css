@@ -18,3 +18,12 @@
 @media(prefers-reduced-motion:reduce){.target-ring{animation:none!important}}
 
 #target-motion-toggle[hidden]{display:none}
+
+/* A gentle double beat draws attention to the career goal. */
+.target-heart{transform-origin:0 0;animation:target-heartbeat 3.2s ease-in-out infinite}
+#career-target .target-gold-disc{fill:#e4bf67}
+#career-target .target-heart text{fill:#0c1f4a}
+@keyframes target-heartbeat{0%,32%,100%{transform:scale(1)}10%,23%{transform:scale(1.035)}16%{transform:scale(1)}}
+.target-paused .target-heart{animation-play-state:paused}
+.target-reduced .target-heart{animation:none}
+@media(prefers-reduced-motion:reduce){.target-heart{animation:none!important}}
