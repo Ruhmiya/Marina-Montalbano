@@ -44,7 +44,7 @@ function toggleMenu() {
 }
 function checkMobile() {
   const burger = document.getElementById('hamburger');
-  if (window.innerWidth <= 1450) {
+  if (window.innerWidth <= 1180) {
     burger.style.display = 'flex';
   } else {
     burger.style.display = 'none';

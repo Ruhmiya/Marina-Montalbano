@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marina Montalbano — Reconversion Product Design &amp; UX</title>
-<meta name="description" content="Découvrez le parcours et les projets UX/UI de Marina Montalbano, en reconversion vers le Product Design et titulaire du certificat professionnel Google UX Design.">
+<title>Accueil — Marina Studio</title>
+<meta name="description" content="Portfolio UX Design de Marina Montalbano : projets personnels, parcours et certificats.">
 <link rel="canonical" href="https://marina-montalbano.fr/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="Marina Montalbano">
-<meta property="og:title" content="Marina Montalbano — Reconversion Product Design &amp; UX">
+<meta property="og:site_name" content="Marina Studio">
+<meta property="og:title" content="Accueil — Marina Studio">
 <meta property="og:description" content="Découvrez le parcours et les projets UX/UI de Marina Montalbano, en reconversion vers le Product Design et titulaire du certificat professionnel Google UX Design.">
 <meta property="og:url" content="https://marina-montalbano.fr/">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
@@ -17,15 +17,9 @@
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/site.css?v=languages-1">
-</head>
-<body>
-
-<!-- Lien d'évitement, pour les utilisateurs clavier -->
-<a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-<!-- Bandeau explicatif du mode contraste élevé (desktop uniquement) -->
-<aside class="hc-sidebar" id="hcSidebar" aria-label="À propos du mode contraste élevé">
+<link rel="stylesheet" href="assets/site.css?v=studio-2026">
+<link rel="stylesheet" href="assets/marina-studio.css?v=studio-2026"></head>
+<body><a href="#main-content" class="skip-link"><span data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</span></a><aside class="hc-sidebar" id="hcSidebar" aria-label="À propos du mode contraste élevé">
   <div class="hc-sidebar-title">
     <span>MODE CONTRASTE ÉLEVÉ ACTIVÉ</span>
     <button class="hc-sidebar-close" onclick="closeHcSidebar()" aria-label="Masquer ce panneau">✕</button>
@@ -55,247 +49,9 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 17l5-5-5-5"/><path d="M12 19h8"/></svg>
     <span>Les boutons, liens et textes sont plus visibles. La navigation au clavier est mise en évidence.</span>
   </div>
-</aside>
-
-<!-- NAV -->
-<nav aria-label="Navigation principale">
-  <a class="nav-logo" href="index.html">Marina Montalbano</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="nav-links">
-<li><a href="index.html" aria-current="page"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
-    <li><a href="parcours.html"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li>
-    <li><a href="projets.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
-    <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
-    <li><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
-    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
-    <li class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('fr')" title="Français" aria-pressed="true"><span style="font-size:20px" aria-hidden="true">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></button>
-      <button class="lang-btn" onclick="setLang('en')" title="English" aria-pressed="false"><span style="font-size:20px" aria-hidden="true">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></button><button class="lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button>
-    </li>
-    <li class="a11y-menu">
-      <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
-      <div class="a11y-panel" id="a11yPanel" hidden>
-        <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
-          <span>Contraste élevé</span>
-          <input type="checkbox" id="toggleContrast" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
-        </label>
-        <div class="a11y-row">
-          <span class="a11y-row-label" id="a11ySizeLabel">Taille du texte</span>
-          <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabel">
-            <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
-            <span class="a11y-step-value" aria-live="polite">100%</span>
-            <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
-          </div>
-        </div>
-        <label class="a11y-switch-row">
-          <span>Police dyslexie</span>
-          <input type="checkbox" id="toggleDyslexic" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
-        </label>
-        <label class="a11y-switch-row">
-          <span>Souligner les liens</span>
-          <input type="checkbox" id="toggleUnderline" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
-        </label>
-      </div>
-    </li>
-  </ul>
-</nav>
-
-<!-- MENU MOBILE PLEIN ÉCRAN -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay">
-  <div class="mm-header">
-    <span class="mm-logo">MARINA MONTALBANO</span>
-    <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
-  </div>
-  <ul class="mm-list"><li>
-      <a href="index.html" class="mm-item" aria-current="page">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
-        <span data-fr="Accueil" data-en="Home">Accueil</span>
-      </a>
-    </li>
-<li>
-      <a href="parcours.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
-        <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span>
-      </a>
-    </li>
-<li>
-      <a href="projets.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
-      </a>
-    </li>
-<li>
-      <a href="cible.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
-        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
-      </a>
-    </li>
-<li>
-      <a href="mailto:emploi.marina.91@gmail.com" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
-      </a>
-    </li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
-  <div class="mm-lang">
-    <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
-    <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button><button class="mm-lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="mm-lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button>
-  </div>
-
-  <div class="mm-a11y">
-    <button class="a11y-toggle" id="a11yToggleMobile" onclick="toggleA11yPanel('Mobile')" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanelMobile">Aa <span>Accessibilité</span></button>
-    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" hidden>
-      <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
-        <span>Contraste élevé</span>
-        <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
-      </label>
-      <div class="a11y-row">
-        <span class="a11y-row-label" id="a11ySizeLabelMobile">Taille du texte</span>
-        <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabelMobile">
-          <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
-          <span class="a11y-step-value" aria-live="polite">100%</span>
-          <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
-        </div>
-      </div>
-      <label class="a11y-switch-row">
-        <span>Police dyslexie</span>
-        <input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
-      </label>
-      <label class="a11y-switch-row">
-        <span>Souligner les liens</span>
-        <input type="checkbox" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
-      </label>
-    </div>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="main-content">
-  <p class="hero-eyebrow"><span data-fr="En reconversion vers le Product Design" data-en="Transitioning into Product Design">En reconversion vers le Product Design</span></p>
-  <div class="hero-grid">
-    <div>
-      <h1><span data-fr="De la coordination à l'expérience utilisateur" data-en="From coordination to user experience">De la coordination à l'expérience utilisateur</span></h1>
-      <div class="hero-divider"></div>
-      <p class="hero-para"><span data-fr="Titulaire du certificat professionnel Google UX Design, je mets mes acquis en pratique pour concevoir des expériences utiles, accessibles et centrées sur l’humain." data-en="Having completed the Google UX Design Professional Certificate, I apply my skills to design useful, accessible and human-centred experiences.">Titulaire du certificat professionnel Google UX Design, je mets mes acquis en pratique pour concevoir des expériences utiles, accessibles et centrées sur l’humain.</span></p>
-
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-fr="Longjumeau (91)" data-en="Longjumeau, France">Longjumeau (91)</span>
-        </div>
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-          <span data-fr="Disponible immédiatement" data-en="Available immediately">Disponible immédiatement</span>
-        </div>
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5L12 5l10 4.5-10 4.5-10-4.5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M21 9.5V16"/></svg>
-          <span data-fr="En apprentissage continu" data-en="Continuously learning">En apprentissage continu</span>
-        </div>
-      </div>
-
-      <div class="hero-ctas">
-        <a href="projets.html" class="btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-          <span data-fr="Voir mon portfolio" data-en="View my portfolio">Voir mon portfolio</span>
-        </a>
-        <a href="parcours.html" class="btn-outline-navy">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
-          <span data-fr="En savoir plus sur moi" data-en="Learn more about me">En savoir plus sur moi</span>
-        </a>
-        <a href="CV_Marina_Montalbano.pdf" download class="btn-outline-gold" id="hero-cv-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
-          <span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-sig-wrap">
-      <p class="hero-sig">Marina Montalbano</p>
-      <div class="hero-sig-underline"></div>
-      <div class="hero-quote">
-        <div class="hero-quote-mark">"</div>
-        <p><span data-fr="Comprendre les besoins, simplifier le complexe et créer du sens : c'est ce qui m'anime." data-en="Understanding needs, simplifying complexity and creating meaning: that's what drives me.">Comprendre les besoins, simplifier le complexe et créer du sens : c'est ce qui m'anime.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NAVIGUEZ SELON VOS INTÉRÊTS -->
-<section id="naviguez">
-  <p class="nav-cards-eyebrow"><span data-fr="Naviguez selon vos intérêts" data-en="Browse by what interests you">Naviguez selon vos intérêts</span></p>
-  <div class="nav-cards-divider"></div>
-  <div class="nav-cards-grid">
-    <a href="parcours.html" class="nav-card">
-      <div class="nav-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
-      </div>
-      <div class="nav-card-title"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></div>
-      <p class="nav-card-desc"><span data-fr="Découvrez mon parcours, mes compétences et ce qui m'a menée à l'UX Design." data-en="Discover my journey, my skills, and what led me to UX Design.">Découvrez mon parcours, mes compétences et ce qui m'a menée à l'UX Design.</span></p>
-      <div class="nav-card-arrow">→</div>
-    </a>
-    <a href="projets.html" class="nav-card">
-      <div class="nav-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-      </div>
-      <div class="nav-card-title"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></div>
-      <p class="nav-card-desc"><span data-fr="Explorez mes projets académiques et personnels en UX Design." data-en="Explore my academic and personal UX Design projects.">Explorez mes projets académiques et personnels en UX Design.</span></p>
-      <div class="nav-card-arrow">→</div>
-    </a>
-    <a href="cible.html" class="nav-card">
-      <div class="nav-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
-      </div>
-      <div class="nav-card-title"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></div>
-      <p class="nav-card-desc"><span data-fr="Mes ambitions, ce que je souhaite développer et les environnements dans lesquels je veux évoluer." data-en="My ambitions, what I want to develop, and the environments I want to grow in.">Mes ambitions, ce que je souhaite développer et les environnements dans lesquels je veux évoluer.</span></p>
-      <div class="nav-card-arrow">→</div>
-    </a>
-    <a href="mailto:emploi.marina.91@gmail.com" class="nav-card">
-      <div class="nav-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-      </div>
-      <div class="nav-card-title"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></div>
-      <p class="nav-card-desc"><span data-fr="Discutons de vos projets ou d'une future collaboration." data-en="Let's discuss your projects or a future collaboration.">Discutons de vos projets ou d'une future collaboration.</span></p>
-      <div class="nav-card-arrow">→</div>
-    </a>
-  </div>
-</section>
-
-<!-- CE QUE MA RECONVERSION M'APPORTE -->
-<section id="apporte">
-  <div class="apporte-inner">
-    <p class="apporte-eyebrow"><span data-fr="Ce que ma reconversion m'apporte" data-en="What my career change brings">Ce que ma reconversion m'apporte</span></p>
-    <div class="apporte-grid">
-      <div class="apporte-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="17" cy="8" r="2.4"/><path d="M22 21v-.8a4.5 4.5 0 0 0-3-4.24"/></svg>
-        <div>
-          <h3><span data-fr="Coordonner" data-en="Coordinate">Coordonner</span></h3>
-          <p><span data-fr="Une expérience forte dans la gestion de projets et la coordination avec des interlocuteurs variés." data-en="Strong experience in project management and coordinating with diverse stakeholders.">Une expérience forte dans la gestion de projets et la coordination avec des interlocuteurs variés.</span></p>
-        </div>
-      </div>
-      <div class="apporte-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-1"/><path d="M4 12v3a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1z"/><path d="M20 12v3a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 2 1z"/></svg>
-        <div>
-          <h3><span data-fr="Écouter" data-en="Listen">Écouter</span></h3>
-          <p><span data-fr="Une capacité à comprendre les besoins et accompagner les utilisateurs avec empathie." data-en="An ability to understand needs and support users with empathy.">Une capacité à comprendre les besoins et accompagner les utilisateurs avec empathie.</span></p>
-        </div>
-      </div>
-      <div class="apporte-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3.5a2 2 0 1 1 3 1.7V7h2.3a2 2 0 1 1 0 3H16v3h1.8a2 2 0 1 1 0 3H16v1.8a2 2 0 1 1-3 0V16H9.5v2a2 2 0 1 1-3 0v-2H4.7a2 2 0 1 1 0-3H6.5v-3H4.7a2 2 0 1 1 0-3H6.5V6.2a2 2 0 1 1 3-1.7"/></svg>
-        <div>
-          <h3><span data-fr="Structurer" data-en="Structure">Structurer</span></h3>
-          <p><span data-fr="Un goût pour l'organisation, la clarté et la transformation d'idées en solutions concrètes." data-en="A taste for organisation, clarity, and turning ideas into concrete solutions.">Un goût pour l'organisation, la clarté et la transformation d'idées en solutions concrètes.</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer><div class="footer-name">Marina Montalbano</div>
-<div class="footer-copy"><span data-fr="En reconversion vers le Product Design · Certificat Google UX Design obtenu" data-en="Transitioning into Product Design · Google UX Design certificate completed">En reconversion vers le Product Design · Certificat Google UX Design obtenu</span></div>
-<div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-<a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
-<script src="assets/translations.js?v=languages-1"></script><script src="assets/site.js?v=languages-1"></script>
-</body>
-</html>
+</aside><nav aria-label="Navigation principale"><a class="nav-logo" href="index.html"><img class="brand-mark" src="assets/marina-infinity.svg" width="42" height="30" alt=""><span class="brand-name">Marina Studio</span></a><ul class="nav-links"><li><a href="index.html" aria-current="page"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li><li><a href="parcours.html" ><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li><li><a href="projets.html" ><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li><li><a href="cible.html" ><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li><li><a href="certificats.html" ><span data-fr="Mes certificats" data-en="My certificates">Mes certificats</span></a></li><li><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Contact" data-en="Contact">Contact</span></a></li><li><a class="nav-cv" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li><li class="lang-switcher"><button class="lang-btn" onclick="setLang('fr')" title="Français" aria-label="Français" aria-pressed="true"><span aria-hidden="true">🇫🇷</span> FR</button><button class="lang-btn" onclick="setLang('en')" title="English" aria-label="English" aria-pressed="false"><span aria-hidden="true">🇬🇧</span> EN</button><button class="lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button></li></ul><button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay"><span></span><span></span><span></span></button></nav><div class="mobile-menu-overlay" id="mobileMenuOverlay"><div class="mm-header"><a class="nav-logo" href="index.html"><img class="brand-mark" src="assets/marina-infinity.svg" width="42" height="30" alt=""><span class="brand-name">Marina Studio</span></a><button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">×</button></div><ul class="mm-list"><li><a href="index.html" class="mm-item" aria-current="page"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li><li><a href="parcours.html" class="mm-item" ><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li><li><a href="projets.html" class="mm-item" ><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li><li><a href="cible.html" class="mm-item" ><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li><li><a href="certificats.html" class="mm-item" ><span data-fr="Mes certificats" data-en="My certificates">Mes certificats</span></a></li><li><a class="mm-item" href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a></li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul><div class="mm-lang"><button class="mm-lang-btn" onclick="setLang('fr')" title="Français" aria-label="Français" aria-pressed="true"><span aria-hidden="true">🇫🇷</span> FR</button><button class="mm-lang-btn" onclick="setLang('en')" title="English" aria-label="English" aria-pressed="false"><span aria-hidden="true">🇬🇧</span> EN</button><button class="mm-lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="mm-lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button></div></div><div class="a11y-menu a11y-persistent"><button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-expanded="false" aria-controls="a11yPanel"><span aria-hidden="true">Aa</span> <span data-fr="Accessibilité" data-en="Accessibility">Accessibilité</span></button><div class="a11y-panel" id="a11yPanel" role="region" aria-labelledby="a11yToggle" hidden><label class="a11y-switch-row"><span data-fr="Contraste élevé" data-en="High contrast">Contraste élevé</span><input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)"></label><div class="a11y-row"><span class="a11y-row-label" data-fr="Taille du texte" data-en="Text size">Taille du texte</span><div class="a11y-stepper" role="group" aria-label="Taille du texte"><button class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button><span class="a11y-step-value" aria-live="polite">100%</span><button class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button></div></div><label class="a11y-switch-row"><span data-fr="Police dyslexie" data-en="Dyslexia-friendly font">Police dyslexie</span><input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)"></label><label class="a11y-switch-row"><span data-fr="Souligner les liens" data-en="Underline links">Souligner les liens</span><input type="checkbox" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)"></label></div></div><main id="main-content"><header class="studio-hero"><div><p class="studio-kicker" data-fr="Portfolio · UX Design" data-en="Portfolio · UX Design">Portfolio · UX Design</p><h1 data-fr="Des expériences utiles, pensées pour les personnes" data-en="Useful experiences, designed around people">Des expériences utiles, pensées pour les personnes</h1><p data-fr="Je conçois des expériences digitales claires et accessibles, en m’appuyant sur mon expérience de coordination et ma formation en UX Design." data-en="I design clear, accessible digital experiences, drawing on my coordination experience and UX Design training.">Je conçois des expériences digitales claires et accessibles, en m’appuyant sur mon expérience de coordination et ma formation en UX Design.</p><div class="studio-actions"><a class="studio-btn" href="projets.html"><span data-fr="Voir l’étude de cas" data-en="View the case study">Voir l’étude de cas</span></a><a class="studio-btn secondary" href="certificats.html"><span data-fr="Mes certificats" data-en="My certificates">Mes certificats</span></a></div></div><div class="studio-art"><img class="studio-art-mark" src="assets/marina-infinity.svg" alt=""><p class="studio-art-caption" data-fr="Comprendre · Concevoir · Améliorer" data-en="Understand · Design · Improve">Comprendre · Concevoir · Améliorer</p></div></header>
+<section class="studio-section alt"><div class="studio-section-heading"><h2 data-fr="Mes projets" data-en="My projects">Mes projets</h2><p data-fr="Des projets personnels pour analyser des expériences existantes et explorer des solutions plus claires." data-en="Personal projects to analyse existing experiences and explore clearer solutions.">Des projets personnels pour analyser des expériences existantes et explorer des solutions plus claires.</p></div><div class="studio-project-grid">
+<article class="studio-project"><div class="studio-project-visual"><img src="assets/assu2000-apres.png" alt="Maquette mobile de l’espace client ASSU 2000, avec des cartes de contrats fictives." width="430" height="932"></div><div class="studio-project-copy"><span class="studio-badge" data-fr="Projet personnel · UX/UI" data-en="Personal project · UX/UI">Projet personnel · UX/UI</span><h3 data-fr="Refonte mobile de l’espace client ASSU 2000" data-en="Mobile redesign of the ASSU 2000 customer portal">Refonte mobile de l’espace client ASSU 2000</h3><p data-fr="Un aperçu avant/après pour rendre les contrats et leurs informations essentielles plus faciles à parcourir. Maquette réalisée avec des données fictives." data-en="A before-and-after overview to make contracts and their key information easier to browse. Prototype uses fictional data.">Un aperçu avant/après pour rendre les contrats et leurs informations essentielles plus faciles à parcourir. Maquette réalisée avec des données fictives.</p><a class="studio-link" href="projets.html"><span data-fr="Explorer le projet →" data-en="Explore the project →">Explorer le projet →</span></a></div></article>
+<article class="studio-project"><div class="studio-project-visual brand-card"><img src="assets/marina-infinity.svg" alt=""><span class="studio-badge" data-fr="Site personnel · HTML, CSS, JavaScript" data-en="Personal website · HTML, CSS, JavaScript">Site personnel · HTML, CSS, JavaScript</span></div><div class="studio-project-copy"><span class="studio-badge" data-fr="Design & développement" data-en="Design & development">Design & développement</span><h3 data-fr="Marina Studio, construit en code" data-en="Marina Studio, built with code">Marina Studio, construit en code</h3><p data-fr="Un site développé en HTML, CSS et JavaScript avec l’appui de l’IA. Ce projet m’aide à mieux comprendre le dialogue entre conception UX et développement." data-en="A website built with HTML, CSS and JavaScript with AI support. This project helps me better understand the conversation between UX design and development.">Un site développé en HTML, CSS et JavaScript avec l’appui de l’IA. Ce projet m’aide à mieux comprendre le dialogue entre conception UX et développement.</p><a class="studio-link" href="parcours.html"><span data-fr="Voir mon parcours →" data-en="View my journey →">Voir mon parcours →</span></a></div></article>
+</div></section>
+<section class="studio-section"><div class="studio-about"><p class="studio-eyebrow" data-fr="Mon approche" data-en="My approach">Mon approche</p><h2 data-fr="Comprendre les besoins. Clarifier les parcours. Créer avec soin." data-en="Understand needs. Clarify journeys. Create with care.">Comprendre les besoins. Clarifier les parcours. Créer avec soin.</h2><p data-fr="J’aime élargir mes connaissances aux domaines qui entourent le design : comprendre un peu mieux les contraintes techniques aide à dialoguer avec les développeurs et à imaginer des solutions plus réalistes. Mon portfolio, réalisé en code avec l’appui de l’IA, me permet aussi d’apprendre en faisant." data-en="I like expanding my knowledge into areas around design. Understanding technical constraints helps me work with developers and imagine more realistic solutions. Building this portfolio in code with AI support is also a way to learn by doing.">J’aime élargir mes connaissances aux domaines qui entourent le design : comprendre un peu mieux les contraintes techniques aide à dialoguer avec les développeurs et à imaginer des solutions plus réalistes. Mon portfolio, réalisé en code avec l’appui de l’IA, me permet aussi d’apprendre en faisant.</p><a class="studio-link" href="parcours.html"><span data-fr="Voir mon parcours →" data-en="View my journey →">Voir mon parcours →</span></a></div><div class="studio-cert-strip"><a class="studio-cert-mini" href="certificats.html"><strong>Google UX Design</strong><span data-fr="Certificat professionnel · 2026" data-en="Professional Certificate · 2026">Certificat professionnel · 2026</span></a><a class="studio-cert-mini" href="certificats.html"><strong data-fr="Développement Full Stack · MIMO" data-en="Full-Stack Development · Mimo">Développement Full Stack · MIMO</strong><span data-fr="Formation complétée · 2026" data-en="Training completed · 2026">Formation complétée · 2026</span></a><a class="studio-cert-mini" href="certificats.html"><strong data-fr="Webmaster · WordPress" data-en="Webmaster · WordPress">Webmaster · WordPress</strong><span data-fr="Formation validée · 2023" data-en="Training completed · 2023">Formation validée · 2023</span></a></div></section></main><footer><div class="footer-name">Marina Studio</div><div class="footer-copy"><span data-fr="Portfolio UX Design · Marina Montalbano" data-en="UX Design portfolio · Marina Montalbano">Portfolio UX Design · Marina Montalbano</span></div><div class="footer-links"><a href="parcours.html"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a></div></footer><script src="assets/translations.js?v=studio-2026"></script><script src="assets/site.js?v=studio-2026"></script></body></html>
