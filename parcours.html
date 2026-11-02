@@ -274,6 +274,28 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
   /* FOOTER */
   footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
 }
+
+/* Certificat visible dès l’ouverture de Mon parcours */
+.certificate-hero { min-height: auto; padding: 110px 32px 48px; }
+.certificate-hero h1 { opacity: 1; animation: none; margin-bottom: 32px; font-size: clamp(32px,4vw,48px); }
+.certificate-card { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; max-width: 1100px; width: 100%; margin: auto; padding: 28px; background: var(--white); border: 1px solid rgba(201,168,76,.4); text-align: left; }
+.certificate-preview { display: block; }
+.certificate-preview img { display: block; width: 100%; height: auto; border: 1px solid #e1e5eb; }
+.certificate-copy h2 { font-family: 'Playfair Display',serif; font-size: clamp(24px,2.5vw,34px); color: var(--blue); line-height: 1.3; margin: 14px 0; }
+.certificate-copy p { font-size: 16px; line-height: 1.7; }
+.certificate-copy .certificate-label { color: #7a5c18; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.certificate-copy .certificate-date { font-weight: 700; margin-bottom: 16px; }
+.certificate-copy .btn { margin-top: 22px; padding: 14px 20px; line-height: 1.5; }
+.certificate-copy .certificate-hint { margin-top: 10px; font-size: 12px; color: var(--muted); }
+.certificate-next { margin-top: 28px; line-height: 1.7; }
+.certificate-next a { color: var(--blue2); text-underline-offset: 4px; }
+.certificate-hero a:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+@media(max-width:768px) {
+ .certificate-hero { padding: 32px 20px; }
+ .certificate-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+ .certificate-preview { max-width: 480px; margin: auto; }
+}
+
 </style>
 </head>
 <body>
@@ -299,15 +321,22 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="accueil">
-  <h1>
-    <span data-fr="De la coordination<br>à l'expérience utilisateur" data-en="From coordination<br>to user experience">De la coordination<br>à l'expérience utilisateur</span>
-  </h1>
-  <p class="hero-sub">
-    <span data-fr="Mon parcours de reconversion vers le Product Design" data-en="My journey into Product Design">Mon parcours de reconversion vers le Product Design</span>
-  </p>
-  <p class="hero-sig">Marina Montalbano</p>
-  <p class="hero-arrow">↓</p>
+<section class="hero certificate-hero" id="accueil">
+  <h1><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></h1>
+  <div class="certificate-card">
+    <a class="certificate-preview" href="assets/google-ux-design.jpg" target="_blank" rel="noopener" aria-label="Agrandir le certificat Google UX Design">
+      <img src="assets/google-ux-design.jpg" alt="Certificat professionnel Google UX Design délivré à Marina Montalbano le 2 octobre 2026, huit cours validés." width="1600" height="1237" fetchpriority="high">
+    </a>
+    <div class="certificate-copy">
+      <p class="certificate-label"><span data-fr="Formation · Google / Coursera" data-en="Education · Google / Coursera">Formation · Google / Coursera</span></p>
+      <h2><span data-fr="Certificat professionnel<br>Google UX Design" data-en="Google UX Design<br>Professional Certificate">Certificat professionnel<br>Google UX Design</span></h2>
+      <p class="certificate-date"><span data-fr="Obtenu le 2 octobre 2026 · 8 cours validés" data-en="Earned October 2, 2026 · 8 courses completed">Obtenu le 2 octobre 2026 · 8 cours validés</span></p>
+      <p><span data-fr="Une formation qui accompagne ma reconversion : recherche utilisateur, conception de parcours, wireframes, prototypes et tests." data-en="Training supporting my career transition: user research, user journeys, wireframes, prototypes and testing.">Une formation qui accompagne ma reconversion : recherche utilisateur, conception de parcours, wireframes, prototypes et tests.</span></p>
+      <a class="btn" href="https://coursera.org/verify/professional-cert/3PNU9Y3WN8EC" target="_blank" rel="noopener"><span data-fr="Vérifier mon certificat ↗" data-en="Verify my certificate ↗">Vérifier mon certificat ↗</span></a>
+      <p class="certificate-hint"><span data-fr="Vérification sur Coursera · nouvel onglet" data-en="Verification on Coursera · new tab">Vérification sur Coursera · nouvel onglet</span></p>
+    </div>
+  </div>
+  <p class="certificate-next"><a href="#fil"><span data-fr="De la coordination à l’expérience utilisateur — découvrir mon parcours ↓" data-en="From coordination to user experience — discover my journey ↓">De la coordination à l’expérience utilisateur — découvrir mon parcours ↓</span></a></p>
 </section>
 
 <!-- FIL CONDUCTEUR -->
