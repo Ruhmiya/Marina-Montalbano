@@ -13,345 +13,11 @@
 <meta property="og:description" content="Découvrez le parcours et les projets UX/UI de Marina Montalbano, en reconversion vers le Product Design et titulaire du certificat professionnel Google UX Design.">
 <meta property="og:url" content="https://marina-montalbano.fr/">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --cream:  #f5f0e8;
-  --blue:   #1a1aff;
-  --blue2:  #0404B8;
-  --gold:   #c9a84c;
-  --gold2:  #a07820;
-  --gold-text: #7a5c18;
-  --navy:   #0b1f4a;
-  --white:  #ffffff;
-  --muted:  #5a6a8a;
-  --text-scale: 1;
-}
-html { scroll-behavior: scroll; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
 
-/* ══ RESPECT DE "PRÉFÉRER LE MOUVEMENT RÉDUIT" (WCAG 2.3.3) ══ */
-@media (prefers-reduced-motion: reduce) {
-  .nav-links a:hover, .nav-links a:focus-visible { animation: none !important; }
-  .nav-cv { animation: none !important; }
-  .hero-eyebrow, .hero h1, .hero-divider, .hero-para, .hero-badges,
-  .hero-ctas, .hero-sig-wrap { animation: none !important; opacity: 1 !important; }
-  .nav-card:hover, .btn:hover, .btn-outline-navy:hover, .btn-outline-gold:hover,
-  .footer-social a:hover { transform: none !important; }
-}
-
-/* ══ ACCESSIBILITÉ — focus clavier visible partout ══ */
-a:focus-visible, button:focus-visible, .nav-card:focus-visible,
-.mm-item:focus-visible, .lang-btn:focus-visible, .a11y-toggle:focus-visible,
-.a11y-panel button:focus-visible, .hamburger:focus-visible {
-  outline: 2.5px solid var(--blue);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* ══ SKIP LINK ══ */
-.skip-link {
-  position: absolute; left: -9999px; top: 0; z-index: 1000;
-  background: var(--navy); color: var(--white);
-  padding: 14px 22px; font-size: calc(13px * var(--text-scale));
-  font-weight: 700; text-decoration: none; letter-spacing: 0.5px;
-}
-.skip-link:focus { left: 12px; top: 12px; }
-
-/* ══ MODE CONTRASTE ÉLEVÉ (fond noir / jaune vif) ══ */
-body.high-contrast {
-  background: #000 !important; color: #fff !important;
-  --cream: #000000; --white: #000000; --navy: #ffffff; --blue: #ffffff; --blue2: #ffffff;
-  --gold: #FFDD00; --gold2: #FFDD00; --gold-text: #FFDD00; --muted: #ffffff;
-}
-body.high-contrast section, body.high-contrast nav, body.high-contrast footer,
-body.high-contrast .mobile-menu-overlay, body.high-contrast .hero,
-body.high-contrast #apporte { background: #000 !important; }
-body.high-contrast .nav-card, body.high-contrast .hero-quote,
-body.high-contrast .a11y-panel, body.high-contrast .a11y-panel-mobile { background: #000 !important; }
-body.high-contrast p, body.high-contrast span, body.high-contrast li,
-body.high-contrast .nav-card-desc, body.high-contrast .apporte-item p,
-body.high-contrast .footer-copy { color: #ffffff !important; }
-body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 { color: #ffffff !important; }
-body.high-contrast .nav-card, body.high-contrast .hero-quote,
-body.high-contrast .btn-outline-navy, body.high-contrast .btn-outline-gold,
-body.high-contrast .footer-social a, body.high-contrast .a11y-toggle,
-body.high-contrast .a11y-panel, body.high-contrast .a11y-panel-mobile,
-body.high-contrast .a11y-step-btn, body.high-contrast .a11y-step-value {
-  border-color: #FFDD00 !important; border-width: 2px !important; color: #FFDD00 !important;
-}
-body.high-contrast .btn {
-  background: #FFDD00 !important; color: #000 !important; border-color: #FFDD00 !important;
-}
-body.high-contrast .btn:hover { background: #fff !important; }
-body.high-contrast .btn-outline-navy:hover, body.high-contrast .btn-outline-gold:hover { background: rgba(255,221,0,0.12) !important; }
-body.high-contrast .hero-badge svg, body.high-contrast .apporte-item svg,
-body.high-contrast .nav-card-icon svg, body.high-contrast .nav-card-arrow,
-body.high-contrast .footer-social svg { color: #FFDD00 !important; }
-body.high-contrast .nav-card-icon { background: rgba(255,221,0,0.12) !important; }
-body.high-contrast .nav-links a, body.high-contrast .nav-logo,
-body.high-contrast .mm-logo, body.high-contrast .hero-sig,
-body.high-contrast .footer-name { color: #ffffff !important; }
-body.high-contrast .nav-links a { text-decoration: underline; text-underline-offset: 3px; }
-body.high-contrast .nav-cv { background: #FFDD00 !important; color: #000 !important; }
-body.high-contrast .hero-divider, body.high-contrast .hero-sig-underline,
-body.high-contrast .nav-cards-divider { background: #FFDD00 !important; }
-body.high-contrast a:focus-visible, body.high-contrast button:focus-visible { outline-color: #FFDD00 !important; }
-body.high-contrast .toggle-switch { background: #333 !important; }
-body.high-contrast .toggle-switch.active { background: #FFDD00 !important; }
-body.high-contrast .toggle-switch.active .toggle-knob { background: #000 !important; }
-
-/* ══ LIENS SOULIGNÉS ══ */
-body.underline-links a:not(.btn):not(.btn-outline-navy):not(.btn-outline-gold):not(.nav-cv):not(.nav-card):not(.skip-link) {
-  text-decoration: underline; text-underline-offset: 3px;
-}
-body.underline-links .nav-card { box-shadow: inset 0 -2px 0 var(--gold2); }
-
-/* ══ NAV ══ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 60px;
-  background: rgba(245,240,232,0.96); backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-}
-.nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(13px * var(--text-scale)); font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-mobile-only { display: none; }
-.nav-links a { font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
-.nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-text); animation: goldBlink 1s ease infinite; }
-@keyframes goldBlink { 0%,100%{opacity:1;color:var(--gold-text)} 50%{opacity:0.85;color:var(--gold2)} }
-.nav-cv { padding: 10px 20px !important; color: var(--navy) !important; font-weight: 700 !important; font-size: calc(11px * var(--text-scale)) !important; letter-spacing: 1.5px !important; white-space: nowrap !important; text-decoration: none; animation: navCvPulse 2.5s ease-in-out infinite !important; }
-@keyframes navCvPulse {
-  0%, 100% { background: var(--gold); box-shadow: 0 0 0 0 rgba(11,31,74,0); }
-  50%      { background: var(--gold); box-shadow: 0 0 10px 3px rgba(11,31,74,0.5); }
-}
-.nav-cv:hover { animation: none !important; background: var(--gold2) !important; box-shadow: none !important; }
-.lang-switcher { display: flex; gap: 4px; align-items: center; }
-.lang-btn { background: none; border: none; padding: 6px; border-radius: 4px; font-size: calc(20px * var(--text-scale)); cursor: pointer; opacity: 0.35; filter: grayscale(80%); transition: all 0.3s; }
-.lang-btn:hover, .lang-btn.active { opacity: 1; filter: grayscale(0%); transform: scale(1.15); }
-
-/* ══ MENU "Aa" — ACCESSIBILITÉ ══ */
-.a11y-menu { position: relative; margin-left: 8px; }
-.a11y-toggle {
-  background: transparent; border: 1px solid rgba(11,31,74,0.25); border-radius: 4px;
-  padding: 6px 11px; font-family: 'Playfair Display', serif;
-  font-size: calc(13px * var(--text-scale)); font-weight: 700; color: var(--navy);
-  cursor: pointer; transition: all 0.25s; line-height: 1;
-}
-.a11y-toggle:hover { border-color: var(--gold2); color: var(--gold-text); }
-.a11y-panel {
-  position: absolute; top: calc(100% + 10px); right: 0; z-index: 150;
-  background: var(--white); border: 1px solid rgba(11,31,74,0.12);
-  box-shadow: 0 14px 34px rgba(11,31,74,0.14);
-  padding: 18px 20px; width: 232px;
-}
-.a11y-row { margin-bottom: 16px; }
-.a11y-row-label { display: block; font-size: calc(10.5px * var(--text-scale)); font-weight: 700; letter-spacing: 0.5px; color: var(--navy); margin-bottom: 10px; }
-.a11y-stepper { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.a11y-step-btn {
-  width: 28px; height: 28px; border: 1px solid rgba(11,31,74,0.25); background: var(--cream);
-  color: var(--navy); font-weight: 700; font-size: 16px; line-height: 1; cursor: pointer;
-  border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.25s;
-}
-.a11y-step-btn:hover { border-color: var(--gold2); color: var(--gold-text); }
-.a11y-step-value { font-weight: 700; font-size: calc(13px * var(--text-scale)); min-width: 42px; text-align: center; color: var(--navy); }
-.a11y-switch-row {
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: calc(12.5px * var(--text-scale)); font-weight: 400; color: var(--navy);
-  padding: 10px 0; border-top: 1px solid rgba(11,31,74,0.08); cursor: pointer;
-}
-.a11y-switch-row input[type="checkbox"] {
-  appearance: none; -webkit-appearance: none; width: 38px; height: 22px; border-radius: 11px;
-  background: rgba(11,31,74,0.25); position: relative; cursor: pointer; transition: background 0.25s; flex-shrink: 0;
-}
-.a11y-switch-row input[type="checkbox"]::before {
-  content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
-  background: #fff; border-radius: 50%; transition: transform 0.25s; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-.a11y-switch-row input[type="checkbox"]:checked { background: var(--gold2); }
-.a11y-switch-row input[type="checkbox"]:checked::before { transform: translateX(16px); }
-
-/* ══ POLICE DYSLEXIE ══ */
-body.dyslexic-font, body.dyslexic-font * {
-  font-family: Verdana, 'Comic Sans MS', sans-serif !important;
-  letter-spacing: 0.035em !important; word-spacing: 0.12em !important; line-height: 1.75 !important;
-}
-
-@media(max-width:1024px) and (min-width:769px){
-  nav { padding: 14px 28px; }
-  .nav-links { gap: 20px; }
-}
-
-/* ══ HERO ══ */
-.hero {
-  min-height: auto; display: flex; flex-direction: column;
-  padding: 150px 60px 70px; background: var(--cream); position: relative;
-  max-width: 1180px; margin: 0 auto;
-}
-.hero-eyebrow { font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.2s ease forwards; }
-.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: start; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: calc(clamp(34px, 4.6vw, 58px) * var(--text-scale)); font-weight: 700; color: var(--blue); line-height: 1.2; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
-.hero-divider { width: 220px; height: 2px; background: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards; }
-.hero-para { font-size: calc(16px * var(--text-scale)); font-weight: 300; line-height: 1.9; color: var(--navy); max-width: 480px; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.6s ease forwards; }
-.hero-badges { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s 0.7s ease forwards; }
-.hero-badge { display: flex; align-items: center; gap: 9px; font-size: calc(13px * var(--text-scale)); font-weight: 400; color: var(--navy); }
-.hero-badge svg { width: 17px; height: 17px; color: var(--gold2); flex-shrink: 0; }
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; opacity: 0; animation: fadeUp 0.8s 0.8s ease forwards; }
-.hero-sig-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 8px; opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards; }
-.hero-sig { font-family: 'Dancing Script', cursive; font-size: calc(clamp(30px, 3.4vw, 46px) * var(--text-scale)); color: var(--blue2); margin-bottom: 4px; text-align: center; }
-.hero-sig-underline { width: 180px; height: 2px; background: var(--gold); margin-bottom: 30px; }
-.hero-quote { background: var(--white); border: 1px solid rgba(11,31,74,0.06); padding: 34px 32px; position: relative; width: 100%; }
-.hero-quote-mark { font-family: 'Playfair Display', serif; font-size: calc(40px * var(--text-scale)); color: var(--gold-text); line-height: 1; margin-bottom: 8px; }
-.hero-quote p { font-size: calc(17px * var(--text-scale)); font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.7; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: var(--gold); color: var(--navy); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; border: 1px solid var(--gold); }
-.btn:hover { background: var(--gold2); border-color: var(--gold2); transform: translateY(-2px); }
-.btn-outline-navy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--navy); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(11,31,74,0.35); transition: all 0.3s; }
-.btn-outline-navy:hover { background: rgba(11,31,74,0.05); transform: translateY(-2px); }
-.btn-outline-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--gold-text); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; }
-.btn-outline-gold:hover { background: rgba(201,168,76,0.08); transform: translateY(-2px); }
-.btn svg, .btn-outline-navy svg, .btn-outline-gold svg { width: 15px; height: 15px; }
-
-/* ══ NAVIGUEZ SELON VOS INTÉRÊTS ══ */
-#naviguez { padding: 70px 60px 90px; max-width: 1180px; margin: 0 auto; }
-.nav-cards-eyebrow { text-align: center; font-size: calc(10px * var(--text-scale)); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 14px; }
-.nav-cards-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 48px; }
-.nav-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.nav-card { background: var(--white); border: 1px solid rgba(11,31,74,0.07); padding: 32px 26px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.3s; }
-.nav-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,31,74,0.09); border-color: rgba(201,168,76,0.35); }
-.nav-card-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,168,76,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-.nav-card-icon svg { width: 24px; height: 24px; color: var(--gold2); }
-.nav-card-title { font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
-.nav-card-desc { font-size: calc(13.5px * var(--text-scale)); font-weight: 300; color: var(--navy); line-height: 1.75; flex-grow: 1; margin-bottom: 20px; }
-.nav-card-arrow { font-size: calc(18px * var(--text-scale)); color: var(--blue); transition: transform 0.3s; }
-.nav-card:hover .nav-card-arrow { transform: translateX(6px); }
-
-/* ══ CE QUE MA RECONVERSION M'APPORTE ══ */
-#apporte { background: rgba(201,168,76,0.08); padding: 70px 60px; }
-.apporte-inner { max-width: 1000px; margin: 0 auto; }
-.apporte-eyebrow { text-align: center; font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 44px; }
-.apporte-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
-.apporte-item { display: flex; gap: 18px; align-items: flex-start; }
-.apporte-item svg { width: 30px; height: 30px; color: var(--gold2); flex-shrink: 0; margin-top: 2px; }
-.apporte-item h3 { font-family: 'Playfair Display', serif; font-size: calc(17px * var(--text-scale)); font-weight: 600; color: var(--blue); margin-bottom: 8px; }
-.apporte-item p { font-size: calc(13.5px * var(--text-scale)); font-weight: 300; color: var(--navy); line-height: 1.75; }
-
-/* ══ BANDEAU EXPLICATIF — MODE CONTRASTE ÉLEVÉ ══ */
-.hc-sidebar {
-  display: none;
-  position: fixed; top: 0; left: 0; bottom: 0; width: 230px; z-index: 250;
-  background: #000; border-right: 2px solid #FFDD00; color: #fff;
-  padding: 24px 20px; overflow-y: auto; font-size: 12.5px; line-height: 1.7;
-}
-body.high-contrast .hc-sidebar.active { display: block; }
-.hc-sidebar-title { color: #FFDD00; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-.hc-sidebar-close { background: none; border: 1px solid #FFDD00; color: #FFDD00; width: 26px; height: 26px; flex-shrink: 0; cursor: pointer; font-size: 14px; border-radius: 3px; }
-.hc-sidebar p { color: rgba(255,255,255,0.85); font-weight: 300; margin-bottom: 20px; }
-.hc-sidebar-controls { border: 2px solid #FFDD00; padding: 14px; margin-bottom: 20px; }
-.hc-sidebar-controls .a11y-switch-row, .hc-sidebar-controls .a11y-row { font-size: 12px; padding: 8px 0; border-color: rgba(255,221,0,0.3); }
-.hc-sidebar-controls .a11y-switch-row span, .hc-sidebar-controls .a11y-row-label { color: #fff; }
-.hc-sidebar-controls .a11y-step-value { color: #FFDD00; }
-.hc-sidebar-note { color: rgba(255,255,255,0.6); font-size: 11.5px; display: flex; align-items: flex-start; gap: 8px; }
-.hc-sidebar-note svg { width: 20px; height: 20px; flex-shrink: 0; color: #FFDD00; }
-@media(max-width:1024px){ .hc-sidebar { display: none !important; } }
-
-@media(min-width:1025px){
-  body.high-contrast.hc-sidebar-open nav { left: 230px; }
-  body.high-contrast.hc-sidebar-open > section,
-  body.high-contrast.hc-sidebar-open > footer,
-  body.high-contrast.hc-sidebar-open > .a11y-statement-bar { margin-left: 230px; }
-}
-
-/* ══ BARRE D'ENGAGEMENT ACCESSIBILITÉ ══ */
-.a11y-statement-bar {
-  background: #0a1730; color: rgba(255,255,255,0.6);
-  display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 40px;
-  padding: 12px 24px; font-size: 11.5px; font-weight: 300;
-}
-.a11y-statement-bar span { display: inline-flex; align-items: center; gap: 8px; }
-.a11y-statement-bar svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); }
-body.high-contrast .a11y-statement-bar { background: #000; color: #fff; border-top: 1px solid #FFDD00; }
-body.high-contrast .a11y-statement-bar svg { color: #FFDD00; }
-@media(max-width:768px){
-  .a11y-statement-bar { flex-direction: column; align-items: center; text-align: center; padding: 14px 20px; gap: 8px; }
-}
-
-/* ══ FOOTER ══ */
-footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-.footer-name { font-family: 'Dancing Script', cursive; font-size: calc(22px * var(--text-scale)); color: var(--gold); }
-.footer-copy { font-size: calc(11px * var(--text-scale)); color: rgba(255,255,255,0.45); letter-spacing: 1px; }
-.footer-social { display: flex; gap: 14px; }
-.footer-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.35); display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; transition: all 0.3s; }
-.footer-social a:hover { background: rgba(201,168,76,0.15); transform: translateY(-2px); }
-.footer-social svg { width: 16px; height: 16px; }
-
-/* ══ MENU MOBILE PLEIN ÉCRAN (partagé avec les autres pages) ══ */
-.mobile-menu-overlay { display: none; }
-.mobile-menu-overlay.open { display: flex; }
-
-/* ══ RESPONSIVE MOBILE ══ */
-@media(max-width:1024px){
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-sig-wrap { align-items: flex-start; }
-  .hero-sig { text-align: left; }
-  .hero-sig-underline { margin-left: 0; }
-  .nav-cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .apporte-grid { grid-template-columns: 1fr; gap: 28px; }
-}
-
-@media(max-width:768px){
-  nav { padding: 14px 20px; flex-direction: row; position: relative; }
-  .nav-logo { font-size: calc(11px * var(--text-scale)); letter-spacing: 3px; }
-  .nav-links { display: none; }
-
-  .mobile-menu-overlay {
-    position: fixed; inset: 0; z-index: 300;
-    background: var(--cream);
-    flex-direction: column;
-    padding: 22px 26px 32px;
-    overflow-y: auto;
-  }
-  .mm-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; }
-  .mm-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(12px * var(--text-scale)); font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); }
-  .mm-close { background: none; border: none; font-size: calc(24px * var(--text-scale)); color: var(--navy); cursor: pointer; line-height: 1; padding: 12px; width: 44px; height: 44px; }
-  .mm-list { list-style: none; margin-top: 8px; }
-  .mm-list li { border-bottom: 1px solid rgba(11,31,74,0.08); }
-  .mm-item { display: flex; align-items: center; gap: 22px; padding: 22px 4px; text-decoration: none; color: var(--navy); font-size: calc(17px * var(--text-scale)); font-weight: 400; transition: color 0.25s; }
-  .mm-item svg { width: 25px; height: 25px; flex-shrink: 0; }
-  .mm-item.active { color: var(--gold-text); }
-  .mm-item.active svg { stroke: var(--gold-text); }
-  .mm-item:active { opacity: 0.6; }
-  .mm-lang { display: flex; gap: 30px; margin-top: 30px; padding-top: 4px; }
-  .mm-a11y { margin-top: 20px; border-top: 1px solid rgba(11,31,74,0.08); padding-top: 20px; }
-  .mm-a11y .a11y-toggle { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 4px; font-size: calc(15px * var(--text-scale)); border: none; }
-  .mm-a11y .a11y-toggle span { font-family: 'Lato', sans-serif; font-weight: 700; font-size: calc(13px * var(--text-scale)); letter-spacing: 1px; text-transform: uppercase; }
-  .a11y-panel-mobile { position: static; width: 100%; box-shadow: none; border: none; background: rgba(11,31,74,0.03); margin-top: 8px; padding: 16px; }
-  .mm-lang button { background: none; border: none; display: flex; align-items: center; gap: 6px; font-size: calc(13px * var(--text-scale)); font-weight: 700; letter-spacing: 1px; color: var(--navy); cursor: pointer; padding: 6px 0; opacity: 0.5; }
-  .mm-lang button.active { opacity: 1; color: var(--gold2); }
-  .mm-lang .flag { font-size: calc(20px * var(--text-scale)); }
-
-  .hamburger { display: flex !important; position: absolute; right: 14px; top: 10px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; padding: 11px; background: none; border: none; width: 44px; height: 44px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
-
-  .hero { padding: 96px 22px 50px; }
-  .hero-quote { margin-top: 30px; }
-  .hero-ctas { flex-direction: column; }
-  .hero-ctas a { width: 100%; }
-
-  #naviguez { padding: 50px 20px 60px; }
-  .nav-cards-grid { grid-template-columns: 1fr; }
-
-  #apporte { padding: 50px 20px; }
-
-  footer { padding: 30px 20px; }
-}
-</style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -392,12 +58,13 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 </aside>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <a class="nav-logo" href="index.html">Marina Montalbano</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
+<li><a href="index.html" aria-current="page"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
     <li><a href="parcours.html"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li>
     <li><a href="projets.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
     <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
@@ -409,7 +76,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     </li>
     <li class="a11y-menu">
       <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
-      <div class="a11y-panel" id="a11yPanel" role="menu" hidden>
+      <div class="a11y-panel" id="a11yPanel" hidden>
         <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
           <span>Contraste élevé</span>
           <input type="checkbox" id="toggleContrast" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
@@ -441,38 +108,36 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     <span class="mm-logo">MARINA MONTALBANO</span>
     <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
   </div>
-  <ul class="mm-list">
-    <li>
-      <a href="#" class="mm-item active">
+  <ul class="mm-list"><li>
+      <a href="index.html" class="mm-item" aria-current="page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
         <span data-fr="Accueil" data-en="Home">Accueil</span>
       </a>
     </li>
-    <li>
-      <a href="projets.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
-      </a>
-    </li>
-    <li>
-      <a href="cible.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
-        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
-      </a>
-    </li>
-    <li>
+<li>
       <a href="parcours.html" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
         <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span>
       </a>
     </li>
-    <li>
+<li>
+      <a href="projets.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
+      </a>
+    </li>
+<li>
+      <a href="cible.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
+      </a>
+    </li>
+<li>
       <a href="mailto:emploi.marina.91@gmail.com" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
         <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
       </a>
-    </li>
-  </ul>
+    </li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
   <div class="mm-lang">
     <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
     <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button>
@@ -480,7 +145,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 
   <div class="mm-a11y">
     <button class="a11y-toggle" id="a11yToggleMobile" onclick="toggleA11yPanel('Mobile')" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanelMobile">Aa <span>Accessibilité</span></button>
-    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" role="menu" hidden>
+    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" hidden>
       <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
         <span>Contraste élevé</span>
         <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
@@ -512,7 +177,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     <div>
       <h1><span data-fr="De la coordination à l'expérience utilisateur" data-en="From coordination to user experience">De la coordination à l'expérience utilisateur</span></h1>
       <div class="hero-divider"></div>
-      <p class="hero-para"><span data-fr="Curieuse, rigoureuse et à l'écoute, je développe mes compétences en UX Design pour concevoir des expériences utiles, accessibles et centrées sur l'humain." data-en="Curious, rigorous and attentive, I'm developing my UX Design skills to create experiences that are useful, accessible and human-centred.">Curieuse, rigoureuse et à l'écoute, je développe mes compétences en UX Design pour concevoir des expériences utiles, accessibles et centrées sur l'humain.</span></p>
+      <p class="hero-para"><span data-fr="Titulaire du certificat professionnel Google UX Design, je mets mes acquis en pratique pour concevoir des expériences utiles, accessibles et centrées sur l’humain." data-en="Having completed the Google UX Design Professional Certificate, I apply my skills to design useful, accessible and human-centred experiences.">Titulaire du certificat professionnel Google UX Design, je mets mes acquis en pratique pour concevoir des expériences utiles, accessibles et centrées sur l’humain.</span></p>
 
       <div class="hero-badges">
         <div class="hero-badge">
@@ -627,176 +292,10 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-name">Marina Montalbano</div>
-  <div class="footer-copy"><span data-fr="Product Designer en reconversion · 2026" data-en="Aspiring Product Designer · 2026">Product Designer en reconversion · 2026</span></div>
-  <div class="footer-social">
-    <a href="#" aria-label="LinkedIn" title="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3v11.75h-3zM9.5 8.75h2.9v1.6h.04c.4-.76 1.4-1.6 2.9-1.6 3.1 0 3.66 2 3.66 4.6v6.9h-3v-6.1c0-1.46-.03-3.34-2.03-3.34-2.04 0-2.35 1.6-2.35 3.24v6.2h-3z"/></svg>
-    </a>
-    <a href="#" aria-label="Dribbble" title="Dribbble">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M4 9.5c4 1.2 9 1 13.5-1.2M3.5 15c5-1.5 10.5-1 16 2M9 3.3c2.7 3.4 4.5 8.5 4.5 13" stroke-linecap="round"/></svg>
-    </a>
-  </div>
-</footer>
-
-<div class="a11y-statement-bar">
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span data-fr="Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité." data-en="This site was designed with particular attention to accessibility and readability.">Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité.</span>
-  </span>
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h1M7 13h1M11 9h6M11 13h3" stroke-linecap="round"/></svg>
-    <span data-fr="Navigation au clavier : Tab pour naviguer, Entrée pour activer." data-en="Keyboard navigation: Tab to navigate, Enter to activate.">Navigation au clavier : Tab pour naviguer, Entrée pour activer.</span>
-  </span>
-</div>
-
-<script>
-// ── LANGUE ────────────────────────────────────────────────
-function setLang(lang) {
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    const txt = el.getAttribute('data-' + lang);
-    if (txt) el.innerHTML = txt;
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  document.querySelectorAll('.mm-lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  const cvFr = 'CV_Marina_Montalbano.pdf';
-  const cvEn = 'CV_Marina_Montalbano_EN.pdf';
-  const navCv = document.getElementById('nav-cv-link');
-  const heroCv = document.getElementById('hero-cv-link');
-  if (navCv) navCv.href = lang === 'en' ? cvEn : cvFr;
-  if (heroCv) heroCv.href = lang === 'en' ? cvEn : cvFr;
-  localStorage.setItem('lang', lang);
-}
-setLang(localStorage.getItem('lang') || 'fr');
-
-// ── HAMBURGER MENU ───────────────────────────────────────
-function toggleMenu() {
-  const overlay = document.getElementById('mobileMenuOverlay');
-  const burger = document.getElementById('hamburger');
-  const isOpen = overlay.classList.toggle('open');
-  burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-}
-function checkMobile() {
-  const burger = document.getElementById('hamburger');
-  if (window.innerWidth <= 768) {
-    burger.style.display = 'flex';
-  } else {
-    burger.style.display = 'none';
-    document.getElementById('mobileMenuOverlay').classList.remove('open');
-  }
-}
-window.addEventListener('resize', checkMobile);
-checkMobile();
-
-document.querySelectorAll('.mm-item').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('mobileMenuOverlay').classList.remove('open');
-  });
-});
-
-// ── MENU "Aa" — ACCESSIBILITÉ ────────────────────────────
-function toggleA11yPanel(suffix) {
-  suffix = suffix || '';
-  const toggle = document.getElementById('a11yToggle' + suffix);
-  const panel = document.getElementById('a11yPanel' + suffix);
-  const isOpen = panel.hasAttribute('hidden');
-  if (isOpen) {
-    panel.removeAttribute('hidden');
-    toggle.setAttribute('aria-expanded', 'true');
-  } else {
-    panel.setAttribute('hidden', '');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-}
-// Fermer les panneaux au clic extérieur ou avec Échap
-document.addEventListener('click', (e) => {
-  document.querySelectorAll('.a11y-menu, .mm-a11y').forEach(wrap => {
-    if (!wrap.contains(e.target)) {
-      const panel = wrap.querySelector('.a11y-panel');
-      const toggle = wrap.querySelector('.a11y-toggle');
-      if (panel && !panel.hasAttribute('hidden')) {
-        panel.setAttribute('hidden', '');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.a11y-panel').forEach(panel => panel.setAttribute('hidden', ''));
-    document.querySelectorAll('.a11y-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
-  }
-});
-
-// Taille du texte — stepper 100% → 150% par pas de 10, agit sur --text-scale
-let currentTextScalePct = 100;
-function applyTextScale(pct) {
-  currentTextScalePct = Math.min(150, Math.max(100, pct));
-  document.documentElement.style.setProperty('--text-scale', currentTextScalePct / 100);
-  document.querySelectorAll('.a11y-step-value').forEach(el => el.textContent = currentTextScalePct + '%');
-  localStorage.setItem('textScale', currentTextScalePct);
-}
-function stepTextScale(delta) {
-  applyTextScale(currentTextScalePct + delta);
-}
-
-// Contraste élevé
-function toggleHighContrast(active) {
-  document.body.classList.toggle('high-contrast', active);
-  document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = active);
-  localStorage.setItem('highContrast', active ? '1' : '0');
-  const sidebar = document.getElementById('hcSidebar');
-  if (active) {
-    sidebar.classList.add('active');
-    document.body.classList.add('hc-sidebar-open');
-  } else {
-    sidebar.classList.remove('active');
-    document.body.classList.remove('hc-sidebar-open');
-  }
-}
-function closeHcSidebar() {
-  document.getElementById('hcSidebar').classList.remove('active');
-  document.body.classList.remove('hc-sidebar-open');
-}
-
-// Police dyslexie
-function toggleDyslexicFont(active) {
-  document.body.classList.toggle('dyslexic-font', active);
-  document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = active);
-  localStorage.setItem('dyslexicFont', active ? '1' : '0');
-}
-
-// Liens soulignés
-function toggleUnderlineLinks(active) {
-  document.body.classList.toggle('underline-links', active);
-  document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = active);
-  localStorage.setItem('underlineLinks', active ? '1' : '0');
-}
-
-// Restaurer les préférences enregistrées
-(function restoreA11yPrefs() {
-  const savedScale = parseInt(localStorage.getItem('textScale'), 10);
-  applyTextScale(savedScale || 100);
-  if (localStorage.getItem('highContrast') === '1') {
-    document.body.classList.add('high-contrast', 'hc-sidebar-open');
-    document.getElementById('hcSidebar').classList.add('active');
-    document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = true);
-  }
-  if (localStorage.getItem('dyslexicFont') === '1') {
-    document.body.classList.add('dyslexic-font');
-    document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = true);
-  }
-  if (localStorage.getItem('underlineLinks') === '1') {
-    document.body.classList.add('underline-links');
-    document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = true);
-  }
-})();
-</script>
-
+<footer><div class="footer-name">Marina Montalbano</div>
+<div class="footer-copy"><span data-fr="En reconversion vers le Product Design · Certificat Google UX Design obtenu" data-en="Transitioning into Product Design · Google UX Design certificate completed">En reconversion vers le Product Design · Certificat Google UX Design obtenu</span></div>
+<div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
+<a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

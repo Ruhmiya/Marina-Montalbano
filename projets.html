@@ -353,6 +353,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -393,14 +394,15 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 </aside>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <a class="nav-logo" href="index.html">Marina Montalbano</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
+<li><a href="index.html"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
     <li><a href="parcours.html"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li>
-    <li><a href="projets.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
+    <li><a href="projets.html" aria-current="page"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
     <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
     <li><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
     <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
@@ -410,7 +412,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     </li>
     <li class="a11y-menu">
       <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
-      <div class="a11y-panel" id="a11yPanel" role="menu" hidden>
+      <div class="a11y-panel" id="a11yPanel" hidden>
         <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
           <span>Contraste élevé</span>
           <input type="checkbox" id="toggleContrast" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
@@ -442,38 +444,36 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     <span class="mm-logo">MARINA MONTALBANO</span>
     <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
   </div>
-  <ul class="mm-list">
-    <li>
-      <a href="#" class="mm-item active">
+  <ul class="mm-list"><li>
+      <a href="index.html" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
         <span data-fr="Accueil" data-en="Home">Accueil</span>
       </a>
     </li>
-    <li>
-      <a href="projets.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
-      </a>
-    </li>
-    <li>
-      <a href="cible.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
-        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
-      </a>
-    </li>
-    <li>
+<li>
       <a href="parcours.html" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
         <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span>
       </a>
     </li>
-    <li>
+<li>
+      <a href="projets.html" class="mm-item" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
+      </a>
+    </li>
+<li>
+      <a href="cible.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
+      </a>
+    </li>
+<li>
       <a href="mailto:emploi.marina.91@gmail.com" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
         <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
       </a>
-    </li>
-  </ul>
+    </li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
   <div class="mm-lang">
     <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
     <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button>
@@ -481,7 +481,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 
   <div class="mm-a11y">
     <button class="a11y-toggle" id="a11yToggleMobile" onclick="toggleA11yPanel('Mobile')" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanelMobile">Aa <span>Accessibilité</span></button>
-    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" role="menu" hidden>
+    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" hidden>
       <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
         <span>Contraste élevé</span>
         <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
@@ -516,176 +516,10 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 <section class="study-access" aria-labelledby="study-title"><p class="eyebrow">Pour aller plus loin</p><h2 id="study-title">L’étude de cas complète</h2><p>L’espace de consultation par code est en préparation. Pour échanger sur ma démarche et demander l’accès à l’étude, contactez-moi.</p><a class="btn" href="mailto:emploi.marina.91@gmail.com?subject=Acc%C3%A8s%20%C3%A0%20l%27%C3%A9tude%20ASSU%202000">Demander un accès</a></section>
 </main>
 <!-- FOOTER -->
-<footer>
-  <div class="footer-name">Marina Montalbano</div>
-  <div class="footer-copy"><span data-fr="Product Designer en reconversion · 2026" data-en="Aspiring Product Designer · 2026">Product Designer en reconversion · 2026</span></div>
-  <div class="footer-social">
-    <a href="#" aria-label="LinkedIn" title="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3v11.75h-3zM9.5 8.75h2.9v1.6h.04c.4-.76 1.4-1.6 2.9-1.6 3.1 0 3.66 2 3.66 4.6v6.9h-3v-6.1c0-1.46-.03-3.34-2.03-3.34-2.04 0-2.35 1.6-2.35 3.24v6.2h-3z"/></svg>
-    </a>
-    <a href="#" aria-label="Dribbble" title="Dribbble">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M4 9.5c4 1.2 9 1 13.5-1.2M3.5 15c5-1.5 10.5-1 16 2M9 3.3c2.7 3.4 4.5 8.5 4.5 13" stroke-linecap="round"/></svg>
-    </a>
-  </div>
-</footer>
-
-<div class="a11y-statement-bar">
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span data-fr="Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité." data-en="This site was designed with particular attention to accessibility and readability.">Ce site a été conçu en accordant une attention particulière à l'accessibilité et à la lisibilité.</span>
-  </span>
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h1M7 13h1M11 9h6M11 13h3" stroke-linecap="round"/></svg>
-    <span data-fr="Navigation au clavier : Tab pour naviguer, Entrée pour activer." data-en="Keyboard navigation: Tab to navigate, Enter to activate.">Navigation au clavier : Tab pour naviguer, Entrée pour activer.</span>
-  </span>
-</div>
-
-<script>
-// ── LANGUE ────────────────────────────────────────────────
-function setLang(lang) {
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    const txt = el.getAttribute('data-' + lang);
-    if (txt) el.innerHTML = txt;
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  document.querySelectorAll('.mm-lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  const cvFr = 'CV_Marina_Montalbano.pdf';
-  const cvEn = 'CV_Marina_Montalbano_EN.pdf';
-  const navCv = document.getElementById('nav-cv-link');
-  const heroCv = document.getElementById('hero-cv-link');
-  if (navCv) navCv.href = lang === 'en' ? cvEn : cvFr;
-  if (heroCv) heroCv.href = lang === 'en' ? cvEn : cvFr;
-  localStorage.setItem('lang', lang);
-}
-setLang(localStorage.getItem('lang') || 'fr');
-
-// ── HAMBURGER MENU ───────────────────────────────────────
-function toggleMenu() {
-  const overlay = document.getElementById('mobileMenuOverlay');
-  const burger = document.getElementById('hamburger');
-  const isOpen = overlay.classList.toggle('open');
-  burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-}
-function checkMobile() {
-  const burger = document.getElementById('hamburger');
-  if (window.innerWidth <= 768) {
-    burger.style.display = 'flex';
-  } else {
-    burger.style.display = 'none';
-    document.getElementById('mobileMenuOverlay').classList.remove('open');
-  }
-}
-window.addEventListener('resize', checkMobile);
-checkMobile();
-
-document.querySelectorAll('.mm-item').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('mobileMenuOverlay').classList.remove('open');
-  });
-});
-
-// ── MENU "Aa" — ACCESSIBILITÉ ────────────────────────────
-function toggleA11yPanel(suffix) {
-  suffix = suffix || '';
-  const toggle = document.getElementById('a11yToggle' + suffix);
-  const panel = document.getElementById('a11yPanel' + suffix);
-  const isOpen = panel.hasAttribute('hidden');
-  if (isOpen) {
-    panel.removeAttribute('hidden');
-    toggle.setAttribute('aria-expanded', 'true');
-  } else {
-    panel.setAttribute('hidden', '');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-}
-// Fermer les panneaux au clic extérieur ou avec Échap
-document.addEventListener('click', (e) => {
-  document.querySelectorAll('.a11y-menu, .mm-a11y').forEach(wrap => {
-    if (!wrap.contains(e.target)) {
-      const panel = wrap.querySelector('.a11y-panel');
-      const toggle = wrap.querySelector('.a11y-toggle');
-      if (panel && !panel.hasAttribute('hidden')) {
-        panel.setAttribute('hidden', '');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.a11y-panel').forEach(panel => panel.setAttribute('hidden', ''));
-    document.querySelectorAll('.a11y-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
-  }
-});
-
-// Taille du texte — stepper 100% → 150% par pas de 10, agit sur --text-scale
-let currentTextScalePct = 100;
-function applyTextScale(pct) {
-  currentTextScalePct = Math.min(150, Math.max(100, pct));
-  document.documentElement.style.setProperty('--text-scale', currentTextScalePct / 100);
-  document.querySelectorAll('.a11y-step-value').forEach(el => el.textContent = currentTextScalePct + '%');
-  localStorage.setItem('textScale', currentTextScalePct);
-}
-function stepTextScale(delta) {
-  applyTextScale(currentTextScalePct + delta);
-}
-
-// Contraste élevé
-function toggleHighContrast(active) {
-  document.body.classList.toggle('high-contrast', active);
-  document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = active);
-  localStorage.setItem('highContrast', active ? '1' : '0');
-  const sidebar = document.getElementById('hcSidebar');
-  if (active) {
-    sidebar.classList.add('active');
-    document.body.classList.add('hc-sidebar-open');
-  } else {
-    sidebar.classList.remove('active');
-    document.body.classList.remove('hc-sidebar-open');
-  }
-}
-function closeHcSidebar() {
-  document.getElementById('hcSidebar').classList.remove('active');
-  document.body.classList.remove('hc-sidebar-open');
-}
-
-// Police dyslexie
-function toggleDyslexicFont(active) {
-  document.body.classList.toggle('dyslexic-font', active);
-  document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = active);
-  localStorage.setItem('dyslexicFont', active ? '1' : '0');
-}
-
-// Liens soulignés
-function toggleUnderlineLinks(active) {
-  document.body.classList.toggle('underline-links', active);
-  document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = active);
-  localStorage.setItem('underlineLinks', active ? '1' : '0');
-}
-
-// Restaurer les préférences enregistrées
-(function restoreA11yPrefs() {
-  const savedScale = parseInt(localStorage.getItem('textScale'), 10);
-  applyTextScale(savedScale || 100);
-  if (localStorage.getItem('highContrast') === '1') {
-    document.body.classList.add('high-contrast', 'hc-sidebar-open');
-    document.getElementById('hcSidebar').classList.add('active');
-    document.querySelectorAll('.toggle-contrast').forEach(cb => cb.checked = true);
-  }
-  if (localStorage.getItem('dyslexicFont') === '1') {
-    document.body.classList.add('dyslexic-font');
-    document.querySelectorAll('.toggle-dyslexic').forEach(cb => cb.checked = true);
-  }
-  if (localStorage.getItem('underlineLinks') === '1') {
-    document.body.classList.add('underline-links');
-    document.querySelectorAll('.toggle-underline').forEach(cb => cb.checked = true);
-  }
-})();
-</script>
-
+<footer><div class="footer-name">Marina Montalbano</div>
+<div class="footer-copy"><span data-fr="En reconversion vers le Product Design · Certificat Google UX Design obtenu" data-en="Transitioning into Product Design · Google UX Design certificate completed">En reconversion vers le Product Design · Certificat Google UX Design obtenu</span></div>
+<div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
+<a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

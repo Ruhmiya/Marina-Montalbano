@@ -308,31 +308,161 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="parcours-page">
+
+<!-- Lien d'évitement, pour les utilisateurs clavier -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<!-- Bandeau explicatif du mode contraste élevé (desktop uniquement) -->
+<aside class="hc-sidebar" id="hcSidebar" aria-label="À propos du mode contraste élevé">
+  <div class="hc-sidebar-title">
+    <span>MODE CONTRASTE ÉLEVÉ ACTIVÉ</span>
+    <button class="hc-sidebar-close" onclick="closeHcSidebar()" aria-label="Masquer ce panneau">✕</button>
+  </div>
+  <p>Le mode contraste élevé améliore la lisibilité en renforçant les contrastes des couleurs et en simplifiant les éléments visuels.</p>
+
+  <div class="hc-sidebar-controls">
+    <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+      <span>Contraste élevé</span>
+      <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+    </label>
+    <div class="a11y-row">
+      <span class="a11y-row-label">Taille du texte</span>
+      <div class="a11y-stepper" role="group" aria-label="Taille du texte">
+        <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+        <span class="a11y-step-value" aria-live="polite">100%</span>
+        <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+      </div>
+    </div>
+    <label class="a11y-switch-row">
+      <span>Police dyslexie</span>
+      <input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+    </label>
+  </div>
+
+  <div class="hc-sidebar-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 17l5-5-5-5"/><path d="M12 19h8"/></svg>
+    <span>Les boutons, liens et textes sont plus visibles. La navigation au clavier est mise en évidence.</span>
+  </div>
+</aside>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <a class="nav-logo" href="index.html">Marina Montalbano</a>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
     <span></span><span></span><span></span>
-  </div>
+  </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
-    <li><a href="#fil"><span data-fr="Parcours" data-en="Journey">Parcours</span></a></li>
-    <li><a href="#metiers"><span data-fr="Compétences" data-en="Skills">Compétences</span></a></li>
-    <li><a href="#pourquoi"><span data-fr="Pourquoi le design" data-en="Why design">Pourquoi le design</span></a></li>
-    <li><a href="#conclusion"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
-    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a></li>
+<li><a href="index.html"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
+    <li><a href="parcours.html" aria-current="page"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li>
+    <li><a href="projets.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
+    <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
+    <li><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Contact" data-en="Contact">Contact</span></a></li>
+    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
     <li class="lang-switcher">
-      <span class="lang-btn active" onclick="setLang('fr')" title="Français"><span style="font-size:20px">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></span>
-      <span class="lang-btn" onclick="setLang('en')" title="English"><span style="font-size:20px">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></span>
+      <button class="lang-btn active" onclick="setLang('fr')" title="Français" aria-pressed="true"><span style="font-size:20px" aria-hidden="true">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></button>
+      <button class="lang-btn" onclick="setLang('en')" title="English" aria-pressed="false"><span style="font-size:20px" aria-hidden="true">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></button>
+    </li>
+    <li class="a11y-menu">
+      <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
+      <div class="a11y-panel" id="a11yPanel" hidden>
+        <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+          <span>Contraste élevé</span>
+          <input type="checkbox" id="toggleContrast" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+        </label>
+        <div class="a11y-row">
+          <span class="a11y-row-label" id="a11ySizeLabel">Taille du texte</span>
+          <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabel">
+            <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+            <span class="a11y-step-value" aria-live="polite">100%</span>
+            <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+          </div>
+        </div>
+        <label class="a11y-switch-row">
+          <span>Police dyslexie</span>
+          <input type="checkbox" id="toggleDyslexic" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+        </label>
+        <label class="a11y-switch-row">
+          <span>Souligner les liens</span>
+          <input type="checkbox" id="toggleUnderline" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
+        </label>
+      </div>
     </li>
   </ul>
 </nav>
 
+<!-- MENU MOBILE PLEIN ÉCRAN -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <div class="mm-header">
+    <span class="mm-logo">MARINA MONTALBANO</span>
+    <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
+  </div>
+  <ul class="mm-list"><li>
+      <a href="index.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+        <span data-fr="Accueil" data-en="Home">Accueil</span>
+      </a>
+    </li>
+<li>
+      <a href="parcours.html" class="mm-item" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
+        <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span>
+      </a>
+    </li>
+<li>
+      <a href="projets.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
+      </a>
+    </li>
+<li>
+      <a href="cible.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
+      </a>
+    </li>
+<li>
+      <a href="mailto:emploi.marina.91@gmail.com" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
+      </a>
+    </li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
+  <div class="mm-lang">
+    <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
+    <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button>
+  </div>
+
+  <div class="mm-a11y">
+    <button class="a11y-toggle" id="a11yToggleMobile" onclick="toggleA11yPanel('Mobile')" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanelMobile">Aa <span>Accessibilité</span></button>
+    <div class="a11y-panel a11y-panel-mobile" id="a11yPanelMobile" hidden>
+      <label class="a11y-switch-row" style="border-top:none; padding-top:0;">
+        <span>Contraste élevé</span>
+        <input type="checkbox" class="toggle-contrast" onchange="toggleHighContrast(this.checked)">
+      </label>
+      <div class="a11y-row">
+        <span class="a11y-row-label" id="a11ySizeLabelMobile">Taille du texte</span>
+        <div class="a11y-stepper" role="group" aria-labelledby="a11ySizeLabelMobile">
+          <button type="button" class="a11y-step-btn" onclick="stepTextScale(-10)" aria-label="Diminuer la taille du texte">−</button>
+          <span class="a11y-step-value" aria-live="polite">100%</span>
+          <button type="button" class="a11y-step-btn" onclick="stepTextScale(10)" aria-label="Augmenter la taille du texte">+</button>
+        </div>
+      </div>
+      <label class="a11y-switch-row">
+        <span>Police dyslexie</span>
+        <input type="checkbox" class="toggle-dyslexic" onchange="toggleDyslexicFont(this.checked)">
+      </label>
+      <label class="a11y-switch-row">
+        <span>Souligner les liens</span>
+        <input type="checkbox" class="toggle-underline" onchange="toggleUnderlineLinks(this.checked)">
+      </label>
+    </div>
+  </div>
+</div>
+
 <!-- HERO -->
-<section class="hero certificate-hero" id="accueil">
+<section class="hero certificate-hero" id="main-content" tabindex="-1">
   <h1><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></h1>
   <div class="certificate-card">
     <a class="certificate-preview" href="assets/google-ux-design.jpg" target="_blank" rel="noopener" aria-label="Agrandir le certificat Google UX Design">
@@ -497,11 +627,11 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
     <span class="tag" data-fr="Communication visuelle" data-en="Visual communication">Communication visuelle</span>
     <span class="tag" data-fr="Empathie" data-en="Empathy">Empathie</span>
   </div>
-  <h2 class="comp-title" style="margin-top:64px;"><span data-fr="Ma transition est déjà en cours" data-en="My transition is already underway">Ma transition est déjà en cours</span></h2>
+  <h2 class="comp-title" style="margin-top:64px;"><span data-fr="Ma formation validée, ma pratique continue" data-en="My training is complete; my practice continues">Ma formation validée, ma pratique continue</span></h2>
   <div class="section-divider"></div>
   <div class="apprend-grid">
     <div class="apprend-box">
-      <h4><span data-fr="En cours d'apprentissage" data-en="Currently learning">En cours d'apprentissage</span></h4>
+      <h4><span data-fr="Acquis travaillés en formation" data-en="Skills developed during training">Acquis travaillés en formation</span></h4>
       <ul>
         <li>Figma</li>
         <li><span data-fr="User flows" data-en="User flows">User flows</span></li>
@@ -510,7 +640,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
       </ul>
     </div>
     <div class="apprend-box">
-      <h4><span data-fr="Ce que je développe" data-en="What I'm building">Ce que je développe</span></h4>
+      <h4><span data-fr="Ce que je continue à approfondir" data-en="What I continue to develop">Ce que je continue à approfondir</span></h4>
       <ul>
         <li><span data-fr="Projets portfolio" data-en="Portfolio projects">Projets portfolio</span></li>
         <li><span data-fr="Tests utilisateurs" data-en="User testing">Tests utilisateurs</span></li>
@@ -570,159 +700,11 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-name">Marina Montalbano</div>
-  <div class="footer-copy"><span data-fr="Product Designer en reconversion · 2026" data-en="Aspiring Product Designer · 2026">Product Designer en reconversion · 2026</span></div>
-</footer>
-
-<script>
-// ── LANGUE ────────────────────────────────────────────────
-function setLang(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    const txt = el.getAttribute('data-' + lang);
-    if (txt) el.innerHTML = txt;
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  // Switcher le lien de téléchargement du CV
-  const cvFr = 'CV_Marina_Montalbano.pdf';
-  const cvEn = 'CV_Marina_Montalbano_EN.pdf';
-  const navCv = document.getElementById('nav-cv-link');
-  const footerCv = document.getElementById('footer-cv-link');
-  if (navCv) navCv.href = lang === 'en' ? cvEn : cvFr;
-  if (footerCv) footerCv.href = lang === 'en' ? cvEn : cvFr;
-  localStorage.setItem('lang', lang);
-}
-setLang(localStorage.getItem('lang') || 'fr');
-
-// ── SCROLL REVEAL ─────────────────────────────────────────
-const revealEls = document.querySelectorAll(
-  '.faisais-card, .fil-box, .tl-item, .metier-card, .pourquoi-item, .tag, .apprend-box, .exp-card, .section-title, .section-eyebrow, .comp-title'
-);
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const siblings = [...entry.target.parentElement.children];
-      const index = siblings.indexOf(entry.target);
-      setTimeout(() => {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }, index * 90);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-revealEls.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  observer.observe(el);
-});
-
-// ── TIMELINE CASCADE AVEC CLIGNOTEMENT FINAL ─────────────
-const tlDots = document.querySelectorAll('.tl-dot');
-const tlItems = document.querySelectorAll('.tl-item');
-let currentDot = -1;
-let blinkInterval = null;
-
-// CSS pour le clignotement
-const blinkStyle = document.createElement('style');
-blinkStyle.textContent = `
-  @keyframes dotBlink {
-    0%,100% { background: var(--gold2); box-shadow: 0 0 0 8px rgba(160,120,32,0.25); transform: scale(1.3); }
-    50%      { background: var(--gold);  box-shadow: 0 0 0 4px rgba(201,168,76,0.15); transform: scale(1.1); }
-  }
-  .tl-dot.blinking { animation: dotBlink 1.2s ease infinite; }
-`;
-document.head.appendChild(blinkStyle);
-
-function activateDot(index) {
-  // Stopper tout clignotement précédent
-  if (blinkInterval) clearInterval(blinkInterval);
-  tlDots.forEach(d => d.classList.remove('active', 'done', 'blinking'));
-
-  // Allumer en cascade avec délai
-  tlDots.forEach((d, i) => {
-    setTimeout(() => {
-      if (i < index) {
-        d.classList.add('done');
-      } else if (i === index) {
-        d.classList.add('active');
-        // Si c'est la dernière puce → clignoter indéfiniment
-        if (index === tlDots.length - 1) {
-          setTimeout(() => d.classList.add('blinking'), 400);
-        }
-      }
-    }, i * 350);
-  });
-}
-
-tlItems.forEach((item, index) => {
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting && index > currentDot) {
-      currentDot = index;
-      activateDot(index);
-    }
-  }, { threshold: 0.5 }).observe(item);
-});
-
-// ── NAV ACTIVE ────────────────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cv)');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : 'var(--navy)';
-  });
-});
-
-// ── HAMBURGER MENU ───────────────────────────────────────
-function toggleMenu() {
-  const nav = document.getElementById('nav-links');
-  const burger = document.getElementById('hamburger');
-  nav.classList.toggle('open');
-}
-
-// Afficher hamburger sur mobile
-function checkMobile() {
-  const burger = document.getElementById('hamburger');
-  if (window.innerWidth <= 768) {
-    burger.style.display = 'flex';
-  } else {
-    burger.style.display = 'none';
-    document.getElementById('nav-links').classList.remove('open');
-  }
-}
-window.addEventListener('resize', checkMobile);
-checkMobile();
-
-// Fermer menu au clic sur un lien
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('nav-links').classList.remove('open');
-  });
-});
-
-// ── SMOOTH SCROLL ─────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-
-// ── CURSOR GLOW ───────────────────────────────────────────
-document.querySelectorAll('.faisais-card, .metier-card, .exp-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.background = `radial-gradient(circle at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(201,168,76,0.07), transparent 60%), var(--cream)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.background = ''; });
-});
-</script>
+<footer><div class="footer-name">Marina Montalbano</div>
+<div class="footer-copy"><span data-fr="En reconversion vers le Product Design · Certificat Google UX Design obtenu" data-en="Transitioning into Product Design · Google UX Design certificate completed">En reconversion vers le Product Design · Certificat Google UX Design obtenu</span></div>
+<div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
+<a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
+<script src="assets/site.js"></script>
+<script src="assets/parcours-motion.js"></script>
 </body>
 </html>
