@@ -260,7 +260,7 @@ body.high-contrast .hc-sidebar.active { display: block; }
 .a11y-statement-bar svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); }
 body.high-contrast .a11y-statement-bar { background: #000; color: #fff; border-top: 1px solid #FFDD00; }
 body.high-contrast .a11y-statement-bar svg { color: #FFDD00; }
-@media(max-width:1450px){
+@media(max-width:1180px){
   .a11y-statement-bar { flex-direction: column; align-items: center; text-align: center; padding: 14px 20px; gap: 8px; }
 }
 
@@ -287,7 +287,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
   .apporte-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
-@media(max-width:1450px){
+@media(max-width:1180px){
   nav { padding: 14px 20px; flex-direction: row; position: relative; }
   .nav-logo { font-size: calc(11px * var(--text-scale)); letter-spacing: 3px; }
   .nav-links { display: none; }
@@ -340,7 +340,7 @@ nav a[aria-current="page"],.mm-item[aria-current="page"]{text-decoration:underli
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px}.footer-links a{color:#fff;font-size:14px;line-height:1.6;padding:10px 0}
 body.menu-open{overflow:hidden}img{max-width:100%}.mobile-menu-overlay{overscroll-behavior:contain}
 body.high-contrast .footer-links a{color:#FFDD00}
-@media(max-width:1450px){nav{min-height:64px;padding-right:68px}.nav-logo{white-space:normal;max-width:calc(100% - 16px);line-height:1.6}.hero{padding-top:44px}.portfolio{padding-top:44px!important}.hc-sidebar{display:none!important}body.high-contrast.hc-sidebar-open nav{left:0}body.high-contrast.hc-sidebar-open>section,body.high-contrast.hc-sidebar-open>footer,body.high-contrast.hc-sidebar-open>.a11y-statement-bar,body.high-contrast.hc-sidebar-open .portfolio{margin-left:0}}
+@media(max-width:1180px){nav{min-height:64px;padding-right:68px}.nav-logo{white-space:normal;max-width:calc(100% - 16px);line-height:1.6}.hero{padding-top:44px}.portfolio{padding-top:44px!important}.hc-sidebar{display:none!important}body.high-contrast.hc-sidebar-open nav{left:0}body.high-contrast.hc-sidebar-open>section,body.high-contrast.hc-sidebar-open>footer,body.high-contrast.hc-sidebar-open>.a11y-statement-bar,body.high-contrast.hc-sidebar-open .portfolio{margin-left:0}}
 @media(max-width:480px){.hero h1{font-size:calc(30px * var(--text-scale))}.hero-badges{gap:16px}.btn,.btn-outline-navy,.btn-outline-gold{white-space:normal;min-height:44px;padding:14px 18px;letter-spacing:1px}.nav-card{padding:24px}.portfolio h1{overflow-wrap:break-word}.comparison figure{min-width:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero-eyebrow,.hero h1,.hero-divider,.hero-para,.hero-badges,.hero-ctas,.hero-sig-wrap{opacity:1!important}}
 body.parcours-page .certificate-hero{min-height:auto;max-width:none;align-items:center;padding:110px 24px 48px}
@@ -353,8 +353,12 @@ body.parcours-page .metier-list li,body.parcours-page .exp-card p{font-size:calc
 body.parcours-page .tl-sub{color:var(--gold-text)}
 body.parcours-page .metiers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .metier-card,body.high-contrast.parcours-page .faisais-card,body.high-contrast.parcours-page .apprend-box,body.high-contrast.parcours-page .exp-card,body.high-contrast.parcours-page .certificate-card{background:#000;border:1px solid #FFDD00}
-@media(max-width:1450px){body.parcours-page .certificate-hero{padding-top:32px}}
+@media(max-width:1180px){body.parcours-page .certificate-hero{padding-top:32px}}
 @media(max-width:768px){body.parcours-page .certificate-card,body.parcours-page .fil-grid,body.parcours-page .metiers-grid,body.parcours-page .faisais-grid,body.parcours-page .pourquoi-grid,body.parcours-page .apprend-grid,body.parcours-page .exp-grid{grid-template-columns:1fr}body.parcours-page .fil-box{padding:28px 20px}body.parcours-page .contact-val{overflow-wrap:anywhere}}
 
 /* Four languages remain reachable on desktop and mobile. */
 .lang-switcher,.mm-lang{flex-wrap:wrap;gap:12px}.lang-btn{font-size:12px}.lang-btn span[aria-hidden]{font-size:18px}.lang-btn,.mm-lang-btn{min-height:36px;white-space:nowrap}
+
+/* Keep the original desktop navigation visible until the compact mobile breakpoint. */
+@media(min-width:1181px){nav .hamburger{display:none!important}nav .nav-links{display:flex!important}}
+@media(max-width:1180px){nav .nav-links{display:none!important}nav .hamburger{display:flex!important}}
