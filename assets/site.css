@@ -384,3 +384,33 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
   nav .nav-links a{font-size:9px!important;letter-spacing:1px!important}
   nav .nav-logo{font-size:14px!important}
 }
+
+
+/* Citation d’accueil : cadre compact et signature sous le texte */
+.hero-sig-wrap { gap: 14px; }
+.hero-quote {
+  width: min(100%, 440px);
+  margin: 0 !important;
+  padding: 16px 22px;
+  border: 1px solid rgba(11,31,74,0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.62);
+  text-align: center;
+}
+.hero-quote p {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: calc(clamp(23px, 2.1vw, 30px) * var(--text-scale));
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+.hero-sig {
+  margin: 0;
+  font-size: calc(clamp(24px, 2.7vw, 34px) * var(--text-scale));
+}
+.hero-sig-underline { display: none; }
+@media (max-width: 1024px) {
+  .hero-sig-wrap { align-items: center; }
+  .hero-sig { text-align: center; }
+}
