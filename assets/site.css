@@ -423,6 +423,29 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -.03em;
+  color: var(--navy);
+}
+.hero-visual-stack.hero-sig-wrap {
+  align-self: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 520px;
+}
+.hero-portrait {
+  display: block;
+  width: min(72%, 320px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid rgba(201,168,76,.6);
+  border-radius: 50%;
+  box-shadow: 0 14px 36px rgba(11,31,74,.10);
+}
+.hero-visual-stack .handwriting-art { max-width: 500px; }
+@media (max-width: 1024px) {
+  .hero h1 { font-size: calc(clamp(42px, 4.4vw, 60px) * var(--text-scale)); }
+  .hero-visual-stack.hero-sig-wrap { max-width: 560px; }
+  .hero-portrait { width: min(64vw, 290px); }
 }
 @media (max-width: 760px) {
   .hero h1 { font-size: calc(clamp(34px, 8.8vw, 44px) * var(--text-scale)); }
