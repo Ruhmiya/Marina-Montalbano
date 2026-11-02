@@ -353,7 +353,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=languages-1">
 </head>
 <body>
 
@@ -408,7 +408,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
     <li class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('fr')" title="Français" aria-pressed="true"><span style="font-size:20px" aria-hidden="true">🇫🇷</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">FR</span></button>
-      <button class="lang-btn" onclick="setLang('en')" title="English" aria-pressed="false"><span style="font-size:20px" aria-hidden="true">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></button>
+      <button class="lang-btn" onclick="setLang('en')" title="English" aria-pressed="false"><span style="font-size:20px" aria-hidden="true">🇬🇧</span><span style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--navy);margin-left:2px;">EN</span></button><button class="lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button>
     </li>
     <li class="a11y-menu">
       <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
@@ -476,7 +476,7 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
     </li><li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
   <div class="mm-lang">
     <button class="mm-lang-btn active" onclick="setLang('fr')"><span class="flag">🇫🇷</span> FR</button>
-    <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button>
+    <button class="mm-lang-btn" onclick="setLang('en')"><span class="flag">🇬🇧</span> EN</button><button class="mm-lang-btn" onclick="setLang('de')" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span> DE</button><button class="mm-lang-btn" onclick="setLang('sr')" title="Srpski (latinica)" aria-label="Srpski (latinica)" aria-pressed="false"><span aria-hidden="true">🇷🇸</span> SR</button>
   </div>
 
   <div class="mm-a11y">
@@ -520,6 +520,6 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 <div class="footer-copy"><span data-fr="En reconversion vers le Product Design · Certificat Google UX Design obtenu" data-en="Transitioning into Product Design · Google UX Design certificate completed">En reconversion vers le Product Design · Certificat Google UX Design obtenu</span></div>
 <div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
 <a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
-<script src="assets/site.js"></script>
+<script src="assets/translations.js?v=languages-1"></script><script src="assets/site.js?v=languages-1"></script>
 </body>
 </html>

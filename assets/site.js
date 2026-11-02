@@ -1,26 +1,35 @@
 const preferences={getItem(k){try{return localStorage.getItem(k)}catch{return null}},setItem(k,v){try{localStorage.setItem(k,v)}catch{}}};
 
 // ── LANGUE ────────────────────────────────────────────────
-function setLang(lang) {
- lang=lang==='en'?'en':'fr';document.documentElement.lang=lang;document.querySelectorAll('[download]').forEach(a=>a.href=lang==='en'?'CV_Marina_Montalbano_EN.pdf':'CV_Marina_Montalbano.pdf');
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    const txt = el.getAttribute('data-' + lang);
-    if (txt) el.innerHTML = txt;
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  document.querySelectorAll('.mm-lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-  });
-  const cvFr = 'CV_Marina_Montalbano.pdf';
-  const cvEn = 'CV_Marina_Montalbano_EN.pdf';
-  const navCv = document.getElementById('nav-cv-link');
-  const heroCv = document.getElementById('hero-cv-link');
-  if (navCv) navCv.href = lang === 'en' ? cvEn : cvFr;
-  if (heroCv) heroCv.href = lang === 'en' ? cvEn : cvFr;
-  document.querySelectorAll('.lang-btn,.mm-lang-btn').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.classList.contains('active'))));
-  preferences.setItem('lang', lang);
+const translations=window.siteTranslations||{};
+const plainTranslations=[];
+const walker=document.createTreeWalker(document.documentElement,NodeFilter.SHOW_TEXT);
+while(walker.nextNode()){
+ const node=walker.currentNode,key=node.textContent.trim();
+ if(translations[key]&&!node.parentElement.closest('[data-fr],script,style'))plainTranslations.push({node,key,original:node.textContent});
+}
+const attributeTranslations=[];
+document.querySelectorAll('[aria-label],[alt],[title]').forEach(el=>{
+ ['aria-label','alt','title'].forEach(attr=>{const key=el.getAttribute(attr);if(translations[key])attributeTranslations.push({el,attr,key});});
+});
+window.translateSite=(key,lang=document.documentElement.lang)=>translations[key]?.[lang==='sr-Latn'?'sr':lang]||key;
+function setLang(lang){
+ lang=['fr','en','de','sr'].includes(lang)?lang:'fr';
+ document.documentElement.lang=lang==='sr'?'sr-Latn':lang;
+ document.querySelectorAll('[data-fr]').forEach(el=>{
+  const key=el.dataset.fr;
+  el.innerHTML=lang==='fr'?key:(translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
+ });
+ plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
+ attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
+ document.querySelectorAll('.lang-btn,.mm-lang-btn').forEach(btn=>{
+  const active=btn.getAttribute('onclick').includes("'"+lang+"'");
+  btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));
+ });
+ // Only French and English PDF versions exist; German/Serbian use English.
+ document.querySelectorAll('[download],#nav-cv-link,#hero-cv-link').forEach(a=>a.href=lang==='fr'?'CV_Marina_Montalbano.pdf':'CV_Marina_Montalbano_EN.pdf');
+ preferences.setItem('lang',lang);
+ document.dispatchEvent(new CustomEvent('site-language-change',{detail:lang}));
 }
 setLang(preferences.getItem('lang') || 'fr');
 
@@ -35,7 +44,7 @@ function toggleMenu() {
 }
 function checkMobile() {
   const burger = document.getElementById('hamburger');
-  if (window.innerWidth <= 1200) {
+  if (window.innerWidth <= 1450) {
     burger.style.display = 'flex';
   } else {
     burger.style.display = 'none';
