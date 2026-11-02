@@ -32,3 +32,7 @@ body.high-contrast .studio-btn,body.high-contrast .a11y-toggle{background:#ffdd0
 body.underline-links .studio-link{text-decoration:underline}
 
 .studio-hero>div>p:not(.studio-kicker),.studio-project p,.studio-section-heading p,.cert-intro p,.cert-copy p,.cert-story p{font-size:calc(1em * var(--text-scale))}
+
+/* Keep the compact menu out of the desktop header, even when a cached script is loaded. */
+@media(min-width:1181px){.hamburger{display:none!important}.nav-links{display:flex!important}}
+@media(max-width:1180px){.hamburger{display:flex!important}.nav-links{display:none!important}}
