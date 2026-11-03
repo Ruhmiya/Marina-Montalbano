@@ -440,14 +440,14 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  -webkit-mask-image: url("home-portrait-mask.svg");
-  mask-image: url("home-portrait-mask.svg");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  mask-composite: intersect;
   filter: drop-shadow(0 12px 24px rgba(11,31,74,.08));
 }
 .hero-visual-stack .handwriting-art { max-width: 500px; }
