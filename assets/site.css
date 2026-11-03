@@ -437,9 +437,18 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
   width: min(72%, 320px);
   height: auto;
   object-fit: cover;
-  border: 1px solid rgba(201,168,76,.6);
-  border-radius: 50%;
-  box-shadow: 0 14px 36px rgba(11,31,74,.10);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-mask-image: url("home-portrait-mask.svg");
+  mask-image: url("home-portrait-mask.svg");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  filter: drop-shadow(0 12px 24px rgba(11,31,74,.08));
 }
 .hero-visual-stack .handwriting-art { max-width: 500px; }
 @media (max-width: 1024px) {
