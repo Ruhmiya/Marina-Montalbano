@@ -41,7 +41,7 @@ C'est ce que j'ai toujours fait. C'est ce que je veux continuer à faire en tant
 
 ---
 
-*Basée en Essonne — Île-de-France · Disponible pour stage d'immersion ou première opportunité Product Designer*
+*Basée en Essonne — Île-de-France · Recherche un CDD UX Designer · Ouverte à une immersion professionnelle*
 
 
 ## Structure du portfolio et URL canoniques
@@ -50,3 +50,10 @@ C'est ce que j'ai toujours fait. C'est ce que je veux continuer à faire en tant
 - `https://marina-montalbano.fr/projets.html` : aperçu public de la refonte UX/UI ASSU 2000, accessible depuis sa carte dans le portfolio, avec un lien de retour à la liste. L’étude complète est proposée sur demande ; cette page n’est ni un second index de portfolio ni une redirection.
 
 Ces contenus étant distincts, chaque page conserve une unique balise canonique vers sa propre URL absolue et un `og:url` identique. Les deux URL figurent une seule fois dans `sitemap.xml`. Ne pas faire pointer la canonique de l’aperçu ASSU 2000 vers le portfolio.
+
+
+## Positionnement éditorial
+
+L’identité publique du site est **Marina Montalbano**. L’audit UX est la première orientation visible de sa reconversion. Le message principal est : « En reconversion vers le Product Design, je développe ma pratique de l’audit UX et recherche un CDD comme UX Designer. » Le certificat professionnel Google UX Design est obtenu ; l’immersion professionnelle reste une possibilité complémentaire.
+
+Le portfolio présente des projets personnels et une pratique en cours de consolidation : analyse des parcours, identification des difficultés, recommandations et propositions d’interface. L’audit UX est mis en avant sans présenter une offre de studio ou de prestation, ni revendiquer une expertise ou des résultats non démontrés. Les titres, introductions, pieds de page et traductions doivent conserver ce positionnement.
