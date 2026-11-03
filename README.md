@@ -42,3 +42,11 @@ C'est ce que j'ai toujours fait. C'est ce que je veux continuer à faire en tant
 ---
 
 *Basée en Essonne — Île-de-France · Disponible pour stage d'immersion ou première opportunité Product Designer*
+
+
+## Structure du portfolio et URL canoniques
+
+- `https://marina-montalbano.fr/portfolio.html` : page principale du portfolio, qui présente la liste des projets. Tous les liens de navigation « Portfolio » pointent ici. L’ancre `#projets` permet de rejoindre la liste.
+- `https://marina-montalbano.fr/projets.html` : aperçu public de la refonte UX/UI ASSU 2000, accessible depuis sa carte dans le portfolio, avec un lien de retour à la liste. L’étude complète est proposée sur demande ; cette page n’est ni un second index de portfolio ni une redirection.
+
+Ces contenus étant distincts, chaque page conserve une unique balise canonique vers sa propre URL absolue et un `og:url` identique. Les deux URL figurent une seule fois dans `sitemap.xml`. Ne pas faire pointer la canonique de l’aperçu ASSU 2000 vers le portfolio.

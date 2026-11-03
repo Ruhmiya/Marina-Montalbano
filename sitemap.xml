@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://marina-montalbano.fr/</loc></url>
   <url><loc>https://marina-montalbano.fr/parcours.html</loc></url>
-  <url><loc>https://marina-montalbano.fr/projets.html</loc></url>
   <url><loc>https://marina-montalbano.fr/cible.html</loc></url>
+  <!-- Portfolio : liste des projets. -->
   <url><loc>https://marina-montalbano.fr/portfolio.html</loc></url>
+  <!-- Contenu distinct : aperçu de la refonte ASSU 2000. -->
+  <url><loc>https://marina-montalbano.fr/projets.html</loc></url>
 </urlset>
