@@ -457,7 +457,7 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 
 /* Desktop homepage portrait: larger and raised to align with the availability row. */
 @media (min-width: 1181px) {
-  .hero-visual-stack.hero-sig-wrap { transform: translateY(-109px); }
+  .hero-visual-stack.hero-sig-wrap { position: relative; top: -109px; }
   .hero-portrait { width: min(84%, 350px); }
 }
 @media (max-width: 1180px) {
