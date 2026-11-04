@@ -148,3 +148,19 @@ body.underline-links .studio-link{text-decoration:underline}
  .studio-portfolio-page .studio-hero-quote p{font-size:20px}
  .studio-portfolio-page .studio-hero-quote cite{text-align:center;margin-right:0}
 }
+
+/* Center the introduction; place the small portrait with the signed quote below projects. */
+.studio-portfolio-page .studio-hero.studio-hero-centered{display:block;min-height:0;max-width:1000px;padding:140px 32px 56px;text-align:center}
+.studio-portfolio-page .studio-hero-centered>div:first-child{max-width:860px;margin-inline:auto}
+.studio-portfolio-page .studio-hero-centered h1{margin-inline:auto}
+.studio-portfolio-page .studio-hero-centered>div:first-child>p:not(.studio-kicker){max-width:780px}
+.studio-portfolio-page .studio-hero-centered .studio-actions{margin-top:24px}
+.studio-portfolio-page .studio-hero-centered .studio-point-icon{margin-inline:auto}
+.studio-portfolio-page .studio-signature-row{display:grid;grid-template-columns:220px minmax(0,1fr);align-items:center;gap:36px;text-align:left}
+.studio-portfolio-page .studio-closing-portrait{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+.studio-portfolio-page .studio-signature-row .studio-handwritten-wrap{min-width:0;max-width:640px;margin:0 auto}
+@media(max-width:760px){
+ .studio-portfolio-page .studio-hero.studio-hero-centered{padding:106px 22px 40px}
+ .studio-portfolio-page .studio-signature-row{grid-template-columns:1fr;justify-items:center;gap:20px}
+ .studio-portfolio-page .studio-closing-portrait{width:160px}
+}
