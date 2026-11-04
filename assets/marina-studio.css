@@ -131,8 +131,8 @@ body.underline-links .studio-link{text-decoration:underline}
 
 /* Spacing, quote and circular portrait requested for the portfolio refresh. */
 @media(min-width:1181px){.studio-portfolio-page .nav-links{gap:clamp(18px,2vw,28px)}}
-.studio-portfolio-page .studio-hero>.studio-art{width:min(100%,510px);aspect-ratio:1/1;min-height:0;justify-self:center;border-radius:50%;background:#fbf9f5}
-.studio-portfolio-page .studio-art-photo{object-fit:contain;object-position:center;border-radius:50%}
+.studio-portfolio-page .studio-hero>.studio-art{width:min(100%,420px);aspect-ratio:1/1;min-height:0;justify-self:center;border-radius:0;background:transparent}
+.studio-portfolio-page .studio-art-photo{object-fit:contain;object-position:center;border-radius:0}
 .studio-portfolio-page .studio-kicker{text-align:center}
 .studio-portfolio-page .studio-hero h1{text-align:center}
 .studio-portfolio-page .studio-hero-quote{max-width:710px;margin:12px auto 0;text-align:center}
@@ -144,7 +144,7 @@ body.underline-links .studio-link{text-decoration:underline}
 .studio-portfolio-page footer .footer-founder{margin-top:7px;color:#f6f1e6;font-size:13px}
 .studio-portfolio-page footer .footer-links{justify-content:center;margin-top:18px}
 @media(max-width:760px){
- .studio-portfolio-page .studio-hero>.studio-art{width:min(100%,350px);min-height:0;max-height:none}
+ .studio-portfolio-page .studio-hero>.studio-art{width:min(100%,300px);min-height:0;max-height:none}
  .studio-portfolio-page .studio-hero-quote p{font-size:20px}
  .studio-portfolio-page .studio-hero-quote cite{text-align:center;margin-right:0}
 }
