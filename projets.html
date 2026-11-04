@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASSU 2000 — Aperçu de la refonte UX/UI — Marina Montalbano</title>
-<meta name="description" content="Découvrez ma refonte personnelle de l’espace client ASSU 2000 : comparaison entre l’interface actuelle et ma proposition sur mobile et explication de mes choix de conception UX/UI.">
+<title>ASSU 2000 — Étude de cas UX/UI — Marina Montalbano</title>
+<meta name="description" content="Étude de cas UX/UI de la refonte conceptuelle mobile ASSU 2000 : analyse, profils, architecture de l’information, parcours et solution.">
 <link rel="canonical" href="https://marina-montalbano.fr/projets.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -349,6 +349,88 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
   footer { padding: 30px 20px; }
 }
 .portfolio{max-width:1120px;margin:auto;padding:140px 32px 64px}.portfolio section{padding:48px 0}.portfolio h1,.portfolio h2,.portfolio h3{font-family:'Playfair Display',serif;color:var(--blue)}.portfolio h1{font-size:clamp(32px,4.5vw,56px);line-height:1.2;margin:20px 0}.portfolio h2{font-size:calc(30px * var(--text-scale));margin-bottom:20px}.portfolio h3{font-size:calc(21px * var(--text-scale));margin:14px 0}.portfolio p{font-size:calc(16px * var(--text-scale));line-height:1.8;max-width:780px}.portfolio .lead{font-size:calc(20px * var(--text-scale))}.portfolio .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--gold-text);font-weight:700}.portfolio .project-note{font-size:calc(13px * var(--text-scale));margin-top:22px;color:var(--muted)}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px;align-items:start}.comparison figure{min-width:0;background:var(--white);padding:20px;border:1px solid #d5dbe5}.comparison figcaption{display:flex;flex-direction:column;gap:6px;margin-bottom:24px}.comparison strong{font-family:'Playfair Display',serif;font-size:26px;color:var(--blue)}.comparison figcaption span{font-size:14px;color:var(--muted)}.comparison img{display:block;max-width:100%;width:auto;height:auto;max-height:720px;margin:auto}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.choices article{padding:24px;background:var(--white);border-top:2px solid var(--gold)}.number{color:var(--gold-text);font-weight:700}.portfolio .study-access{border-top:1px solid var(--gold);padding-bottom:0}.study-access .btn{margin-top:24px}body.high-contrast.hc-sidebar-open .portfolio{margin-left:230px}@media(max-width:768px){.portfolio{padding:40px 20px}.comparison,.choices{grid-template-columns:1fr}.portfolio section{padding:32px 0}.comparison img{max-height:none}.comparison figure{padding:16px}body.high-contrast.hc-sidebar-open .portfolio{margin-left:0}}
+
+/* Étude de cas ASSU 2000 — remplace intégralement l'ancien aperçu */
+body{background:#fff}
+.case-study{max-width:1190px;margin:0 auto;padding:120px 28px 72px;color:#0a2d68;font-family:Lato,Arial,sans-serif}
+.case-study *{box-sizing:border-box}
+.case-study h1,.case-study h2,.case-study h3{color:#09276f}
+.case-study h1{font:700 clamp(36px,5vw,62px)/1.1 'Playfair Display',serif;letter-spacing:-.035em}
+.case-study h2{font:700 clamp(23px,2.6vw,34px)/1.2 'Playfair Display',serif;margin:0 0 15px}
+.case-study h3{font-size:16px;margin:0 0 9px}
+.case-study p,.case-study li{font-size:15px;line-height:1.65}
+.case-study .intro-tag{font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase;margin:0 0 18px}
+.case-study .context-band{display:grid;grid-template-columns:1.05fr repeat(3,1fr);gap:12px;padding:24px;background:#f5f7fa;border:1px solid #e9edf3;border-radius:18px;margin-bottom:46px}
+.case-study .context-band article{padding:10px 15px;border-left:1px solid #dce2eb}
+.case-study .context-band article:first-child{border:0}
+.case-study .context-band strong{font-size:17px;color:#0a2d68}
+.case-study .context-band p{font-size:13px;margin:5px 0 0}
+.case-study .brand-chip{display:inline-block;background:linear-gradient(#074694 0 50%,#2ba745 50%);border-radius:8px;color:white;padding:8px 11px;margin-bottom:9px;font-weight:800}
+.case-study .hero-case{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;margin-bottom:35px}
+.case-study .hero-case p{max-width:550px;font-size:18px}
+.case-study .pill-row{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
+.case-study .pill{font-size:12px;padding:9px 14px;border:1px solid #e4eaf0;background:#f8f9fb;border-radius:30px}
+.case-study .hero-screen{max-width:300px;margin:auto;filter:drop-shadow(0 16px 20px #102a4b22)}
+.case-study .hero-screen img{display:block;width:100%;height:auto;border:5px solid #171a20;border-radius:30px}
+.case-study .block{padding:30px 0;border-bottom:1px solid #e5eaf0;position:relative}
+.case-study .section-heading{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.case-study .index{display:inline-grid;place-items:center;background:#268e3e;color:white;border-radius:24px;padding:6px 12px;font-weight:800;font-size:13px;flex:none}
+.case-study .split{display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center}
+.case-study .current-shot{background:#f8f9fb;padding:16px;border-radius:14px;max-width:580px}
+.case-study .current-shot img{display:block;width:100%;height:auto}
+.case-study .findings{display:grid;gap:10px}
+.case-study .finding{background:#f2f5fa;border-radius:10px;padding:12px 16px;font-size:14px}
+.case-study .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.case-study .goal-card{border:1px solid #e5ebf0;padding:20px;border-radius:14px;background:#fcfdfd}
+.case-study .goal-card h3{background:#eef8ef;color:#17672c;padding:10px 13px;border-radius:9px}
+.case-study .goal-card.blue h3{background:#ecf3ff;color:#123a86}
+.case-study ul{padding-left:22px}
+.case-study li::marker{color:#298b41}
+.case-study .profiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.case-study .profile{background:#fff;border:1px solid #e3e9f1;border-radius:16px;text-align:center;padding:20px 13px}
+.case-study .avatar{display:grid;place-items:center;margin:0 auto 12px;width:50px;height:50px;border-radius:50%;background:#e8f2ff;font-size:24px}
+.case-study .profile:nth-child(1) .avatar,.case-study .profile:nth-child(4) .avatar{background:#ffe4ee}
+.case-study .profile h3{font-size:17px}
+.case-study .profile .desc{font-size:12px;font-weight:700;background:#ecf8ed;color:#24743a;display:block;border-radius:20px;padding:7px;margin:12px 0}
+.case-study .profile p{font-size:13px}
+.case-study .muted-note{font-size:12px;color:#58687e;margin-top:14px;font-style:italic}
+.case-study .sitemap{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.case-study .sitemap article{background:#f8fafc;border:1px solid #e6ebf2;border-radius:13px;padding:16px 12px}
+.case-study .sitemap h3{font-size:15px;background:#e7f4eb;padding:8px;border-radius:7px;text-align:center}
+.case-study .sitemap article:nth-child(2) h3{background:#ffecee}
+.case-study .sitemap article:nth-child(3) h3{background:#eaf1ff}
+.case-study .sitemap article:nth-child(4) h3{background:#fff1d6}
+.case-study .sitemap article:nth-child(5) h3{background:#f2eafe}
+.case-study .sitemap li{font-size:12px}
+.case-study .flow-list{display:grid;gap:12px}
+.case-study .flow-line{display:flex;align-items:center;flex-wrap:wrap;gap:9px;background:#f8fafc;padding:13px;border-radius:10px}
+.case-study .flow-line strong{min-width:180px;font-size:13px}
+.case-study .flow-line span{border:1px solid #b9c9e4;padding:7px 10px;border-radius:8px;background:white;font-size:12px}
+.case-study .flow-line span:last-child{background:#1b873a;color:#fff;border-color:#1b873a}
+.case-study .colors{display:flex;gap:12px;margin:20px 0}
+.case-study .color{height:60px;width:65px;border-radius:10px;border:1px solid #ddd}
+.case-study .design-cols{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.case-study .solution-layout{display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:start}
+.case-study .screens{display:flex;align-items:start;gap:20px;overflow-x:auto;padding:12px 8px 25px}
+.case-study .screen{flex:0 0 168px;text-align:center}
+.case-study .iphone{border:5px solid #171c27;border-radius:26px;background:#fff;aspect-ratio:430/932;overflow:hidden;box-shadow:0 10px 21px #152c4c22;position:relative}
+.case-study .iphone:before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);height:12px;width:55px;border-radius:20px;background:#161a24;z-index:2}
+.case-study .iphone img{display:block;width:100%;height:100%;object-fit:contain}
+.case-study .screen figcaption{font-size:12px;font-weight:700;margin-top:12px}
+.case-study .screen-placeholder{height:100%;display:flex;flex-direction:column;gap:13px;padding:44px 10px 15px;text-align:left;font-size:10px;color:#0b326b}
+.case-study .screen-placeholder .screen-title{text-align:center;font-weight:800;font-size:12px;border-bottom:1px solid #dae3ee;padding-bottom:10px}
+.case-study .screen-placeholder .screen-row{padding:12px 8px;border:1px solid #d9e2ef;border-radius:8px;background:#f7f9fc}
+.case-study .screen-placeholder .screen-cta{margin-top:auto;background:#228a3d;color:white;padding:12px 6px;text-align:center;border-radius:7px;font-weight:800}
+.case-study .screen small{display:block;font-size:10px;color:#596b82;margin-top:5px}
+.case-study .closing{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:18px;background:#f6f9fc;padding:25px;border-radius:18px;margin-top:22px}
+.case-study .closing strong{font-size:14px}
+.case-study .closing p{font-size:12px}
+.case-study .watermarked{position:relative;isolation:isolate}
+.case-study .watermarked:before{content:"M  ∞  M  ∞  M  ∞  M";white-space:pre-wrap;position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.07;color:#194da4;letter-spacing:45px;font:bold 95px Georgia,serif;overflow:hidden;word-break:break-all}
+.case-study .copyright{font-size:12px;color:#5b6a7d;margin-top:20px}
+@media(max-width:800px){.case-study{padding:40px 18px}.case-study .context-band{grid-template-columns:1fr 1fr}.case-study .hero-case,.case-study .split,.case-study .design-cols,.case-study .solution-layout{grid-template-columns:1fr}.case-study .profiles{grid-template-columns:1fr 1fr}.case-study .sitemap{grid-template-columns:repeat(2,1fr)}.case-study .closing{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.case-study .context-band,.case-study .profiles,.case-study .two-cols,.case-study .closing{grid-template-columns:1fr}.case-study .sitemap{grid-template-columns:1fr}.case-study .hero-screen{max-width:220px}.case-study h1{font-size:34px}}
+
 </style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
@@ -501,15 +583,19 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
   </div>
 </div>
 
-<main class="portfolio" id="main-content" tabindex="-1">
-<header class="project-intro"><p><a href="portfolio.html#projets" data-fr="← Retour aux projets du portfolio" data-en="← Back to portfolio projects">← Retour aux projets du portfolio</a></p><p class="eyebrow">ASSU 2000 · Aperçu de la refonte UX/UI</p><h1>Repenser l’espace client<br>ASSU 2000 sur mobile</h1><p class="lead">Rendre les contrats plus faciles à parcourir et leurs informations essentielles plus faciles à repérer.</p><p class="project-note">Projet personnel de refonte — démarche indépendante, non commandée ni validée par ASSU 2000.</p></header>
-<section aria-labelledby="comparison-title"><p class="eyebrow">Un aperçu du projet</p><h2 id="comparison-title">L’interface actuelle et ma proposition</h2><p>Une mise en regard de l’interface officielle, capturée sur mobile puis anonymisée, et de ma proposition d’interface. Cliquez sur chaque image pour l’ouvrir en grand.</p><div class="comparison">
-<figure><figcaption><strong>Version actuelle</strong><span>Interface officielle · capture anonymisée</span></figcaption><a href="assets/assu2000-avant.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture de la version actuelle dans un nouvel onglet"><img src="assets/assu2000-avant.jpg" alt="Interface existante : menu latéral et contrats présentés dans une liste arborescente." width="1080" height="1400"></a></figure>
-<figure><figcaption><strong>Ma proposition</strong><span>Version mobile · données fictives</span></figcaption><a href="assets/assu2000-apres.png" target="_blank" rel="noopener" aria-label="Agrandir ma proposition mobile dans un nouvel onglet"><img src="assets/assu2000-apres.png" alt="Refonte : filtres Tous, Auto, Habitation et Santé ; cartes de contrats avec statut et accès aux détails." width="430" height="932"></a></figure>
-</div></section>
-<section aria-labelledby="choices-title"><h2 id="choices-title">Les choix de cette refonte</h2><div class="choices"><article><span class="number">01</span><h3>Organiser les contrats</h3><p>Des filtres par catégorie pour retrouver un type d’assurance, tout en conservant une vue d’ensemble.</p></article><article><span class="number">02</span><h3>Hiérarchiser l’information</h3><p>Une carte par contrat pour distinguer le statut, la formule et l’échéance, avec un accès explicite aux détails.</p></article><article><span class="number">03</span><h3>Adapter la navigation au mobile</h3><p>Une barre de navigation en bas de l’écran pour accéder aux principales rubriques de l’espace client.</p></article></div><p class="project-note">Ces choix présentent des intentions de conception. Aucun résultat de test utilisateur n’est revendiqué dans cet aperçu.</p></section>
-<section class="study-access" aria-labelledby="study-title"><p class="eyebrow">Pour aller plus loin</p><h2 id="study-title">L’étude de cas complète</h2><p>L’espace de consultation par code est en préparation. Pour échanger sur ma démarche et demander l’accès à l’étude, contactez-moi.</p><a class="btn" href="mailto:emploi.marina.91@gmail.com?subject=Acc%C3%A8s%20%C3%A0%20l%27%C3%A9tude%20ASSU%202000">Demander un accès</a></section>
-</main>
+<main class="case-study" id="main-content" tabindex="-1">
+<div class="watermarked">
+<div class="context-band" aria-label="Contexte du projet"><article><span class="brand-chip">ASSU<br>2000</span><div><strong>ASSU 2000</strong><p>Assurance auto, habitation et plus, avec un espace client à moderniser.</p></div></article><article><h3>◎ Contexte</h3><p>Explorer une refonte mobile pour améliorer l’accès aux informations essentielles.</p></article><article><h3>⚠ Problème</h3><p>Une interface dense et peu intuitive, avec un accès complexe aux contrats, documents et actions clés.</p></article><article><h3>♙ Mon rôle</h3><p>Explorer la difficulté, cadrer le projet et définir une proposition de refonte mobile (UX, UI et prototype).</p></article></div>
+<div class="hero-case"><div><p class="intro-tag">Étude de cas personnelle · UX/UI design</p><h1>Repenser l’espace client ASSU 2000 sur mobile</h1><p>Une refonte conceptuelle pour mieux retrouver ses contrats, ses documents et l’assistance, avec une expérience mobile plus claire, fluide et rassurante.</p><div class="pill-row"><span class="pill">UX/UI Design</span><span class="pill">Étude de cas personnelle</span><span class="pill">7 écrans conçus</span><span class="pill">Prototype à tester</span></div><p class="muted-note">Projet indépendant, non commandé ni validé par ASSU 2000.</p></div><figure class="hero-screen"><img src="assets/assu2000-apres.png" alt="Maquette mobile réelle de la page Mes contrats du projet ASSU 2000" width="430" height="932"></figure></div>
+<section class="block" aria-labelledby="origin"><div class="section-heading"><span class="index">01</span><h2 id="origin">Observer l’interface d’origine</h2></div><div class="split"><figure class="current-shot"><img src="assets/assu2000-avant.jpg" alt="Capture anonymisée de l’interface d’origine ASSU 2000 : navigation latérale et contrats en arborescence" loading="lazy"></figure><div><h3>Les principaux constats</h3><div class="findings"><div class="finding">Aa — Textes très petits et hiérarchie peu claire</div><div class="finding">☰ — Navigation latérale compacte et peu lisible</div><div class="finding">◇ — Contrats présentés en arborescence complexe</div><div class="finding">▯ — Peu d’espace consacré à la tâche</div></div><p class="muted-note">Revue heuristique préliminaire, pas un audit complet.</p></div></div></section>
+<section class="block" aria-labelledby="goals"><div class="section-heading"><span class="index">02</span><h2 id="goals">Définir les objectifs</h2></div><div class="two-cols"><div class="goal-card"><h3>Pour les utilisateurs</h3><ul><li>Retrouver contrats et documents rapidement</li><li>Identifier les actions utiles</li><li>Accéder à l’assistance en toute simplicité</li></ul></div><div class="goal-card blue"><h3>Pour la refonte</h3><ul><li>Clarifier la hiérarchie et la navigation</li><li>Adapter la présentation au mobile</li><li>Prévoir une conception accessible</li></ul></div></div></section>
+<section class="block" aria-labelledby="profiles"><div class="section-heading"><span class="index">03</span><h2 id="profiles">Comprendre les profils</h2></div><div class="profiles"><article class="profile"><div class="avatar" aria-hidden="true">👩</div><h3>Virginie — 38 ans</h3><span class="desc">Amie et utilisatrice pressée</span><p>Veut retrouver rapidement une information dans son espace personnel.</p></article><article class="profile"><div class="avatar" aria-hidden="true">👨</div><h3>Thomas — 48 ans</h3><span class="desc">Utilisateur régulier</span><p>Possède plusieurs contrats et consulte régulièrement son espace client.</p></article><article class="profile"><div class="avatar" aria-hidden="true">👨‍🦳</div><h3>Marc — 75 ans</h3><span class="desc">Peu à l’aise avec le numérique</span><p>Rencontre des difficultés avec les technologies actuelles et recherche une interface claire.</p></article><article class="profile"><div class="avatar" aria-hidden="true">👩</div><h3>Nadia — 32 ans</h3><span class="desc">Très à l’aise avec l’informatique</span><p>Toujours pressée, elle veut accéder directement aux informations et actions utiles.</p></article></div><p class="muted-note">Virginie correspond à une situation rapportée ; les autres profils sont des hypothèses fictives à vérifier.</p></section>
+<section class="block" aria-labelledby="architecture"><div class="section-heading"><span class="index">04</span><h2 id="architecture">Architecture de l’information</h2></div><p>Une organisation plus simple, centrée sur les besoins clés des utilisateurs.</p><div style="text-align:center;background:#0a2d68;color:white;padding:10px;width:140px;border-radius:9px;margin:12px auto">Accueil</div><div class="sitemap"><article><h3>Contrats</h3><ul><li>Détail</li><li>Garanties</li><li>Documents</li><li>Attestation</li><li>Historique</li></ul></article><article><h3>Sinistres</h3><ul><li>Déclaration</li><li>En cours</li><li>Suivi</li><li>Historique</li></ul></article><article><h3>Documents</h3><ul><li>Consulter</li><li>Envoyer</li><li>Demander</li><li>Reçus</li></ul></article><article><h3>Paiements</h3><ul><li>Échéances</li><li>Payer</li><li>Moyens</li><li>Historique</li></ul></article><article><h3>Menu</h3><ul><li>Profil</li><li>Informations</li><li>Sécurité</li><li>Préférences</li><li>Aide & contact</li></ul></article></div><p class="muted-note">L’assistance reste accessible depuis l’accueil et le menu.</p></section>
+<section class="block" aria-labelledby="flows"><div class="section-heading"><span class="index">05</span><h2 id="flows">User flow — Les parcours clés</h2></div><div class="flow-list"><div class="flow-line"><strong>Consulter un contrat</strong><span>Accueil</span> → <span>Mes contrats</span> → <span>Détail du contrat</span></div><div class="flow-line"><strong>Obtenir une attestation</strong><span>Accueil</span> → <span>Attestation</span> → <span>Télécharger le PDF</span></div><div class="flow-line"><strong>Contacter l’assistance</strong><span>Accueil</span> → <span>Assistance</span> → <span>Appeler</span></div></div></section>
+<section class="block" aria-labelledby="identity"><div class="section-heading"><span class="index">06</span><h2 id="identity">Identité visuelle & design system</h2></div><div class="design-cols"><div><h3>Couleurs</h3><div class="colors"><div class="color" style="background:#0a2d68" title="#0A2D68"></div><div class="color" style="background:#187a32" title="#187A32"></div><div class="color" style="background:#f5f7fa" title="#F5F7FA"></div><div class="color" style="background:#fff" title="#FFFFFF"></div></div><p>Bleu profond pour structurer, vert pour les actions, gris clair pour aérer.</p></div><div><h3>Typographie</h3><p style="font-size:27px;font-weight:800">Aa <span style="font-size:16px">Plus Jakarta Sans</span></p><p>Une typographie moderne, claire et adaptée à une interface mobile.</p></div></div></section>
+<section class="block" aria-labelledby="solution"><div class="section-heading"><span class="index">07</span><h2 id="solution">La solution finale</h2></div><div class="solution-layout"><div><p>Une expérience mobile plus claire, centrée sur les actions essentielles : gérer les contrats, accéder aux documents, suivre ses paiements et obtenir de l’aide.</p><ul><li>Une navigation simplifiée</li><li>Des informations plus lisibles</li><li>Des actions clés accessibles en quelques taps</li></ul><p class="muted-note">Seule la capture « Mes contrats » est actuellement présente dans les fichiers du site. Les autres appareils ci-contre sont des repères de structure, pas des copies de tes maquettes Figma.</p></div><div class="screens" aria-label="Sept écrans du parcours mobile"><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Accueil</div><div class="screen-row">Présentation des contrats</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>01 · Accueil</figcaption><small>Visuel indicatif</small></figure><figure class="screen"><div class="iphone"><img src="assets/assu2000-apres.png" loading="lazy" alt="Véritable maquette Figma : Mes contrats"></div><figcaption>02 · Mes contrats</figcaption></figure><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Détail du contrat</div><div class="screen-row">Garanties et informations</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>03 · Détail du contrat</figcaption><small>Visuel indicatif</small></figure><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Déclarer un sinistre</div><div class="screen-row">Parcours guidé</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>04 · Déclarer un sinistre</figcaption><small>Visuel indicatif</small></figure><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Documents</div><div class="screen-row">Documents à consulter</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>05 · Documents</figcaption><small>Visuel indicatif</small></figure><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Attestation</div><div class="screen-row">Téléchargement du PDF</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>06 · Attestation</figcaption><small>Visuel indicatif</small></figure><figure class="screen"><div class="iphone"><div class="screen-placeholder"><div class="screen-title">Assistance</div><div class="screen-row">Contacter l’assistance</div><div class="screen-row">Navigation simplifiée</div><div class="screen-cta">Action principale</div></div></div><figcaption>07 · Assistance</figcaption><small>Visuel indicatif</small></figure></div></div></section>
+<section class="block" aria-labelledby="next"><div class="section-heading"><span class="index">08</span><h2 id="next">Bilan & prochaines étapes</h2></div><div class="closing"><div><strong>Une base visuelle et expérientielle solide</strong><p>Pour explorer les usages essentiels.</p></div><div><strong>Finaliser le prototype</strong><p>Enrichir les micro-interactions.</p></div><div><strong>Tester les parcours</strong><p>Avec de vrais utilisateurs pour valider les choix.</p></div><div><strong>Ajuster les hypothèses</strong><p>Itérer selon les retours et prioriser les évolutions.</p></div></div></section>
+<p class="copyright">© Marina Montalbano — Étude de cas personnelle. Visuels protégés par un marquage discret ; aucun filigrane ne remplace la protection juridique du travail.</p></div></main>
 <!-- FOOTER -->
 <footer><div class="footer-name">Marina Montalbano</div>
 <div class="footer-copy"><span data-fr="Audit UX · Reconversion Product Design · Recherche un CDD UX Designer" data-en="UX audit · Transitioning into Product Design · Seeking a fixed-term UX Designer role">Audit UX · Reconversion Product Design · Recherche un CDD UX Designer</span></div>
