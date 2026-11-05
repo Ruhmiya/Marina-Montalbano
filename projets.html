@@ -446,20 +446,23 @@ body.high-contrast .case-study .watermarked:before{display:none}
 .case-study .assu-gallery figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:12px}
 .case-study .assu-gallery figure a{display:block;margin-top:auto}
 .case-study .assu-gallery figure img{display:block;width:100%;height:clamp(175px,46vh,380px);object-fit:contain}
-.case-study .assu-toggle{display:grid;gap:10px;justify-items:center;padding:12px;background:transparent;color:inherit;font:inherit;border:1px solid currentColor;border-radius:12px;cursor:pointer}
+.case-study .assu-toggle{
+  display:grid;min-width:0;padding:0;border:0;background:transparent;
+  color:inherit;font:inherit;cursor:pointer;perspective:1000px;
+}
 .case-study .assu-toggle:focus-visible{outline:3px solid currentColor;outline-offset:4px}
-.case-study .assu-toggle{perspective:900px}
 .case-study .assu-stack{
-  display:grid;width:100%;height:clamp(135px,24vh,220px);
-  transform-style:preserve-3d;transform:rotateY(0deg);
-  transition:transform 680ms cubic-bezier(.45,0,.25,1);
+  display:grid;transform-style:preserve-3d;
+  transition:transform 800ms ease-in-out;
 }
 .case-study .assu-toggle[aria-pressed=true] .assu-stack{transform:rotateY(180deg)}
-.case-study .assu-stack img{
-  grid-area:1/1;display:block;width:100%;height:100%;min-height:0;object-fit:contain;
+.case-study .assu-face{
+  grid-area:1/1;min-width:0;display:grid;gap:10px;justify-items:center;
+  padding:12px;border:1px solid currentColor;border-radius:12px;
   -webkit-backface-visibility:hidden;backface-visibility:hidden;
 }
-.case-study .assu-stack img+img{transform:rotateY(180deg)}
+.case-study .assu-face:last-child{transform:rotateY(180deg)}
+.case-study .assu-face img{display:block;width:100%;height:clamp(135px,24vh,220px);object-fit:contain}
 @media(prefers-reduced-motion:reduce){
   .case-study .assu-stack{transition:none}
 }
@@ -638,9 +641,9 @@ body.high-contrast .case-study .watermarked:before{display:none}
 <figure><figcaption><strong>Mes contrats</strong><p>Des filtres et des fiches rendent le statut, la formule et l’échéance visibles sans ouvrir chaque contrat.</p></figcaption><a href="assets/assu-contracts-proposal-wm.webp" aria-label="Agrandir Mes contrats — Ma conception"><img src="assets/assu-contracts-proposal-wm.webp" loading="lazy" alt="Mes contrats — Des filtres et des fiches rendent le statut, la formule et l’échéance visibles sans ouvrir chaque contrat."></a></figure>
 </div></section>
 <section class="block" aria-labelledby="next"><div class="section-heading"><span class="index">09</span><h2 id="next">Bilan & prochaines étapes</h2></div><div class="closing"><div><strong>Une base visuelle et expérientielle solide</strong><p>Pour explorer les usages essentiels.</p></div><div><strong>Finaliser le prototype</strong><p>Enrichir les micro-interactions.</p></div><div><strong>Tester les parcours</strong><p>Avec de vrais utilisateurs pour valider les choix.</p></div><div><strong>Ajuster les hypothèses</strong><p>Itérer selon les retours et prioriser les évolutions.</p></div></div><h3>Version actuelle et ma conception</h3><p>Survolez ou activez une vignette pour comparer les deux versions.</p><div class="assu-gallery">
-<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Accueil" aria-pressed="false"><strong>Accueil</strong><span class="assu-stack"><img src="assets/assu-home-current-private.webp" alt="" loading="lazy"><img src="assets/assu-home-proposal-wm.webp" alt="" loading="lazy"></span><span class="assu-state">Version actuelle</span></button>
-<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Menu" aria-pressed="false"><strong>Menu</strong><span class="assu-stack"><img src="assets/assu-menu-current-wm.webp" alt="" loading="lazy"><img src="assets/assu-menu-proposal-wm.webp" alt="" loading="lazy"></span><span class="assu-state">Version actuelle</span></button>
-<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Mes contrats" aria-pressed="false"><strong>Mes contrats</strong><span class="assu-stack"><img src="assets/assu-contracts-current-wm.webp" alt="" loading="lazy"><img src="assets/assu-contracts-proposal-wm.webp" alt="" loading="lazy"></span><span class="assu-state">Version actuelle</span></button>
+<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Accueil" aria-pressed="false"><span class="assu-stack" aria-hidden="true"><span class="assu-face"><strong>Accueil</strong><img src="assets/assu-home-current-private.webp" alt="" loading="lazy"><span>Version actuelle</span></span><span class="assu-face"><strong>Accueil</strong><img src="assets/assu-home-proposal-wm.webp" alt="" loading="lazy"><span>Ma conception</span></span></span></button>
+<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Menu" aria-pressed="false"><span class="assu-stack" aria-hidden="true"><span class="assu-face"><strong>Menu</strong><img src="assets/assu-menu-current-wm.webp" alt="" loading="lazy"><span>Version actuelle</span></span><span class="assu-face"><strong>Menu</strong><img src="assets/assu-menu-proposal-wm.webp" alt="" loading="lazy"><span>Ma conception</span></span></span></button>
+<button type="button" class="assu-toggle" aria-label="Afficher ma conception : Mes contrats" aria-pressed="false"><span class="assu-stack" aria-hidden="true"><span class="assu-face"><strong>Mes contrats</strong><img src="assets/assu-contracts-current-wm.webp" alt="" loading="lazy"><span>Version actuelle</span></span><span class="assu-face"><strong>Mes contrats</strong><img src="assets/assu-contracts-proposal-wm.webp" alt="" loading="lazy"><span>Ma conception</span></span></span></button>
 </div></section>
 <p class="copyright">© Marina Montalbano — Étude de cas personnelle. Les propositions et le croquis portent mon filigrane.</p></div></main>
 <!-- FOOTER -->
@@ -652,10 +655,8 @@ body.high-contrast .case-study .watermarked:before{display:none}
 <script>
 document.querySelectorAll('.assu-toggle').forEach(button => {
   let pinned = false;
-  const caption = button.querySelector('.assu-state');
   function show(design) {
     button.setAttribute('aria-pressed', String(design));
-    caption.textContent = design ? 'Ma conception' : 'Version actuelle';
   }
   button.addEventListener('pointerenter', event => {
     if (event.pointerType === 'mouse') show(true);
