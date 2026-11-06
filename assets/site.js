@@ -22,16 +22,19 @@ function setLang(lang){
  });
  plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
  attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
- document.querySelectorAll('.lang-btn,.mm-lang-btn').forEach(btn=>{
-  const active=btn.getAttribute('onclick').includes("'"+lang+"'");
-  btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));
- });
+ document.querySelectorAll('.language-select').forEach(select=>{select.value=lang;});
+ document.querySelectorAll('.handwriting-accessible').forEach(el=>el.lang=document.documentElement.lang);
  // Only French and English PDF versions exist; German/Serbian use English.
  document.querySelectorAll('[download],#nav-cv-link,#hero-cv-link').forEach(a=>a.href=lang==='fr'?'CV_Marina_Montalbano.pdf':'CV_Marina_Montalbano_EN.pdf');
- preferences.setItem('lang',lang);
+ try{sessionStorage.setItem('portfolioLanguage',lang)}catch{}
  document.dispatchEvent(new CustomEvent('site-language-change',{detail:lang}));
 }
-setLang(preferences.getItem('lang') || 'fr');
+document.querySelectorAll('.language-select').forEach(select=>{
+ select.addEventListener('change',()=>setLang(select.value));
+});
+let initialLanguage='fr';
+try{initialLanguage=sessionStorage.getItem('portfolioLanguage')||'fr'}catch{}
+setLang(initialLanguage);
 
 // ── HAMBURGER MENU ───────────────────────────────────────
 function toggleMenu() {
@@ -165,7 +168,8 @@ function toggleUnderlineLinks(active) {
 document.addEventListener('keydown',e=>{
  const overlay=document.getElementById('mobileMenuOverlay');
  if(e.key!=='Tab'||!overlay.classList.contains('open'))return;
- const a=[...overlay.querySelectorAll('a,button,input')].filter(el=>el.getClientRects().length);
+ const a=[...overlay.querySelectorAll('a,button,input,select')].filter(el=>el.getClientRects().length);
  if(e.shiftKey&&document.activeElement===a[0]){e.preventDefault();a.at(-1).focus();}
  else if(!e.shiftKey&&document.activeElement===a.at(-1)){e.preventDefault();a[0].focus();}
 });
+
