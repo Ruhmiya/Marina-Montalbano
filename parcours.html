@@ -304,6 +304,36 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
  .certificate-preview { max-width: 480px; margin: auto; }
 }
 
+
+.learning-page{max-width:1100px;margin:auto;padding:135px 28px 64px}
+.learning-page .learn-back{font-size:calc(13px * var(--text-scale));color:var(--navy);text-underline-offset:4px}
+.learning-page .learn-hero{padding:32px 0 38px;max-width:840px}
+.learning-page .learn-kicker,.learn-teaser .learn-kicker{font-size:calc(11px * var(--text-scale));text-transform:uppercase;letter-spacing:2px;color:var(--gold-text);font-weight:700;margin-bottom:14px}
+.learning-page h1{font-family:'Playfair Display',serif;font-size:calc(clamp(36px,5vw,58px) * var(--text-scale));line-height:1.15;color:var(--navy);margin-bottom:22px}
+.learning-page p{font-size:calc(15px * var(--text-scale));line-height:1.75}
+.learning-page .learn-intro{font-size:calc(18px * var(--text-scale));max-width:760px}
+.learning-page h2,.learn-teaser h2{font-family:'Playfair Display',serif;font-size:calc(28px * var(--text-scale));line-height:1.3;margin-bottom:12px}
+.learning-page .learn-section{padding:28px 0}
+.learning-page .learn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.learning-page .learn-card{background:#fff;border:1px solid #e4ddd0;border-radius:18px;padding:28px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0}
+.learning-page .learn-card h3{font-family:'Playfair Display',serif;font-size:calc(23px * var(--text-scale));line-height:1.3}
+.learning-page .learn-top{width:100%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.learning-page .learn-platform{font-size:calc(12px * var(--text-scale));letter-spacing:.5px;font-weight:700}
+.learning-page .learn-status{background:#e6f1e8;color:#245734;border-radius:30px;padding:5px 11px;font-size:calc(12px * var(--text-scale));font-weight:700}
+.learning-page .learn-meta{font-size:calc(12px * var(--text-scale));color:var(--muted)}
+.learning-page .learn-links{display:flex;gap:15px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
+.learning-page .learn-links a,.learning-page summary{font-size:calc(13px * var(--text-scale));color:var(--blue2);font-weight:700;text-underline-offset:4px}
+.learning-page details{width:100%;border-top:1px solid #e4ddd0;padding-top:14px}
+.learning-page summary{cursor:pointer;padding:4px 0}
+.learning-page details img{display:block;width:100%;height:auto;margin:16px 0 10px;border-radius:8px}
+.learning-page .learn-note{font-size:calc(12px * var(--text-scale));color:var(--muted);margin-top:14px}
+.learning-page .curiosity-card{background:transparent;border-top:2px solid var(--gold);border-radius:0;padding:22px 0}
+.learning-page .learn-close{border-top:1px solid #d9d0c0;margin-top:25px;padding-top:26px}
+.learn-teaser{max-width:1060px;margin:28px auto 45px;padding:30px;background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.3);border-radius:18px}
+.learn-teaser p{line-height:1.7;margin-bottom:18px}.learn-teaser a{font-weight:700;color:var(--blue2);text-underline-offset:4px}
+body.high-contrast .learning-page .learn-card,body.high-contrast .learn-teaser{background:#000;color:#fff;border-color:#ffdd00}body.high-contrast .learning-page .learn-status{background:#000;color:#ffdd00;border:1px solid #ffdd00}body.high-contrast .learning-page a,body.high-contrast .learning-page summary,body.high-contrast .learn-teaser a{color:#ffdd00}
+@media(max-width:700px){.learning-page{padding:110px 20px 45px}.learning-page .learn-grid{grid-template-columns:1fr}.learning-page .learn-card{padding:22px}.learn-teaser{margin:24px 20px;padding:24px}}
+
 </style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
@@ -469,6 +499,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); p
   <p class="certificate-next"><a href="#fil"><span data-fr="De la coordination à l’expérience utilisateur — découvrir mon parcours ↓" data-en="From coordination to user experience — discover my journey ↓">De la coordination à l’expérience utilisateur — découvrir mon parcours ↓</span></a></p>
 </section>
 
+<section class="learn-teaser" aria-labelledby="learning-link-heading"><p class="learn-kicker"><span data-fr="Apprendre, pratiquer, progresser." data-en="Learn, practise, grow." data-de="Lernen, üben, wachsen." data-sr="Učiti, vežbati, napredovati.">Apprendre, pratiquer, progresser.</span></p><h2 id="learning-link-heading"><span data-fr="Apprentissages &amp; curiosités" data-en="Learning &amp; curiosity" data-de="Lernen &amp; Neugier" data-sr="Učenje i radoznalost">Apprentissages &amp; curiosités</span></h2><p><span data-fr="Des ressources variées, des apprentissages concrets et des curiosités qui vont au-delà du design." data-en="Varied resources, practical learning and interests beyond design." data-de="Vielfältige Ressourcen, praktisches Lernen und Interessen über Design hinaus." data-sr="Raznovrsni izvori, praktično učenje i interesovanja izvan dizajna.">Des ressources variées, des apprentissages concrets et des curiosités qui vont au-delà du design.</span></p><a href="apprentissages.html"><span data-fr="Découvrir mes apprentissages →" data-en="Explore my learning →" data-de="Meine Lernreise entdecken →" data-sr="Otkrij moj put učenja →">Découvrir mes apprentissages →</span></a></section>
 <!-- FIL CONDUCTEUR -->
 <section id="fil">
   <p class="section-eyebrow"><span data-fr="Le fil conducteur" data-en="The common thread">Le fil conducteur</span></p>
