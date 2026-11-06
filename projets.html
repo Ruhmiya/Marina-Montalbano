@@ -490,12 +490,13 @@ body.high-contrast .case-study .watermarked:before{display:none}
 .case-study .hero-disclosure strong{font-size:12px;background:#e4efff;padding:8px 13px;border-radius:22px;white-space:nowrap}
 .case-study .hero-disclosure em{font-size:12px;line-height:1.4}
 .case-study .hero-link{display:inline-flex;gap:12px;align-items:center;margin-top:8px;color:var(--ink);font-size:13px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--lime-strong);padding:0 0 6px}
-.case-study .hero-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.case-study .hero-visual{position:relative;min-height:610px;display:flex;align-items:center;justify-content:center;isolation:isolate}
 .case-study .hero-blob{position:absolute;z-index:-1;width:min(92%,520px);height:76%;right:2%;top:14%;border-radius:48% 52% 60% 40%/52% 42% 58% 48%;background:linear-gradient(140deg,#b6d9d5 5%,#d9efaa 88%);transform:rotate(-8deg)}
-.case-study .hero-device{position:absolute;margin:0;width:min(50%,260px);height:390px;padding:9px;border:1px solid #d8e0e5;border-radius:32px;background:#fff;box-shadow:0 24px 50px #18345430;overflow:hidden}
-.case-study .hero-device img{width:100%;height:100%;object-fit:contain;border:0;border-radius:22px}
-.case-study .hero-device-back{right:8%;top:30px;transform:rotate(7deg)}
-.case-study .hero-device-front{left:11%;top:0;transform:rotate(-6deg);z-index:1}
+.case-study .hero-device{position:absolute;margin:0;width:min(53%,265px);height:auto;padding:0;border:7px solid #172b39;border-radius:38px;background:#172b39;box-shadow:0 0 0 2px #8d9eaa,0 24px 50px #18345440;overflow:hidden}
+.case-study .hero-device::before{content:"";position:absolute;z-index:2;top:8px;left:50%;transform:translateX(-50%);width:48px;height:13px;border-radius:20px;background:#14222c}
+.case-study .hero-device img{display:block;width:100%;height:auto;border:0;border-radius:29px}
+.case-study .hero-device-back{right:5%;top:42px;width:min(49%,245px);transform:rotate(7deg)}
+.case-study .hero-device-front{left:6%;top:0;transform:rotate(-6deg);z-index:1}
 .case-study .hero-spark{position:absolute;right:5%;top:0;color:var(--lime-strong);font-size:58px;transform:rotate(18deg)}
 .case-study .context-band{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:28px 0 8px;padding:22px 0;background:transparent;border:0;border-bottom:1px solid #e6e8e5;border-radius:0}
 .case-study .context-band article{padding:6px 20px;border-left:1px solid #dfe3e1}
@@ -509,12 +510,12 @@ body.high-contrast .case-study .watermarked:before{display:none}
 .case-study .feature-eyebrow:before{content:"";display:inline-block;vertical-align:middle;width:26px;height:4px;margin-right:10px;background:var(--lime-strong);border-radius:4px}
 .case-study .feature-copy>p:not(.feature-eyebrow){max-width:320px}
 .case-study .feature-copy>a{display:inline-block;margin-top:14px;color:var(--ink);font-size:13px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:5px}
-.case-study .feature-comparison{display:grid;grid-template-columns:1fr 34px 1fr;align-items:center;gap:14px;padding:22px;background:linear-gradient(120deg,#f0f3f2,#fff);border:1px solid #e7e9e7;border-radius:24px;box-shadow:0 12px 28px #132b4510}
+.case-study .feature-comparison{display:grid;grid-template-columns:.85fr 40px 1.15fr;align-items:center;gap:18px;padding:22px;background:linear-gradient(120deg,#f0f3f2,#fff);border:1px solid #e7e9e7;border-radius:24px;box-shadow:0 12px 28px #132b4510}
 .case-study .feature-comparison figure{margin:0;min-width:0;text-align:center}
 .case-study .feature-comparison figcaption{display:inline-block;margin-bottom:12px;padding:7px 15px;border-radius:22px;background:#e5eaf0;font-size:12px;font-weight:800}
 .case-study .feature-comparison figure:last-child figcaption{background:var(--lime);color:var(--ink)}
-.case-study .feature-comparison img{display:block;width:100%;height:clamp(180px,28vw,300px);object-fit:contain;border-radius:10px}
-.case-study .comparison-arrow{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 3px 14px #15284322;font-size:26px}
+.case-study .feature-comparison img{display:block;width:100%;height:510px;object-fit:contain;border-radius:10px}
+.case-study .comparison-arrow{display:flex;align-items:center;justify-content:center;width:40px;height:40px;line-height:0;border-radius:50%;background:#fff;box-shadow:0 3px 14px #15284322}.case-study .comparison-arrow svg{display:block;flex:none}
 .case-study .sketch-feature{display:grid;grid-template-columns:1.12fr .62fr;gap:clamp(32px,6vw,72px);align-items:center;margin:0 -34px 60px;padding:0 34px}
 .case-study .sketch-feature figure{margin:0}
 .case-study .sketch-feature img{display:block;width:100%;height:330px;object-fit:cover;border-radius:20px}
@@ -547,8 +548,8 @@ body.high-contrast .case-study .watermarked:before{display:none}
 @media(max-width:800px){
 .case-study .watermarked{padding:0 22px}
 .case-study .hero-case{grid-template-columns:1fr;gap:8px;min-height:0;padding:96px 22px 32px}
-.case-study .hero-visual{min-height:380px}
-.case-study .hero-device{height:330px}
+.case-study .hero-visual{min-height:590px}
+.case-study .hero-device{height:auto}
 .case-study .context-band{grid-template-columns:1fr 1fr}
 .case-study .context-band article{padding:14px 12px}
 .case-study .context-band article:first-child{padding-left:12px}
@@ -562,14 +563,14 @@ body.high-contrast .case-study .watermarked:before{display:none}
 .case-study .hero-case{padding:88px 18px 25px}
 .case-study .hero-meta{gap:12px 18px}
 .case-study .hero-disclosure{align-items:flex-start;flex-direction:column}
-.case-study .hero-visual{min-height:320px}
-.case-study .hero-device{width:47%;height:285px;padding:6px;border-radius:22px}
-.case-study .hero-device-front{left:9%}
-.case-study .hero-device-back{right:8%}
+.case-study .hero-visual{min-height:440px}
+.case-study .hero-device{width:53%;height:auto;padding:0;border-width:5px;border-radius:29px}.case-study .hero-device img{border-radius:23px}.case-study .hero-device::before{width:36px;height:10px;top:6px}
+.case-study .hero-device-front{left:3%}
+.case-study .hero-device-back{width:49%;right:3%}
 .case-study .context-band{grid-template-columns:1fr 1fr}
 .case-study .context-band article{border:0!important;padding:12px 4px!important}
 .case-study .feature-comparison{gap:5px;padding:12px}
-.case-study .feature-comparison img{height:190px}
+.case-study .feature-comparison img{height:340px}
 .case-study .assu-gallery{grid-template-columns:1fr}
 .case-study .assu-gallery figure img{height:300px}
 .case-study .sketch-feature{margin-left:-18px;margin-right:-18px;padding:0 18px}
@@ -578,15 +579,16 @@ body.high-contrast .case-study .watermarked:before{display:none}
 
 .case-study .design-highlights{padding:0 0 64px}
 .case-study .design-highlights>.feature-eyebrow{margin-bottom:18px}
-.case-study .design-highlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.case-study .design-highlight-grid article{position:relative;min-width:0;padding:22px 20px 0;border:1px solid #e8ebe8;border-radius:21px;background:linear-gradient(150deg,#fff,#f6f8f5);box-shadow:0 9px 24px #142d4610;overflow:hidden}
-.case-study .design-highlight-grid article>span{display:inline-grid;place-items:center;width:36px;height:36px;margin-right:9px;border-radius:50%;background:#c5ef8d;color:var(--ink);font-weight:800}
-.case-study .design-highlight-grid h3{display:inline;font-family:'Playfair Display',Georgia,serif;font-size:18px;line-height:1.3}
-.case-study .design-highlight-grid p{min-height:66px;margin:12px 0 0;font-size:13px;line-height:1.55}
-.case-study .design-highlight-grid img{display:block;width:100%;height:150px;object-fit:contain;margin:10px auto 0}
-@media(max-width:800px){.case-study .design-highlight-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.case-study .design-highlight-grid{grid-template-columns:1fr}.case-study .design-highlight-grid p{min-height:0}.case-study .design-highlight-grid img{height:190px}}
-
+.case-study .design-highlight-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.case-study .design-highlight-grid article{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center;min-width:0;padding:32px;border:1px solid #e8ebe8;border-radius:24px;background:linear-gradient(135deg,#fff,#f3f7f0);box-shadow:0 9px 24px #142d4610;overflow:hidden}
+.case-study .design-highlight-copy{max-width:340px;padding:12px}
+.case-study .design-highlight-copy>span{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:50%;background:#c5ef8d;color:var(--ink);font-weight:800}
+.case-study .design-highlight-grid h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.5vw,32px);line-height:1.2;margin:0 0 14px}
+.case-study .design-highlight-grid p{font-size:16px;line-height:1.65;margin:0}
+.case-study .design-highlight-visual{display:flex;align-items:center;justify-content:center;min-width:0;width:100%;padding:12px;border-radius:18px;background:#fff;box-shadow:0 8px 28px #142d460d}
+.case-study .design-highlight-grid img{display:block;max-width:100%;width:auto;height:560px;object-fit:contain;border-radius:12px}
+@media(max-width:800px){.case-study .design-highlight-grid article{grid-template-columns:.85fr 1.15fr;gap:16px;padding:22px}.case-study .design-highlight-grid img{height:480px}}
+@media(max-width:520px){.case-study .design-highlight-grid article{grid-template-columns:1fr;padding:20px;gap:20px}.case-study .design-highlight-copy{padding:0;max-width:none}.case-study .design-highlight-grid img{height:auto;width:100%;max-width:300px}.case-study .design-highlight-visual{padding:8px}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
@@ -760,14 +762,14 @@ body.high-contrast .case-study .watermarked:before{display:none}
 </div>
 <div class="context-band" aria-label="Contexte du projet"><article><h3>Contexte</h3><p>Explorer une refonte mobile pour améliorer l’accès aux informations essentielles.</p></article><article><h3>Problème</h3><p>Une interface dense et peu intuitive, avec un accès complexe aux contrats, documents et actions clés.</p></article><article><h3>Mon rôle</h3><p>Explorer la difficulté, cadrer le projet et définir une proposition de refonte mobile (UX, UI et prototype).</p></article><article><h3>Date</h3><p><time datetime="2026-10-14">14 octobre 2026</time></p></article></div>
 <p class="assu-resources"><strong>Outils et ressources</strong><span>Figma · Concept · Behance · CareerFoundry · GitHub · Papier · Stylo</span></p>
-<section class="feature-preview" aria-labelledby="preview-title"><div class="feature-copy"><p class="feature-eyebrow">Aperçu de la refonte</p><h2 id="preview-title">Avant / Après</h2><p>Une interface plus claire et structurée, pour accéder rapidement aux contrats et aux actions essentielles.</p><a href="#solution">Voir les écrans de ma conception <span aria-hidden="true">→</span></a></div><div class="feature-comparison"><figure><figcaption>Avant</figcaption><img src="assets/assu-home-current-private.webp" alt="Accueil actuel de l’espace client ASSU 2000"></figure><span class="comparison-arrow" aria-hidden="true">›</span><figure><figcaption>Après</figcaption><img src="assets/assu-home-proposal-wm.webp" alt="Proposition de nouvel accueil mobile"></figure></div></section>
+<section class="feature-preview" aria-labelledby="preview-title"><div class="feature-copy"><p class="feature-eyebrow">Aperçu de la refonte</p><h2 id="preview-title">Avant / Après</h2><p>Une interface plus claire et structurée, pour accéder rapidement aux contrats et aux actions essentielles.</p><a href="#solution">Voir les écrans de ma conception <span aria-hidden="true">→</span></a></div><div class="feature-comparison"><figure><figcaption>Avant</figcaption><img src="assets/assu-home-current-private.webp" alt="Accueil actuel de l’espace client ASSU 2000"></figure><span class="comparison-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></span><figure><figcaption>Après</figcaption><img src="assets/assu-home-proposal-wm.webp" alt="Proposition de nouvel accueil mobile"></figure></div></section>
 <section class="sketch-feature" aria-labelledby="sketch-title"><figure><a href="assets/assu-sketch-wm.webp" target="_blank" rel="noopener" aria-label="Agrandir le croquis papier (nouvel onglet)"><img src="assets/assu-sketch-wm.webp" loading="lazy" alt="Croquis papier des écrans Accueil, Mes contrats, Détail du contrat et Documents"></a></figure><div><p class="feature-eyebrow">Exploration & réflexion</p><h2 id="sketch-title">Du papier à l’interface</h2><p>Mes premières pistes ont été esquissées à la main, afin d’explorer différentes structures, de tester la hiérarchie des informations et d’imaginer un parcours plus fluide.</p></div></section>
-<section class="design-highlights" aria-labelledby="design-highlights-title">
+<section class="design-highlights" aria-label="Trois choix de conception clés">
   <p class="feature-eyebrow">3 choix de conception clés</p>
   <div class="design-highlight-grid">
-    <article><span>01</span><h3>Organiser les contrats</h3><p>Regrouper les contrats dans un espace clair, avec les repères utiles visibles au premier regard.</p><img src="assets/assu-contracts-proposal-wm.webp" loading="lazy" alt="Écran proposé de la liste des contrats"></article>
-    <article><span>02</span><h3>Hiérarchiser l’information</h3><p>Mettre en avant les informations essentielles pour faciliter une lecture rapide et efficace.</p><img src="assets/assu-home-proposal-wm.webp" loading="lazy" alt="Écran proposé d’accueil avec les actions principales"></article>
-    <article><span>03</span><h3>Adapter la navigation au mobile</h3><p>Regrouper les entrées par tâche pour rendre l’accès aux assurances et à l’aide plus direct.</p><img src="assets/assu-menu-proposal-wm.webp" loading="lazy" alt="Écran proposé du menu mobile"></article>
+    <article><div class="design-highlight-copy"><span>01</span><h3>Organiser les contrats</h3><p>Regrouper les contrats dans un espace clair, avec les repères utiles visibles au premier regard.</p></div><a class="design-highlight-visual" href="assets/assu-contracts-proposal-wm.webp" aria-label="Agrandir : Écran proposé de la liste des contrats"><img src="assets/assu-contracts-proposal-wm.webp" loading="lazy" alt="Écran proposé de la liste des contrats"></a></article>
+    <article><div class="design-highlight-copy"><span>02</span><h3>Hiérarchiser l’information</h3><p>Mettre en avant les informations essentielles pour faciliter une lecture rapide et efficace.</p></div><a class="design-highlight-visual" href="assets/assu-home-proposal-wm.webp" aria-label="Agrandir : Écran proposé d’accueil avec les actions principales"><img src="assets/assu-home-proposal-wm.webp" loading="lazy" alt="Écran proposé d’accueil avec les actions principales"></a></article>
+    <article><div class="design-highlight-copy"><span>03</span><h3>Adapter la navigation au mobile</h3><p>Regrouper les entrées par tâche pour rendre l’accès aux assurances et à l’aide plus direct.</p></div><a class="design-highlight-visual" href="assets/assu-menu-proposal-wm.webp" aria-label="Agrandir : Écran proposé du menu mobile"><img src="assets/assu-menu-proposal-wm.webp" loading="lazy" alt="Écran proposé du menu mobile"></a></article>
   </div>
 </section>
 <section class="block" aria-labelledby="origin"><div class="section-heading"><span class="index">01</span><h2 id="origin">Observer l’interface d’origine</h2></div><div class="assu-gallery">
@@ -791,10 +793,10 @@ body.high-contrast .case-study .watermarked:before{display:none}
 <button type="button" class="assu-toggle" aria-label="Afficher ma conception : Menu" aria-pressed="false"><span class="assu-stack" aria-hidden="true"><span class="assu-face"><strong>Menu</strong><img src="assets/assu-menu-current-wm.webp" alt="" loading="lazy"><span>Version actuelle</span></span><span class="assu-face"><strong>Menu</strong><img src="assets/assu-menu-proposal-wm.webp" alt="" loading="lazy"><span>Ma conception</span></span></span></button>
 <button type="button" class="assu-toggle" aria-label="Afficher ma conception : Mes contrats" aria-pressed="false"><span class="assu-stack" aria-hidden="true"><span class="assu-face"><strong>Mes contrats</strong><img src="assets/assu-contracts-current-wm.webp" alt="" loading="lazy"><span>Version actuelle</span></span><span class="assu-face"><strong>Mes contrats</strong><img src="assets/assu-contracts-proposal-wm.webp" alt="" loading="lazy"><span>Ma conception</span></span></span></button>
 </div></section>
-<p class="copyright">© Marina Montalbano — Étude de cas personnelle. Les propositions et le croquis portent mon filigrane.</p></div></main>
+<p class="copyright">© Marina Montalbano — Étude de cas personnelle.</p></div></main>
 <!-- FOOTER -->
 <footer><div class="footer-name">Marina Montalbano</div>
-<div class="footer-copy"><span data-fr="Audit UX · Reconversion Product Design · Recherche un CDD UX Designer" data-en="UX audit · Transitioning into Product Design · Seeking a fixed-term UX Designer role">Audit UX · Reconversion Product Design · Recherche un CDD UX Designer</span></div>
+<div class="footer-copy"><span data-fr="En recherche d’un CDD, d’une mission d’intérim ou d’un CDI · UX/UI Designer" data-en="Seeking a fixed-term, temporary or permanent role · UX/UI Designer">En recherche d’un CDD, d’une mission d’intérim ou d’un CDI · UX/UI Designer</span></div>
 <div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
 <a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
 <script src="assets/translations.js?v=positionnement-20261103"></script><script src="assets/site.js?v=restore-bluegold-2026d"></script>
