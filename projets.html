@@ -577,18 +577,17 @@ body.high-contrast .case-study .watermarked:before{display:none}
 }
 
 
-.case-study .design-highlights{padding:0 0 64px}
+.case-study .design-highlights{padding:0 0 44px}
 .case-study .design-highlights>.feature-eyebrow{margin-bottom:18px}
-.case-study .design-highlight-grid{display:grid;grid-template-columns:1fr;gap:24px}
-.case-study .design-highlight-grid article{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center;min-width:0;padding:32px;border:1px solid #e8ebe8;border-radius:24px;background:linear-gradient(135deg,#fff,#f3f7f0);box-shadow:0 9px 24px #142d4610;overflow:hidden}
-.case-study .design-highlight-copy{max-width:340px;padding:12px}
-.case-study .design-highlight-copy>span{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:50%;background:#c5ef8d;color:var(--ink);font-weight:800}
-.case-study .design-highlight-grid h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.5vw,32px);line-height:1.2;margin:0 0 14px}
-.case-study .design-highlight-grid p{font-size:16px;line-height:1.65;margin:0}
-.case-study .design-highlight-visual{display:flex;align-items:center;justify-content:center;min-width:0;width:100%;padding:12px;border-radius:18px;background:#fff;box-shadow:0 8px 28px #142d460d}
-.case-study .design-highlight-grid img{display:block;max-width:100%;width:auto;height:560px;object-fit:contain;border-radius:12px}
-@media(max-width:800px){.case-study .design-highlight-grid article{grid-template-columns:.85fr 1.15fr;gap:16px;padding:22px}.case-study .design-highlight-grid img{height:480px}}
-@media(max-width:520px){.case-study .design-highlight-grid article{grid-template-columns:1fr;padding:20px;gap:20px}.case-study .design-highlight-copy{padding:0;max-width:none}.case-study .design-highlight-grid img{height:auto;width:100%;max-width:300px}.case-study .design-highlight-visual{padding:8px}}
+.case-study .design-highlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.case-study .design-highlight-grid article{display:flex;flex-direction:column;gap:16px;min-width:0;padding:22px;border:1px solid #e8ebe8;border-radius:21px;background:linear-gradient(135deg,#fff,#f3f7f0);box-shadow:0 9px 24px #142d4610}
+.case-study .design-highlight-copy{padding:0}
+.case-study .design-highlight-grid h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;line-height:1.25;margin:0 0 10px}
+.case-study .design-highlight-grid p{font-size:14px;line-height:1.55;margin:0}
+.case-study .design-highlight-visual{display:flex;align-items:center;justify-content:center;min-width:0;width:100%;margin-top:auto;padding:8px;border-radius:14px;background:#fff}
+.case-study .design-highlight-grid img{display:block;max-width:100%;width:auto;height:240px;object-fit:contain;border-radius:8px}
+@media(max-width:800px){.case-study .design-highlight-grid{grid-template-columns:1fr;gap:14px}.case-study .design-highlight-grid article{display:grid;grid-template-columns:minmax(0,1fr) 130px;align-items:center;gap:18px;padding:18px}.case-study .design-highlight-visual{margin-top:0}.case-study .design-highlight-grid img{height:210px}}
+@media(max-width:400px){.case-study .design-highlight-grid article{grid-template-columns:minmax(0,1fr) 100px;gap:12px;padding:16px}.case-study .design-highlight-grid h3{font-size:18px}.case-study .design-highlight-grid p{font-size:13px}.case-study .design-highlight-grid img{height:180px}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
@@ -761,9 +760,9 @@ body.high-contrast .case-study .watermarked:before{display:none}
 <section class="design-highlights" aria-label="Trois choix de conception clés">
   <p class="feature-eyebrow">3 choix de conception clés</p>
   <div class="design-highlight-grid">
-    <article><div class="design-highlight-copy"><span>01</span><h3>Organiser les contrats</h3><p>Regrouper les contrats dans un espace clair, avec les repères utiles visibles au premier regard.</p></div><a class="design-highlight-visual" href="assets/assu-contracts-proposal-wm.webp" aria-label="Agrandir : Écran proposé de la liste des contrats"><img src="assets/assu-contracts-proposal-wm.webp" loading="lazy" alt="Écran proposé de la liste des contrats"></a></article>
-    <article><div class="design-highlight-copy"><span>02</span><h3>Hiérarchiser l’information</h3><p>Mettre en avant les informations essentielles pour faciliter une lecture rapide et efficace.</p></div><a class="design-highlight-visual" href="assets/assu-home-proposal-wm.webp" aria-label="Agrandir : Écran proposé d’accueil avec les actions principales"><img src="assets/assu-home-proposal-wm.webp" loading="lazy" alt="Écran proposé d’accueil avec les actions principales"></a></article>
-    <article><div class="design-highlight-copy"><span>03</span><h3>Adapter la navigation au mobile</h3><p>Regrouper les entrées par tâche pour rendre l’accès aux assurances et à l’aide plus direct.</p></div><a class="design-highlight-visual" href="assets/assu-menu-proposal-wm.webp" aria-label="Agrandir : Écran proposé du menu mobile"><img src="assets/assu-menu-proposal-wm.webp" loading="lazy" alt="Écran proposé du menu mobile"></a></article>
+    <article><div class="design-highlight-copy"><h3>Organiser les contrats</h3><p>Regrouper les contrats dans un espace clair, avec les repères utiles visibles au premier regard.</p></div><a class="design-highlight-visual" href="assets/assu-contracts-proposal-wm.webp" aria-label="Agrandir : Écran proposé de la liste des contrats"><img src="assets/assu-contracts-proposal-wm.webp" loading="lazy" alt="Écran proposé de la liste des contrats"></a></article>
+    <article><div class="design-highlight-copy"><h3>Hiérarchiser l’information</h3><p>Mettre en avant les informations essentielles pour faciliter une lecture rapide et efficace.</p></div><a class="design-highlight-visual" href="assets/assu-home-proposal-wm.webp" aria-label="Agrandir : Écran proposé d’accueil avec les actions principales"><img src="assets/assu-home-proposal-wm.webp" loading="lazy" alt="Écran proposé d’accueil avec les actions principales"></a></article>
+    <article><div class="design-highlight-copy"><h3>Adapter la navigation au mobile</h3><p>Regrouper les entrées par tâche pour rendre l’accès aux assurances et à l’aide plus direct.</p></div><a class="design-highlight-visual" href="assets/assu-menu-proposal-wm.webp" aria-label="Agrandir : Écran proposé du menu mobile"><img src="assets/assu-menu-proposal-wm.webp" loading="lazy" alt="Écran proposé du menu mobile"></a></article>
   </div>
 </section>
 <section class="block" aria-labelledby="origin"><div class="section-heading"><span class="index">01</span><h2 id="origin">Observer l’interface d’origine</h2></div><div class="assu-gallery">
