@@ -384,6 +384,37 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
   border-radius:0;
   box-shadow:0 0 0 1px #dbd1bf;
 }
+</style><style>
+.parcours-page nav{background:#0e293d;color:white;border-bottom:1px solid #c6a66b}
+.parcours-page nav .nav-logo,.parcours-page nav .nav-links a{color:#fff}
+.parcours-page nav .nav-logo::before{content:'M';font:italic 32px 'Dancing Script',cursive;color:#e6bd69;margin-right:12px;padding-right:12px;border-right:1px solid #aa956e}
+.parcours-page nav .nav-links a[aria-current=page]{color:#f1ce80;text-decoration:underline;text-underline-offset:7px}
+.parcours-page nav .nav-cv,.certificate-card .btn{border-radius:30px;background:linear-gradient(115deg,#f1d180,#d9ae56);color:#10283b}
+.parcours-page nav .hamburger span{background:#fff}
+.parcours-page nav .a11y-toggle,.parcours-page nav .language-select{background:#f9f4eb;color:#10283b}
+.journey-opening{position:relative;isolation:isolate;background:radial-gradient(ellipse at 100% 92%,#f2e6d7,transparent 48%),#fbf7ef}
+.journey-opening::before,.journey-opening::after{content:'';position:absolute;z-index:-1;pointer-events:none;width:min(17vw,260px);height:350px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20260%20360%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23bc914c%22%20stroke-width%3D%221.3%22%3E%3Cpath%20d%3D%22M-10%20350%20Q95%20275%20144%20173%20T213%2063%22%2F%3E%3Cpath%20d%3D%22M75%20282Q37%20246%2046%20197Q80%20221%2075%20282ZM108%20229Q121%20173%20168%20179Q143%20211%20108%20229ZM135%20185Q103%20153%20112%20111Q141%20141%20135%20185ZM166%20131Q188%20104%20231%20108Q203%20132%20166%20131ZM187%2099Q182%2062%20218%2027Q217%2066%20187%2099Z%22%2F%3E%3Cpath%20d%3D%22M112%20225Q160%20227%20185%20211M154%20223l10%2012M144%20222l8-13%22%2F%3E%3Ccircle%20cx%3D%22186%22%20cy%3D%22210%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22165%22%20cy%3D%22237%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22153%22%20cy%3D%22207%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat,radial-gradient(ellipse at -12% -30%,#102b40 0 49%,transparent 49.4%)}
+.journey-opening::before{top:56px;left:0}.journey-opening::after{bottom:0;right:0;transform:rotate(180deg)}
+.journey-opening .certificate-hero{background:transparent;padding:90px 22px 10px;max-width:1000px}
+.journey-opening .certificate-hero h1{font:700 calc(clamp(38px,4vw,58px)*var(--text-scale))/1.08 'Playfair Display',Georgia,serif;text-align:center;color:#10283b;margin:0 auto 18px}
+.journey-opening .certificate-hero h1::after{content:'';display:block;width:76px;height:2px;background:#c6a15b;margin:14px auto 0}
+.journey-opening .certificate-card{border:1px solid #d4b57d;background:#fffaf2;box-shadow:0 8px 24px #4c371316;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.journey-opening .certificate-copy h2{color:#10283b}
+.journey-opening .certificate-next{text-align:center;margin:14px auto 0}
+.journey-opening #fil{background:transparent;padding:18px 24px 32px}
+#fil .section-eyebrow{text-align:center;margin:0 0 9px;color:#99712f}
+#fil .section-title{color:#10283b;margin:0 auto 18px;line-height:1.12}
+#fil .section-title em{display:block;color:#9b742e;font-weight:500}
+#fil .section-divider{display:none}
+#fil .fil-grid{gap:0;border-radius:16px;overflow:hidden;border:1px solid #ccae76;box-shadow:0 5px 14px #35291515}
+#fil .fil-box{padding:20px clamp(18px,3vw,38px);border:0}
+#fil .fil-box.light{background:#fffaf2}#fil .fil-box.dark{background:#102b40}
+#fil .fil-label{margin-bottom:10px;font-size:calc(12px*var(--text-scale));letter-spacing:1.6px}
+#fil .fil-list li{font-size:calc(15px*var(--text-scale));line-height:1.55}
+#parcours{background:#fbf7ef}#parcours .section-title{color:#10283b}
+body.high-contrast .journey-opening,body.high-contrast .journey-opening .certificate-card,body.high-contrast #fil .fil-box{background:#000}
+@media(max-width:1100px){.journey-opening::before,.journey-opening::after{opacity:.32;width:9vw}}
+@media(max-width:720px){.journey-opening::before,.journey-opening::after{display:none}.journey-opening .certificate-card,#fil .fil-grid{grid-template-columns:1fr}.journey-opening .certificate-hero{padding:86px 18px 8px}}
 </style></head>
 <body class="parcours-page">
 
@@ -525,6 +556,7 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
   </div>
 </div>
 
+<div class="journey-opening">
 <!-- HERO -->
 <section class="hero certificate-hero" id="main-content" tabindex="-1">
   <h1><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></h1>
@@ -550,7 +582,7 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
 <section id="fil">
   <p class="section-eyebrow"><span data-fr="Le fil conducteur" data-en="The common thread">Le fil conducteur</span></p>
   <h2 class="section-title">
-    <span data-fr="Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé." data-en="A path that seems to change.<br>A thread that never did.">Un parcours qui semble changer.<br>Un fil conducteur qui, lui, n'a jamais changé.</span>
+    <span data-fr="Un parcours qui semble changer." data-en="A path that seems to change." data-de="Ein Weg, der sich zu verändern scheint." data-sr="Put koji kao da se menja.">Un parcours qui semble changer.</span><em><span data-fr="Une même façon de penser." data-en="The same way of thinking." data-de="Dieselbe Denkweise." data-sr="Isti način razmišljanja.">Une même façon de penser.</span></em>
   </h2>
   <div class="section-divider"></div>
   <div class="fil-grid">
@@ -563,7 +595,7 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
       </ul>
     </div>
     <div class="fil-box dark">
-      <p class="fil-label"><span data-fr="Ce qu'il y avait déjà" data-en="What was always there">Ce qu'il y avait déjà</span></p>
+      <p class="fil-label"><span data-fr="Ce qui m’a toujours guidée" data-en="What has always guided me" data-de="Was mich immer geleitet hat" data-sr="Ono što me je uvek vodilo">Ce qui m’a toujours guidée</span></p>
       <ul class="fil-list">
         <li><span data-fr="Compréhension des besoins" data-en="Understanding needs">Compréhension des besoins</span></li>
         <li><span data-fr="Clarté de l'information" data-en="Information clarity">Clarté de l'information</span></li>
@@ -574,6 +606,7 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
   </div>
 </section>
 
+</div>
 <!-- PARCOURS -->
 <section id="parcours">
   <h2 class="section-title"><span data-fr="Mon parcours professionnel" data-en="My professional journey">Mon parcours professionnel</span></h2>
