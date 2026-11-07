@@ -353,6 +353,22 @@ body>section:not(.certificate-hero) {padding-block:clamp(32px,4.8vw,62px)}
 .section-title {font-size:calc(clamp(24px,2.6vw,35px)*var(--text-scale));margin-bottom:28px}
 body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
 @media(max-width:720px){body .certificate-hero{padding:90px 20px 24px}.certificate-hero .certificate-card{grid-template-columns:1fr}.certificate-card .certificate-preview{width:min(100%,300px);margin:auto}}
+</style><style>
+.certificate-card .certificate-preview {
+  display:block;
+  padding:clamp(12px,1.6vw,20px);
+  border:5px solid #172d46;
+  background:#fffcf4;
+  box-shadow:inset 0 0 0 1px #bb9b58,0 5px 12px #13273c22;
+  border-radius:3px;
+}
+.certificate-card .certificate-preview img {
+  width:100%;
+  height:auto;
+  border:1px solid #ded5c3;
+  border-radius:0;
+  box-shadow:none;
+}
 </style></head>
 <body class="parcours-page">
 
