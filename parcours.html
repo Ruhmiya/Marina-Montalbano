@@ -415,6 +415,40 @@ body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
 body.high-contrast .journey-opening,body.high-contrast .journey-opening .certificate-card,body.high-contrast #fil .fil-box{background:#000}
 @media(max-width:1100px){.journey-opening::before,.journey-opening::after{opacity:.32;width:9vw}}
 @media(max-width:720px){.journey-opening::before,.journey-opening::after{display:none}.journey-opening .certificate-card,#fil .fil-grid{grid-template-columns:1fr}.journey-opening .certificate-hero{padding:86px 18px 8px}}
+</style><style>
+.parcours-page {
+  --journey-ink:#102b40;
+  --journey-paper:#fbf7ef;
+  --journey-panel:#fffaf2;
+  --journey-edge:#d7bf92;
+  --journey-radius:16px;
+  --journey-shadow:0 5px 15px rgba(62,46,22,.07);
+}
+.parcours-page:not(.high-contrast) :is(#parcours,#faisais,#experiences,#certificats){background:var(--journey-paper)}
+.parcours-page:not(.high-contrast) :is(#metiers,#competences){background:#f4eddf}
+.parcours-page:not(.high-contrast) :is(.section-title,.comp-title,.tl-role,.metier-title,.exp-card h3,.apprend-box h4,#credentials-heading,.credential-copy h3){color:var(--journey-ink)}
+.parcours-page :is(.tl-item,.metier-card,.faisais-card,.apprend-box,.exp-card,.credential-card,.pourquoi-item){border-radius:var(--journey-radius)}
+.parcours-page:not(.high-contrast) :is(.tl-item,.metier-card,.faisais-card,.apprend-box,.exp-card,.credential-card){
+  background:var(--journey-panel);border:1px solid var(--journey-edge);box-shadow:var(--journey-shadow)
+}
+.parcours-page .timeline{max-width:740px;padding-left:28px}
+.parcours-page .tl-item{padding:14px 22px;margin-bottom:12px}
+.parcours-page .tl-dot{left:-35px;top:21px}
+.parcours-page:not(.high-contrast) .tl-sub{color:#6e5e42}
+.parcours-page .metier-card,.parcours-page .exp-card,.parcours-page .apprend-box{padding:22px}
+.parcours-page .tag{border-radius:24px;padding:7px 16px}
+.parcours-page:not(.high-contrast) .tag{background:var(--journey-panel);border-color:var(--journey-edge)}
+.parcours-page .pourquoi-grid{gap:16px}
+.parcours-page .pourquoi-item{padding:22px 18px;gap:8px}
+.parcours-page:not(.high-contrast) :is(#pourquoi,#conclusion){background:linear-gradient(135deg,#102b40,#17394c);color:#fffaf2}
+.parcours-page:not(.high-contrast) #pourquoi .section-title{color:#fffaf2}
+.parcours-page:not(.high-contrast) .pourquoi-item{border:1px solid #827354;background:#18384c}
+.parcours-page:not(.high-contrast) .concl-h1{color:#f1d491}
+.parcours-page .credential-card{overflow:hidden}
+.parcours-page #conclusion{padding:clamp(42px,5vw,68px) 22px}
+.parcours-page #conclusion .btns-row a{border-radius:28px}
+.parcours-page:not(.high-contrast) footer{background:#0e293d;border-top:1px solid #ac915e}
+.parcours-page.high-contrast :is(.tl-item,.pourquoi-item,.credential-card){background:#000;border:1px solid #ffdd00}
 </style></head>
 <body class="parcours-page">
 
