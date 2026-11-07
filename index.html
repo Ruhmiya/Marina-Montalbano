@@ -31,6 +31,20 @@
 #main-content .hero-visual-stack{align-self:start;position:static;transform:none;gap:8px;padding:0}
 #main-content .hero-portrait{width:min(88%,34vh,296px)}
 @media(max-width:700px){#main-content.hero{padding:86px 22px 28px}#main-content .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:22px}#main-content .hero-visual-stack{max-width:300px}#main-content .hero-portrait{width:168px}}
+
+/* Match the journey page palette while retaining the homepage layout. */
+body:not(.high-contrast){background:radial-gradient(ellipse at 98% 68%,#f3eadb,transparent 48%),#fbf7ef}
+body:not(.high-contrast) #main-content.hero{background:transparent}
+body:not(.high-contrast) nav{background:#0e293d;color:#fff;border-bottom:1px solid #c6a66b}
+body:not(.high-contrast) nav :is(.nav-logo,.nav-links a){color:#fff}
+body:not(.high-contrast) nav .nav-links a[aria-current="page"]{color:#f1ce80;text-decoration:underline;text-underline-offset:7px}
+body:not(.high-contrast) nav .nav-cv,body:not(.high-contrast) #main-content .hero-ctas .btn{border-radius:30px;background:linear-gradient(115deg,#f1d180,#d9ae56);color:#10283b;border:1px solid #c5a464}
+body:not(.high-contrast) nav .hamburger span{background:#fff}
+body:not(.high-contrast) nav :is(.a11y-toggle,.language-select){background:#f9f4eb;color:#10283b}
+body:not(.high-contrast) nav .language-picker svg{color:#f1ce80}
+body:not(.high-contrast) #main-content h1{font-family:'Playfair Display',Georgia,serif;color:#102b40}
+body:not(.high-contrast) #main-content .hero-divider{background:#c6a15b}
+body:not(.high-contrast) footer{background:#0e293d;border-top:1px solid #ac915e}
 </style></head>
 <body>
 
