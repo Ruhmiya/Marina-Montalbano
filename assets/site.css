@@ -475,3 +475,14 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 body.high-contrast .language-picker{border-color:#FFDD00;color:#fff;background:#000}
 body.high-contrast .language-select option{background:#000;color:#fff}
 body.high-contrast .language-select:focus-visible{outline-color:#FFDD00}
+
+@keyframes cv-border-glow {
+  0%,100% {box-shadow:0 0 0 1px #b18a45,0 0 0 2px transparent}
+  50% {box-shadow:0 0 0 2px #ffe5a5,0 0 12px 3px rgba(237,194,103,.55)}
+}
+@media(prefers-reduced-motion:no-preference){
+ nav a.nav-cv,.mobile-menu-overlay a.mm-item[download]{animation:cv-border-glow 3.6s ease-in-out infinite !important}
+}
+@media(prefers-reduced-motion:reduce){
+ nav a.nav-cv,.mobile-menu-overlay a.mm-item[download]{animation:none!important}
+}
