@@ -1,9 +1,9 @@
 (()=>{
 const rings=[
  {radius:440,words:["Empathie","Curiosité","Observation","Accessibilité","Collaboration","Communication","Recherche utilisateur","Entretiens","Profils utilisateurs","Normes d’accessibilité"],mobile:["Empathie","Accessibilité","Collaboration","Recherche utilisateur","Profils utilisateurs"]},
- {radius:355,words:["Architecture de l’information","Flux utilisateurs","Cartographie des parcours","Maquettes filaires","Conception UX","Tests","Résolution de problèmes"],mobile:["Architecture de l’information","Flux utilisateurs","Entretiens","Tests"]},
- {radius:270,words:["Conception UI","Conception visuelle","Système de conception","Composants","Mise en page automatique","Prototypage","Animation"],mobile:["Conception UI","Système de conception","Prototypage"]},
- {radius:185,words:["Figma","Balsamiq","Miro","Adaptation aux écrans","Performance","GitHub"],mobile:["Figma","Miro","Performance"]},
+ {radius:365,words:["Architecture de l’information","Flux utilisateurs","Cartographie des parcours","Maquettes filaires","Conception UX","Tests","Résolution de problèmes"],mobile:["Architecture de l’information","Flux utilisateurs","Entretiens","Tests"]},
+ {radius:290,words:["Conception UI","Conception visuelle","Système de conception","Composants","Mise en page automatique","Prototypage","Animation"],mobile:["Conception UI","Système de conception","Prototypage"]},
+ {radius:215,words:["Figma","Balsamiq","Miro","Adaptation aux écrans","Performance","GitHub"],mobile:["Figma","Miro","Performance"]},
  {radius:140,words:["Vision produit","Stratégie","Innovation","Rétrospective","Point quotidien","Impact"],mobile:["Stratégie","Innovation","Impact"]}
 ];
 const svg=document.getElementById('career-target');
@@ -30,7 +30,35 @@ function renderRings(compact){
 function localizeTarget(){
  const t=window.translateSite;
  svg.querySelectorAll('textPath').forEach(el=>{el.textContent=JSON.parse(el.dataset.words).map(k=>t(k)).join('');});
+ spaceRingLabels();
  button.querySelector('span').textContent=t(section.classList.contains('target-paused')?'Reprendre l’animation':'Mettre l’animation en pause');
+}
+function spaceRingLabels(){
+ const scale=svg.getBoundingClientRect().width/1000;
+ if(!scale)return;
+ svg.querySelectorAll('.target-ring').forEach((group,index)=>{
+  const circumference=2*Math.PI*rings[index].radius;
+  const gap=12/scale;
+  let used=0;
+  const labels=[];
+  group.querySelectorAll('text').forEach(text=>{
+   text.style.display='';
+   const path=text.querySelector('textPath');
+   const length=text.getComputedTextLength();
+   if(used+length+gap>circumference){
+    text.style.display='none';
+    return;
+   }
+   labels.push({path,length});
+   used+=length+gap;
+  });
+  let offset=0;
+  const spacing=gap+(circumference-used)/(labels.length||1);
+  labels.forEach(({path,length})=>{
+   path.setAttribute('startOffset',((offset+(length+spacing)/2)/circumference*100)+'%');
+   offset+=length+spacing;
+  });
+ });
 }
 function syncRingFont(){
  const width=svg.getBoundingClientRect().width||600,scale=width/1000;
@@ -41,7 +69,7 @@ function syncRingFont(){
  if(role)role.style.fontSize=((compact?8:12)/scale)+'px';
 }
 function syncLayout(){
- const compact=window.matchMedia('(max-width:600px)').matches;
+ const compact=svg.getBoundingClientRect().width < 520;
  if(compact!==compactMode){renderRings(compact);compactMode=compact;}
  syncRingFont();localizeTarget();
 }
@@ -51,4 +79,6 @@ button.addEventListener('click',()=>{const paused=section.classList.toggle('targ
 document.addEventListener('site-language-change',localizeTarget);
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(syncLayout,120);});
 syncLayout();
+if(document.fonts)document.fonts.ready.then(syncLayout);
+new ResizeObserver(syncLayout).observe(svg);
 })();
