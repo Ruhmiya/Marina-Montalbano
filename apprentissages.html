@@ -347,7 +347,30 @@ body.high-contrast .learning-page .learn-filters button[aria-pressed="true"]{bac
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css?v=publication-langues-20261106">
-</head>
+<style>
+.learning-page{max-width:1100px;padding:98px clamp(18px,3vw,32px) 34px}
+.learning-page .learn-hero{padding:14px 0 18px}
+.learning-page h1{font-size:calc(clamp(28px,3vw,40px)*var(--text-scale));margin-bottom:12px}
+.learning-page .learn-intro{font-size:calc(15px*var(--text-scale))}
+.learning-page .handwritten-statement{max-width:520px;margin:12px 0 0}
+.learning-page .learn-section{padding:16px 0}
+.learning-page h2{font-size:calc(22px*var(--text-scale))}
+.learning-page .learn-grid{gap:14px;margin-top:14px;align-items:start}
+.learning-page .learn-card{padding:15px;gap:8px;border-radius:14px}
+.learning-page .learn-card h3{font-size:calc(17px*var(--text-scale))}
+.learning-page .learn-card p{font-size:calc(14px*var(--text-scale));line-height:1.45}
+.learning-page .learn-card .learn-meta,.learning-page .learn-status{font-size:calc(12px*var(--text-scale))}
+.learning-page .learn-status{flex:none;width:fit-content;padding:2px 8px}
+.learning-page [data-learning-status] .learn-top{width:100%;margin:0;padding:0;background:none}
+.learning-page .learn-links{padding-top:4px}
+body:not(.high-contrast){background:#f3eee5}
+body:not(.high-contrast) .learning-page{color:#183e35}
+body:not(.high-contrast) .learning-page :is(h1,h2,h3,.learn-links a,summary,.learn-back){color:#183e35}
+body:not(.high-contrast) .learning-page .learn-card{background:#fffefa;border-color:#e1d9cb}
+body:not(.high-contrast) .learning-page .learn-status{background:#eee2ca;color:#574324}
+body:not(.high-contrast) .learning-page .learn-filters button[aria-pressed=true]{background:#183e35;color:white}
+@media(min-width:900px){.learning-page #learning-resources{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style></head>
 <body class="parcours-page">
 
 <!-- Lien d'évitement, pour les utilisateurs clavier -->
