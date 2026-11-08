@@ -1,6 +1,8 @@
 # Bonjour, je suis Marina Montalbano 
 
-### En reconversion vers le métier de Product Designer
+**[Voir mon portfolio UX/UI et mes études de cas sur marina-montalbano.fr](https://marina-montalbano.fr/)**
+
+### En reconversion vers le métier de designer UX/UI
 
 Certificat professionnel Google UX Design obtenu le 2 octobre 2026 (8 cours).
 
