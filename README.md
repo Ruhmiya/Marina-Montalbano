@@ -43,7 +43,7 @@ C'est ce que j'ai toujours fait. C'est ce que je veux continuer à faire en tant
 
 ---
 
-*Basée en Essonne — Île-de-France · Recherche un CDD UX Designer · Ouverte à une immersion professionnelle*
+*Basée en Essonne — Île-de-France · Recherche un CDD, une mission d’intérim ou un CDI en UX/UI design · Ouverte à une immersion professionnelle*
 
 
 ## Structure du portfolio et URL canoniques
@@ -56,6 +56,6 @@ Ces contenus étant distincts, chaque page conserve une unique balise canonique 
 
 ## Positionnement éditorial
 
-L’identité publique du site est **Marina Montalbano**. L’audit UX est la première orientation visible de sa reconversion. Le message principal est : « En reconversion vers le Product Design, je développe ma pratique de l’audit UX et recherche un CDD comme UX Designer. » Le certificat professionnel Google UX Design est obtenu ; l’immersion professionnelle reste une possibilité complémentaire.
+L’identité publique du site est **Marina Montalbano**. Le positionnement principal est une reconversion vers le métier de designer UX/UI. Le message principal est : « En reconversion vers le métier de designer UX/UI, j’analyse les parcours, je repère les difficultés et je conçois des interfaces plus faciles à utiliser. Je recherche un CDD, une mission d’intérim ou un CDI en UX/UI design. » Le certificat professionnel Google UX Design est obtenu ; l’immersion professionnelle reste une possibilité complémentaire.
 
-Le portfolio présente des projets personnels et une pratique en cours de consolidation : analyse des parcours, identification des difficultés, recommandations et propositions d’interface. L’audit UX est mis en avant sans présenter une offre de studio ou de prestation, ni revendiquer une expertise ou des résultats non démontrés. Les titres, introductions, pieds de page et traductions doivent conserver ce positionnement.
+Le portfolio présente des projets personnels et une pratique en cours de consolidation : analyse des parcours, identification des difficultés, recommandations et propositions d’interface. L’audit UX fait partie de cette pratique, aux côtés de la conception d’interfaces, sans présenter une offre de studio ou de prestation, ni revendiquer une expertise ou des résultats non démontrés. Les titres, introductions, pieds de page et traductions doivent conserver ce positionnement.
