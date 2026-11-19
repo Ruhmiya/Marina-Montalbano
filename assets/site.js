@@ -18,20 +18,14 @@ function setLang(lang){
  document.documentElement.lang=lang==='sr'?'sr-Latn':lang;
  document.querySelectorAll('[data-fr]').forEach(el=>{
   const key=el.dataset.fr;
-  const local=el.closest('.direction-page main, .direction-page footer')?el.getAttribute('data-'+lang):null;
+  const local=el.closest('.direction-page main, .direction-page footer, a[download][hreflang=fr]')?el.getAttribute('data-'+lang):null;
   el.innerHTML=lang==='fr'?key:(local||translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
  });
  plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
  attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
  document.querySelectorAll('.language-select').forEach(select=>{select.value=lang;});
  document.querySelectorAll('.handwriting-accessible').forEach(el=>el.lang=document.documentElement.lang);
- // The current CV is available in French for every site language.
- const cvLanguage = {en:' (French)',de:' (Französisch)',sr:' (na francuskom)'};
- document.querySelectorAll('a[href="CV_Marina_Montalbano.pdf"][download]').forEach(link=>{
-   link.hreflang='fr';
-   const label=link.querySelector('[data-fr]');
-   if(label && lang!=='fr')label.textContent+=cvLanguage[lang];
- });
+
  try{sessionStorage.setItem('portfolioLanguage',lang)}catch{}
  document.dispatchEvent(new CustomEvent('site-language-change',{detail:lang}));
 }
@@ -99,8 +93,19 @@ document.addEventListener('click', (e) => {
   });
 });
 document.addEventListener('keydown', (e) => {
+  const overlay = document.getElementById('mobileMenuOverlay');
+  if (e.key === 'Tab' && overlay.classList.contains('open')) {
+    const controls = Array.from(overlay.querySelectorAll('a[href], button, input, select')).filter(
+      el => !el.disabled && el.tabIndex >= 0 && el.getClientRects().length
+    );
+    const boundary = e.shiftKey ? controls[0] : controls.at(-1);
+    if (document.activeElement === boundary || !overlay.contains(document.activeElement)) {
+      e.preventDefault();
+      (e.shiftKey ? controls.at(-1) : controls[0])?.focus();
+    }
+  }
   if (e.key === 'Escape') {
- if(document.getElementById('mobileMenuOverlay').classList.contains('open'))toggleMenu();
+    if (overlay.classList.contains('open')) toggleMenu();
     document.querySelectorAll('.a11y-panel').forEach(panel => panel.setAttribute('hidden', ''));
     document.querySelectorAll('.a11y-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
   }

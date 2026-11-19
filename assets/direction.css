@@ -91,6 +91,12 @@
   color: var(--direction-muted);
   font-size: calc(1.1rem * var(--text-scale));
 }
+.direction-page p.direction-availability {
+  margin-top: 1rem;
+  color: var(--signature-gold-text);
+  font-size: calc(.95rem * var(--text-scale));
+  font-weight: 700;
+}
 .direction-page-intro .direction-intro + .direction-intro { margin-top: 1rem; }
 .direction-section h2 + p { margin-top: 1rem; }
 .direction-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.6rem; }
@@ -142,7 +148,8 @@
 .direction-card p { margin-top: .75rem; color: var(--direction-muted); }
 
 .direction-page .direction-experiences p.direction-intro { max-width: 76ch; }
-.direction-experiences .direction-card .direction-link {
+.direction-experiences .direction-card .direction-link,
+#expertise .direction-card .direction-link {
   display: inline-block;
   margin-top: .85rem;
   font-size: calc(1rem * var(--text-scale));
