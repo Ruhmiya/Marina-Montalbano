@@ -518,9 +518,11 @@ body:not(.high-contrast) .mobile-menu-overlay a.mm-item[download] {
 }
 
 
-/* Green header for the portfolio and its case-study pages. */
+/* Green header and footer for the portfolio and its case-study pages. */
+nav.nav-green,
+footer.footer-green { background: var(--studio-green); }
+.footer-green .footer-copy { color: #f6f1e6; }
 nav.nav-green {
-  background: var(--studio-green);
   border-bottom: 1px solid color-mix(in srgb, var(--signature-gold) 45%, transparent);
 }
 .nav-green .nav-links a:not(.nav-cv) { color: #fff; }
