@@ -1,5 +1,6 @@
 .direction-page {
   --direction-navy: #10283b;
+  --direction-title-size: calc(clamp(2.25rem, 5.9vw, 4.75rem) * var(--text-scale));
   --direction-paper: #fbf8f1;
   --direction-gold: #c6a66b;
   --direction-rule: #d9cbb7;
@@ -56,7 +57,7 @@
 }
 .direction-page h1 {
   max-width: 15ch;
-  font-size: calc(clamp(2.25rem, 5.9vw, 4.75rem) * var(--text-scale));
+  font-size: var(--direction-title-size);
   line-height: 1.08;
   letter-spacing: -.035em;
   text-wrap: balance;
@@ -195,14 +196,13 @@
 .direction-monogram {
   grid-column: 2;
   grid-row: 1 / span 2;
-  width: clamp(5rem, 11vw, 8.5rem);
+  width: min(calc(3 * var(--direction-title-size)), 30vw, 16rem);
   height: auto;
 }
 
 @media (max-width: 760px) {
   .direction-monogram {
     grid-row: 1;
-    width: clamp(3.75rem, 15vw, 5rem);
   }
 
   .direction-journey-intro .direction-intro { grid-column: 1 / -1; }
