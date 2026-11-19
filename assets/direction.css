@@ -197,7 +197,7 @@
   grid-column: 2;
   grid-row: 1 / span 2;
   justify-self: center;
-  width: min(calc(3.4 * var(--direction-title-size)), 32vw, 17.5rem);
+  width: min(calc(4.2 * var(--direction-title-size)), 35vw, 21rem);
   max-width: 100%;
   height: auto;
 }
