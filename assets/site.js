@@ -18,14 +18,20 @@ function setLang(lang){
  document.documentElement.lang=lang==='sr'?'sr-Latn':lang;
  document.querySelectorAll('[data-fr]').forEach(el=>{
   const key=el.dataset.fr;
-  el.innerHTML=lang==='fr'?key:(translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
+  const local=el.closest('.direction-page main, .direction-page footer')?el.getAttribute('data-'+lang):null;
+  el.innerHTML=lang==='fr'?key:(local||translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
  });
  plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
  attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
  document.querySelectorAll('.language-select').forEach(select=>{select.value=lang;});
  document.querySelectorAll('.handwriting-accessible').forEach(el=>el.lang=document.documentElement.lang);
- // Only French and English PDF versions exist; German/Serbian use English.
- document.querySelectorAll('[download],#nav-cv-link,#hero-cv-link').forEach(a=>a.href=lang==='fr'?'CV_Marina_Montalbano.pdf':'CV_Marina_Montalbano_EN.pdf');
+ // The current CV is available in French for every site language.
+ const cvLanguage = {en:' (French)',de:' (Französisch)',sr:' (na francuskom)'};
+ document.querySelectorAll('a[href="CV_Marina_Montalbano.pdf"][download]').forEach(link=>{
+   link.hreflang='fr';
+   const label=link.querySelector('[data-fr]');
+   if(label && lang!=='fr')label.textContent+=cvLanguage[lang];
+ });
  try{sessionStorage.setItem('portfolioLanguage',lang)}catch{}
  document.dispatchEvent(new CustomEvent('site-language-change',{detail:lang}));
 }
