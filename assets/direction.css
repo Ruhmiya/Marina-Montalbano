@@ -62,6 +62,11 @@
   letter-spacing: -.035em;
   text-wrap: balance;
 }
+.direction-hero > div { container-type: inline-size; }
+.direction-hero h1:lang(fr) {
+  max-width: 12em;
+  font-size: min(var(--direction-title-size), calc(11cqi * var(--text-scale)));
+}
 .direction-page h1::after {
   content: "";
   display: block;
