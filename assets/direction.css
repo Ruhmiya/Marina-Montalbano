@@ -184,3 +184,26 @@
 }
 
 .direction-page.high-contrast .nav-links .nav-cv span { color: #000 !important; }
+
+.direction-journey-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(1rem, 5vw, 4rem);
+}
+
+.direction-monogram {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: clamp(5rem, 11vw, 8.5rem);
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .direction-monogram {
+    grid-row: 1;
+    width: clamp(3.75rem, 15vw, 5rem);
+  }
+
+  .direction-journey-intro .direction-intro { grid-column: 1 / -1; }
+}
