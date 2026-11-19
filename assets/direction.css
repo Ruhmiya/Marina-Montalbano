@@ -213,13 +213,33 @@
   .direction-journey-intro .direction-intro { grid-column: 1 / -1; }
 }
 
+.direction-goal-intro { padding-block: clamp(1.5rem, 5vh, 3rem); }
 .direction-goal-intro h1 {
   max-width: none;
+  font-size: calc(clamp(1.875rem, 4.5vw, 3.75rem) * var(--text-scale));
   text-align: center;
 }
 .direction-page .direction-goal-intro p.direction-intro {
   max-width: none;
+  font-size: calc(clamp(1rem, 1.25vw, 1.0625rem) * var(--text-scale));
+  line-height: 1.5;
   text-align: justify;
 }
-.direction-goal-intro h1::after { margin-inline: auto; }
-.direction-goal-intro .direction-actions { justify-content: center; }
+.direction-goal-intro .direction-intro + .direction-intro { margin-top: .75rem; }
+.direction-goal-intro h1::after { margin: .75rem auto; }
+.direction-goal-intro .direction-actions {
+  justify-content: center;
+  gap: .5rem 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .direction-goal-intro {
+    padding-block: 1.5rem;
+    padding-inline: .875rem;
+  }
+  .direction-page .direction-goal-intro p.direction-intro { line-height: 1.45; }
+  .direction-goal-intro .direction-actions { column-gap: .5rem; }
+  .direction-goal-intro .direction-button { padding-inline: .875rem; }
+}
