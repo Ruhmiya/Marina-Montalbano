@@ -491,7 +491,7 @@ body.high-contrast .language-select:focus-visible{outline-color:#FFDD00}
 nav a.nav-logo > img.nav-signature,
 .mm-header img.nav-signature {
   display: block;
-  width: clamp(12rem, 22vw, 18rem);
+  width: clamp(12rem, 24vw, 20rem);
   max-width: 100%;
   height: auto;
   aspect-ratio: 2172 / 394;
@@ -500,5 +500,11 @@ nav a.nav-logo > img.nav-signature,
 
 @media (max-width: 1180px) {
   nav a.nav-logo > img.nav-signature,
-  .mm-header img.nav-signature { width: min(55vw, 14rem); }
+  .mm-header img.nav-signature { width: min(60vw, 15.5rem); }
+}
+
+body:not(.high-contrast) nav a.nav-cv,
+body:not(.high-contrast) .mobile-menu-overlay a.mm-item[download] {
+  background: linear-gradient(110deg, #e4ac1c, #fcd45c 52%, #f4b41c) !important;
+  color: #10283b !important;
 }
