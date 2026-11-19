@@ -285,3 +285,35 @@
   .direction-goal-intro .direction-actions { column-gap: .5rem; }
   .direction-goal-intro .direction-button { padding-inline: .875rem; }
 }
+
+/* Keep the mobile portrait alongside the job title, above the introduction. */
+@media (max-width: 760px) {
+  .direction-hero {
+    grid-template-columns: minmax(0, 1fr) clamp(80px, 24vw, 104px);
+    gap: 0 1rem;
+    padding-block: 2rem 2.5rem;
+  }
+  .direction-hero > .direction-hero-copy { display: contents; }
+  .direction-hero-copy > .direction-kicker { grid-column: 1 / -1; grid-row: 1; }
+  .direction-hero-copy > h1 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    max-width: none;
+  }
+  .direction-hero h1:lang(fr) {
+    font-size: calc(clamp(1.65rem, 6.5vw, 2.4rem) * var(--text-scale));
+  }
+  .direction-hero h1::after { margin-block: 1rem; }
+  .direction-hero > .direction-portrait {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    width: 100%;
+    margin: 0;
+    padding: .25rem;
+  }
+  .direction-hero-copy > .direction-intro { grid-column: 1 / -1; grid-row: 3; }
+  .direction-hero-copy > .direction-availability { grid-column: 1 / -1; grid-row: 4; }
+  .direction-hero-copy > .direction-actions { grid-column: 1 / -1; grid-row: 5; }
+}
