@@ -188,7 +188,7 @@
 
 .direction-journey-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   align-items: center;
   column-gap: clamp(1rem, 5vw, 4rem);
 }
@@ -196,11 +196,15 @@
 .direction-monogram {
   grid-column: 2;
   grid-row: 1 / span 2;
-  width: min(calc(3 * var(--direction-title-size)), 30vw, 16rem);
+  justify-self: center;
+  width: min(calc(3.4 * var(--direction-title-size)), 32vw, 17.5rem);
+  max-width: 100%;
   height: auto;
 }
 
 @media (max-width: 760px) {
+  .direction-journey-intro { grid-template-columns: minmax(0, 1fr) auto; }
+
   .direction-monogram {
     grid-row: 1;
   }
