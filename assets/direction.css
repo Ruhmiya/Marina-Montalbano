@@ -234,6 +234,21 @@
   text-align: center;
 }
 
+@media (min-width: 1181px) {
+  .direction-goal-intro { padding-block: 2.125rem 2.4rem; }
+  .direction-goal-intro h1 { font-size: var(--direction-title-size); }
+  .direction-goal-intro h1::after { margin-block: 1.35rem; }
+  .direction-page .direction-goal-intro p.direction-intro {
+    font-size: calc(1.1rem * var(--text-scale));
+    line-height: 1.65;
+  }
+  .direction-goal-intro .direction-intro + .direction-intro { margin-top: 1rem; }
+  .direction-goal-intro .direction-actions {
+    gap: 1rem 1.5rem;
+    margin-top: 1.6rem;
+  }
+}
+
 @media (max-width: 760px) {
   .direction-goal-intro {
     padding-block: 1.5rem;
