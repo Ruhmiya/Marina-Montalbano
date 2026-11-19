@@ -4,6 +4,7 @@
   --cream:  #f5f0e8;
   --blue:   #1a1aff;
   --blue2:  #0404B8;
+  --studio-green: #183e35;
   --signature-gold: #e4ac1c;
   --signature-gold-highlight: #fcd45c;
   --signature-gold-warm: #f4b41c;
@@ -514,4 +515,30 @@ body:not(.high-contrast) nav a.nav-cv,
 body:not(.high-contrast) .mobile-menu-overlay a.mm-item[download] {
   background: var(--signature-gold-gradient) !important;
   color: #10283b !important;
+}
+
+
+/* Green header for the portfolio and its case-study pages. */
+nav.nav-green {
+  background: var(--studio-green);
+  border-bottom: 1px solid color-mix(in srgb, var(--signature-gold) 45%, transparent);
+}
+.nav-green .nav-links a:not(.nav-cv) { color: #fff; }
+.nav-green .nav-links a:not(.nav-cv):is([aria-current="page"], [aria-current="location"], :hover, :focus-visible) {
+  color: var(--signature-gold-highlight);
+  animation: none;
+}
+.nav-green .nav-links a[aria-current="location"] {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.nav-green :is(.language-picker, .a11y-menu > .a11y-toggle) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .55);
+}
+.nav-green .language-picker > svg,
+.nav-green .a11y-menu > .a11y-toggle:hover { color: var(--signature-gold-highlight); }
+.nav-green .hamburger span { background: #fff; }
+.nav-green :is(.nav-logo, .nav-links a, .language-select, .hamburger, .a11y-menu > .a11y-toggle):focus-visible {
+  outline-color: var(--signature-gold-highlight);
 }
