@@ -486,3 +486,19 @@ body.high-contrast .language-select:focus-visible{outline-color:#FFDD00}
 @media(prefers-reduced-motion:reduce){
  nav a.nav-cv,.mobile-menu-overlay a.mm-item[download]{animation:none!important}
 }
+
+/* Signature in the shared header and the mobile menu. */
+nav a.nav-logo > img.nav-signature,
+.mm-header img.nav-signature {
+  display: block;
+  width: clamp(12rem, 22vw, 18rem);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2172 / 394;
+  object-fit: cover;
+}
+
+@media (max-width: 1180px) {
+  nav a.nav-logo > img.nav-signature,
+  .mm-header img.nav-signature { width: min(55vw, 14rem); }
+}
