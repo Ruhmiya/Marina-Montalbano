@@ -213,8 +213,13 @@
   .direction-journey-intro .direction-intro { grid-column: 1 / -1; }
 }
 
-.direction-goal-intro { text-align: center; }
-.direction-goal-intro h1,
-.direction-page .direction-goal-intro p.direction-intro { max-width: none; }
+.direction-goal-intro h1 {
+  max-width: none;
+  text-align: center;
+}
+.direction-page .direction-goal-intro p.direction-intro {
+  max-width: none;
+  text-align: justify;
+}
 .direction-goal-intro h1::after { margin-inline: auto; }
 .direction-goal-intro .direction-actions { justify-content: center; }
