@@ -86,6 +86,7 @@
   color: var(--direction-muted);
   font-size: calc(1.1rem * var(--text-scale));
 }
+.direction-page-intro .direction-intro + .direction-intro { margin-top: 1rem; }
 .direction-section h2 + p { margin-top: 1rem; }
 .direction-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.6rem; }
 .direction-actions a { font-size: calc(.95rem * var(--text-scale)); }
