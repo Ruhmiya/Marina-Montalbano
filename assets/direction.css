@@ -141,6 +141,21 @@
 }
 .direction-card p { margin-top: .75rem; color: var(--direction-muted); }
 
+.direction-page .direction-experiences p.direction-intro { max-width: 76ch; }
+.direction-experiences .direction-card .direction-link {
+  display: inline-block;
+  margin-top: .85rem;
+  font-size: calc(1rem * var(--text-scale));
+}
+
+@media (min-width: 761px) {
+  .direction-experiences .direction-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1181px) {
+  .direction-experiences .direction-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .direction-experiences .direction-card { padding-inline: 1.5rem; }
+}
+
 .direction-timeline { margin-top: 1.75rem; list-style: none; }
 .direction-timeline li {
   display: grid;
