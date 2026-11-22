@@ -2,7 +2,7 @@
 
 [Site de Marina Montalbano](https://marina-montalbano.fr/) · Assistante de direction confirmée à Longjumeau (Essonne).
 
-Je recherche un CDD ou une mission d’intérim en assistanat de direction. Mon parcours associe coordination administrative, appui aux projets et expérience du service aux voyageurs.
+Je recherche un CDD ou une mission d’intérim en assistanat de direction, pour une durée d’au moins 3 mois et dans un rayon de 20 km autour de Longjumeau. Mon parcours associe coordination administrative, appui aux projets et expérience du service aux voyageurs.
 
 Je prépare le certificat professionnel Google en gestion de projet sur Coursera. Mon certificat Google UX Design, obtenu en octobre 2026, complète ce parcours avec des méthodes pour structurer l’analyse et concevoir des parcours plus fluides.
 
