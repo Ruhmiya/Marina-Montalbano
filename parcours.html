@@ -3,454 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon parcours &amp; certificat Google UX Design — Marina Montalbano</title>
-<meta name="description" content="De la coordination au Product Design : découvrez mon parcours professionnel, mes compétences transférables et mon certificat professionnel Google UX Design.">
+<title>Mon parcours — Marina Montalbano</title>
+<meta name="description" content="De l’assistanat de direction à la conduite de bus : expériences, compétences et formations de Marina Montalbano.">
 <link rel="canonical" href="https://marina-montalbano.fr/parcours.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Marina Montalbano">
-<meta property="og:title" content="Mon parcours &amp; certificat Google UX Design — Marina Montalbano">
-<meta property="og:description" content="De la coordination au Product Design : découvrez mon parcours professionnel, mes compétences transférables et mon certificat professionnel Google UX Design.">
+<meta property="og:title" content="Mon parcours — Marina Montalbano">
+<meta property="og:description" content="De l’assistanat de direction à la conduite de bus : expériences, compétences et formations de Marina Montalbano.">
 <meta property="og:url" content="https://marina-montalbano.fr/parcours.html">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --cream:  #f5f0e8;
-  --blue:   #1a1aff;
-  --blue2:  #0404B8;
-  --gold:   #c9a84c;
-  --gold2:  #a07820;
-  --navy:   #0b1f4a;
-  --white:  #ffffff;
-  --muted:  #5a6a8a;
-}
-html { scroll-behavior: smooth; }
-body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
 
-/* ══ NAV ══ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 60px;
-  background: rgba(245,240,232,0.96); backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-}
-.nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-links a { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: all 0.3s; }
-.nav-links a:hover { color: var(--gold); animation: goldBlink 1s ease infinite; }
-@keyframes goldBlink { 0%,100%{opacity:1;color:var(--gold)} 50%{opacity:0.4;color:var(--gold2)} }
-.nav-cv { padding: 10px 20px !important; color: var(--white) !important; font-weight: 700 !important; font-size: 11px !important; letter-spacing: 1.5px !important; white-space: nowrap !important; text-decoration: none; animation: navCvPulse 2.5s ease-in-out infinite !important; }
-@keyframes navCvPulse {
-  0%, 100% {
-    background: var(--gold);
-    box-shadow: 0 0 0 0 rgba(11,31,74,0);
-  }
-  50% {
-    background: var(--gold);
-    box-shadow: 0 0 10px 3px rgba(11,31,74,0.5);
-  }
-}
-.nav-cv:hover { animation: none !important; background: var(--gold2) !important; box-shadow: none !important; }
-.nav-cv:hover { background: var(--gold2) !important; animation: none !important; }
-.lang-switcher { display: flex; gap: 6px; align-items: center; }
-.lang-btn { font-size: 20px; cursor: pointer; opacity: 0.35; filter: grayscale(80%); transition: all 0.3s; }
-.lang-btn:hover, .lang-btn.active { opacity: 1; filter: grayscale(0%); transform: scale(1.2); }
-
-/* ══ HERO ══ */
-.hero {
-  min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; align-items: center; text-align: center;
-  padding: 120px 60px 80px; background: var(--cream); position: relative;
-}
-.hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s 0.2s ease forwards; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5.5vw, 72px); font-weight: 700; color: var(--blue); line-height: 1.2; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
-.hero-sub { font-size: 15px; font-weight: 300; color: var(--gold); margin-bottom: 48px; letter-spacing: 1px; opacity: 0; animation: fadeUp 0.8s 0.6s ease forwards; }
-.hero-sig { font-family: 'Dancing Script', cursive; font-size: clamp(36px, 5vw, 64px); color: var(--blue2); margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s 0.8s ease forwards; }
-.hero-arrow { font-size: 24px; color: var(--gold); margin-top: 48px; opacity: 0; animation: fadeUp 0.8s 1s ease forwards, bounce 2s 1.8s ease infinite; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
-
-/* ══ SECTIONS ══ */
-section { padding: 100px 120px; }
-.section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; text-align: center; }
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 44px); font-weight: 600; color: var(--blue); line-height: 1.3; margin-bottom: 60px; text-align: center; }
-.section-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 60px; }
-
-/* ══ FIL CONDUCTEUR ══ */
-#fil { background: var(--cream); }
-.fil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 720px; margin: 0 auto; }
-.fil-box { padding: 52px 44px; }
-.fil-box.light { background: var(--white); border: 1px solid rgba(11,31,74,0.08); }
-.fil-box.dark  { background: var(--navy); }
-.fil-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px; }
-.fil-box.light .fil-label { color: var(--muted); }
-.fil-box.dark  .fil-label { color: var(--gold); }
-.fil-list { list-style: none; }
-.fil-list li { font-size: 18px; font-weight: 300; line-height: 2.1; display: flex; align-items: baseline; gap: 12px; }
-.fil-box.light .fil-list li { color: var(--navy); }
-.fil-box.dark  .fil-list li { color: rgba(255,255,255,0.9); }
-.fil-list li::before { content: '—'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-
-/* ══ PARCOURS ══ */
-#parcours { background: var(--white); }
-.timeline { position: relative; padding-left: 40px; max-width: 620px; margin: 0 auto; }
-.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:1px; background:linear-gradient(180deg,var(--gold),rgba(201,168,76,0.1)); }
-.tl-item { position: relative; margin-bottom: 52px; }
-.tl-item:last-child { margin-bottom: 0; }
-.tl-dot { position:absolute; left:-46px; top:6px; width:12px; height:12px; background:rgba(201,168,76,0.25); border-radius:50%; transition:all 0.6s ease; }
-.tl-dot.active { background:var(--gold2); box-shadow:0 0 0 8px rgba(160,120,32,0.15); transform:scale(1.3); }
-.tl-dot.done  { background:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,0.2); }
-.tl-role { font-family:'Playfair Display',serif; font-size: 18px; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
-.tl-sub  { font-size: 14px; font-weight: 300; font-style: italic; color: var(--gold); margin-bottom: 0; }
-
-/* ══ METIERS ══ */
-#metiers { background: var(--cream); }
-.metiers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
-.metier-card { background: var(--white); padding: 32px 24px; border: 1px solid rgba(11,31,74,0.06); display: flex; flex-direction: column; transition: all 0.3s; }
-.metier-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(11,31,74,0.08); border-color: rgba(201,168,76,0.3); }
-.metier-title { font-size: 11px; font-weight: 400; color: var(--blue); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-.metier-list { list-style: none; flex: 1; }
-.metier-list li { font-size: 13px; font-weight: 300; color: var(--navy); line-height: 1.9; display: flex; align-items: baseline; gap: 8px; }
-.metier-list li::before { content:'●'; font-size:6px; color:var(--gold); flex-shrink:0; }
-
-/* ══ FAISAIS ══ */
-#faisais { background: var(--white); }
-.faisais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 760px; margin: 0 auto; }
-.faisais-card { border: 1px solid rgba(11,31,74,0.1); padding: 22px 24px; display: flex; align-items: center; gap: 14px; background: var(--cream); transition: all 0.3s; }
-.faisais-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.faisais-icon { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--gold); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.faisais-icon::after { content:'✓'; font-size:10px; color:var(--gold); font-weight:700; }
-.faisais-card span { font-size: 14px; font-weight: 400; color: var(--navy); }
-
-/* ══ POURQUOI ══ */
-#pourquoi { background: var(--navy); text-align: center; }
-#pourquoi .section-title { color: var(--white); }
-.pourquoi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; max-width: 860px; margin: 0 auto; }
-.pourquoi-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.pourquoi-icon { font-size: 36px; color: var(--gold); margin-bottom: 8px; }
-.pourquoi-label { font-family:'Playfair Display',serif; font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-.pourquoi-text { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.8; }
-
-/* ══ COMPÉTENCES ══ */
-#competences { background: var(--cream); }
-.comp-title { font-family:'Playfair Display',serif; font-size:clamp(22px,2.8vw,38px); font-weight:600; color:var(--blue); text-align:center; margin-bottom:48px; }
-.tags-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 760px; margin: 0 auto 64px; }
-.tag { padding: 10px 24px; border: 1px solid rgba(11,31,74,0.15); font-size: 13px; font-weight: 400; color: var(--navy); background: var(--white); transition: all 0.3s; cursor: default; }
-.tag:hover { background: var(--navy); color: var(--gold2); border-color: var(--navy); }
-.apprend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
-.apprend-box { padding: 28px 32px; border-left: 3px solid var(--gold); background: var(--white); }
-.apprend-box h4 { font-size: 12px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
-.apprend-box ul { list-style: none; }
-.apprend-box ul li { font-size: 16px; font-weight: 400; color: var(--navy); line-height: 2; }
-.apprend-box ul li::before { content: '· '; color: var(--gold); font-weight: 700; }
-
-/* ══ EXPÉRIENCES ══ */
-#experiences { background: var(--white); }
-.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
-.exp-card { padding: 36px 32px; background: var(--cream); border-top: 2px solid transparent; transition: all 0.3s; }
-.exp-card:hover { border-top-color: var(--gold); transform: translateY(-3px); }
-.exp-card h3 { font-family:'Playfair Display',serif; font-size: 18px; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
-.exp-card p { font-size: 13px; font-weight: 300; color: var(--navy); line-height: 1.8; }
-
-/* ══ CONCLUSION ══ */
-#conclusion { background: var(--navy); text-align: center; padding: 120px 80px; }
-.concl-h1 { font-family:'Playfair Display',serif; font-size:clamp(26px,3.5vw,48px); font-weight:700; color:var(--gold2); line-height:1.3; margin-bottom:40px; }
-.concl-text { font-size: 16px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.75); max-width: 660px; margin: 0 auto 52px; line-height: 1.9; }
-.concl-sig { font-family: 'Dancing Script', cursive; font-size: clamp(36px,5vw,60px); color: var(--white); margin-bottom: 10px; }
-.concl-role { font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 56px; }
-.contact-row { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; margin-bottom: 48px; }
-.contact-item .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.contact-item .contact-val { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85); }
-.btns-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; text-align: center; }
-.btn:hover { background: var(--gold2); transform: translateY(-2px); }
-.btn-outline { display: inline-block; padding: 14px 40px; background: transparent; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: all 0.3s; }
-.btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
-.btn-cv-glow {
-  animation: cvPulse 2.5s ease-in-out infinite;
-  font-size: 11px;
-  text-align: center;
-}
-@keyframes cvPulse {
-  0%, 100% {
-    border-color: rgba(201,168,76,0.5);
-    color: var(--gold);
-    box-shadow: 0 0 0 0 rgba(201,168,76,0);
-    background: transparent;
-  }
-  50% {
-    border-color: var(--gold2);
-    color: var(--white);
-    box-shadow: 0 0 40px 15px rgba(201,168,76,0.4), 0 0 80px 30px rgba(201,168,76,0.15);
-    background: rgba(201,168,76,0.12);
-  }
-}
-.btn-cv-glow:hover {
-  animation: none;
-  background: rgba(201,168,76,0.15);
-  box-shadow: 0 0 32px 8px rgba(201,168,76,0.3);
-  transform: translateY(-2px);
-}
-
-/* ══ FOOTER ══ */
-footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; }
-.footer-name { font-family: 'Dancing Script', cursive; font-size: 18px; color: var(--gold); }
-.footer-copy { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
-
-/* ══ RESPONSIVE MOBILE ══ */
-@media(max-width:768px){
-
-  /* NAV mobile — hamburger simple */
-  nav {
-    padding: 14px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    position: relative;
-  }
-  .nav-logo { font-size: 11px; letter-spacing: 3px; margin-bottom: 0; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-    background: rgba(245,240,232,0.98);
-    padding: 12px 0;
-    margin-top: 12px;
-    border-top: 1px solid rgba(201,168,76,0.2);
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { width: 100%; }
-  .nav-links a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 11px;
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-  }
-  .nav-links .nav-cv { margin: 10px 20px; display: inline-block; width: auto; }
-  .lang-switcher { padding: 10px 20px; }
-
-  /* Bouton hamburger */
-  .hamburger {
-    display: flex !important;
-    position: absolute;
-    right: 20px;
-    top: 14px;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--navy);
-    transition: all 0.3s;
-  }
-
-  /* HERO */
-  .hero { padding: 100px 24px 60px; }
-  .hero h1 { font-size: clamp(32px, 8vw, 48px); }
-  .hero-sig { font-size: clamp(28px, 7vw, 40px); }
-
-  /* SECTIONS */
-  section { padding: 64px 20px; }
-
-  /* GRILLES → 1 colonne */
-  .fil-grid,
-  .faisais-grid,
-  .pourquoi-grid,
-  .apprend-grid,
-  .exp-grid { grid-template-columns: 1fr; }
-
-  /* METIERS → 1 colonne */
-  .metiers-grid { grid-template-columns: 1fr; }
-
-  /* FIL CONDUCTEUR */
-  .fil-box { padding: 32px 24px; }
-  .fil-list li { font-size: 15px; }
-
-  /* CONCLUSION */
-  #conclusion { padding: 72px 20px; }
-  .contact-row { gap: 24px; flex-direction: column; align-items: center; }
-  .btns-row { flex-direction: column; align-items: center; }
-  .btn, .btn-outline { width: 100%; text-align: center; }
-
-  /* FOOTER */
-  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
-}
-
-/* Certificat visible dès l’ouverture de Mon parcours */
-.certificate-hero { min-height: auto; padding: 110px 32px 48px; }
-.certificate-hero h1 { opacity: 1; animation: none; margin-bottom: 32px; font-size: clamp(32px,4vw,48px); }
-.certificate-card { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; max-width: 1100px; width: 100%; margin: auto; padding: 28px; background: var(--white); border: 1px solid rgba(201,168,76,.4); text-align: left; }
-.certificate-preview { display: block; }
-.certificate-preview img { display: block; width: 100%; height: auto; border: 1px solid #e1e5eb; }
-.certificate-copy h2 { font-family: 'Playfair Display',serif; font-size: clamp(24px,2.5vw,34px); color: var(--blue); line-height: 1.3; margin: 14px 0; }
-.certificate-copy p { font-size: 16px; line-height: 1.7; }
-.certificate-copy .certificate-label { color: #7a5c18; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-.certificate-copy .certificate-date { font-weight: 700; margin-bottom: 16px; }
-.certificate-copy .btn { margin-top: 22px; padding: 14px 20px; line-height: 1.5; }
-.certificate-copy .certificate-hint { margin-top: 10px; font-size: 12px; color: var(--muted); }
-.certificate-next { margin-top: 28px; line-height: 1.7; }
-.certificate-next a { color: var(--blue2); text-underline-offset: 4px; }
-.certificate-hero a:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
-@media(max-width:768px) {
- .certificate-hero { padding: 32px 20px; }
- .certificate-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
- .certificate-preview { max-width: 480px; margin: auto; }
-}
-
-
-.learning-page{max-width:1100px;margin:auto;padding:135px 28px 64px}
-.learning-page .learn-back{font-size:calc(13px * var(--text-scale));color:var(--navy);text-underline-offset:4px}
-.learning-page .learn-hero{padding:32px 0 38px;max-width:840px}
-.learning-page .learn-kicker,.learn-teaser .learn-kicker{font-size:calc(11px * var(--text-scale));text-transform:uppercase;letter-spacing:2px;color:var(--gold-text);font-weight:700;margin-bottom:14px}
-.learning-page h1{font-family:'Playfair Display',serif;font-size:calc(clamp(36px,5vw,58px) * var(--text-scale));line-height:1.15;color:var(--navy);margin-bottom:22px}
-.learning-page p{font-size:calc(15px * var(--text-scale));line-height:1.75}
-.learning-page .learn-intro{font-size:calc(18px * var(--text-scale));max-width:760px}
-.learning-page h2,.learn-teaser h2{font-family:'Playfair Display',serif;font-size:calc(28px * var(--text-scale));line-height:1.3;margin-bottom:12px}
-.learning-page .learn-section{padding:28px 0}
-.learning-page .learn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
-.learning-page .learn-card{background:#fff;border:1px solid #e4ddd0;border-radius:18px;padding:28px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0}
-.learning-page .learn-card h3{font-family:'Playfair Display',serif;font-size:calc(23px * var(--text-scale));line-height:1.3}
-.learning-page .learn-top{width:100%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
-.learning-page .learn-platform{font-size:calc(12px * var(--text-scale));letter-spacing:.5px;font-weight:700}
-.learning-page .learn-status{background:#e6f1e8;color:#245734;border-radius:30px;padding:5px 11px;font-size:calc(12px * var(--text-scale));font-weight:700}
-.learning-page .learn-meta{font-size:calc(12px * var(--text-scale));color:var(--muted)}
-.learning-page .learn-links{display:flex;gap:15px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
-.learning-page .learn-links a,.learning-page summary{font-size:calc(13px * var(--text-scale));color:var(--blue2);font-weight:700;text-underline-offset:4px}
-.learning-page details{width:100%;border-top:1px solid #e4ddd0;padding-top:14px}
-.learning-page summary{cursor:pointer;padding:4px 0}
-.learning-page details img{display:block;width:100%;height:auto;margin:16px 0 10px;border-radius:8px}
-.learning-page .learn-note{font-size:calc(12px * var(--text-scale));color:var(--muted);margin-top:14px}
-.learning-page .curiosity-card{background:transparent;border-top:2px solid var(--gold);border-radius:0;padding:22px 0}
-.learning-page .learn-close{border-top:1px solid #d9d0c0;margin-top:25px;padding-top:26px}
-.learn-teaser{max-width:1060px;margin:28px auto 45px;padding:30px;background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.3);border-radius:18px}
-.learn-teaser p{line-height:1.7;margin-bottom:18px}.learn-teaser a{font-weight:700;color:var(--blue2);text-underline-offset:4px}
-body.high-contrast .learning-page .learn-card,body.high-contrast .learn-teaser{background:#000;color:#fff;border-color:#ffdd00}body.high-contrast .learning-page .learn-status{background:#000;color:#ffdd00;border:1px solid #ffdd00}body.high-contrast .learning-page a,body.high-contrast .learning-page summary,body.high-contrast .learn-teaser a{color:#ffdd00}
-@media(max-width:700px){.learning-page{padding:110px 20px 45px}.learning-page .learn-grid{grid-template-columns:1fr}.learning-page .learn-card{padding:22px}.learn-teaser{margin:24px 20px;padding:24px}}
-
-.certificate-hero .learning-cta{display:inline-flex;align-items:center;justify-content:space-between;align-self:flex-start;gap:18px;max-width:100%;width:fit-content;margin:4px 0 28px;padding:15px 23px;border-radius:32px;background:#102747;color:white;text-decoration:none;font-weight:700;box-shadow:0 5px 18px #14284625}.learning-cta b{border-radius:50%;background:#e9cb77;color:#142846;padding:4px 9px}.learning-cta:hover,.learning-cta:focus-visible{outline:3px solid #bb9643;outline-offset:3px}</style>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/site.css?v=publication-langues-20261106">
-<style>
-body .certificate-hero {max-width:1100px;margin:auto;padding:94px 28px 26px}
-.certificate-hero h1 {font-size:calc(clamp(29px,3vw,39px)*var(--text-scale));margin-bottom:14px}
-.certificate-hero .learning-cta {margin:0 0 19px;padding:10px 18px}
-.certificate-hero .certificate-card {max-width:1010px;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(18px,3vw,32px);padding:clamp(18px,2.2vw,26px);border-radius:18px;border-top:3px solid var(--gold);background:linear-gradient(120deg,#f8f3e8,#fff 55%);box-shadow:0 8px 26px #14284612}
-.certificate-card .certificate-preview img {border-radius:5px;box-shadow:0 4px 14px #14284614}
-.certificate-card .certificate-copy h2 {font-size:calc(clamp(21px,2vw,29px)*var(--text-scale));margin:8px 0}
-.certificate-card .certificate-copy p:not(.certificate-label):not(.certificate-hint) {font-size:calc(15px*var(--text-scale));line-height:1.52}
-.certificate-card .certificate-copy .btn {margin-top:14px;padding:10px 16px}
-.certificate-hero .certificate-next {margin-top:16px}
-body>section:not(.certificate-hero) {padding-block:clamp(32px,4.8vw,62px)}
-.section-title {font-size:calc(clamp(24px,2.6vw,35px)*var(--text-scale));margin-bottom:28px}
-body.high-contrast .certificate-card {background:#000;border-color:#ffdd00}
-@media(max-width:720px){body .certificate-hero{padding:90px 20px 24px}.certificate-hero .certificate-card{grid-template-columns:1fr}.certificate-card .certificate-preview{width:min(100%,370px);margin:auto}}
-</style><style>
-/* The bevel follows each mitred side of the frame. */
-.certificate-card .certificate-preview {
-  position:relative;
-  isolation:isolate;
-  display:block;
-  padding:clamp(19px,2.4vw,30px);
-  border:1px solid #344559;
-  border-radius:2px;
-  background:conic-gradient(from 45deg,#182b40 0 25%,#101e32 0 50%,#364b61 0 75%,#506377 0);
-  box-shadow:0 1px 0 #fff,0 3px 5px #17283a26,0 12px 20px -9px #17283a60;
-}
-.certificate-card .certificate-preview::before {
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:6px;
-  border:2px solid;
-  border-color:#f3dfac #ae8e56 #947444 #d6ba80;
-  background:linear-gradient(145deg,#fffdf6,#f2ebdd);
-  box-shadow:0 0 0 1px #0d1d30,inset 0 2px 4px #4c3b2126;
-}
-.certificate-card .certificate-preview img {
-  display:block;
-  width:100%;
-  height:auto;
-  border:1px solid;
-  border-color:#bcb09b #fffef9 #fffef9 #c5bba9;
-  border-radius:0;
-  box-shadow:0 0 0 1px #dbd1bf;
-}
-</style><style>
-.parcours-page nav{background:#0e293d;color:white;border-bottom:1px solid #c6a66b}
-.parcours-page nav .nav-logo,.parcours-page nav .nav-links a{color:#fff}
-.parcours-page nav .nav-logo::before{content:'M';font:italic 32px 'Dancing Script',cursive;color:#e6bd69;margin-right:12px;padding-right:12px;border-right:1px solid #aa956e}
-.parcours-page nav .nav-links a[aria-current=page]{color:#f1ce80;text-decoration:underline;text-underline-offset:7px}
-.parcours-page nav .nav-cv,.certificate-card .btn{border-radius:30px;background:linear-gradient(115deg,#f1d180,#d9ae56);color:#10283b}
-.parcours-page nav .hamburger span{background:#fff}
-.parcours-page nav .a11y-toggle,.parcours-page nav .language-select{background:#f9f4eb;color:#10283b}
-.journey-opening{position:relative;isolation:isolate;background:radial-gradient(ellipse at 100% 92%,#f2e6d7,transparent 48%),#fbf7ef}
-.journey-opening::before,.journey-opening::after{content:'';position:absolute;z-index:-1;pointer-events:none;width:min(17vw,260px);height:350px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20260%20360%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23bc914c%22%20stroke-width%3D%221.3%22%3E%3Cpath%20d%3D%22M-10%20350%20Q95%20275%20144%20173%20T213%2063%22%2F%3E%3Cpath%20d%3D%22M75%20282Q37%20246%2046%20197Q80%20221%2075%20282ZM108%20229Q121%20173%20168%20179Q143%20211%20108%20229ZM135%20185Q103%20153%20112%20111Q141%20141%20135%20185ZM166%20131Q188%20104%20231%20108Q203%20132%20166%20131ZM187%2099Q182%2062%20218%2027Q217%2066%20187%2099Z%22%2F%3E%3Cpath%20d%3D%22M112%20225Q160%20227%20185%20211M154%20223l10%2012M144%20222l8-13%22%2F%3E%3Ccircle%20cx%3D%22186%22%20cy%3D%22210%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22165%22%20cy%3D%22237%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22153%22%20cy%3D%22207%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat,radial-gradient(ellipse at -12% -30%,#102b40 0 49%,transparent 49.4%)}
-.journey-opening::before{top:56px;left:0}.journey-opening::after{bottom:0;right:0;transform:rotate(180deg)}
-.journey-opening .certificate-hero{background:transparent;padding:90px 22px 10px;max-width:1000px}
-.journey-opening .certificate-hero h1{font:700 calc(clamp(38px,4vw,58px)*var(--text-scale))/1.08 'Playfair Display',Georgia,serif;text-align:center;color:#10283b;margin:0 auto 18px}
-.journey-opening .certificate-hero h1::after{content:'';display:block;width:76px;height:2px;background:#c6a15b;margin:14px auto 0}
-.journey-opening .certificate-card{border:1px solid #d4b57d;background:#fffaf2;box-shadow:0 8px 24px #4c371316;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.journey-opening .certificate-copy h2{color:#10283b}
-.journey-opening .certificate-next{text-align:center;margin:14px auto 0}
-.journey-opening #fil{background:transparent;padding:18px 24px 32px}
-#fil .section-eyebrow{text-align:center;margin:0 0 9px;color:#99712f}
-#fil .section-title{color:#10283b;margin:0 auto 18px;line-height:1.12}
-#fil .section-title em{display:block;color:#9b742e;font-weight:500}
-#fil .section-divider{display:none}
-#fil .fil-grid{gap:0;border-radius:16px;overflow:hidden;border:1px solid #ccae76;box-shadow:0 5px 14px #35291515}
-#fil .fil-box{padding:20px clamp(18px,3vw,38px);border:0}
-#fil .fil-box.light{background:#fffaf2}#fil .fil-box.dark{background:#102b40}
-#fil .fil-label{margin-bottom:10px;font-size:calc(12px*var(--text-scale));letter-spacing:1.6px}
-#fil .fil-list li{font-size:calc(15px*var(--text-scale));line-height:1.55}
-#parcours{background:#fbf7ef}#parcours .section-title{color:#10283b}
-body.high-contrast .journey-opening,body.high-contrast .journey-opening .certificate-card,body.high-contrast #fil .fil-box{background:#000}
-@media(max-width:1100px){.journey-opening::before,.journey-opening::after{opacity:.32;width:9vw}}
-@media(max-width:720px){.journey-opening::before,.journey-opening::after{display:none}.journey-opening .certificate-card,#fil .fil-grid{grid-template-columns:1fr}.journey-opening .certificate-hero{padding:86px 18px 8px}}
-</style><style>
-.parcours-page {
-  --journey-ink:#102b40;
-  --journey-paper:#fbf7ef;
-  --journey-panel:#fffaf2;
-  --journey-edge:#d7bf92;
-  --journey-radius:16px;
-  --journey-shadow:0 5px 15px rgba(62,46,22,.07);
-}
-.parcours-page:not(.high-contrast) :is(#parcours,#faisais,#experiences,#certificats){background:var(--journey-paper)}
-.parcours-page:not(.high-contrast) :is(#metiers,#competences){background:#f4eddf}
-.parcours-page:not(.high-contrast) :is(.section-title,.comp-title,.tl-role,.metier-title,.exp-card h3,.apprend-box h4,#credentials-heading,.credential-copy h3){color:var(--journey-ink)}
-.parcours-page :is(.tl-item,.metier-card,.faisais-card,.apprend-box,.exp-card,.credential-card,.pourquoi-item){border-radius:var(--journey-radius)}
-.parcours-page:not(.high-contrast) :is(.tl-item,.metier-card,.faisais-card,.apprend-box,.exp-card,.credential-card){
-  background:var(--journey-panel);border:1px solid var(--journey-edge);box-shadow:var(--journey-shadow)
-}
-.parcours-page .timeline{max-width:740px;padding-left:28px}
-.parcours-page .tl-item{padding:14px 22px;margin-bottom:12px}
-.parcours-page .tl-dot{left:-35px;top:21px}
-.parcours-page:not(.high-contrast) .tl-sub{color:#6e5e42}
-.parcours-page .metier-card,.parcours-page .exp-card,.parcours-page .apprend-box{padding:22px}
-.parcours-page .tag{border-radius:24px;padding:7px 16px}
-.parcours-page:not(.high-contrast) .tag{background:var(--journey-panel);border-color:var(--journey-edge)}
-.parcours-page .pourquoi-grid{gap:16px}
-.parcours-page .pourquoi-item{padding:22px 18px;gap:8px}
-.parcours-page:not(.high-contrast) :is(#pourquoi,#conclusion){background:linear-gradient(135deg,#102b40,#17394c);color:#fffaf2}
-.parcours-page:not(.high-contrast) #pourquoi .section-title{color:#fffaf2}
-.parcours-page:not(.high-contrast) .pourquoi-item{border:1px solid #827354;background:#18384c}
-.parcours-page:not(.high-contrast) .concl-h1{color:#f1d491}
-.parcours-page .credential-card{overflow:hidden}
-.parcours-page #conclusion{padding:clamp(42px,5vw,68px) 22px}
-.parcours-page #conclusion .btns-row a{border-radius:28px}
-.parcours-page:not(.high-contrast) footer{background:#0e293d;border-top:1px solid #ac915e}
-.parcours-page.high-contrast :is(.tl-item,.pourquoi-item,.credential-card){background:#000;border:1px solid #ffdd00}
-</style></head>
-<body class="parcours-page">
+<link rel="stylesheet" href="assets/site.css?v=palette-doree">
+<link rel="stylesheet" href="assets/direction.css?v=recrutement">
+</head>
+<body class="direction-page">
 
 <!-- Lien d'évitement, pour les utilisateurs clavier -->
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -490,17 +60,17 @@ body.high-contrast .journey-opening,body.high-contrast .journey-opening .certifi
 
 <!-- NAV -->
 <nav aria-label="Navigation principale">
-  <a class="nav-logo" href="index.html">Marina Montalbano</a>
+  <a class="nav-logo" href="index.html"><img class="nav-signature" src="assets/signature-marina-header.webp" width="960" height="320" alt="Marina Montalbano"></a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" style="display:none;" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
 <li><a href="index.html"><span data-fr="Accueil" data-en="Home">Accueil</span></a></li>
     <li><a href="parcours.html" aria-current="page"><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></a></li>
-    <li><a href="portfolio.html"><span data-fr="Portfolio" data-en="Portfolio">Portfolio</span></a></li>
-    <li><a href="cible.html"><span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span></a></li>
+    <li><a href="cible.html"><span data-fr="Mon objectif" data-en="My goal" data-de="Mein Ziel" data-sr="Moj cilj">Mon objectif</span></a></li>
+    <li><a href="portfolio.html"><span data-fr="Portfolio UX/UI" data-en="UX/UI portfolio" data-de="UX/UI-Portfolio" data-sr="UX/UI portfolio">Portfolio UX/UI</span></a></li>
     
-    <li><a href="CV_Marina_Montalbano.pdf" download class="nav-cv" id="nav-cv-link"><span data-fr="Télécharger mon CV ⬇" data-en="Download my Resume ⬇">Télécharger mon CV ⬇</span></a></li>
+    <li><a href="CV_Marina_Montalbano.pdf?v=65c1f3f1" download class="nav-cv" id="nav-cv-link" hreflang="fr"><span data-fr="Télécharger mon CV" data-en="Download my CV (French)" data-de="Lebenslauf herunterladen (Französisch)" data-sr="Preuzmite CV (na francuskom)">Télécharger mon CV</span> <span aria-hidden="true">⬇</span></a></li>
     <li class="lang-switcher language-picker"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><select class="language-select" aria-label="Choisir la langue"><option value="fr" selected>Français</option><option value="en">English</option><option value="de">Deutsch</option><option value="sr">Srpski</option></select></li>
     <li class="a11y-menu">
       <button class="a11y-toggle" id="a11yToggle" onclick="toggleA11yPanel()" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Options d'accessibilité">Aa</button>
@@ -531,9 +101,9 @@ body.high-contrast .journey-opening,body.high-contrast .journey-opening .certifi
 </nav>
 
 <!-- MENU MOBILE PLEIN ÉCRAN -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Navigation principale">
   <div class="mm-header">
-    <span class="mm-logo">MARINA MONTALBANO</span>
+    <span class="mm-logo"><img class="nav-signature" src="assets/signature-marina-header.webp" width="960" height="320" alt="Marina Montalbano"></span>
     <button class="mm-close" onclick="toggleMenu()" aria-label="Fermer le menu">✕</button>
   </div>
   <ul class="mm-list"><li>
@@ -543,24 +113,24 @@ body.high-contrast .journey-opening,body.high-contrast .journey-opening .certifi
       </a>
     </li>
 <li>
-      <a href="parcours.html" class="mm-item" aria-current="page">
+      <a href="parcours.html" aria-current="page" class="mm-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
         <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span>
       </a>
     </li>
 <li>
-      <a href="portfolio.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-        <span data-fr="Mon portfolio" data-en="My portfolio">Mon portfolio</span>
+      <a href="cible.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
+        <span data-fr="Mon objectif" data-en="My goal" data-de="Mein Ziel" data-sr="Moj cilj">Mon objectif</span>
       </a>
     </li>
 <li>
-      <a href="cible.html" class="mm-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.3"/><circle cx="11" cy="13" r="0.9" fill="currentColor"/><path d="M15.3 8.7L20 4M20 4h-3.2M20 4v3.2"/></svg>
-        <span data-fr="Mes objectifs" data-en="My goals">Mes objectifs</span>
+      <a href="portfolio.html" class="mm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span data-fr="Portfolio UX/UI" data-en="UX/UI portfolio" data-de="UX/UI-Portfolio" data-sr="UX/UI portfolio">Portfolio UX/UI</span>
       </a>
     </li>
-<li><a class="mm-item" href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></li></ul>
+<li><a class="mm-item" href="CV_Marina_Montalbano.pdf?v=65c1f3f1" download hreflang="fr"><span data-fr="Télécharger mon CV" data-en="Download my CV (French)" data-de="Lebenslauf herunterladen (Französisch)" data-sr="Preuzmite CV (na francuskom)">Télécharger mon CV</span></a></li></ul>
   <div class="mm-lang language-picker"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><select class="language-select" aria-label="Choisir la langue"><option value="fr" selected>Français</option><option value="en">English</option><option value="de">Deutsch</option><option value="sr">Srpski</option></select></div>
 
   <div class="mm-a11y">
@@ -590,282 +160,18 @@ body.high-contrast .journey-opening,body.high-contrast .journey-opening .certifi
   </div>
 </div>
 
-<div class="journey-opening">
-<!-- HERO -->
-<section class="hero certificate-hero" id="main-content" tabindex="-1">
-  <h1><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></h1>
-
-  <div class="certificate-card">
-    <a class="certificate-preview" href="assets/google-ux-design.jpg" target="_blank" rel="noopener" aria-label="Agrandir le certificat Google UX Design">
-      <img src="assets/google-ux-design.jpg" alt="Certificat professionnel Google UX Design délivré à Marina Montalbano le 2 octobre 2026, huit cours validés." width="1600" height="1237" fetchpriority="high">
-    </a>
-    <div class="certificate-copy">
-      <p class="certificate-label"><span data-fr="Formation · Google / Coursera" data-en="Education · Google / Coursera">Formation · Google / Coursera</span></p>
-      <h2><span data-fr="Certificat professionnel<br>Google UX Design" data-en="Google UX Design<br>Professional Certificate">Certificat professionnel<br>Google UX Design</span></h2>
-      <p class="certificate-date"><span data-fr="Obtenu le 2 octobre 2026 · 8 cours validés" data-en="Earned October 2, 2026 · 8 courses completed">Obtenu le 2 octobre 2026 · 8 cours validés</span></p>
-      <p><span data-fr="Une formation qui accompagne ma reconversion : recherche utilisateur, conception de parcours, wireframes, prototypes et tests." data-en="Training supporting my career transition: user research, user journeys, wireframes, prototypes and testing.">Une formation qui accompagne ma reconversion : recherche utilisateur, conception de parcours, wireframes, prototypes et tests.</span></p>
-      <a class="btn" href="https://coursera.org/verify/professional-cert/3PNU9Y3WN8EC" target="_blank" rel="noopener"><span data-fr="Vérifier mon certificat ↗" data-en="Verify my certificate ↗">Vérifier mon certificat ↗</span></a>
-      <p class="certificate-hint"><span data-fr="Vérification sur Coursera · nouvel onglet" data-en="Verification on Coursera · new tab">Vérification sur Coursera · nouvel onglet</span></p>
-    </div>
-  </div>
-  <p class="certificate-next"><a href="#fil"><span data-fr="De la coordination à l’expérience utilisateur — découvrir mon parcours ↓" data-en="From coordination to user experience — discover my journey ↓">De la coordination à l’expérience utilisateur — découvrir mon parcours ↓</span></a></p>
-</section>
-
-
-<!-- FIL CONDUCTEUR -->
-<section id="fil">
-  <p class="section-eyebrow"><span data-fr="Le fil conducteur" data-en="The common thread">Le fil conducteur</span></p>
-  <h2 class="section-title">
-    <span data-fr="Un parcours qui semble changer." data-en="A path that seems to change." data-de="Ein Weg, der sich zu verändern scheint." data-sr="Put koji kao da se menja.">Un parcours qui semble changer.</span><em><span data-fr="Une même façon de penser." data-en="The same way of thinking." data-de="Dieselbe Denkweise." data-sr="Isti način razmišljanja.">Une même façon de penser.</span></em>
-  </h2>
-  <div class="section-divider"></div>
-  <div class="fil-grid">
-    <div class="fil-box light">
-      <p class="fil-label"><span data-fr="Ce que l'on voit" data-en="What people see">Ce que l'on voit</span></p>
-      <ul class="fil-list">
-        <li><span data-fr="Assistante de direction" data-en="Executive Assistant">Assistante de direction</span></li>
-        <li><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></li>
-        <li><span data-fr="Support projet" data-en="Project support">Support projet</span></li>
-      </ul>
-    </div>
-    <div class="fil-box dark">
-      <p class="fil-label"><span data-fr="Ce qui m’a toujours guidée" data-en="What has always guided me" data-de="Was mich immer geleitet hat" data-sr="Ono što me je uvek vodilo">Ce qui m’a toujours guidée</span></p>
-      <ul class="fil-list">
-        <li><span data-fr="Compréhension des besoins" data-en="Understanding needs">Compréhension des besoins</span></li>
-        <li><span data-fr="Clarté de l'information" data-en="Information clarity">Clarté de l'information</span></li>
-        <li><span data-fr="Fluidité des parcours" data-en="Smooth user journeys">Fluidité des parcours</span></li>
-        <li><span data-fr="Sens du détail" data-en="Attention to detail">Sens du détail</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-</div>
-<!-- PARCOURS -->
-<section id="parcours">
-  <h2 class="section-title"><span data-fr="Mon parcours professionnel" data-en="My professional journey">Mon parcours professionnel</span></h2>
-  <div class="section-divider"></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot" id="dot0"></div>
-      <div class="tl-role"><span data-fr="Assistanat" data-en="Executive assistance">Assistanat</span></div>
-      <div class="tl-sub"><span data-fr="Organisation, coordination et communication" data-en="Organisation, coordination and communication">Organisation, coordination et communication</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot1"></div>
-      <div class="tl-role"><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></div>
-      <div class="tl-sub"><span data-fr="Service public, anticipation et parcours utilisateur" data-en="Public service, anticipation and user journey">Service public, anticipation et parcours utilisateur</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot2"></div>
-      <div class="tl-role"><span data-fr="Assistante de direction technique" data-en="Technical executive assistant">Assistante de direction technique</span></div>
-      <div class="tl-sub"><span data-fr="Support projet, clarté et gestion de l'information" data-en="Project support, clarity and information management">Support projet, clarté et gestion de l'information</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" id="dot3"></div>
-      <div class="tl-role"><span data-fr="Reconversion Product Design" data-en="Product Design transition">Reconversion Product Design</span></div>
-      <div class="tl-sub"><span data-fr="Synthèse de toutes ces compétences" data-en="Bringing all skills together">Synthèse de toutes ces compétences</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- MÉTIERS -->
-<section id="metiers">
-  <h2 class="section-title"><span data-fr="Chaque métier m'a appris<br>une compétence utile au design" data-en="Every role taught me skills<br>that are useful in design">Chaque métier m'a appris<br>une compétence utile au design</span></h2>
-  <div class="section-divider"></div>
-  <div class="metiers-grid">
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Assistante de direction" data-en="Executive assistant">Assistante de direction</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Organiser l'information" data-en="Organise information">Organiser l'information</span></li>
-        <li><span data-fr="Anticiper les besoins" data-en="Anticipate needs">Anticiper les besoins</span></li>
-        <li><span data-fr="Simplifier les processus" data-en="Simplify processes">Simplifier les processus</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Support projet" data-en="Project support">Support projet</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Coordination d'équipes" data-en="Team coordination">Coordination d'équipes</span></li>
-        <li><span data-fr="Vision d'ensemble" data-en="Big picture thinking">Vision d'ensemble</span></li>
-        <li><span data-fr="Clarté dans la communication" data-en="Clear communication">Clarté dans la communication</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Conductrice de bus" data-en="Bus driver">Conductrice de bus</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Expérience utilisateur" data-en="User experience">Expérience utilisateur</span></li>
-        <li><span data-fr="Accessibilité" data-en="Accessibility">Accessibilité</span></li>
-        <li><span data-fr="Gestion des imprévus" data-en="Managing the unexpected">Gestion des imprévus</span></li>
-      </ul>
-    </div>
-    <div class="metier-card">
-      <div class="metier-title"><span data-fr="Environnement technique" data-en="Technical environment">Environnement technique</span></div>
-      <ul class="metier-list">
-        <li><span data-fr="Rigueur" data-en="Rigour">Rigueur</span></li>
-        <li><span data-fr="Logique de système" data-en="Systems thinking">Logique de système</span></li>
-        <li><span data-fr="Attention aux détails" data-en="Attention to detail">Attention aux détails</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- CE QUE JE FAISAIS -->
-<section id="faisais">
-  <h2 class="section-title"><span data-fr="Ce que je faisais déjà<br>sans le nommer" data-en="What I was already doing<br>without naming it">Ce que je faisais déjà<br>sans le nommer</span></h2>
-  <div class="section-divider"></div>
-  <div class="faisais-grid">
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Améliorer la lisibilité d'un support" data-en="Improving readability of a document">Améliorer la lisibilité d'un support</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Organiser une information complexe" data-en="Organising complex information">Organiser une information complexe</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Anticiper les besoins" data-en="Anticipating needs">Anticiper les besoins</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Rendre un parcours plus simple" data-en="Making a journey simpler">Rendre un parcours plus simple</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Penser accessibilité" data-en="Thinking about accessibility">Penser accessibilité</span></div>
-    <div class="faisais-card"><div class="faisais-icon"></div><span data-fr="Créer de la cohérence visuelle" data-en="Creating visual consistency">Créer de la cohérence visuelle</span></div>
-  </div>
-</section>
-
-<!-- POURQUOI -->
-<section id="pourquoi">
-  <h2 class="section-title"><span data-fr="Pourquoi le Product Design<br>s'est imposé à moi" data-en="Why Product Design<br>became my obvious choice">Pourquoi le Product Design<br>s'est imposé à moi</span></h2>
-  <div class="section-divider" style="background:rgba(201,168,76,0.4);"></div>
-  <div class="pourquoi-grid">
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">♡</div>
-      <div class="pourquoi-label"><span data-fr="Ce que j'aime" data-en="What I love">Ce que j'aime</span></div>
-      <p class="pourquoi-text"><span data-fr="Comprendre les besoins, simplifier le complexe, créer de la clarté et du sens." data-en="Understanding needs, simplifying complexity, creating clarity and meaning.">Comprendre les besoins, simplifier le complexe, créer de la clarté et du sens.</span></p>
-    </div>
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">◎</div>
-      <div class="pourquoi-label"><span data-fr="Ce que je cherche" data-en="What I'm looking for">Ce que je cherche</span></div>
-      <p class="pourquoi-text"><span data-fr="Un métier qui allie réflexion, créativité, technique et impact humain." data-en="A role that combines thinking, creativity, technical skill and human impact.">Un métier qui allie réflexion, créativité, technique et impact humain.</span></p>
-    </div>
-    <div class="pourquoi-item">
-      <div class="pourquoi-icon">✦</div>
-      <div class="pourquoi-label"><span data-fr="Ce que j'ai trouvé" data-en="What I found">Ce que j'ai trouvé</span></div>
-      <p class="pourquoi-text"><span data-fr="Le Product Design : là où toutes mes compétences trouvent enfin leur place." data-en="Product Design: where all my skills finally find their place.">Le Product Design : là où toutes mes compétences trouvent enfin leur place.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- COMPÉTENCES -->
-<section id="competences">
-  <h2 class="comp-title"><span data-fr="Les compétences que j'apporte<br>dans ma reconversion" data-en="The transferable skills<br>I bring">Les compétences que j'apporte<br>dans ma reconversion</span></h2>
-  <div class="section-divider"></div>
-  <div class="tags-wrap">
-    <span class="tag" data-fr="Organisation" data-en="Organisation">Organisation</span>
-    <span class="tag" data-fr="Analyse" data-en="Analysis">Analyse</span>
-    <span class="tag" data-fr="Clarté" data-en="Clarity">Clarté</span>
-    <span class="tag" data-fr="Coordination" data-en="Coordination">Coordination</span>
-    <span class="tag" data-fr="Écoute" data-en="Active listening">Écoute</span>
-    <span class="tag" data-fr="Sens du détail" data-en="Attention to detail">Sens du détail</span>
-    <span class="tag" data-fr="Communication visuelle" data-en="Visual communication">Communication visuelle</span>
-    <span class="tag" data-fr="Empathie" data-en="Empathy">Empathie</span>
-  </div>
-  <h2 class="comp-title" style="margin-top:64px;"><span data-fr="Ma formation validée, ma pratique continue" data-en="My training is complete; my practice continues">Ma formation validée, ma pratique continue</span></h2>
-  <div class="section-divider"></div>
-  <div class="apprend-grid">
-    <div class="apprend-box">
-      <h4><span data-fr="Acquis travaillés en formation" data-en="Skills developed during training">Acquis travaillés en formation</span></h4>
-      <ul>
-        <li>Figma</li>
-        <li><span data-fr="User flows" data-en="User flows">User flows</span></li>
-        <li><span data-fr="Accessibilité" data-en="Accessibility">Accessibilité</span></li>
-        <li><span data-fr="Recherche utilisateur" data-en="User research">Recherche utilisateur</span></li>
-      </ul>
-    </div>
-    <div class="apprend-box">
-      <h4><span data-fr="Ce que je continue à approfondir" data-en="What I continue to develop">Ce que je continue à approfondir</span></h4>
-      <ul>
-        <li><span data-fr="Projets portfolio" data-en="Portfolio projects">Projets portfolio</span></li>
-        <li><span data-fr="Tests utilisateurs" data-en="User testing">Tests utilisateurs</span></li>
-        <li><span data-fr="Design systems" data-en="Design systems">Design systems</span></li>
-        <li><span data-fr="Autonomie d'apprentissage" data-en="Self-directed learning">Autonomie d'apprentissage</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- EXPÉRIENCES SOUHAITÉES -->
-<section id="experiences">
-  <h2 class="section-title"><span data-fr="Le type d'expériences<br>que je souhaite créer" data-en="The type of experiences<br>I want to create">Le type d'expériences<br>que je souhaite créer</span></h2>
-  <div class="section-divider"></div>
-  <div class="exp-grid">
-    <div class="exp-card">
-      <h3><span data-fr="Des interfaces claires" data-en="Clear interfaces">Des interfaces claires</span></h3>
-      <p><span data-fr="Où l'utilisateur n'a pas à chercher, où tout est à sa place." data-en="Where users never have to search — everything feels intuitive.">Où l'utilisateur n'a pas à chercher, où tout est à sa place.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Des parcours rassurants" data-en="Reassuring journeys">Des parcours rassurants</span></h3>
-      <p><span data-fr="Qui accompagnent sans perdre, qui anticipent sans envahir." data-en="That guide without getting lost, that anticipate without overwhelming.">Qui accompagnent sans perdre, qui anticipent sans envahir.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Des services utiles" data-en="Useful services">Des services utiles</span></h3>
-      <p><span data-fr="Pensés pour résoudre un vrai besoin, pas pour impressionner." data-en="Designed to solve a real need, not to impress.">Pensés pour résoudre un vrai besoin, pas pour impressionner.</span></p>
-    </div>
-    <div class="exp-card">
-      <h3><span data-fr="Un design plus humain" data-en="A more human design">Un design plus humain</span></h3>
-      <p><span data-fr="Qui place l'empathie et l'accessibilité au centre." data-en="That puts empathy and accessibility at the centre.">Qui place l'empathie et l'accessibilité au centre.</span></p>
-    </div>
-  </div>
-</section>
-
-
-<section id="certificats" class="credentials-section" aria-labelledby="credentials-heading">
-  <p class="credentials-eyebrow"><span data-fr="Apprendre et élargir mes compétences" data-en="Learning and broadening my skills">Apprendre et élargir mes compétences</span></p>
-  <h2 id="credentials-heading"><span data-fr="Mes autres formations" data-en="My other training">Mes autres formations</span></h2>
-  <p class="credentials-intro"><span data-fr="J’aime comprendre les domaines qui entourent l’UX. Des repères en développement et en création de sites m’aident à dialoguer avec les équipes techniques et à concevoir des solutions plus réalistes." data-en="I like understanding the fields around UX. Foundations in development and website creation help me work with technical teams and design more realistic solutions.">J’aime comprendre les domaines qui entourent l’UX. Des repères en développement et en création de sites m’aident à dialoguer avec les équipes techniques et à concevoir des solutions plus réalistes.</span></p>
-  <div class="credential-grid">
-    <article class="credential-card">
-      <a href="assets/certificat-mimo-fullstack.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le certificat MIMO Full Stack dans un nouvel onglet"><div class="credential-type">MIMO</div></a>
-      <div class="credential-copy">
-        <h3><span data-fr="Développement Full Stack · MIMO" data-en="Full-Stack Development · MIMO">Développement Full Stack · MIMO</span></h3>
-        <p class="credential-meta"><span data-fr="Formation complétée · 17 mai 2026" data-en="Training completed · 17 May 2026">Formation complétée · 17 mai 2026</span></p>
-        <p><span data-fr="HTML, CSS, JavaScript, React, Node, Express et bases de données SQL. Ces connaissances m’aident à mieux comprendre les échanges entre conception et développement." data-en="HTML, CSS, JavaScript, React, Node, Express and SQL databases. This knowledge helps me better understand the handoff between design and development.">HTML, CSS, JavaScript, React, Node, Express et bases de données SQL. Ces connaissances m’aident à mieux comprendre les échanges entre conception et développement.</span></p>
-        <a class="credential-link" href="assets/certificat-mimo-fullstack.pdf" target="_blank" rel="noopener"><span data-fr="Voir le certificat PDF ↗" data-en="View the PDF certificate ↗">Voir le certificat PDF ↗</span></a>
-      </div>
-    </article>
-    <article class="credential-card">
-      <a href="assets/certificat-wordpress.png" target="_blank" rel="noopener" aria-label="Agrandir le certificat Webmaster WordPress"><img src="assets/certificat-wordpress.png" alt="Attestation de participation de Marina Montalbano à la formation Webmaster WordPress, le 25 février 2023." loading="lazy"></a>
-      <div class="credential-copy">
-        <h3><span data-fr="Webmaster · WordPress" data-en="Webmaster · WordPress">Webmaster · WordPress</span></h3>
-        <p class="credential-meta"><span data-fr="Formation suivie · 25 février 2023" data-en="Training attended · 25 February 2023">Formation suivie · 25 février 2023</span></p>
-        <p><span data-fr="Cette formation m’a fait découvrir la création et la gestion d’un site avec WordPress, ainsi que les questions de maintenance et de mises à jour." data-en="This course introduced me to building and managing a website with WordPress, including maintenance and updates.">Cette formation m’a fait découvrir la création et la gestion d’un site avec WordPress, ainsi que les questions de maintenance et de mises à jour.</span></p>
-        <a class="credential-link" href="assets/certificat-wordpress.png" target="_blank" rel="noopener"><span data-fr="Agrandir l’attestation ↗" data-en="View the certificate ↗">Agrandir l’attestation ↗</span></a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- CONCLUSION -->
-<section id="conclusion">
-  <h2 class="concl-h1"><span data-fr="Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit." data-en="My background doesn't distance me<br>from Product Design.<br>It leads me there.">Mon parcours ne m'éloigne pas<br>du Product Design.<br>Il m'y conduit.</span></h2>
-  <p class="concl-text"><span data-fr="Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles." data-en="Every professional experience was a building block. Every skill acquired, a tool. Today, I'm not starting from scratch — I'm bringing everything I've learned to create user experiences that are clear, human, and meaningful.">Chaque expérience professionnelle a été une brique. Chaque compétence acquise, un outil. Aujourd'hui, je ne commence pas de zéro : je rassemble tout ce que j'ai appris pour le mettre au service d'expériences utilisateur claires, humaines et utiles.</span></p>
-  <div class="contact-row">
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Téléphone" data-en="Phone">Téléphone</span></div>
-      <div class="contact-val">07 50 62 53 97</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Localisation" data-en="Location">Localisation</span></div>
-      <div class="contact-val">Longjumeau — 91160</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label"><span data-fr="Disponibilité" data-en="Availability">Disponibilité</span></div>
-      <div class="contact-val"><span data-fr="Immédiate" data-en="Immediate">Immédiate</span></div>
-    </div>
-  </div>
-  <div class="btns-row">
-    <a href="mailto:emploi.marina.91@gmail.com" class="btn"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-    <a href="CV_Marina_Montalbano.pdf" download class="btn-outline btn-cv-glow" id="footer-cv-link"><span data-fr="⬇ Télécharger mon CV" data-en="⬇ Download my Resume">⬇ Télécharger mon CV</span></a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer><div class="footer-name">Marina Montalbano</div>
-<div class="footer-copy"><span data-fr="En recherche d’un CDD, d’une mission d’intérim ou d’un CDI · UX/UI Designer" data-en="Seeking a fixed-term, temporary or permanent role · UX/UI Designer">En recherche d’un CDD, d’une mission d’intérim ou d’un CDI · UX/UI Designer</span></div>
-<div class="footer-links"><a href="mailto:emploi.marina.91@gmail.com"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
-<a href="CV_Marina_Montalbano.pdf" download><span data-fr="Télécharger mon CV" data-en="Download my Resume">Télécharger mon CV</span></a></div></footer>
-<script src="assets/translations.js?v=publication-langues-20261106"></script><script src="assets/site.js?v=publication-langues-20261106"></script>
-<script src="assets/parcours-motion.js"></script>
+<main id="main-content" tabindex="-1">
+<header class="direction-opening"><div class="direction-wrap direction-page-intro direction-journey-intro"><h1><span data-fr="Mon parcours" data-en="My experience" data-de="Mein Werdegang" data-sr="Moje iskustvo">Mon parcours</span></h1>
+  <img class="direction-monogram" src="assets/marina-monogramme-hd.webp" width="1254" height="1254" alt="Logo de Marina Montalbano">
+  <p class="direction-intro"><span data-fr="J’ai travaillé au sein de grandes structures dans les ressources humaines, les achats et le suivi de clientèle. Mes six années dans le transport de voyageurs m’ont appris à garder mon calme face aux imprévus. J’ai ensuite mis cette expérience à profit en assistanat de direction, où j’ai coordonné les échanges entre services et traité des informations confidentielles." data-en="I worked in HR, procurement and customer account management at large organisations. Six years in passenger transport taught me to stay calm when things didn’t go to plan. I drew on that experience as an executive assistant, coordinating communication across departments and handling confidential information." data-de="Ich habe in großen Organisationen im Personalwesen, im Einkauf und in der Kundenbetreuung gearbeitet. In sechs Jahren im Personenverkehr habe ich gelernt, bei Unvorhergesehenem ruhig zu bleiben. Diese Erfahrung nutzte ich anschließend in der Direktionsassistenz, wo ich den Austausch zwischen Abteilungen koordinierte und vertrauliche Informationen bearbeitete." data-sr="Radila sam u velikim organizacijama u ljudskim resursima, nabavci i radu s klijentima. Šest godina u prevozu putnika naučilo me je da ostanem smirena u nepredviđenim situacijama. To iskustvo sam potom iskoristila kao asistentkinja direktora, gde sam koordinirala komunikaciju između odeljenja i radila s poverljivim informacijama.">J’ai travaillé au sein de grandes structures dans les ressources humaines, les achats et le suivi de clientèle. Mes six années dans le transport de voyageurs m’ont appris à garder mon calme face aux imprévus. J’ai ensuite mis cette expérience à profit en assistanat de direction, où j’ai coordonné les échanges entre services et traité des informations confidentielles.</span></p></div></header><section class="direction-section" id="experiences"><div class="direction-wrap"><h2><span data-fr="Expériences professionnelles" data-en="Professional experience" data-de="Berufserfahrung" data-sr="Radno iskustvo">Expériences professionnelles</span></h2><ol class="direction-timeline"><li id="onera"><p class="direction-period">08/2024 – 01/2026</p><div><h3><span data-fr="Assistante de direction" data-en="Executive Assistant" data-de="Direktionsassistentin" data-sr="Asistentkinja direktora">Assistante de direction</span></h3><p class="direction-employer">ONERA</p><p><span data-fr="J’ai coordonné les échanges entre services, relu des rapports et organisé la logistique de séminaires, dans le respect des exigences de confidentialité de l’établissement." data-en="I coordinated communication across departments, reviewed reports and arranged seminar logistics in line with the organisation’s confidentiality requirements." data-de="Ich koordinierte den Austausch zwischen Abteilungen, prüfte Berichte und organisierte Seminare unter Einhaltung der Vertraulichkeitsvorgaben." data-sr="Koordinisala sam komunikaciju između službi, pregledala izveštaje i organizovala seminare uz poštovanje pravila poverljivosti ustanove.">J’ai coordonné les échanges entre services, relu des rapports et organisé la logistique de séminaires, dans le respect des exigences de confidentialité de l’établissement.</span></p></div></li><li><p class="direction-period">03/2018 – 08/2024</p><div><h3><span data-fr="Conductrice-receveuse" data-en="Bus Driver" data-de="Busfahrerin" data-sr="Vozačica autobusa">Conductrice-receveuse</span></h3><p class="direction-employer">Île-de-France Mobilités</p><p><span data-fr="Pendant six ans, j’ai informé les voyageurs et géré les imprévus sur le terrain en veillant au respect des procédures de sécurité." data-en="For six years, I kept passengers informed and handled unexpected situations while following safety procedures." data-de="Sechs Jahre lang informierte ich Fahrgäste und bewältigte unerwartete Situationen unter Einhaltung der Sicherheitsvorschriften." data-sr="Šest godina sam informisala putnike i rešavala nepredviđene situacije uz poštovanje bezbednosnih procedura.">Pendant six ans, j’ai informé les voyageurs et géré les imprévus sur le terrain en veillant au respect des procédures de sécurité.</span></p></div></li><li><p class="direction-period">08/2017 – 02/2018</p><div><h3><span data-fr="Opératrice de saisie" data-en="Data Entry Clerk" data-de="Datenerfasserin" data-sr="Operaterka za unos podataka">Opératrice de saisie</span></h3><p class="direction-employer">Transport Dispam</p><p><span data-fr="J’ai contrôlé les mouvements logistiques et tenu à jour les tableaux de suivi." data-en="I checked logistics movements and maintained tracking sheets." data-de="Ich kontrollierte Logistikbewegungen und hielt die Übersichten aktuell." data-sr="Kontrolisala sam logistička kretanja i ažurirala evidenciju.">J’ai contrôlé les mouvements logistiques et tenu à jour les tableaux de suivi.</span></p></div></li><li id="sopra-steria"><p class="direction-period">02/2016 – 10/2016</p><div><h3><span data-fr="Assistante chef de projets" data-en="Project Support Assistant" data-de="Projektassistentin" data-sr="Asistentkinja na projektima">Assistante chef de projets</span></h3><p class="direction-employer">Sopra Steria · Mission Thales</p><p><span data-fr="J’ai assuré le suivi administratif des projets et des demandes d’achat, en lien avec les équipes concernées." data-en="I handled administrative tracking for projects and purchase requests with the relevant teams." data-de="Ich betreute Projektvorgänge und Beschaffungsanfragen in Abstimmung mit den zuständigen Teams." data-sr="Vodila sam administrativno praćenje projekata i zahteva za nabavku u saradnji sa nadležnim timovima.">J’ai assuré le suivi administratif des projets et des demandes d’achat, en lien avec les équipes concernées.</span></p></div></li><li><p class="direction-period">11/2015 – 01/2016</p><div><h3><span data-fr="Assistante administration des ventes" data-en="Sales Administration Assistant" data-de="Vertriebsassistentin" data-sr="Asistentkinja u administraciji prodaje">Assistante administration des ventes</span></h3><p class="direction-employer">Apogea</p><p><span data-fr="J’ai assuré la facturation, suivi les impayés et rendu compte de l’activité." data-en="I handled invoicing, tracked overdue payments and reported on operations." data-de="Ich erstellte Rechnungen, verfolgte offene Zahlungen und berichtete über die Geschäftstätigkeit." data-sr="Izdavala sam fakture, pratila dugovanja i izveštavala o aktivnostima.">J’ai assuré la facturation, suivi les impayés et rendu compte de l’activité.</span></p></div></li><li><p class="direction-period">04/2015 – 09/2015</p><div><h3><span data-fr="Assistante achats" data-en="Purchasing Assistant" data-de="Einkaufsassistentin" data-sr="Asistentkinja u nabavci">Assistante achats</span></h3><p class="direction-employer">Juva Santé · Groupe Urgo</p><p><span data-fr="J’ai suivi les factures et les litiges fournisseurs en coordination avec les services internes." data-en="I tracked supplier invoices and disputes in coordination with internal teams." data-de="Ich bearbeitete Lieferantenrechnungen und Streitfälle in Abstimmung mit internen Teams." data-sr="Pratila sam fakture i sporove sa dobavljačima u saradnji sa internim službama.">J’ai suivi les factures et les litiges fournisseurs en coordination avec les services internes.</span></p></div></li><li id="thales"><p class="direction-period">09/2012 – 03/2015</p><div><h3><span data-fr="Assistante chargée de clientèle" data-en="Customer Account Assistant" data-de="Assistentin in der Kundenbetreuung" data-sr="Asistentkinja za rad sa klijentima">Assistante chargée de clientèle</span></h3><p class="direction-employer">Thales Air Systems</p><p><span data-fr="J’ai suivi les dossiers clients et les demandes d’achat, ainsi que les indicateurs mensuels d’activité." data-en="I tracked customer records, purchase requests and monthly activity metrics." data-de="Ich betreute Kundenakten und Beschaffungsanfragen und verfolgte die monatlichen Kennzahlen." data-sr="Pratila sam dokumentaciju klijenata, zahteve za nabavku i mesečne pokazatelje aktivnosti.">J’ai suivi les dossiers clients et les demandes d’achat, ainsi que les indicateurs mensuels d’activité.</span></p></div></li><li><p class="direction-period">09/2010 – 08/2012</p><div><h3><span data-fr="Assistante ressources humaines" data-en="Human Resources Assistant" data-de="Personalassistentin" data-sr="Asistentkinja u ljudskim resursima">Assistante ressources humaines</span></h3><p class="direction-employer">Groupe Vivarte</p><p><span data-fr="J’ai organisé les déplacements, traité les notes de frais, suivi les documents de formation et apporté mon appui au recrutement." data-en="I organised travel, processed expenses, maintained training records and supported recruitment." data-de="Ich organisierte Reisen, bearbeitete Reisekosten, pflegte Schulungsunterlagen und unterstützte die Personalsuche." data-sr="Organizovala sam putovanja, obrađivala troškove, pratila dokumentaciju za obuke i pružala podršku pri zapošljavanju.">J’ai organisé les déplacements, traité les notes de frais, suivi les documents de formation et apporté mon appui au recrutement.</span></p></div></li></ol></div></section><section class="direction-section direction-dark" id="certificats"><div class="direction-wrap"><h2><span data-fr="Formations et certificats" data-en="Education and certificates" data-de="Ausbildung und Zertifikate" data-sr="Obrazovanje i sertifikati">Formations et certificats</span></h2><div class="direction-grid"><article class="direction-card"><h3><span data-fr="BTS Assistante de manager" data-en="BTS in Management Assistance" data-de="BTS Managementassistenz" data-sr="BTS za asistenciju menadžmentu">BTS Assistante de manager</span></h3><p><span data-fr="Diplôme obtenu en 2014, après un bac professionnel en secrétariat et un BEP en comptabilité." data-en="Completed in 2014, after vocational qualifications in secretarial work and accounting." data-de="2014 abgeschlossen, nach Berufsabschlüssen in Sekretariat und Buchhaltung." data-sr="Diploma stečena 2014. godine, nakon stručnih kvalifikacija iz sekretarskih poslova i računovodstva.">Diplôme obtenu en 2014, après un bac professionnel en secrétariat et un BEP en comptabilité.</span></p></article><article class="direction-card"><h3><span data-fr="Google UX Design · Certificat obtenu en octobre 2026" data-en="Google UX Design · Certificate earned in October 2026" data-de="Google UX Design · Zertifikat seit Oktober 2026" data-sr="Google UX Design · Sertifikat stečen u oktobru 2026.">Google UX Design · Certificat obtenu en octobre 2026</span></h3><p><span data-fr="J’applique les méthodes de recherche utilisateur et de conception d’interfaces à mes projets personnels, notamment à une proposition de refonte d’espace client sur mobile." data-en="I apply user research and interface design methods in personal projects, including a proposed mobile redesign of a customer portal." data-de="Ich nutze Methoden der Nutzerforschung und Oberflächengestaltung in eigenen Projekten, etwa bei einem Entwurf für ein mobiles Kundenportal." data-sr="Metode istraživanja korisnika i dizajna interfejsa primenjujem u ličnim projektima, uključujući predlog redizajna mobilnog korisničkog portala.">J’applique les méthodes de recherche utilisateur et de conception d’interfaces à mes projets personnels, notamment à une proposition de refonte d’espace client sur mobile.</span></p></article><article class="direction-card"><h3><span data-fr="Gestion de projet · Formation en cours" data-en="Project management · Training in progress" data-de="Projektmanagement · Laufende Weiterbildung" data-sr="Upravljanje projektima · Obuka u toku">Gestion de projet · Formation en cours</span></h3><p><span data-fr="Je prépare le certificat professionnel Google en gestion de projet sur Coursera. Cette formation complète mon expérience du suivi de dossiers, notamment en planification et en suivi de projet." data-en="I’m working towards the Google Project Management Professional Certificate on Coursera. It builds on my experience tracking work by developing my project planning and monitoring skills." data-de="Ich bereite mich bei Coursera auf das Google Project Management Professional Certificate vor. Die Weiterbildung ergänzt meine Erfahrung in der Vorgangsbetreuung um Projektplanung und -verfolgung." data-sr="Na platformi Coursera pripremam se za Google sertifikat iz upravljanja projektima. Obuka dopunjuje moje iskustvo u praćenju predmeta, posebno u planiranju i praćenju projekata.">Je prépare le certificat professionnel Google en gestion de projet sur Coursera. Cette formation complète mon expérience du suivi de dossiers, notamment en planification et en suivi de projet.</span></p></article></div><div class="direction-actions"><a class="direction-link" href="https://www.coursera.org/account/accomplishments/professional-cert/3PNU9Y3WN8EC"><span data-fr="Vérifier le certificat Google UX Design" data-en="Verify the Google UX Design certificate" data-de="Google UX Design-Zertifikat prüfen" data-sr="Proverite Google UX Design sertifikat">Vérifier le certificat Google UX Design</span></a><a class="direction-link" href="apprentissages.html"><span data-fr="Voir mes formations et ma pratique personnelle" data-en="Explore my training and personal practice" data-de="Weiterbildung und eigene Praxis ansehen" data-sr="Pogledajte moje obuke i samostalnu praksu">Voir mes formations et ma pratique personnelle</span></a><a class="direction-link" href="assets/certificat-mimo-fullstack.pdf?v=c6418569" hreflang="en"><span data-fr="Certificat Mimo Full Stack" data-en="Mimo Full Stack certificate" data-de="Mimo Full Stack-Zertifikat" data-sr="Mimo Full Stack sertifikat">Certificat Mimo Full Stack</span></a>
+<a class="direction-link" href="assets/certificat-wordpress.png"><span data-fr="Attestation WordPress" data-en="WordPress certificate" data-de="WordPress-Bescheinigung" data-sr="WordPress potvrda">Attestation WordPress</span></a></div></div></section>
+</main>
+<footer id="contact">
+  <div class="footer-name">Marina Montalbano</div>
+  <div class="footer-copy"><span data-fr="Longjumeau (91) · CDD et intérim" data-en="Longjumeau, France · Fixed-term and temporary roles" data-de="Longjumeau, Frankreich · Befristete Stellen und Zeitarbeit" data-sr="Longjumeau, Francuska · Rad na određeno i privremeni angažmani">Longjumeau (91) · CDD et intérim</span></div>
+  <div class="footer-links"><a class="direction-link" href="mailto:e.marina.montalbano@gmail.com?subject=%5BSite%20web%5D%20Prise%20de%20contact"><span data-fr="Me contacter par e-mail" data-en="Email me" data-de="Kontakt per E-Mail" data-sr="Pišite mi e-poštom">Me contacter par e-mail</span></a><a class="direction-link" href="CV_Marina_Montalbano.pdf?v=65c1f3f1" hreflang="fr"><span data-fr="Consulter mon CV" data-en="View my CV (French)" data-de="Lebenslauf ansehen (Französisch)" data-sr="Pogledajte CV (na francuskom)">Consulter mon CV</span></a></div>
+</footer>
+<script src="assets/translations.js?v=publication-langues-20261106"></script>
+<script src="assets/site.js?v=recrutement"></script>
 </body>
 </html>
-

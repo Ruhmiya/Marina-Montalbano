@@ -1,61 +1,18 @@
-# Bonjour, je suis Marina Montalbano 
+# Marina Montalbano
 
-**[Voir mon portfolio UX/UI et mes études de cas sur marina-montalbano.fr](https://marina-montalbano.fr/)**
+[Site de Marina Montalbano](https://marina-montalbano.fr/) · Assistante de direction confirmée à Longjumeau (Essonne).
 
-### En reconversion vers le métier de designer UX/UI
+Je recherche un CDD ou une mission d’intérim en assistanat de direction, pour une durée d’au moins 3 mois et dans un rayon de 20 km autour de Longjumeau. Mon parcours associe coordination administrative, appui aux projets et expérience du service aux voyageurs.
 
-Certificat professionnel Google UX Design obtenu le 2 octobre 2026 (8 cours).
+Je prépare le certificat professionnel Google en gestion de projet sur Coursera. Mon certificat Google UX Design, obtenu en octobre 2026, complète ce parcours avec des méthodes pour structurer l’analyse et concevoir des parcours plus fluides.
 
----
-
-Après plus de dix ans dans l'administration, la coordination et le service public,  
-j'ai réalisé que je faisais déjà de l'UX sans en avoir le vocabulaire.
-
-Comprendre les besoins réels. Organiser l'information. Clarifier. Fluidifier.  
-Améliorer l'expérience des autres.  
-C'est ce que j'ai toujours fait. C'est ce que je veux continuer à faire en tant que designer.
-
----
-
-## Ce que je continue à approfondir
-
-- **Figma** — maquettes, wireframes, prototypes interactifs
-- **Recherche utilisateur** — personas, user flows, interviews
-- **Accessibilité** — design inclusif et bonnes pratiques
-- **Tests utilisateurs** — Maze, itérations, amélioration continue
-- **UI Design** — typographie, couleurs, design systems
-
----
-
-## Ce que j'apporte
-
-| Compétence | Origine |
-|---|---|
-| Organisation & structuration de l'information | 10 ans dans l'administration |
-| Compréhension des besoins utilisateurs | 6 ans dans le transport de personnes |
-| Clarté de la communication | Coordination multi-interlocuteurs |
-| Gestion des imprévus & adaptabilité | Environnements exigeants |
-| Sens du détail & rigueur | Gestion documentaire et administrative |
-
----
-
-- 📧 emploi.marina.91@gmail.com
-
----
-
-*Basée en Essonne — Île-de-France · Recherche un CDD, une mission d’intérim ou un CDI en UX/UI design · Ouverte à une immersion professionnelle*
-
+- [Mon parcours et mes formations](https://marina-montalbano.fr/parcours.html)
+- [Mon CV](https://marina-montalbano.fr/CV_Marina_Montalbano.pdf?v=65c1f3f1)
+- [Mon portfolio UX/UI](https://marina-montalbano.fr/portfolio.html)
 
 ## Structure du portfolio et URL canoniques
 
-- `https://marina-montalbano.fr/portfolio.html` : page principale du portfolio, qui présente la liste des projets. Tous les liens de navigation « Portfolio » pointent ici. L’ancre `#projets` permet de rejoindre la liste.
+- `https://marina-montalbano.fr/portfolio.html` : page principale du portfolio, qui présente la liste des projets. Tous les liens de navigation « Portfolio UX/UI » pointent ici. L’ancre `#projets` permet de rejoindre la liste.
 - `https://marina-montalbano.fr/projets.html` : aperçu public de la refonte UX/UI ASSU 2000, accessible depuis sa carte dans le portfolio, avec un lien de retour à la liste. L’étude complète est proposée sur demande ; cette page n’est ni un second index de portfolio ni une redirection.
 
 Ces contenus étant distincts, chaque page conserve une unique balise canonique vers sa propre URL absolue et un `og:url` identique. Les deux URL figurent une seule fois dans `sitemap.xml`. Ne pas faire pointer la canonique de l’aperçu ASSU 2000 vers le portfolio.
-
-
-## Positionnement éditorial
-
-L’identité publique du site est **Marina Montalbano**. Le positionnement principal est une reconversion vers le métier de designer UX/UI. Le message principal est : « En reconversion vers le métier de designer UX/UI, j’analyse les parcours, je repère les difficultés et je conçois des interfaces plus faciles à utiliser. Je recherche un CDD, une mission d’intérim ou un CDI en UX/UI design. » Le certificat professionnel Google UX Design est obtenu ; l’immersion professionnelle reste une possibilité complémentaire.
-
-Le portfolio présente des projets personnels et une pratique en cours de consolidation : analyse des parcours, identification des difficultés, recommandations et propositions d’interface. L’audit UX fait partie de cette pratique, aux côtés de la conception d’interfaces, sans présenter une offre de studio ou de prestation, ni revendiquer une expertise ou des résultats non démontrés. Les titres, introductions, pieds de page et traductions doivent conserver ce positionnement.
