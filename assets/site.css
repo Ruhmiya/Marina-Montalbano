@@ -4,9 +4,17 @@
   --cream:  #f5f0e8;
   --blue:   #1a1aff;
   --blue2:  #0404B8;
-  --gold:   #c9a84c;
-  --gold2:  #a07820;
-  --gold-text: #7a5c18;
+  --studio-green: #183e35;
+  --signature-gold: #e4ac1c;
+  --signature-gold-highlight: #fcd45c;
+  --signature-gold-warm: #f4b41c;
+  --signature-gold-text: #805100;
+  --signature-gold-border: color-mix(in srgb, var(--signature-gold) 50%, #fbf8f1);
+  --signature-gold-tint: color-mix(in srgb, var(--signature-gold) 16%, #fffefa);
+  --signature-gold-gradient: linear-gradient(110deg, var(--signature-gold), var(--signature-gold-highlight) 52%, var(--signature-gold-warm));
+  --gold: var(--signature-gold);
+  --gold2: #a46a08;
+  --gold-text: var(--signature-gold-text);
   --navy:   #0b1f4a;
   --white:  #ffffff;
   --muted:  #5a6a8a;
@@ -99,7 +107,7 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   padding: 16px 60px;
   background: rgba(245,240,232,0.96); backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--signature-gold) 20%, transparent);
 }
 .nav-logo { font-family: 'Josefin Sans', sans-serif; font-size: calc(13px * var(--text-scale)); font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
 .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
@@ -196,8 +204,8 @@ body.dyslexic-font, body.dyslexic-font * {
 .btn:hover { background: var(--gold2); border-color: var(--gold2); transform: translateY(-2px); }
 .btn-outline-navy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--navy); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(11,31,74,0.35); transition: all 0.3s; }
 .btn-outline-navy:hover { background: rgba(11,31,74,0.05); transform: translateY(-2px); }
-.btn-outline-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--gold-text); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; }
-.btn-outline-gold:hover { background: rgba(201,168,76,0.08); transform: translateY(-2px); }
+.btn-outline-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 30px; background: transparent; color: var(--gold-text); font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid color-mix(in srgb, var(--signature-gold) 50%, transparent); transition: all 0.3s; }
+.btn-outline-gold:hover { background: color-mix(in srgb, var(--signature-gold) 8%, transparent); transform: translateY(-2px); }
 .btn svg, .btn-outline-navy svg, .btn-outline-gold svg { width: 15px; height: 15px; }
 
 /* ══ NAVIGUEZ SELON VOS INTÉRÊTS ══ */
@@ -206,8 +214,8 @@ body.dyslexic-font, body.dyslexic-font * {
 .nav-cards-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 48px; }
 .nav-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .nav-card { background: var(--white); border: 1px solid rgba(11,31,74,0.07); padding: 32px 26px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.3s; }
-.nav-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,31,74,0.09); border-color: rgba(201,168,76,0.35); }
-.nav-card-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,168,76,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.nav-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,31,74,0.09); border-color: color-mix(in srgb, var(--signature-gold) 35%, transparent); }
+.nav-card-icon { width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--signature-gold) 12%, transparent); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
 .nav-card-icon svg { width: 24px; height: 24px; color: var(--gold2); }
 .nav-card-title { font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
 .nav-card-desc { font-size: calc(13.5px * var(--text-scale)); font-weight: 300; color: var(--navy); line-height: 1.75; flex-grow: 1; margin-bottom: 20px; }
@@ -215,7 +223,7 @@ body.dyslexic-font, body.dyslexic-font * {
 .nav-card:hover .nav-card-arrow { transform: translateX(6px); }
 
 /* ══ CE QUE MA RECONVERSION M'APPORTE ══ */
-#apporte { background: rgba(201,168,76,0.08); padding: 70px 60px; }
+#apporte { background: color-mix(in srgb, var(--signature-gold) 8%, transparent); padding: 70px 60px; }
 .apporte-inner { max-width: 1000px; margin: 0 auto; }
 .apporte-eyebrow { text-align: center; font-size: calc(11px * var(--text-scale)); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 44px; }
 .apporte-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
@@ -269,8 +277,8 @@ footer { background: var(--navy); padding: 40px 60px; display: flex; flex-direct
 .footer-name { font-family: 'Dancing Script', cursive; font-size: calc(22px * var(--text-scale)); color: var(--gold); }
 .footer-copy { font-size: calc(11px * var(--text-scale)); color: rgba(255,255,255,0.45); letter-spacing: 1px; }
 .footer-social { display: flex; gap: 14px; }
-.footer-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.35); display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; transition: all 0.3s; }
-.footer-social a:hover { background: rgba(201,168,76,0.15); transform: translateY(-2px); }
+.footer-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--signature-gold) 35%, transparent); display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; transition: all 0.3s; }
+.footer-social a:hover { background: color-mix(in srgb, var(--signature-gold) 15%, transparent); transform: translateY(-2px); }
 .footer-social svg { width: 16px; height: 16px; }
 
 /* ══ MENU MOBILE PLEIN ÉCRAN (partagé avec les autres pages) ══ */
@@ -369,7 +377,7 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 .credentials-eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);font-weight:700}
 .credentials-intro{max-width:860px;line-height:1.8;color:var(--muted);margin:0 0 28px}
 .credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1120px}
-.credential-card{background:var(--cream);border:1px solid #d9c98d;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:170px 1fr}
+.credential-card{background:var(--cream);border:1px solid var(--signature-gold-border);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:170px 1fr}
 .credential-card>a{min-height:150px;display:grid;place-items:center;background:#fff;padding:12px}
 .credential-card>a img{display:block;max-width:100%;max-height:140px;object-fit:contain}
 .credential-type{display:grid;place-items:center;width:100%;height:100%;font-size:28px;font-weight:800;color:#fff;background:var(--navy)}
@@ -475,3 +483,64 @@ body.high-contrast.parcours-page .fil-box,body.high-contrast.parcours-page .meti
 body.high-contrast .language-picker{border-color:#FFDD00;color:#fff;background:#000}
 body.high-contrast .language-select option{background:#000;color:#fff}
 body.high-contrast .language-select:focus-visible{outline-color:#FFDD00}
+
+@keyframes cv-border-glow {
+  0%,100% {box-shadow:0 0 0 1px var(--signature-gold),0 0 0 2px transparent}
+  50% {box-shadow:0 0 0 2px var(--signature-gold-highlight),0 0 12px 3px color-mix(in srgb, var(--signature-gold-highlight) 55%, transparent)}
+}
+@media(prefers-reduced-motion:no-preference){
+ nav a.nav-cv,.mobile-menu-overlay a.mm-item[download]{animation:cv-border-glow 3.6s ease-in-out infinite !important}
+}
+@media(prefers-reduced-motion:reduce){
+ nav a.nav-cv,.mobile-menu-overlay a.mm-item[download]{animation:none!important}
+}
+
+/* Signature in the shared header and the mobile menu. */
+nav a.nav-logo > img.nav-signature,
+.mm-header img.nav-signature {
+  display: block;
+  width: clamp(12rem, 24vw, 20rem);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2172 / 394;
+  object-fit: cover;
+}
+
+@media (max-width: 1180px) {
+  nav a.nav-logo > img.nav-signature,
+  .mm-header img.nav-signature { width: min(60vw, 15.5rem); }
+}
+
+body:not(.high-contrast) nav a.nav-cv,
+body:not(.high-contrast) .mobile-menu-overlay a.mm-item[download] {
+  background: var(--signature-gold-gradient) !important;
+  color: #10283b !important;
+}
+
+
+/* Green header and footer for the portfolio and its case-study pages. */
+nav.nav-green,
+footer.footer-green { background: var(--studio-green); }
+.footer-green .footer-copy { color: #f6f1e6; }
+nav.nav-green {
+  border-bottom: 1px solid color-mix(in srgb, var(--signature-gold) 45%, transparent);
+}
+.nav-green .nav-links a:not(.nav-cv) { color: #fff; }
+.nav-green .nav-links a:not(.nav-cv):is([aria-current="page"], [aria-current="location"], :hover, :focus-visible) {
+  color: var(--signature-gold-highlight);
+  animation: none;
+}
+.nav-green .nav-links a[aria-current="location"] {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.nav-green :is(.language-picker, .a11y-menu > .a11y-toggle) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .55);
+}
+.nav-green .language-picker > svg,
+.nav-green .a11y-menu > .a11y-toggle:hover { color: var(--signature-gold-highlight); }
+.nav-green .hamburger span { background: #fff; }
+.nav-green :is(.nav-logo, .nav-links a, .language-select, .hamburger, .a11y-menu > .a11y-toggle):focus-visible {
+  outline-color: var(--signature-gold-highlight);
+}
