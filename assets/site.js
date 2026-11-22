@@ -13,13 +13,22 @@ document.querySelectorAll('[aria-label],[alt],[title]').forEach(el=>{
  ['aria-label','alt','title'].forEach(attr=>{const key=el.getAttribute(attr);if(translations[key])attributeTranslations.push({el,attr,key});});
 });
 window.translateSite=(key,lang=document.documentElement.lang)=>translations[key]?.[lang==='sr-Latn'?'sr':lang]||key;
+const cvLinks = Array.from(document.querySelectorAll('a[data-href-en]'), link => ({
+ link,
+ defaultHref: link.getAttribute('href'),
+ defaultLanguage: link.hreflang,
+}));
 function setLang(lang){
  lang=['fr','en','de','sr'].includes(lang)?lang:'fr';
  document.documentElement.lang=lang==='sr'?'sr-Latn':lang;
  document.querySelectorAll('[data-fr]').forEach(el=>{
   const key=el.dataset.fr;
-  const local=el.closest('.direction-page main, .direction-page footer, a[download][hreflang=fr]')?el.getAttribute('data-'+lang):null;
+  const local=el.closest('.direction-page main, .direction-page footer, a[download][hreflang=fr], a[data-href-en]')?el.getAttribute('data-'+lang):null;
   el.innerHTML=lang==='fr'?key:(local||translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
+ });
+ cvLinks.forEach(({link, defaultHref, defaultLanguage}) => {
+  link.href = lang === 'en' ? link.dataset.hrefEn : defaultHref;
+  link.hreflang = lang === 'en' ? 'en' : defaultLanguage;
  });
  plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
  attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
