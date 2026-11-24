@@ -566,7 +566,9 @@ const results = {
   sr: `Prikazani resursi (${count})`,
 };
 const language = document.documentElement.lang.split('-')[0];
-document.querySelector('.learn-results').textContent = results[language] || results.fr;
+const status = document.querySelector('.learn-results');
+Object.assign(status.dataset, results);
+status.textContent = results[language] || results.fr;
 });
 });
 filterGroup.hidden = false;
