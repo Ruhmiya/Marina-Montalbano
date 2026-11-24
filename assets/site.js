@@ -27,8 +27,8 @@ function setLang(lang){
   el.innerHTML=lang==='fr'?key:(local||translations[key]?.[lang]||el.getAttribute('data-'+lang)||key);
  });
  cvLinks.forEach(({link, defaultHref, defaultLanguage}) => {
-  link.href = lang === 'en' ? link.dataset.hrefEn : defaultHref;
-  link.hreflang = lang === 'en' ? 'en' : defaultLanguage;
+  link.href = lang === 'fr' ? defaultHref : link.dataset.hrefEn;
+  link.hreflang = lang === 'fr' ? defaultLanguage : 'en';
  });
  plainTranslations.forEach(({node,key,original})=>{node.textContent=original.replace(key,translateSite(key,lang));});
  attributeTranslations.forEach(({el,attr,key})=>el.setAttribute(attr,translateSite(key,lang)));
